@@ -1,6 +1,6 @@
 -- ============================================
 -- MM2 ULTIMATE CHECKER (FULL INFO + DREAM PETS)
--- С РАБОТАЮЩИМИ НАСТРОЙКАМИ
+-- ПОЛНАЯ ВЕРСИЯ - ИСПРАВЛЕНА
 -- ============================================
 
 local Players = game:GetService("Players")
@@ -135,7 +135,7 @@ frame.ClipsDescendants = true
 Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 10)
 
 -- ============================================
--- ПЕРЕТАСКИВАНИЕ ГЛАВНОГО ОКНА (ТОЛЬКО ПО ЗАГОЛОВКУ)
+-- ПЕРЕТАСКИВАНИЕ ГЛАВНОГО ОКНА
 -- ============================================
 local titleBar = Instance.new("TextLabel")
 titleBar.Parent = frame
@@ -222,7 +222,7 @@ local iconAsset = randomIconPath and fileToAsset(randomIconPath)
 local bgAsset = randomBGPath and fileToAsset(randomBGPath)
 
 -- ============================================
--- ФОН GUI (ПОЛУПРОЗРАЧНЫЙ)
+-- ФОН GUI
 -- ============================================
 local backgroundImage = Instance.new("ImageLabel")
 backgroundImage.Parent = frame
@@ -235,7 +235,7 @@ backgroundImage.ScaleType = Enum.ScaleType.Crop
 backgroundImage.ZIndex = -999
 
 -- ============================================
--- ОСТАЛЬНЫЕ ЭЛЕМЕНТЫ GUI (ЗАГОЛОВКИ, СЛОТЫ)
+-- ЗАГОЛОВКИ И РАЗДЕЛИТЕЛИ
 -- ============================================
 local line1 = Instance.new("Frame")
 line1.Parent = frame
@@ -468,7 +468,7 @@ yourSlots[1].frame.BackgroundColor3 = Color3.fromRGB(40, 60, 90)
 theirSlots[1].frame.BackgroundColor3 = Color3.fromRGB(40, 60, 90)
 
 -- ============================================
--- КРУГЛАЯ КНОПКА ДЛЯ ОТКРЫТИЯ/ЗАКРЫТИЯ
+-- КРУГЛАЯ КНОПКА ОТКРЫТИЯ/ЗАКРЫТИЯ
 -- ============================================
 local toggleButton = Instance.new("ImageButton")
 toggleButton.Parent = gui
@@ -487,9 +487,7 @@ toggleButton.ZIndex = 999999
 
 Instance.new("UICorner", toggleButton).CornerRadius = UDim.new(1, 0)
 
--- ============================================
--- ПЕРЕТАСКИВАНИЕ КРУГЛОЙ КНОПКИ
--- ============================================
+-- ПЕРЕТАСКИВАНИЕ КНОПКИ
 local toggleDragging = false
 local toggleDragStart
 local toggleStartPos
@@ -520,9 +518,7 @@ UIS.InputChanged:Connect(function(input)
     end
 end)
 
--- ============================================
 -- ЕДИНЫЙ КОНТРОЛЛЕР СОСТОЯНИЯ
--- ============================================
 local UI = {
     open = true,
     settings = false
@@ -533,7 +529,6 @@ toggleButton.MouseButton1Click:Connect(function()
     UI.open = not UI.open
     frame.Visible = UI.open
     
-    -- Если главное меню закрыто, закрываем и настройки
     if not UI.open then
         UI.settings = false
         settingsFrame.Visible = false
@@ -541,7 +536,7 @@ toggleButton.MouseButton1Click:Connect(function()
 end)
 
 -- ============================================
--- ШЕСТЕРЕНКА ВНУТРИ ГЛАВНОГО GUI
+-- ШЕСТЕРЕНКА И НАСТРОЙКИ
 -- ============================================
 local settingsButton = Instance.new("ImageButton")
 settingsButton.Parent = frame
@@ -560,9 +555,7 @@ settingsButton.ZIndex = 999999
 
 Instance.new("UICorner", settingsButton).CornerRadius = UDim.new(1, 0)
 
--- ============================================
--- ОКНО НАСТРОЕК (НЕ ДВИГАЕТСЯ)
--- ============================================
+-- ОКНО НАСТРОЕК
 local settingsFrame = Instance.new("Frame")
 settingsFrame.Parent = gui
 
@@ -575,14 +568,11 @@ settingsFrame.BorderSizePixel = 0
 settingsFrame.Visible = false
 settingsFrame.ZIndex = 999999
 
--- ЗАПРЕТ ПЕРЕТАСКИВАНИЯ НАСТРОЕК
 settingsFrame.Active = false
 settingsFrame.Draggable = false
-settingsFrame.AnchorPoint = Vector2.new(0, 0)
 
 Instance.new("UICorner", settingsFrame).CornerRadius = UDim.new(0, 10)
 
--- ЗАГОЛОВОК НАСТРОЕК
 local settingsTitle = Instance.new("TextLabel")
 settingsTitle.Parent = settingsFrame
 settingsTitle.Size = UDim2.new(1, 0, 0, 35)
@@ -593,15 +583,13 @@ settingsTitle.TextColor3 = Color3.new(1, 1, 1)
 settingsTitle.TextScaled = true
 settingsTitle.ZIndex = 999999
 
--- ОТКРЫТИЕ/ЗАКРЫТИЕ НАСТРОЕК (ПО ШЕСТЕРЕНКЕ)
+-- ОТКРЫТИЕ/ЗАКРЫТИЕ НАСТРОЕК
 settingsButton.MouseButton1Click:Connect(function()
     UI.settings = not UI.settings
     settingsFrame.Visible = UI.settings
 end)
 
--- ============================================
 -- СОЗДАНИЕ ПОЛЗУНКОВ
--- ============================================
 local function createSlider(name, posY, min, max, default, callback)
     local holder = Instance.new("Frame")
     holder.Parent = settingsFrame
@@ -672,7 +660,7 @@ local function createSlider(name, posY, min, max, default, callback)
     end)
 end
 
--- САМИ ПОЛЗУНКИ
+-- ПОЛЗУНКИ
 createSlider("BG IMAGE", 40, 0, 1, 0.55, function(v)
     backgroundImage.ImageTransparency = v
 end)
@@ -712,6 +700,7 @@ end
 local function formatDetails(name, isChromaActive)
     local realName = name
     local useChromaDetails = false
+    
     if isChromaActive then
         local chromaName = getChromaName(name)
         if chromaName then
@@ -719,26 +708,210 @@ local function formatDetails(name, isChromaActive)
             useChromaDetails = true
         end
     end
+    
     local details = itemDetails[realName]
     if not details and useChromaDetails then
         details = itemDetails[name]
     end
+    
     if not details then
         return "📊 Нет данных"
     end
+    
     local trend = details.trend or "?"
     local stability = details.stability or "?"
     local trendIcon = (trend == "Rising" and "📈") or (trend == "Falling" and "📉") or (trend == "Stable" and "➡️") or "❓"
     local rangeStr = (details.range and details.range ~= "") and ("📊 " .. details.range) or ""
+    
     local lines = {}
     table.insert(lines, string.format("%s %s | %s", trendIcon, trend, stability))
     if rangeStr ~= "" then table.insert(lines, rangeStr) end
     table.insert(lines, string.format("🔥 %s | ✨ %s", details.demand, details.rarity))
+    
     return table.concat(lines, "\n")
 end
 
--- ========== ПОДСЧЁТ ОБЩИХ СУММ ==========
+-- ========== ПОДСЧЁТ ОБЩИХ СУММ (ИСПРАВЛЕНА) ==========
 local function calculateTotal(sideName, maxSlot, chromaTable)
     local tradeGui = LP.PlayerGui:FindFirstChild("TradeGUI")
     if not tradeGui then return 0, 0 end
-    local container = tradeGui
+    
+    local container = tradeGui.Container.Trade[sideName].Container
+    if not container then return 0, 0 end
+    
+    local totalV = 0
+    local totalRub = 0
+    
+    for i = 1, maxSlot do
+        local slot = container:FindFirstChild("NewItem"..i)
+        if slot then
+            local name = getSlotItemName(slot)
+            if name then
+                local amount = getSlotAmount(slot)
+                local priceV, priceRub
+                
+                if chromaTable and chromaTable[i] then
+                    local chromaName = getChromaName(name)
+                    if chromaName then
+                        priceV = getPrice(chromaName)
+                        priceRub = getDreamPrice(chromaName)
+                    else
+                        priceV = getPrice(name)
+                        priceRub = getDreamPrice(name)
+                    end
+                else
+                    priceV = getPrice(name)
+                    priceRub = getDreamPrice(name)
+                end
+                
+                totalV = totalV + (priceV * amount)
+                totalRub = totalRub + (priceRub * amount)
+            end
+        end
+    end
+    
+    return totalV, totalRub
+end
+
+-- ========== ОБНОВЛЕНИЕ GUI ==========
+local function updateAll()
+    local tradeGui = LP.PlayerGui:FindFirstChild("TradeGUI")
+    if not tradeGui then return end
+    
+    local yourContainer = tradeGui.Container.Trade.YourOffer.Container
+    local theirContainer = tradeGui.Container.Trade.TheirOffer.Container
+    
+    for i = 1, 4 do
+        local slot = yourContainer:FindFirstChild("NewItem"..i)
+        local slotUI = yourSlots[i]
+        
+        if slot then
+            local name = getSlotItemName(slot)
+            if name then
+                local amount = getSlotAmount(slot)
+                local supremePrice, dreamPrice
+                
+                if yourChromaMode[i] then
+                    local chromaName = getChromaName(name)
+                    if chromaName then
+                        supremePrice = getPrice(chromaName)
+                        dreamPrice = getDreamPrice(chromaName)
+                    else
+                        supremePrice = getPrice(name)
+                        dreamPrice = getDreamPrice(name)
+                    end
+                else
+                    supremePrice = getPrice(name)
+                    dreamPrice = getDreamPrice(name)
+                end
+                
+                local totalSupreme = math.floor(supremePrice * amount)
+                local totalDream = math.floor(dreamPrice * amount)
+                
+                local shortName = name
+                if #shortName > 14 then shortName = shortName:sub(1, 12) .. ".." end
+                
+                slotUI.nameLabel.Text = shortName
+                if totalDream > 0 then
+                    slotUI.priceLabel.Text = totalSupreme .. " V\n" .. totalDream .. " ₽"
+                else
+                    slotUI.priceLabel.Text = totalSupreme .. " V"
+                end
+                slotUI.detailsLabel.Text = formatDetails(name, yourChromaMode[i])
+            else
+                slotUI.nameLabel.Text = "Пусто"
+                slotUI.priceLabel.Text = "0 V"
+                slotUI.detailsLabel.Text = "❌ Нет предмета"
+            end
+        else
+            slotUI.nameLabel.Text = "Пусто"
+            slotUI.priceLabel.Text = "0 V"
+            slotUI.detailsLabel.Text = "❌ Нет предмета"
+        end
+    end
+    
+    for i = 1, 4 do
+        local slot = theirContainer:FindFirstChild("NewItem"..i)
+        local slotUI = theirSlots[i]
+        
+        if slot then
+            local name = getSlotItemName(slot)
+            if name then
+                local amount = getSlotAmount(slot)
+                local supremePrice, dreamPrice
+                
+                if theirChromaMode[i] then
+                    local chromaName = getChromaName(name)
+                    if chromaName then
+                        supremePrice = getPrice(chromaName)
+                        dreamPrice = getDreamPrice(chromaName)
+                    else
+                        supremePrice = getPrice(name)
+                        dreamPrice = getDreamPrice(name)
+                    end
+                else
+                    supremePrice = getPrice(name)
+                    dreamPrice = getDreamPrice(name)
+                end
+                
+                local totalSupreme = math.floor(supremePrice * amount)
+                local totalDream = math.floor(dreamPrice * amount)
+                
+                local shortName = name
+                if #shortName > 14 then shortName = shortName:sub(1, 12) .. ".." end
+                
+                slotUI.nameLabel.Text = shortName
+                if totalDream > 0 then
+                    slotUI.priceLabel.Text = totalSupreme .. " V\n" .. totalDream .. " ₽"
+                else
+                    slotUI.priceLabel.Text = totalSupreme .. " V"
+                end
+                slotUI.detailsLabel.Text = formatDetails(name, theirChromaMode[i])
+            else
+                slotUI.nameLabel.Text = "Пусто"
+                slotUI.priceLabel.Text = "0 V"
+                slotUI.detailsLabel.Text = "❌ Нет предмета"
+            end
+        else
+            slotUI.nameLabel.Text = "Пусто"
+            slotUI.priceLabel.Text = "0 V"
+            slotUI.detailsLabel.Text = "❌ Нет предмета"
+        end
+    end
+    
+    local yourTotalV, yourTotalRub = calculateTotal("YourOffer", YOUR_MAX_SLOT, yourChromaMode)
+    local theirTotalV, theirTotalRub = calculateTotal("TheirOffer", THEIR_MAX_SLOT, theirChromaMode)
+    
+    yourTotalLabel.Text = "TOTAL: " .. math.floor(yourTotalV) .. " V"
+    theirTotalLabel.Text = "TOTAL: " .. math.floor(theirTotalV) .. " V"
+    
+    if yourTotalRub > 0 then
+        yourTotalDreamLabel.Text = "💸 " .. math.floor(yourTotalRub) .. " ₽"
+    else
+        yourTotalDreamLabel.Text = ""
+    end
+    
+    if theirTotalRub > 0 then
+        theirTotalDreamLabel.Text = "💸 " .. math.floor(theirTotalRub) .. " ₽"
+    else
+        theirTotalDreamLabel.Text = ""
+    end
+    
+    if yourTotalV > theirTotalV then
+        yourTotalLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+        theirTotalLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+    elseif theirTotalV > yourTotalV then
+        yourTotalLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+        theirTotalLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+    else
+        yourTotalLabel.TextColor3 = Color3.fromRGB(180, 180, 180)
+        theirTotalLabel.TextColor3 = Color3.fromRGB(180, 180, 180)
+    end
+end
+
+-- ========== ЗАПУСК ==========
+loadDataFromGitHub()
+
+while task.wait(0.3) do
+    pcall(updateAll)
+end
