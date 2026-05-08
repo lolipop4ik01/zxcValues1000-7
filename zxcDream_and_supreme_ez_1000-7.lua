@@ -1,6 +1,6 @@
 -- ============================================
--- MM2 ULTIMATE CHECKER (ПОЛНАЯ ВЕРСИЯ)
--- С ПОДДЕРЖКОЙ КАРТИНОК ИЗ ПАПОК
+-- MM2 ULTIMATE CHECKER (ULTRA STABLE)
+-- РАБОТАЕТ ДАЖЕ ЕСЛИ ЧТО-ТО СЛОМАЛОСЬ
 -- ============================================
 
 local Players = game:GetService("Players")
@@ -65,7 +65,7 @@ local function loadDataFromGitHub()
     return true
 end
 
--- ========== ПРЕОБРАЗОВАНИЕ ИМЁН (Chroma ↔ C.) ==========
+-- ========== ПРЕОБРАЗОВАНИЕ ИМЁН ==========
 local function normalizeChromaName(name)
     if name:match("^Chroma ") then
         local rest = name:sub(8)
@@ -134,9 +134,7 @@ frame.BorderSizePixel = 0
 frame.ClipsDescendants = true
 Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 10)
 
--- ============================================
--- ПЕРЕТАСКИВАНИЕ ГЛАВНОГО ОКНА
--- ============================================
+-- ЗАГОЛОВОК (для перетаскивания)
 local titleBar = Instance.new("TextLabel")
 titleBar.Parent = frame
 titleBar.Size = UDim2.new(1, 0, 0, 30)
@@ -146,6 +144,7 @@ titleBar.Font = Enum.Font.GothamBold
 titleBar.TextColor3 = Color3.new(1, 1, 1)
 titleBar.TextScaled = true
 
+-- ПЕРЕТАСКИВАНИЕ
 local dragging = false
 local dragStart
 local startPos
@@ -176,51 +175,97 @@ UIS.InputChanged:Connect(function(input)
 end)
 
 -- ============================================
--- СТАБИЛЬНАЯ СИСТЕМА ЗАГРУЗКИ ИЗОБРАЖЕНИЙ
+-- УЛЬТРА-СТАБИЛЬНАЯ ЗАГРУЗКА КАРТИНОК
 -- ============================================
 
 local iconAsset = nil
 local bgAsset = nil
 
--- Функции executor'а
+-- ПРОВЕРЯЕМ ДОСТУПНЫЕ ФУНКЦИИ
 local hasMakeFolder = type(makefolder) == "function"
 local hasListFiles = type(listfiles) == "function"
+local hasIsFolder = type(isfolder) == "function"
 local hasGetSynAsset = type(getsynasset) == "function"
 local hasGetCustomAsset = type(getcustomasset) == "function"
 
+print("[ASSETS] === ПРОВЕРКА ФУНКЦИЙ ===")
+print("[ASSETS] makefolder:", hasMakeFolder)
+print("[ASSETS] listfiles:", hasListFiles)
+print("[ASSETS] isfolder:", hasIsFolder)
+print("[ASSETS] getsynasset:", hasGetSynAsset)
+print("[ASSETS] getcustomasset:", hasGetCustomAsset)
+
+-- ПЫТАЕМСЯ НАЙТИ РАБОЧУЮ ПАПКУ
+local function findWorkspacePath()
+    -- Список возможных путей
+    local possiblePaths = {
+        "workspace",
+        "./workspace",
+        "../workspace",
+        "C:/Users/" .. os.getenv("USERNAME") .. "/AppData/Local/Xeno/workspace",
+        "C:/Users/" .. os.getenv("USERNAME") .. "/AppData/Local/Solara/workspace",
+        "C:/Users/" .. os.getenv("USERNAME") .. "/Desktop/workspace",
+    }
+    
+    for _, path in ipairs(possiblePaths) do
+        if hasIsFolder and pcall(isfolder, path) then
+            return path
+        end
+    end
+    
+    -- Пробуем получить через listfiles текущей директории
+    if hasListFiles then
+        local success, files = pcall(listfiles, ".")
+        if success and files and #files > 0 then
+            return "."
+        end
+    end
+    
+    return nil
+end
+
+local workspacePath = findWorkspacePath()
+print("[ASSETS] Найден путь:", workspacePath or "НЕ НАЙДЕН")
+
+-- СОЗДАЁМ ПАПКИ (если возможно)
 local EXECUTOR_FOLDER = "1000-7_Assets"
 local ICONS_FOLDER = EXECUTOR_FOLDER .. "/Icons_ZXC"
 local BG_FOLDER = EXECUTOR_FOLDER .. "/Backgrounds_Ghoul"
 
-print("[ASSETS] Makefolder available:", hasMakeFolder)
-print("[ASSETS] Listfiles available:", hasListFiles)
-
--- СОЗДАЁМ ПАПКИ
-if hasMakeFolder then
+if hasMakeFolder and hasIsFolder then
     pcall(function()
         if not isfolder(EXECUTOR_FOLDER) then
             makefolder(EXECUTOR_FOLDER)
-            print("[ASSETS] Created folder:", EXECUTOR_FOLDER)
+            print("[ASSETS] Создана папка:", EXECUTOR_FOLDER)
         end
         if not isfolder(ICONS_FOLDER) then
             makefolder(ICONS_FOLDER)
-            print("[ASSETS] Created folder:", ICONS_FOLDER)
+            print("[ASSETS] Создана папка:", ICONS_FOLDER)
         end
         if not isfolder(BG_FOLDER) then
             makefolder(BG_FOLDER)
-            print("[ASSETS] Created folder:", BG_FOLDER)
+            print("[ASSETS] Создана папка:", BG_FOLDER)
         end
     end)
 end
 
--- ПОИСК ФАЙЛОВ
+-- ПОИСК КАРТИНОК
 local function getRandomImage(folder)
-    if not hasListFiles then 
-        return nil 
+    if not hasListFiles then
+        print("[ASSETS] listfiles недоступна")
+        return nil
     end
     
+    print("[ASSETS] Поиск в папке:", folder)
+    
     local success, files = pcall(listfiles, folder)
-    if not success or not files or #files == 0 then
+    if not success then
+        print("[ASSETS] Ошибка listfiles:", tostring(files))
+        return nil
+    end
+    
+    if not files or #files == 0 then
+        print("[ASSETS] Папка пуста или не существует")
         return nil
     end
     
@@ -229,14 +274,18 @@ local function getRandomImage(folder)
         local lower = string.lower(file)
         if lower:find("%.png$") or lower:find("%.jpg$") or lower:find("%.jpeg$") then
             table.insert(valid, file)
+            print("[ASSETS] Найдена картинка:", file)
         end
     end
     
-    if #valid <= 0 then
+    if #valid == 0 then
+        print("[ASSETS] Нет PNG/JPG файлов")
         return nil
     end
     
-    return valid[math.random(1, #valid)]
+    local selected = valid[math.random(1, #valid)]
+    print("[ASSETS] Выбрана картинка:", selected)
+    return selected
 end
 
 -- КОНВЕРТАЦИЯ
@@ -244,6 +293,7 @@ local function fileToAsset(path)
     if hasGetSynAsset then
         local success, result = pcall(getsynasset, path)
         if success and result then
+            print("[ASSETS] Конвертация через getsynasset успешна")
             return result
         end
     end
@@ -251,36 +301,37 @@ local function fileToAsset(path)
     if hasGetCustomAsset then
         local success, result = pcall(getcustomasset, path)
         if success and result then
+            print("[ASSETS] Конвертация через getcustomasset успешна")
             return result
         end
     end
     
+    print("[ASSETS] Конвертация НЕ удалась")
     return nil
 end
 
--- ЗАГРУЖАЕМ
-local randomIconPath = getRandomImage(ICONS_FOLDER)
-local randomBGPath = getRandomImage(BG_FOLDER)
+-- ЗАГРУЗКА
+print("[ASSETS] === НАЧАЛО ЗАГРУЗКИ ===")
 
+local randomIconPath = getRandomImage(ICONS_FOLDER)
 if randomIconPath then
     iconAsset = fileToAsset(randomIconPath)
-    print("[ASSETS] Loaded icon:", randomIconPath)
 end
 
+local randomBGPath = getRandomImage(BG_FOLDER)
 if randomBGPath then
     bgAsset = fileToAsset(randomBGPath)
-    print("[ASSETS] Loaded background:", randomBGPath)
 end
 
--- FALLBACK
+-- FALLBACK (ВСЕГДА РАБОТАЕТ)
 if not iconAsset then
     iconAsset = "rbxassetid://7072719338"
-    print("[ASSETS] Using fallback icon")
+    print("[ASSETS] Использую стандартную иконку")
 end
 
 if not bgAsset then
     bgAsset = "rbxassetid://9066026056"
-    print("[ASSETS] Using fallback background")
+    print("[ASSETS] Использую стандартный фон")
 end
 
 -- ============================================
@@ -297,7 +348,7 @@ backgroundImage.ScaleType = Enum.ScaleType.Crop
 backgroundImage.ZIndex = -999
 
 -- ============================================
--- ЗАГОЛОВКИ И РАЗДЕЛИТЕЛИ
+-- ОСТАЛЬНЫЕ ЭЛЕМЕНТЫ GUI
 -- ============================================
 local line1 = Instance.new("Frame")
 line1.Parent = frame
@@ -530,7 +581,7 @@ yourSlots[1].frame.BackgroundColor3 = Color3.fromRGB(40, 60, 90)
 theirSlots[1].frame.BackgroundColor3 = Color3.fromRGB(40, 60, 90)
 
 -- ============================================
--- КРУГЛАЯ КНОПКА ОТКРЫТИЯ/ЗАКРЫТИЯ
+-- КРУГЛАЯ КНОПКА
 -- ============================================
 local toggleButton = Instance.new("ImageButton")
 toggleButton.Parent = gui
@@ -580,13 +631,12 @@ UIS.InputChanged:Connect(function(input)
     end
 end)
 
--- ЕДИНЫЙ КОНТРОЛЛЕР СОСТОЯНИЯ
+-- ЕДИНЫЙ КОНТРОЛЛЕР
 local UI = {
     open = true,
     settings = false
 }
 
--- ОТКРЫТИЕ/ЗАКРЫТИЕ ГЛАВНОГО МЕНЮ
 toggleButton.MouseButton1Click:Connect(function()
     UI.open = not UI.open
     frame.Visible = UI.open
@@ -629,7 +679,6 @@ settingsFrame.BackgroundTransparency = 0.1
 settingsFrame.BorderSizePixel = 0
 settingsFrame.Visible = false
 settingsFrame.ZIndex = 999999
-
 settingsFrame.Active = false
 settingsFrame.Draggable = false
 
@@ -645,7 +694,6 @@ settingsTitle.TextColor3 = Color3.new(1, 1, 1)
 settingsTitle.TextScaled = true
 settingsTitle.ZIndex = 999999
 
--- ОТКРЫТИЕ/ЗАКРЫТИЕ НАСТРОЕК
 settingsButton.MouseButton1Click:Connect(function()
     UI.settings = not UI.settings
     settingsFrame.Visible = UI.settings
@@ -758,7 +806,6 @@ local function getSlotAmount(slot)
     return 1
 end
 
--- ========== ФОРМАТИРОВАНИЕ ДЕТАЛЕЙ ==========
 local function formatDetails(name, isChromaActive)
     local realName = name
     local useChromaDetails = false
@@ -793,7 +840,6 @@ local function formatDetails(name, isChromaActive)
     return table.concat(lines, "\n")
 end
 
--- ========== ПОДСЧЁТ ОБЩИХ СУММ ==========
 local function calculateTotal(sideName, maxSlot, chromaTable)
     local tradeGui = LP.PlayerGui:FindFirstChild("TradeGUI")
     if not tradeGui then return 0, 0 end
@@ -835,7 +881,6 @@ local function calculateTotal(sideName, maxSlot, chromaTable)
     return totalV, totalRub
 end
 
--- ========== ОБНОВЛЕНИЕ GUI ==========
 local function updateAll()
     local tradeGui = LP.PlayerGui:FindFirstChild("TradeGUI")
     if not tradeGui then return end
