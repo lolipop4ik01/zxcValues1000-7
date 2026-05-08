@@ -1,6 +1,6 @@
 -- ============================================
--- MM2 ULTIMATE CHECKER (FULL INFO + DREAM PETS)
--- ПОЛНАЯ ВЕРСИЯ - ИСПРАВЛЕНА
+-- MM2 ULTIMATE CHECKER (ПОЛНАЯ ВЕРСИЯ)
+-- С ПОДДЕРЖКОЙ КАРТИНОК ИЗ ПАПОК
 -- ============================================
 
 local Players = game:GetService("Players")
@@ -176,50 +176,112 @@ UIS.InputChanged:Connect(function(input)
 end)
 
 -- ============================================
--- EXECUTOR IMAGE SYSTEM
+-- СТАБИЛЬНАЯ СИСТЕМА ЗАГРУЗКИ ИЗОБРАЖЕНИЙ
 -- ============================================
+
+local iconAsset = nil
+local bgAsset = nil
+
+-- Функции executor'а
+local hasMakeFolder = type(makefolder) == "function"
+local hasListFiles = type(listfiles) == "function"
+local hasGetSynAsset = type(getsynasset) == "function"
+local hasGetCustomAsset = type(getcustomasset) == "function"
 
 local EXECUTOR_FOLDER = "1000-7_Assets"
 local ICONS_FOLDER = EXECUTOR_FOLDER .. "/Icons_ZXC"
 local BG_FOLDER = EXECUTOR_FOLDER .. "/Backgrounds_Ghoul"
 
-if makefolder then
-    if not isfolder(EXECUTOR_FOLDER) then
-        makefolder(EXECUTOR_FOLDER)
-    end
-    if not isfolder(ICONS_FOLDER) then
-        makefolder(ICONS_FOLDER)
-    end
-    if not isfolder(BG_FOLDER) then
-        makefolder(BG_FOLDER)
-    end
+print("[ASSETS] Makefolder available:", hasMakeFolder)
+print("[ASSETS] Listfiles available:", hasListFiles)
+
+-- СОЗДАЁМ ПАПКИ
+if hasMakeFolder then
+    pcall(function()
+        if not isfolder(EXECUTOR_FOLDER) then
+            makefolder(EXECUTOR_FOLDER)
+            print("[ASSETS] Created folder:", EXECUTOR_FOLDER)
+        end
+        if not isfolder(ICONS_FOLDER) then
+            makefolder(ICONS_FOLDER)
+            print("[ASSETS] Created folder:", ICONS_FOLDER)
+        end
+        if not isfolder(BG_FOLDER) then
+            makefolder(BG_FOLDER)
+            print("[ASSETS] Created folder:", BG_FOLDER)
+        end
+    end)
 end
 
+-- ПОИСК ФАЙЛОВ
 local function getRandomImage(folder)
-    if not listfiles then return nil end
-    local files = listfiles(folder)
+    if not hasListFiles then 
+        return nil 
+    end
+    
+    local success, files = pcall(listfiles, folder)
+    if not success or not files or #files == 0 then
+        return nil
+    end
+    
     local valid = {}
-    for _,file in ipairs(files) do
+    for _, file in ipairs(files) do
         local lower = string.lower(file)
-        if lower:find(".png") or lower:find(".jpg") or lower:find(".jpeg") then
+        if lower:find("%.png$") or lower:find("%.jpg$") or lower:find("%.jpeg$") then
             table.insert(valid, file)
         end
     end
-    if #valid <= 0 then return nil end
+    
+    if #valid <= 0 then
+        return nil
+    end
+    
     return valid[math.random(1, #valid)]
 end
 
+-- КОНВЕРТАЦИЯ
 local function fileToAsset(path)
-    if getsynasset then return getsynasset(path) end
-    if getcustomasset then return getcustomasset(path) end
+    if hasGetSynAsset then
+        local success, result = pcall(getsynasset, path)
+        if success and result then
+            return result
+        end
+    end
+    
+    if hasGetCustomAsset then
+        local success, result = pcall(getcustomasset, path)
+        if success and result then
+            return result
+        end
+    end
+    
     return nil
 end
 
+-- ЗАГРУЖАЕМ
 local randomIconPath = getRandomImage(ICONS_FOLDER)
 local randomBGPath = getRandomImage(BG_FOLDER)
 
-local iconAsset = randomIconPath and fileToAsset(randomIconPath)
-local bgAsset = randomBGPath and fileToAsset(randomBGPath)
+if randomIconPath then
+    iconAsset = fileToAsset(randomIconPath)
+    print("[ASSETS] Loaded icon:", randomIconPath)
+end
+
+if randomBGPath then
+    bgAsset = fileToAsset(randomBGPath)
+    print("[ASSETS] Loaded background:", randomBGPath)
+end
+
+-- FALLBACK
+if not iconAsset then
+    iconAsset = "rbxassetid://7072719338"
+    print("[ASSETS] Using fallback icon")
+end
+
+if not bgAsset then
+    bgAsset = "rbxassetid://9066026056"
+    print("[ASSETS] Using fallback background")
+end
 
 -- ============================================
 -- ФОН GUI
@@ -229,7 +291,7 @@ backgroundImage.Parent = frame
 backgroundImage.Size = UDim2.new(1, 0, 1, 0)
 backgroundImage.Position = UDim2.new(0, 0, 0, 0)
 backgroundImage.BackgroundTransparency = 1
-backgroundImage.Image = bgAsset or "rbxassetid://9066026056"
+backgroundImage.Image = bgAsset
 backgroundImage.ImageTransparency = 0.55
 backgroundImage.ScaleType = Enum.ScaleType.Crop
 backgroundImage.ZIndex = -999
@@ -481,7 +543,7 @@ toggleButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 toggleButton.BackgroundTransparency = 0
 toggleButton.BorderSizePixel = 0
 
-toggleButton.Image = iconAsset or "rbxassetid://7072719338"
+toggleButton.Image = iconAsset
 toggleButton.ScaleType = Enum.ScaleType.Crop
 toggleButton.ZIndex = 999999
 
@@ -731,7 +793,7 @@ local function formatDetails(name, isChromaActive)
     return table.concat(lines, "\n")
 end
 
--- ========== ПОДСЧЁТ ОБЩИХ СУММ (ИСПРАВЛЕНА) ==========
+-- ========== ПОДСЧЁТ ОБЩИХ СУММ ==========
 local function calculateTotal(sideName, maxSlot, chromaTable)
     local tradeGui = LP.PlayerGui:FindFirstChild("TradeGUI")
     if not tradeGui then return 0, 0 end
