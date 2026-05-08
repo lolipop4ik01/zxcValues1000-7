@@ -1,55 +1,34 @@
 import json
 import re
-import time
 from playwright.sync_api import sync_playwright
 
-# ========== ЧЁРНЫЙ СПИСОК КЛЮЧЕВЫХ СЛОВ ==========
+# ========== ЧЁРНЫЙ СПИСОК ==========
 IGNORE_KEYWORDS = [
-    # Петы
-    "pet", "puppy", "pony", "bunny", "bear", "dog", "cat", "fox", "pig", "chicken", "dragon",
-    "phoenix", "bird", "skelly", "sammy", "icey", "electro", "fire", "chroma fire",
-    # Мусорные/нетрейдерные
-    "join our discord", "make sure", "extra features", "placeholder", "coming soon",
-    "owner -", "owners -", "gold ", "silver ", "bronze ", "blue ", "red ", "purple ",
-    "top 100", "leaderboard", "account terminated", "click here", "view item on the wiki",
-    # Не оружие
-    "wrapping paper", "sparkle", "potion", "mummy", "zombie", "grave", "snakebite",
-    "cavern", "toxic", "frozen", "aurora", "vampire (", "vampire set", "pumpkin set",
-    "latte", "bats", "spectral", "traveler (", "gingerbread", "silent night",
-    "zombified", "candy swirl", "lights", "icedriller", "elite", "santa's", "scratch",
-    "marble", "haunted", "eyeball", "overseer eye", "icecracker", "icedriller",
+    "pet", "puppy", "pony", "bunny", "bear", "dog", "cat", "fox", "pig",
+    "join our discord", "make sure", "extra features", "placeholder",
+    "owner -", "owners -", "gold ", "silver ", "bronze ",
+    "wrapping paper", "sparkle", "potion", "mummy", "zombie", "grave",
+    "frozen", "spearmint", "floatie", "gingercookie", "splat", "cupid",
+    "blue elite", "elite", "hardened", "splash", "toy", "jellyfish",
+    "palms", "candy swirl", "lights", "icedriller", "elite",
 ]
 
 def should_ignore_item(name):
-    """Проверяем, нужно ли игнорировать предмет"""
     name_lower = name.lower()
-    
-    # Игнорируем по ключевым словам
     for kw in IGNORE_KEYWORDS:
         if kw in name_lower:
             return True
-    
-    # Игнорируем если начинается с "×" или слишком короткое
     if name.startswith("×") or len(name) < 3:
         return True
-    
-    # Игнорируем если это явно не оружие (нет цены или мусор)
-    if any(x in name_lower for x in ["set", "collection", "bundle"]):
-        # Но оставляем отдельные сеты (они нужны для информации)
-        if "set" in name_lower and len(name) < 20:
-            return True
-    
+    # Игнорируем дешёвый мусор (ценой 2-3 рубля)
     return False
 
-# ========== ОСНОВНЫЕ НАСТРОЙКИ ==========
+# ========== SUPREME VALUES ПАРСЕР ==========
 SUPREME_URLS = {
     "godlies": "https://supremevalues.com/mm2/godlies",
     "chromas": "https://supremevalues.com/mm2/chromas",
     "vintages": "https://supremevalues.com/mm2/vintages",
     "ancients": "https://supremevalues.com/mm2/ancients",
-    # Исключаем uniques и sets — там много мусора
-    # "uniques": "https://supremevalues.com/mm2/uniques",
-    # "sets": "https://supremevalues.com/mm2/sets",
 }
 
 def parse_supreme_item(text):
@@ -98,12 +77,10 @@ def extract_supreme_items(page, category):
                 continue
             name = lines[0]
             
-            # Пропускаем мусорные заголовки
             skip_words = ["value", "demand", "trend", "join our", "make sure", "×", "extra features"]
             if any(skip in name.lower() for skip in skip_words):
                 continue
             
-            # Фильтруем ненужные предметы
             if should_ignore_item(name):
                 continue
             
@@ -114,35 +91,53 @@ def extract_supreme_items(page, category):
             continue
     return items
 
-# ========== ПАРСИНГ DREAM PETS ==========
-def get_dreampets_price(page, item_name):
-    """Заходит на страницу предмета на DreamPets и возвращает цену в рублях"""
-    # Формируем URL
-    url_name = item_name.lower().replace(" ", "-")
-    url_name = re.sub(r"[\(\)]", "", url_name)
-    url_name = re.sub(r"[^\w\-]", "", url_name)  # убираем всё, кроме букв, цифр и тире
-    url = f"https://dreampets.gg/mm2/items/{url_name}"
+# ========== DREAM PETS ПАРСЕР (через JS) ==========
+def get_dreampets_prices(page):
+    """Собирает все цены с DreamPets через JavaScript"""
+    js_code = """
+    (function() {
+        const items = {};
+        const h3s = document.querySelectorAll('h3');
+        
+        for (let i = 0; i < h3s.length; i++) {
+            const h3 = h3s[i];
+            const parent = h3.closest('a');
+            let priceElem = null;
+            
+            if (parent) {
+                priceElem = parent.querySelector('[class*="price"]');
+            }
+            if (!priceElem && h3.parentElement) {
+                priceElem = h3.parentElement.querySelector('[class*="price"]');
+            }
+            
+            let price = 0;
+            if (priceElem) {
+                const priceText = priceElem.innerText.trim();
+                const match = priceText.match(/(\\d+(?:\\.\\d+)?)/);
+                if (match) {
+                    price = parseFloat(match[1]);
+                }
+            }
+            
+            const name = h3.innerText.trim();
+            if (price > 0 && name.length > 0) {
+                items[name] = price;
+            }
+        }
+        
+        return items;
+    })();
+    """
     
     try:
-        page.goto(url, timeout=15000)
-        page.wait_for_timeout(2000)
-        
-        html = page.content()
-        match = re.search(r"(\d+)\s*[₽]", html)
-        if match:
-            return int(match.group(1))
-        
-        price_elem = page.query_selector(".item-price, .price, [class*='price']")
-        if price_elem:
-            text = price_elem.inner_text()
-            num = re.search(r"(\d+)", text)
-            if num:
-                return int(num.group(1))
-    except:
-        pass
-    return 0
+        items = page.evaluate(js_code)
+        return items
+    except Exception as e:
+        print(f"Ошибка JS: {e}")
+        return {}
 
-# ========== ОСНОВНОЙ ПАРСЕР ==========
+# ========== ОСНОВНАЯ ФУНКЦИЯ ==========
 def main():
     all_data = {}
     
@@ -150,47 +145,44 @@ def main():
         browser = p.chromium.launch(headless=True)
         page = browser.new_page()
         
-        # Собираем SupremeValues
+        # 1. Собираем SupremeValues
+        print("[1/2] Сбор данных с SupremeValues...")
         for category, url in SUPREME_URLS.items():
-            print(f"[1/2] Сбор SupremeValues: {category}...")
+            print(f"  → {category}...")
             page.goto(url)
             data = extract_supreme_items(page, category)
             all_data[category] = data
-            print(f"     Найдено после фильтрации: {len(data)} предметов")
+            print(f"    Найдено: {len(data)} предметов")
         
-        # Собираем названия всех отфильтрованных предметов
-        all_items = []
-        for category, items in all_data.items():
-            for name in items.keys():
-                all_items.append(name)
+        # 2. Собираем цены с DreamPets
+        print("\n[2/2] Сбор цен с DreamPets...")
+        page.goto("https://dreampets.gg/mm2/", timeout=30000)
+        page.wait_for_timeout(5000)
         
-        print(f"\n[2/2] Сбор цен с DreamPets для {len(all_items)} предметов...")
-        
-        dreampets_prices = {}
-        total = len(all_items)
-        
-        for i, name in enumerate(all_items):
-            print(f"  {i+1}/{total}: {name}")
-            price = get_dreampets_price(page, name)
-            if price > 0:
-                dreampets_prices[name] = price
-            time.sleep(0.5)
-        
-        # Добавляем DreamPets цены
-        for category, items in all_data.items():
-            for name, info in items.items():
-                info["dreampets_price"] = dreampets_prices.get(name, 0)
+        dreampets_prices = get_dreampets_prices(page)
+        print(f"  Найдено цен: {len(dreampets_prices)}")
         
         browser.close()
     
-    # Сохраняем результат
+    # 3. Объединяем данные
+    print("\n[3/3] Объединение данных...")
+    for category, items in all_data.items():
+        for name, info in items.items():
+            if name in dreampets_prices:
+                info["dreampets_price"] = dreampets_prices[name]
+            else:
+                info["dreampets_price"] = 0
+    
+    # 4. Сохраняем результат
     with open("prices.json", "w", encoding="utf-8") as f:
         json.dump(all_data, f, indent=2, ensure_ascii=False)
     
-    filtered_count = sum(len(v) for v in all_data.values())
-    print(f"\n✅ Готово! Оставлено предметов: {filtered_count}")
-    print(f"💰 Цены с DreamPets найдены для {len(dreampets_prices)} предметов")
-    print(f"🗑️ Игнорируется: {len(IGNORE_KEYWORDS)} категорий мусора")
+    total_items = sum(len(v) for v in all_data.values())
+    items_with_dp = sum(1 for c in all_data.values() for i in c.values() if i.get("dreampets_price", 0) > 0)
+    
+    print(f"\n✅ Готово!")
+    print(f"   Всего предметов: {total_items}")
+    print(f"   Цены DreamPets найдены для: {items_with_dp}")
 
 if __name__ == "__main__":
     main()
