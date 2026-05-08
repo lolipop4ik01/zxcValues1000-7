@@ -1,6 +1,6 @@
 -- ============================================
--- MM2 ULTIMATE CHECKER (ULTRA STABLE)
--- РАБОТАЕТ ДАЖЕ ЕСЛИ ЧТО-ТО СЛОМАЛОСЬ
+-- MM2 ULTIMATE CHECKER (FULL INFO + DREAM PETS)
+-- С НАСТРОЙКАМИ ПРОЗРАЧНОСТИ
 -- ============================================
 
 local Players = game:GetService("Players")
@@ -65,7 +65,7 @@ local function loadDataFromGitHub()
     return true
 end
 
--- ========== ПРЕОБРАЗОВАНИЕ ИМЁН ==========
+-- ========== ПРЕОБРАЗОВАНИЕ ИМЁН (Chroma ↔ C.) ==========
 local function normalizeChromaName(name)
     if name:match("^Chroma ") then
         local rest = name:sub(8)
@@ -131,225 +131,115 @@ frame.Position = UDim2.new(0.5, -400, 0, 30)
 frame.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
 frame.BackgroundTransparency = 0.1
 frame.BorderSizePixel = 0
-frame.ClipsDescendants = true
 Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 10)
 
--- ЗАГОЛОВОК (для перетаскивания)
-local titleBar = Instance.new("TextLabel")
-titleBar.Parent = frame
-titleBar.Size = UDim2.new(1, 0, 0, 30)
-titleBar.BackgroundTransparency = 1
-titleBar.Text = "ZXC 1000-7 made by Ghouls SSS Rank"
-titleBar.Font = Enum.Font.GothamBold
-titleBar.TextColor3 = Color3.new(1, 1, 1)
-titleBar.TextScaled = true
+-- ============================================
+-- ПЕРЕТАСКИВАНИЕ ГЛАВНОГО ОКНА
+-- ============================================
+local frameDragging = false
+local frameDragStart
+local frameStartPos
 
--- ПЕРЕТАСКИВАНИЕ
-local dragging = false
-local dragStart
-local startPos
-
-titleBar.InputBegan:Connect(function(input)
+frame.InputBegan:Connect(function(input)
     if input.UserInputType == Enum.UserInputType.MouseButton1 then
-        dragging = true
-        dragStart = input.Position
-        startPos = frame.Position
+        frameDragging = true
+        frameDragStart = input.Position
+        frameStartPos = frame.Position
+        
         input.Changed:Connect(function()
             if input.UserInputState == Enum.UserInputState.End then
-                dragging = false
+                frameDragging = false
             end
         end)
     end
 end)
 
 UIS.InputChanged:Connect(function(input)
-    if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
-        local delta = input.Position - dragStart
+    if frameDragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+        local delta = input.Position - frameDragStart
         frame.Position = UDim2.new(
-            startPos.X.Scale,
-            startPos.X.Offset + delta.X,
-            startPos.Y.Scale,
-            startPos.Y.Offset + delta.Y
+            frameStartPos.X.Scale,
+            frameStartPos.X.Offset + delta.X,
+            frameStartPos.Y.Scale,
+            frameStartPos.Y.Offset + delta.Y
         )
     end
 end)
 
 -- ============================================
--- УЛЬТРА-СТАБИЛЬНАЯ ЗАГРУЗКА КАРТИНОК
+-- EXECUTOR IMAGE SYSTEM
 -- ============================================
 
-local iconAsset = nil
-local bgAsset = nil
-
--- ПРОВЕРЯЕМ ДОСТУПНЫЕ ФУНКЦИИ
-local hasMakeFolder = type(makefolder) == "function"
-local hasListFiles = type(listfiles) == "function"
-local hasIsFolder = type(isfolder) == "function"
-local hasGetSynAsset = type(getsynasset) == "function"
-local hasGetCustomAsset = type(getcustomasset) == "function"
-
-print("[ASSETS] === ПРОВЕРКА ФУНКЦИЙ ===")
-print("[ASSETS] makefolder:", hasMakeFolder)
-print("[ASSETS] listfiles:", hasListFiles)
-print("[ASSETS] isfolder:", hasIsFolder)
-print("[ASSETS] getsynasset:", hasGetSynAsset)
-print("[ASSETS] getcustomasset:", hasGetCustomAsset)
-
--- ПЫТАЕМСЯ НАЙТИ РАБОЧУЮ ПАПКУ
-local function findWorkspacePath()
-    -- Список возможных путей
-    local possiblePaths = {
-        "workspace",
-        "./workspace",
-        "../workspace",
-        "C:/Users/" .. os.getenv("USERNAME") .. "/AppData/Local/Xeno/workspace",
-        "C:/Users/" .. os.getenv("USERNAME") .. "/AppData/Local/Solara/workspace",
-        "C:/Users/" .. os.getenv("USERNAME") .. "/Desktop/workspace",
-    }
-    
-    for _, path in ipairs(possiblePaths) do
-        if hasIsFolder and pcall(isfolder, path) then
-            return path
-        end
-    end
-    
-    -- Пробуем получить через listfiles текущей директории
-    if hasListFiles then
-        local success, files = pcall(listfiles, ".")
-        if success and files and #files > 0 then
-            return "."
-        end
-    end
-    
-    return nil
-end
-
-local workspacePath = findWorkspacePath()
-print("[ASSETS] Найден путь:", workspacePath or "НЕ НАЙДЕН")
-
--- СОЗДАЁМ ПАПКИ (если возможно)
 local EXECUTOR_FOLDER = "1000-7_Assets"
 local ICONS_FOLDER = EXECUTOR_FOLDER .. "/Icons_ZXC"
 local BG_FOLDER = EXECUTOR_FOLDER .. "/Backgrounds_Ghoul"
 
-if hasMakeFolder and hasIsFolder then
-    pcall(function()
-        if not isfolder(EXECUTOR_FOLDER) then
-            makefolder(EXECUTOR_FOLDER)
-            print("[ASSETS] Создана папка:", EXECUTOR_FOLDER)
-        end
-        if not isfolder(ICONS_FOLDER) then
-            makefolder(ICONS_FOLDER)
-            print("[ASSETS] Создана папка:", ICONS_FOLDER)
-        end
-        if not isfolder(BG_FOLDER) then
-            makefolder(BG_FOLDER)
-            print("[ASSETS] Создана папка:", BG_FOLDER)
-        end
-    end)
+if makefolder then
+    if not isfolder(EXECUTOR_FOLDER) then
+        makefolder(EXECUTOR_FOLDER)
+    end
+    if not isfolder(ICONS_FOLDER) then
+        makefolder(ICONS_FOLDER)
+    end
+    if not isfolder(BG_FOLDER) then
+        makefolder(BG_FOLDER)
+    end
 end
 
--- ПОИСК КАРТИНОК
 local function getRandomImage(folder)
-    if not hasListFiles then
-        print("[ASSETS] listfiles недоступна")
-        return nil
-    end
-    
-    print("[ASSETS] Поиск в папке:", folder)
-    
-    local success, files = pcall(listfiles, folder)
-    if not success then
-        print("[ASSETS] Ошибка listfiles:", tostring(files))
-        return nil
-    end
-    
-    if not files or #files == 0 then
-        print("[ASSETS] Папка пуста или не существует")
-        return nil
-    end
-    
+    if not listfiles then return nil end
+    local files = listfiles(folder)
     local valid = {}
-    for _, file in ipairs(files) do
+    for _,file in ipairs(files) do
         local lower = string.lower(file)
-        if lower:find("%.png$") or lower:find("%.jpg$") or lower:find("%.jpeg$") then
+        if lower:find(".png") or lower:find(".jpg") or lower:find(".jpeg") then
             table.insert(valid, file)
-            print("[ASSETS] Найдена картинка:", file)
         end
     end
-    
-    if #valid == 0 then
-        print("[ASSETS] Нет PNG/JPG файлов")
-        return nil
-    end
-    
-    local selected = valid[math.random(1, #valid)]
-    print("[ASSETS] Выбрана картинка:", selected)
-    return selected
+    if #valid <= 0 then return nil end
+    return valid[math.random(1, #valid)]
 end
 
--- КОНВЕРТАЦИЯ
 local function fileToAsset(path)
-    if hasGetSynAsset then
-        local success, result = pcall(getsynasset, path)
-        if success and result then
-            print("[ASSETS] Конвертация через getsynasset успешна")
-            return result
-        end
-    end
-    
-    if hasGetCustomAsset then
-        local success, result = pcall(getcustomasset, path)
-        if success and result then
-            print("[ASSETS] Конвертация через getcustomasset успешна")
-            return result
-        end
-    end
-    
-    print("[ASSETS] Конвертация НЕ удалась")
+    if getsynasset then return getsynasset(path) end
+    if getcustomasset then return getcustomasset(path) end
     return nil
 end
 
--- ЗАГРУЗКА
-print("[ASSETS] === НАЧАЛО ЗАГРУЗКИ ===")
-
 local randomIconPath = getRandomImage(ICONS_FOLDER)
-if randomIconPath then
-    iconAsset = fileToAsset(randomIconPath)
-end
-
 local randomBGPath = getRandomImage(BG_FOLDER)
-if randomBGPath then
-    bgAsset = fileToAsset(randomBGPath)
-end
 
--- FALLBACK (ВСЕГДА РАБОТАЕТ)
-if not iconAsset then
-    iconAsset = "rbxassetid://7072719338"
-    print("[ASSETS] Использую стандартную иконку")
-end
-
-if not bgAsset then
-    bgAsset = "rbxassetid://9066026056"
-    print("[ASSETS] Использую стандартный фон")
-end
+local iconAsset = randomIconPath and fileToAsset(randomIconPath)
+local bgAsset = randomBGPath and fileToAsset(randomBGPath)
 
 -- ============================================
--- ФОН GUI
+-- ФОН GUI (ПОЛУПРОЗРАЧНЫЙ)
 -- ============================================
+frame.ClipsDescendants = true
+
 local backgroundImage = Instance.new("ImageLabel")
 backgroundImage.Parent = frame
 backgroundImage.Size = UDim2.new(1, 0, 1, 0)
 backgroundImage.Position = UDim2.new(0, 0, 0, 0)
 backgroundImage.BackgroundTransparency = 1
-backgroundImage.Image = bgAsset
+backgroundImage.Image = bgAsset or "rbxassetid://9066026056"
 backgroundImage.ImageTransparency = 0.55
 backgroundImage.ScaleType = Enum.ScaleType.Crop
 backgroundImage.ZIndex = -999
 
 -- ============================================
--- ОСТАЛЬНЫЕ ЭЛЕМЕНТЫ GUI
+-- ЗАГОЛОВОК
 -- ============================================
+local title = Instance.new("TextLabel")
+title.Parent = frame
+title.Size = UDim2.new(1, 0, 0, 30)
+title.BackgroundTransparency = 1
+title.Text = "ZXC 1000-7 made by Ghouls SSS Rank"
+title.Font = Enum.Font.GothamBold
+title.TextColor3 = Color3.new(1, 1, 1)
+title.TextScaled = true
+
+-- Разделитель
 local line1 = Instance.new("Frame")
 line1.Parent = frame
 line1.Position = UDim2.new(0, 0, 0, 35)
@@ -357,6 +247,7 @@ line1.Size = UDim2.new(1, 0, 0, 2)
 line1.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
 line1.BorderSizePixel = 0
 
+-- Центральная линия
 local centerLine = Instance.new("Frame")
 centerLine.Parent = frame
 centerLine.Position = UDim2.new(0.5, 0, 0, 40)
@@ -364,6 +255,7 @@ centerLine.Size = UDim2.new(0, 2, 1, -40)
 centerLine.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
 centerLine.BorderSizePixel = 0
 
+-- YOUR HEADER
 local yourHeader = Instance.new("TextLabel")
 yourHeader.Parent = frame
 yourHeader.Position = UDim2.new(0, 0, 0, 42)
@@ -374,6 +266,7 @@ yourHeader.Font = Enum.Font.GothamBold
 yourHeader.TextColor3 = Color3.fromRGB(255, 200, 100)
 yourHeader.TextScaled = true
 
+-- THEIR HEADER
 local theirHeader = Instance.new("TextLabel")
 theirHeader.Parent = frame
 theirHeader.Position = UDim2.new(0.5, 0, 0, 42)
@@ -581,8 +474,9 @@ yourSlots[1].frame.BackgroundColor3 = Color3.fromRGB(40, 60, 90)
 theirSlots[1].frame.BackgroundColor3 = Color3.fromRGB(40, 60, 90)
 
 -- ============================================
--- КРУГЛАЯ КНОПКА
+-- ТОГГЛ КНОПКА (КРУГЛАЯ)
 -- ============================================
+
 local toggleButton = Instance.new("ImageButton")
 toggleButton.Parent = gui
 toggleButton.Name = "ToggleButton"
@@ -594,13 +488,21 @@ toggleButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 toggleButton.BackgroundTransparency = 0
 toggleButton.BorderSizePixel = 0
 
-toggleButton.Image = iconAsset
+toggleButton.Image = iconAsset or "rbxassetid://7072719338"
 toggleButton.ScaleType = Enum.ScaleType.Crop
 toggleButton.ZIndex = 999999
 
 Instance.new("UICorner", toggleButton).CornerRadius = UDim.new(1, 0)
 
--- ПЕРЕТАСКИВАНИЕ КНОПКИ
+-- ========== ОТКРЫТИЕ / ЗАКРЫТИЕ ==========
+local opened = true
+
+toggleButton.MouseButton1Click:Connect(function()
+    opened = not opened
+    frame.Visible = opened
+end)
+
+-- ========== ПЕРЕТАСКИВАНИЕ КНОПКИ ==========
 local toggleDragging = false
 local toggleDragStart
 local toggleStartPos
@@ -631,49 +533,36 @@ UIS.InputChanged:Connect(function(input)
     end
 end)
 
--- ЕДИНЫЙ КОНТРОЛЛЕР
-local UI = {
-    open = true,
-    settings = false
+-- ============================================
+-- НАСТРОЙКИ (ШЕСТЕРЕНКА + ПОЛЗУНКИ)
+-- ============================================
+
+-- Данные настроек
+local Settings = {
+    BackgroundTransparency = 0.55,
+    MainTransparency = 0.1,
+    IconTransparency = 0,
 }
 
-toggleButton.MouseButton1Click:Connect(function()
-    UI.open = not UI.open
-    frame.Visible = UI.open
-    
-    if not UI.open then
-        UI.settings = false
-        settingsFrame.Visible = false
-    end
-end)
-
--- ============================================
--- ШЕСТЕРЕНКА И НАСТРОЙКИ
--- ============================================
+-- ШЕСТЕРЕНКА (внутри главного окна, справа сверху)
 local settingsButton = Instance.new("ImageButton")
 settingsButton.Parent = frame
 settingsButton.Name = "SettingsButton"
-
 settingsButton.Size = UDim2.new(0, 32, 0, 32)
 settingsButton.Position = UDim2.new(1, -38, 0, 4)
-
 settingsButton.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 settingsButton.BackgroundTransparency = 0
 settingsButton.BorderSizePixel = 0
-
 settingsButton.Image = "rbxassetid://6031280882"
 settingsButton.ImageColor3 = Color3.new(1, 1, 1)
 settingsButton.ZIndex = 999999
-
 Instance.new("UICorner", settingsButton).CornerRadius = UDim.new(1, 0)
 
--- ОКНО НАСТРОЕК
+-- ОКНО НАСТРОЕК (отдельное, не перетаскивается)
 local settingsFrame = Instance.new("Frame")
 settingsFrame.Parent = gui
-
 settingsFrame.Size = UDim2.new(0, 260, 0, 220)
 settingsFrame.Position = UDim2.new(0, 140, 0.5, -110)
-
 settingsFrame.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
 settingsFrame.BackgroundTransparency = 0.1
 settingsFrame.BorderSizePixel = 0
@@ -681,9 +570,9 @@ settingsFrame.Visible = false
 settingsFrame.ZIndex = 999999
 settingsFrame.Active = false
 settingsFrame.Draggable = false
-
 Instance.new("UICorner", settingsFrame).CornerRadius = UDim.new(0, 10)
 
+-- Заголовок окна настроек
 local settingsTitle = Instance.new("TextLabel")
 settingsTitle.Parent = settingsFrame
 settingsTitle.Size = UDim2.new(1, 0, 0, 35)
@@ -694,12 +583,7 @@ settingsTitle.TextColor3 = Color3.new(1, 1, 1)
 settingsTitle.TextScaled = true
 settingsTitle.ZIndex = 999999
 
-settingsButton.MouseButton1Click:Connect(function()
-    UI.settings = not UI.settings
-    settingsFrame.Visible = UI.settings
-end)
-
--- СОЗДАНИЕ ПОЛЗУНКОВ
+-- Функция создания ползунка (НЕ ПЕРЕТАСКИВАЕТ ОКНО)
 local function createSlider(name, posY, min, max, default, callback)
     local holder = Instance.new("Frame")
     holder.Parent = settingsFrame
@@ -770,17 +654,29 @@ local function createSlider(name, posY, min, max, default, callback)
     end)
 end
 
--- ПОЛЗУНКИ
-createSlider("BG IMAGE", 40, 0, 1, 0.55, function(v)
-    backgroundImage.ImageTransparency = v
+-- СОЗДАЕМ ПОЛЗУНКИ
+createSlider("BG IMAGE", 40, 0, 1, Settings.BackgroundTransparency, function(v)
+    Settings.BackgroundTransparency = v
+    if backgroundImage then
+        backgroundImage.ImageTransparency = v
+    end
 end)
 
-createSlider("MAIN GUI", 100, 0, 1, 0.1, function(v)
+createSlider("MAIN GUI", 100, 0, 1, Settings.MainTransparency, function(v)
+    Settings.MainTransparency = v
     frame.BackgroundTransparency = v
 end)
 
-createSlider("ICON", 160, 0, 1, 0, function(v)
+createSlider("ICON", 160, 0, 1, Settings.IconTransparency, function(v)
+    Settings.IconTransparency = v
     toggleButton.BackgroundTransparency = v
+end)
+
+-- ОТКРЫТИЕ/ЗАКРЫТИЕ НАСТРОЕК (ПО ШЕСТЕРЕНКЕ)
+local settingsOpened = false
+settingsButton.MouseButton1Click:Connect(function()
+    settingsOpened = not settingsOpened
+    settingsFrame.Visible = settingsOpened
 end)
 
 -- ========== ФУНКЦИИ ЧТЕНИЯ ТРЕЙДА ==========
@@ -806,6 +702,7 @@ local function getSlotAmount(slot)
     return 1
 end
 
+-- ========== ФОРМАТИРОВАНИЕ ДЕТАЛЕЙ ==========
 local function formatDetails(name, isChromaActive)
     local realName = name
     local useChromaDetails = false
@@ -840,10 +737,10 @@ local function formatDetails(name, isChromaActive)
     return table.concat(lines, "\n")
 end
 
+-- ========== ПОДСЧЁТ ОБЩИХ СУММ ==========
 local function calculateTotal(sideName, maxSlot, chromaTable)
     local tradeGui = LP.PlayerGui:FindFirstChild("TradeGUI")
     if not tradeGui then return 0, 0 end
-    
     local container = tradeGui.Container.Trade[sideName].Container
     if not container then return 0, 0 end
     
@@ -877,10 +774,10 @@ local function calculateTotal(sideName, maxSlot, chromaTable)
             end
         end
     end
-    
     return totalV, totalRub
 end
 
+-- ========== ОБНОВЛЕНИЕ GUI ==========
 local function updateAll()
     local tradeGui = LP.PlayerGui:FindFirstChild("TradeGUI")
     if not tradeGui then return end
