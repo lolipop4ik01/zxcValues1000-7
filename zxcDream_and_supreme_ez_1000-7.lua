@@ -167,50 +167,108 @@ UIS.InputChanged:Connect(function(input)
 end)
 
 -- ============================================
--- EXECUTOR IMAGE SYSTEM
+-- ИСПРАВЛЕННАЯ СИСТЕМА ЗАГРУЗКИ КАРТИНОК
 -- ============================================
 
 local EXECUTOR_FOLDER = "1000-7_Assets"
 local ICONS_FOLDER = EXECUTOR_FOLDER .. "/Icons_ZXC"
 local BG_FOLDER = EXECUTOR_FOLDER .. "/Backgrounds_Ghoul"
 
+-- СОЗДАЕМ ПАПКИ
 if makefolder then
-    if not isfolder(EXECUTOR_FOLDER) then
-        makefolder(EXECUTOR_FOLDER)
-    end
-    if not isfolder(ICONS_FOLDER) then
-        makefolder(ICONS_FOLDER)
-    end
-    if not isfolder(BG_FOLDER) then
-        makefolder(BG_FOLDER)
-    end
+    pcall(function()
+        if not isfolder(EXECUTOR_FOLDER) then makefolder(EXECUTOR_FOLDER) end
+        if not isfolder(ICONS_FOLDER) then makefolder(ICONS_FOLDER) end
+        if not isfolder(BG_FOLDER) then makefolder(BG_FOLDER) end
+    end)
 end
 
+-- РАСШИРЕННЫЙ ПОИСК ФАЙЛОВ (поддерживает любые форматы)
 local function getRandomImage(folder)
-    if not listfiles then return nil end
-    local files = listfiles(folder)
+    if not listfiles then 
+        print("[ASSETS] listfiles недоступен")
+        return nil 
+    end
+    
+    local success, files = pcall(listfiles, folder)
+    if not success or not files or #files == 0 then
+        print("[ASSETS] Папка пуста или не существует:", folder)
+        return nil
+    end
+    
     local valid = {}
-    for _,file in ipairs(files) do
+    for _, file in ipairs(files) do
         local lower = string.lower(file)
-        if lower:find(".png") or lower:find(".jpg") or lower:find(".jpeg") then
+        -- ПОДДЕРЖИВАЕМ ВСЕ ФОРМАТЫ
+        if lower:match("%.png$") or 
+           lower:match("%.jpg$") or 
+           lower:match("%.jpeg$") or 
+           lower:match("%.webp$") or
+           lower:match("%.bmp$") or
+           lower:match("%.gif$") then
             table.insert(valid, file)
+            print("[ASSETS] Найден файл:", file)
         end
     end
-    if #valid <= 0 then return nil end
-    return valid[math.random(1, #valid)]
+    
+    if #valid == 0 then
+        print("[ASSETS] Нет поддерживаемых изображений в:", folder)
+        print("[ASSETS] Поддерживаются: PNG, JPG, JPEG, WEBP, BMP, GIF")
+        return nil
+    end
+    
+    local selected = valid[math.random(1, #valid)]
+    print("[ASSETS] ВЫБРАН:", selected)
+    return selected
 end
 
+-- КОНВЕРТАЦИЯ С ПРОВЕРКАМИ
 local function fileToAsset(path)
-    if getsynasset then return getsynasset(path) end
-    if getcustomasset then return getcustomasset(path) end
+    if getsynasset then
+        local success, result = pcall(getsynasset, path)
+        if success and result and result ~= "" then
+            print("[ASSETS] getsynasset успешно:", result)
+            return result
+        end
+    end
+    
+    if getcustomasset then
+        local success, result = pcall(getcustomasset, path)
+        if success and result and result ~= "" then
+            print("[ASSETS] getcustomasset успешно:", result)
+            return result
+        end
+    end
+    
+    print("[ASSETS] НЕ УДАЛОСЬ конвертировать:", path)
     return nil
 end
 
+-- ЗАГРУЖАЕМ
+print("[ASSETS] === ПОИСК КАРТИНОК ===")
 local randomIconPath = getRandomImage(ICONS_FOLDER)
 local randomBGPath = getRandomImage(BG_FOLDER)
 
+-- ДИАГНОСТИКА
+print("[ASSETS] ICON путь:", randomIconPath or "НЕ НАЙДЕН")
+print("[ASSETS] BG путь:", randomBGPath or "НЕ НАЙДЕН")
+
 local iconAsset = randomIconPath and fileToAsset(randomIconPath)
 local bgAsset = randomBGPath and fileToAsset(randomBGPath)
+
+print("[ASSETS] ICON ассет:", iconAsset or "FALLBACK")
+print("[ASSETS] BG ассет:", bgAsset or "FALLBACK")
+
+-- FALLBACK
+if not iconAsset then
+    iconAsset = "rbxassetid://7072719338"
+    print("[ASSETS] Использую стандартную иконку")
+end
+
+if not bgAsset then
+    bgAsset = "rbxassetid://9066026056"
+    print("[ASSETS] Использую стандартный фон")
+end
 
 -- ============================================
 -- ФОН GUI (ПОЛУПРОЗРАЧНЫЙ)
