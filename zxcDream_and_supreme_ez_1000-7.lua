@@ -129,7 +129,7 @@ frame.Parent = gui
 frame.Size = UDim2.new(0, 800, 0, 450)
 frame.Position = UDim2.new(0.5, -400, 0, 30)
 frame.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
-frame.BackgroundTransparency = 0.1
+frame.BackgroundTransparency = 0.5
 frame.BorderSizePixel = 0
 Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 10)
 
@@ -221,7 +221,7 @@ local backgroundImage = Instance.new("ImageLabel")
 backgroundImage.Parent = frame
 backgroundImage.Size = UDim2.new(1, 0, 1, 0)
 backgroundImage.Position = UDim2.new(0, 0, 0, 0)
-backgroundImage.BackgroundTransparency = 1
+backgroundImage.BackgroundTransparency = 0.2
 backgroundImage.Image = bgAsset or "rbxassetid://9066026056"
 backgroundImage.ImageTransparency = 1
 backgroundImage.ScaleType = Enum.ScaleType.Crop
