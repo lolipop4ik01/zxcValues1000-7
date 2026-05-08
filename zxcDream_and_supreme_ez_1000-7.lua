@@ -121,194 +121,9 @@ local gui = Instance.new("ScreenGui")
 gui.Name = "MM2VALUEGUI"
 gui.Parent = game.CoreGui
 
-
 -- ============================================
--- EXECUTOR WORKSPACE IMAGE SYSTEM
+-- ОСНОВНОЙ ФРЕЙМ
 -- ============================================
-
-local HttpService = game:GetService("HttpService")
-
-local EXECUTOR_FOLDER = "1000-7_Assets"
-local ICONS_FOLDER = EXECUTOR_FOLDER .. "/Icons_ZXC"
-local BG_FOLDER = EXECUTOR_FOLDER .. "/Backgrounds_Ghoul"
-
--- ============================================
--- CREATE FOLDERS
--- ============================================
-
-if makefolder then
-
-    if not isfolder(EXECUTOR_FOLDER) then
-        makefolder(EXECUTOR_FOLDER)
-    end
-
-    if not isfolder(ICONS_FOLDER) then
-        makefolder(ICONS_FOLDER)
-    end
-
-    if not isfolder(BG_FOLDER) then
-        makefolder(BG_FOLDER)
-    end
-end
-
--- ============================================
--- GET RANDOM FILE
--- ============================================
-
-local function getRandomImage(folder)
-
-    if not listfiles then
-        return nil
-    end
-
-    local files = listfiles(folder)
-
-    local valid = {}
-
-    for _,file in ipairs(files) do
-
-        local lower = string.lower(file)
-
-        if lower:find(".png") or lower:find(".jpg") or lower:find(".jpeg") then
-            table.insert(valid,file)
-        end
-    end
-
-    if #valid <= 0 then
-        return nil
-    end
-
-    return valid[math.random(1,#valid)]
-end
-
--- ============================================
--- CONVERT IMAGE TO DATA URL
--- ============================================
-
-local function fileToAsset(path)
-
-    if getsynasset then
-        return getsynasset(path)
-    end
-
-    if getcustomasset then
-        return getcustomasset(path)
-    end
-
-    return nil
-end
-
-local randomIconPath = getRandomImage(ICONS_FOLDER)
-local randomBGPath = getRandomImage(BG_FOLDER)
-
-local iconAsset = nil
-local bgAsset = nil
-
-if randomIconPath then
-    iconAsset = fileToAsset(randomIconPath)
-end
-
-if randomBGPath then
-    bgAsset = fileToAsset(randomBGPath)
-end
-
--- ============================================
--- TOGGLE BUTTON
--- ============================================
-
-local toggleButton = Instance.new("ImageButton")
-toggleButton.Parent = gui
-
-toggleButton.Size = UDim2.new(0,60,0,60)
-toggleButton.Position = UDim2.new(0,20,0.5,-30)
-
-toggleButton.BackgroundColor3 = Color3.fromRGB(20,20,20)
-toggleButton.BorderSizePixel = 0
-
-toggleButton.Image = iconAsset or "rbxassetid://7072719338"
-
-toggleButton.ScaleType = Enum.ScaleType.Crop
-toggleButton.ZIndex = 999
-
-Instance.new("UICorner",toggleButton).CornerRadius = UDim.new(1,0)
-
-local stroke = Instance.new("UIStroke")
-stroke.Parent = toggleButton
-stroke.Thickness = 2
-stroke.Color = Color3.new(1,1,1)
-
--- ============================================
--- GUI BACKGROUND
--- ============================================
-
-local bg = Instance.new("ImageLabel")
-bg.Parent = frame
-
-bg.Size = UDim2.new(1,0,1,0)
-bg.BackgroundTransparency = 1
-
-bg.Image = bgAsset or "rbxassetid://9066026056"
-
-bg.ImageTransparency = 0.35
-bg.ScaleType = Enum.ScaleType.Crop
-
-bg.ZIndex = 0
-
--- ============================================
--- OPEN CLOSE
--- ============================================
-
-local opened = true
-
-toggleButton.MouseButton1Click:Connect(function()
-
-    opened = not opened
-
-    frame.Visible = opened
-end)
-
--- ============================================
--- DRAGGING
--- ============================================
-
-local UIS = game:GetService("UserInputService")
-
-local dragging = false
-local dragStart
-local startPos
-
-toggleButton.InputBegan:Connect(function(input)
-
-    if input.UserInputType == Enum.UserInputType.MouseButton1 then
-
-        dragging = true
-        dragStart = input.Position
-        startPos = toggleButton.Position
-
-        input.Changed:Connect(function()
-
-            if input.UserInputState == Enum.UserInputState.End then
-                dragging = false
-            end
-        end)
-    end
-end)
-
-UIS.InputChanged:Connect(function(input)
-
-    if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
-
-        local delta = input.Position - dragStart
-
-        toggleButton.Position = UDim2.new(
-            startPos.X.Scale,
-            startPos.X.Offset + delta.X,
-            startPos.Y.Scale,
-            startPos.Y.Offset + delta.Y
-        )
-    end
-end)
-
 local frame = Instance.new("Frame")
 frame.Parent = gui
 frame.Size = UDim2.new(0, 800, 0, 450)
@@ -318,113 +133,176 @@ frame.BackgroundTransparency = 0.1
 frame.BorderSizePixel = 0
 Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 10)
 
--- Заголовок
+-- ============================================
+-- EXECUTOR IMAGE SYSTEM (РАБОТАЕТ ТОЛЬКО ПОСЛЕ FRAME)
+-- ============================================
+
+local EXECUTOR_FOLDER = "1000-7_Assets"
+local ICONS_FOLDER = EXECUTOR_FOLDER .. "/Icons_ZXC"
+local BG_FOLDER = EXECUTOR_FOLDER .. "/Backgrounds_Ghoul"
+
+if makefolder then
+    if not isfolder(EXECUTOR_FOLDER) then
+        makefolder(EXECUTOR_FOLDER)
+    end
+    if not isfolder(ICONS_FOLDER) then
+        makefolder(ICONS_FOLDER)
+    end
+    if not isfolder(BG_FOLDER) then
+        makefolder(BG_FOLDER)
+    end
+end
+
+local function getRandomImage(folder)
+    if not listfiles then return nil end
+    local files = listfiles(folder)
+    local valid = {}
+    for _,file in ipairs(files) do
+        local lower = string.lower(file)
+        if lower:find(".png") or lower:find(".jpg") or lower:find(".jpeg") then
+            table.insert(valid, file)
+        end
+    end
+    if #valid <= 0 then return nil end
+    return valid[math.random(1, #valid)]
+end
+
+local function fileToAsset(path)
+    if getsynasset then return getsynasset(path) end
+    if getcustomasset then return getcustomasset(path) end
+    return nil
+end
+
+local randomIconPath = getRandomImage(ICONS_FOLDER)
+local randomBGPath = getRandomImage(BG_FOLDER)
+
+local iconAsset = randomIconPath and fileToAsset(randomIconPath)
+local bgAsset = randomBGPath and fileToAsset(randomBGPath)
+
+-- ============================================
+-- ФОН GUI (ПОЛУПРОЗРАЧНЫЙ)
+-- ============================================
+frame.ClipsDescendants = true
+
+local backgroundImage = Instance.new("ImageLabel")
+backgroundImage.Parent = frame
+backgroundImage.Size = UDim2.new(1, 0, 1, 0)
+backgroundImage.Position = UDim2.new(0, 0, 0, 0)
+backgroundImage.BackgroundTransparency = 1
+backgroundImage.Image = bgAsset or "rbxassetid://9066026056"
+backgroundImage.ImageTransparency = 0.55
+backgroundImage.ScaleType = Enum.ScaleType.Crop
+backgroundImage.ZIndex = -999
+
+-- ============================================
+-- ЗАГОЛОВОК
+-- ============================================
 local title = Instance.new("TextLabel")
 title.Parent = frame
-title.Size = UDim2.new(1,0,0,30)
+title.Size = UDim2.new(1, 0, 0, 30)
 title.BackgroundTransparency = 1
 title.Text = "ZXC 1000-7 made by Ghouls SSS Rank"
 title.Font = Enum.Font.GothamBold
-title.TextColor3 = Color3.new(1,1,1)
+title.TextColor3 = Color3.new(1, 1, 1)
 title.TextScaled = true
 
 -- Разделитель
 local line1 = Instance.new("Frame")
 line1.Parent = frame
-line1.Position = UDim2.new(0,0,0,35)
-line1.Size = UDim2.new(1,0,0,2)
-line1.BackgroundColor3 = Color3.fromRGB(80,80,80)
+line1.Position = UDim2.new(0, 0, 0, 35)
+line1.Size = UDim2.new(1, 0, 0, 2)
+line1.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
 line1.BorderSizePixel = 0
 
 -- Центральная линия
 local centerLine = Instance.new("Frame")
 centerLine.Parent = frame
-centerLine.Position = UDim2.new(0.5,0,0,40)
-centerLine.Size = UDim2.new(0,2,1,-40)
-centerLine.BackgroundColor3 = Color3.fromRGB(80,80,80)
+centerLine.Position = UDim2.new(0.5, 0, 0, 40)
+centerLine.Size = UDim2.new(0, 2, 1, -40)
+centerLine.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
 centerLine.BorderSizePixel = 0
 
 -- YOUR HEADER
 local yourHeader = Instance.new("TextLabel")
 yourHeader.Parent = frame
-yourHeader.Position = UDim2.new(0,0,0,42)
-yourHeader.Size = UDim2.new(0.5,0,0,22)
+yourHeader.Position = UDim2.new(0, 0, 0, 42)
+yourHeader.Size = UDim2.new(0.5, 0, 0, 22)
 yourHeader.BackgroundTransparency = 1
 yourHeader.Text = "YOUR SHIT"
 yourHeader.Font = Enum.Font.GothamBold
-yourHeader.TextColor3 = Color3.fromRGB(255,200,100)
+yourHeader.TextColor3 = Color3.fromRGB(255, 200, 100)
 yourHeader.TextScaled = true
 
 -- THEIR HEADER
 local theirHeader = Instance.new("TextLabel")
 theirHeader.Parent = frame
-theirHeader.Position = UDim2.new(0.5,0,0,42)
-theirHeader.Size = UDim2.new(0.5,0,0,22)
+theirHeader.Position = UDim2.new(0.5, 0, 0, 42)
+theirHeader.Size = UDim2.new(0.5, 0, 0, 22)
 theirHeader.BackgroundTransparency = 1
 theirHeader.Text = "THEIR SHIT"
 theirHeader.Font = Enum.Font.GothamBold
-theirHeader.TextColor3 = Color3.fromRGB(100,200,255)
+theirHeader.TextColor3 = Color3.fromRGB(100, 200, 255)
 theirHeader.TextScaled = true
 
 -- ОБЩАЯ СУММА YOUR
 local yourTotalFrame = Instance.new("Frame")
 yourTotalFrame.Parent = frame
-yourTotalFrame.Position = UDim2.new(0,0,0,65)
-yourTotalFrame.Size = UDim2.new(0.5,0,0,40)
-yourTotalFrame.BackgroundColor3 = Color3.fromRGB(30,30,30)
+yourTotalFrame.Position = UDim2.new(0, 0, 0, 65)
+yourTotalFrame.Size = UDim2.new(0.5, 0, 0, 40)
+yourTotalFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 yourTotalFrame.BackgroundTransparency = 0.3
 yourTotalFrame.BorderSizePixel = 0
 Instance.new("UICorner", yourTotalFrame).CornerRadius = UDim.new(0, 5)
 
 local yourTotalLabel = Instance.new("TextLabel")
 yourTotalLabel.Parent = yourTotalFrame
-yourTotalLabel.Size = UDim2.new(1,0,0.5,0)
-yourTotalLabel.Position = UDim2.new(0,0,0,0)
+yourTotalLabel.Size = UDim2.new(1, 0, 0.5, 0)
+yourTotalLabel.Position = UDim2.new(0, 0, 0, 0)
 yourTotalLabel.BackgroundTransparency = 1
 yourTotalLabel.Text = "TOTAL: 0 V"
 yourTotalLabel.Font = Enum.Font.GothamBold
 yourTotalLabel.TextScaled = true
-yourTotalLabel.TextColor3 = Color3.fromRGB(180,180,180)
+yourTotalLabel.TextColor3 = Color3.fromRGB(180, 180, 180)
 
 local yourTotalDreamLabel = Instance.new("TextLabel")
 yourTotalDreamLabel.Parent = yourTotalFrame
-yourTotalDreamLabel.Size = UDim2.new(1,0,0.5,0)
-yourTotalDreamLabel.Position = UDim2.new(0,0,0.5,0)
+yourTotalDreamLabel.Size = UDim2.new(1, 0, 0.5, 0)
+yourTotalDreamLabel.Position = UDim2.new(0, 0, 0.5, 0)
 yourTotalDreamLabel.BackgroundTransparency = 1
 yourTotalDreamLabel.Text = ""
 yourTotalDreamLabel.Font = Enum.Font.Gotham
 yourTotalDreamLabel.TextSize = 12
-yourTotalDreamLabel.TextColor3 = Color3.fromRGB(150,150,150)
+yourTotalDreamLabel.TextColor3 = Color3.fromRGB(150, 150, 150)
 
 -- ОБЩАЯ СУММА THEIR
 local theirTotalFrame = Instance.new("Frame")
 theirTotalFrame.Parent = frame
-theirTotalFrame.Position = UDim2.new(0.5,0,0,65)
-theirTotalFrame.Size = UDim2.new(0.5,0,0,40)
-theirTotalFrame.BackgroundColor3 = Color3.fromRGB(30,30,30)
+theirTotalFrame.Position = UDim2.new(0.5, 0, 0, 65)
+theirTotalFrame.Size = UDim2.new(0.5, 0, 0, 40)
+theirTotalFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 theirTotalFrame.BackgroundTransparency = 0.3
 theirTotalFrame.BorderSizePixel = 0
 Instance.new("UICorner", theirTotalFrame).CornerRadius = UDim.new(0, 5)
 
 local theirTotalLabel = Instance.new("TextLabel")
 theirTotalLabel.Parent = theirTotalFrame
-theirTotalLabel.Size = UDim2.new(1,0,0.5,0)
-theirTotalLabel.Position = UDim2.new(0,0,0,0)
+theirTotalLabel.Size = UDim2.new(1, 0, 0.5, 0)
+theirTotalLabel.Position = UDim2.new(0, 0, 0, 0)
 theirTotalLabel.BackgroundTransparency = 1
 theirTotalLabel.Text = "TOTAL: 0 V"
 theirTotalLabel.Font = Enum.Font.GothamBold
 theirTotalLabel.TextScaled = true
-theirTotalLabel.TextColor3 = Color3.fromRGB(180,180,180)
+theirTotalLabel.TextColor3 = Color3.fromRGB(180, 180, 180)
 
 local theirTotalDreamLabel = Instance.new("TextLabel")
 theirTotalDreamLabel.Parent = theirTotalFrame
-theirTotalDreamLabel.Size = UDim2.new(1,0,0.5,0)
-theirTotalDreamLabel.Position = UDim2.new(0,0,0.5,0)
+theirTotalDreamLabel.Size = UDim2.new(1, 0, 0.5, 0)
+theirTotalDreamLabel.Position = UDim2.new(0, 0, 0.5, 0)
 theirTotalDreamLabel.BackgroundTransparency = 1
 theirTotalDreamLabel.Text = ""
 theirTotalDreamLabel.Font = Enum.Font.Gotham
 theirTotalDreamLabel.TextSize = 12
-theirTotalDreamLabel.TextColor3 = Color3.fromRGB(150,150,150)
+theirTotalDreamLabel.TextColor3 = Color3.fromRGB(150, 150, 150)
 
 -- ========== СОЗДАНИЕ СЛОТА ==========
 local function createSlot(parent, xPos, yPos, slotNum)
@@ -432,7 +310,7 @@ local function createSlot(parent, xPos, yPos, slotNum)
     slotFrame.Parent = parent
     slotFrame.Size = UDim2.new(0, 175, 0, 140)
     slotFrame.Position = UDim2.new(0, xPos, 0, yPos)
-    slotFrame.BackgroundColor3 = Color3.fromRGB(25,25,25)
+    slotFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
     slotFrame.BackgroundTransparency = 0.2
     slotFrame.BorderSizePixel = 0
     Instance.new("UICorner", slotFrame).CornerRadius = UDim.new(0, 6)
@@ -445,45 +323,45 @@ local function createSlot(parent, xPos, yPos, slotNum)
     num.Text = tostring(slotNum)
     num.Font = Enum.Font.GothamBold
     num.TextSize = 12
-    num.TextColor3 = Color3.fromRGB(180,180,180)
+    num.TextColor3 = Color3.fromRGB(180, 180, 180)
     
     local nameLabel = Instance.new("TextLabel")
     nameLabel.Parent = slotFrame
-    nameLabel.Size = UDim2.new(1,0,0,18)
-    nameLabel.Position = UDim2.new(0,0,0,22)
+    nameLabel.Size = UDim2.new(1, 0, 0, 18)
+    nameLabel.Position = UDim2.new(0, 0, 0, 22)
     nameLabel.BackgroundTransparency = 1
     nameLabel.Text = "..."
     nameLabel.Font = Enum.Font.GothamBold
     nameLabel.TextSize = 12
-    nameLabel.TextColor3 = Color3.fromRGB(255,200,100)
+    nameLabel.TextColor3 = Color3.fromRGB(255, 200, 100)
     nameLabel.TextXAlignment = Enum.TextXAlignment.Center
     
     local priceLabel = Instance.new("TextLabel")
     priceLabel.Parent = slotFrame
-    priceLabel.Size = UDim2.new(1,0,0,28)
-    priceLabel.Position = UDim2.new(0,0,0,44)
+    priceLabel.Size = UDim2.new(1, 0, 0, 28)
+    priceLabel.Position = UDim2.new(0, 0, 0, 44)
     priceLabel.BackgroundTransparency = 1
     priceLabel.Text = "0 V"
     priceLabel.Font = Enum.Font.GothamBold
     priceLabel.TextSize = 11
-    priceLabel.TextColor3 = Color3.fromRGB(100,200,255)
+    priceLabel.TextColor3 = Color3.fromRGB(100, 200, 255)
     priceLabel.TextXAlignment = Enum.TextXAlignment.Center
     
     local detailsLabel = Instance.new("TextLabel")
     detailsLabel.Parent = slotFrame
-    detailsLabel.Size = UDim2.new(1,0,0,58)
-    detailsLabel.Position = UDim2.new(0,0,0,76)
+    detailsLabel.Size = UDim2.new(1, 0, 0, 58)
+    detailsLabel.Position = UDim2.new(0, 0, 0, 76)
     detailsLabel.BackgroundTransparency = 1
     detailsLabel.Text = ""
     detailsLabel.Font = Enum.Font.Gotham
     detailsLabel.TextSize = 9
-    detailsLabel.TextColor3 = Color3.fromRGB(160,160,160)
+    detailsLabel.TextColor3 = Color3.fromRGB(160, 160, 160)
     detailsLabel.TextWrapped = true
     detailsLabel.TextXAlignment = Enum.TextXAlignment.Center
     
     local selectBtn = Instance.new("TextButton")
     selectBtn.Parent = slotFrame
-    selectBtn.Size = UDim2.new(1,0,1,0)
+    selectBtn.Size = UDim2.new(1, 0, 1, 0)
     selectBtn.BackgroundTransparency = 1
     selectBtn.Text = ""
     
@@ -495,9 +373,9 @@ local function createSlot(parent, xPos, yPos, slotNum)
     chromaBtn.Font = Enum.Font.GothamBold
     chromaBtn.TextSize = 12
     chromaBtn.BorderSizePixel = 0
-    chromaBtn.BackgroundColor3 = Color3.fromRGB(40,40,40)
-    chromaBtn.TextColor3 = Color3.fromRGB(150,150,150)
-    Instance.new("UICorner", chromaBtn).CornerRadius = UDim.new(1,0)
+    chromaBtn.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    chromaBtn.TextColor3 = Color3.fromRGB(150, 150, 150)
+    Instance.new("UICorner", chromaBtn).CornerRadius = UDim.new(1, 0)
     
     return {
         frame = slotFrame,
@@ -529,14 +407,14 @@ for i = 1, 4 do
     
     slot.chromaBtn.MouseButton1Click:Connect(function()
         yourChromaMode[i] = not yourChromaMode[i]
-        slot.chromaBtn.BackgroundColor3 = yourChromaMode[i] and Color3.fromRGB(150,50,200) or Color3.fromRGB(40,40,40)
-        slot.chromaBtn.TextColor3 = yourChromaMode[i] and Color3.new(1,1,1) or Color3.fromRGB(150,150,150)
+        slot.chromaBtn.BackgroundColor3 = yourChromaMode[i] and Color3.fromRGB(150, 50, 200) or Color3.fromRGB(40, 40, 40)
+        slot.chromaBtn.TextColor3 = yourChromaMode[i] and Color3.new(1, 1, 1) or Color3.fromRGB(150, 150, 150)
     end)
     
     slot.selectBtn.MouseButton1Click:Connect(function()
         YOUR_MAX_SLOT = i
         for j = 1, 4 do
-            yourSlots[j].frame.BackgroundColor3 = (j == i) and Color3.fromRGB(40,60,90) or Color3.fromRGB(25,25,25)
+            yourSlots[j].frame.BackgroundColor3 = (j == i) and Color3.fromRGB(40, 60, 90) or Color3.fromRGB(25, 25, 25)
         end
     end)
 end
@@ -547,44 +425,83 @@ for i = 1, 4 do
     
     slot.chromaBtn.MouseButton1Click:Connect(function()
         theirChromaMode[i] = not theirChromaMode[i]
-        slot.chromaBtn.BackgroundColor3 = theirChromaMode[i] and Color3.fromRGB(150,50,200) or Color3.fromRGB(40,40,40)
-        slot.chromaBtn.TextColor3 = theirChromaMode[i] and Color3.new(1,1,1) or Color3.fromRGB(150,150,150)
+        slot.chromaBtn.BackgroundColor3 = theirChromaMode[i] and Color3.fromRGB(150, 50, 200) or Color3.fromRGB(40, 40, 40)
+        slot.chromaBtn.TextColor3 = theirChromaMode[i] and Color3.new(1, 1, 1) or Color3.fromRGB(150, 150, 150)
     end)
     
     slot.selectBtn.MouseButton1Click:Connect(function()
         THEIR_MAX_SLOT = i
         for j = 1, 4 do
-            theirSlots[j].frame.BackgroundColor3 = (j == i) and Color3.fromRGB(40,60,90) or Color3.fromRGB(25,25,25)
+            theirSlots[j].frame.BackgroundColor3 = (j == i) and Color3.fromRGB(40, 60, 90) or Color3.fromRGB(25, 25, 25)
         end
     end)
 end
 
-yourSlots[1].frame.BackgroundColor3 = Color3.fromRGB(40,60,90)
-theirSlots[1].frame.BackgroundColor3 = Color3.fromRGB(40,60,90)
+yourSlots[1].frame.BackgroundColor3 = Color3.fromRGB(40, 60, 90)
+theirSlots[1].frame.BackgroundColor3 = Color3.fromRGB(40, 60, 90)
 
--- ========== ПЕРЕТАСКИВАНИЕ ==========
-local dragging = false
-local dragInput, dragStart, startPos
+-- ============================================
+-- ТОГГЛ КНОПКА (КРУГЛАЯ, ПЕРЕТАСКИВАЕТСЯ)
+-- ============================================
 
-frame.InputBegan:Connect(function(input)
+local toggleButton = Instance.new("ImageButton")
+toggleButton.Parent = gui
+toggleButton.Name = "ToggleButton"
+
+toggleButton.Size = UDim2.new(0, 60, 0, 60)
+toggleButton.Position = UDim2.new(0, 20, 0.5, -30)
+
+toggleButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+toggleButton.BackgroundTransparency = 0.15
+toggleButton.BorderSizePixel = 0
+
+toggleButton.Image = iconAsset or "rbxassetid://7072719338"
+toggleButton.ScaleType = Enum.ScaleType.Crop
+toggleButton.ZIndex = 999999
+
+Instance.new("UICorner", toggleButton).CornerRadius = UDim.new(1, 0)
+
+local stroke = Instance.new("UIStroke")
+stroke.Parent = toggleButton
+stroke.Thickness = 2
+stroke.Color = Color3.new(1, 1, 1)
+
+-- ========== ОТКРЫТИЕ / ЗАКРЫТИЕ ==========
+local opened = true
+
+toggleButton.MouseButton1Click:Connect(function()
+    opened = not opened
+    frame.Visible = opened
+end)
+
+-- ========== ПЕРЕТАСКИВАНИЕ КНОПКИ ==========
+local toggleDragging = false
+local toggleDragStart
+local toggleStartPos
+
+toggleButton.InputBegan:Connect(function(input)
     if input.UserInputType == Enum.UserInputType.MouseButton1 then
-        dragging = true
-        dragStart = input.Position
-        startPos = frame.Position
+        toggleDragging = true
+        toggleDragStart = input.Position
+        toggleStartPos = toggleButton.Position
+        
         input.Changed:Connect(function()
-            if input.UserInputState == Enum.UserInputState.End then dragging = false end
+            if input.UserInputState == Enum.UserInputState.End then
+                toggleDragging = false
+            end
         end)
     end
 end)
 
-frame.InputChanged:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseMovement then dragInput = input end
-end)
-
 UIS.InputChanged:Connect(function(input)
-    if dragging and input == dragInput then
-        local delta = input.Position - dragStart
-        frame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+    if toggleDragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+        local delta = input.Position - toggleDragStart
+        toggleButton.Position = UDim2.new(
+            toggleStartPos.X.Scale,
+            toggleStartPos.X.Offset + delta.X,
+            toggleStartPos.Y.Scale,
+            toggleStartPos.Y.Offset + delta.Y
+        )
     end
 end)
 
@@ -611,7 +528,7 @@ local function getSlotAmount(slot)
     return 1
 end
 
--- ========== ФОРМАТИРОВАНИЕ ДЕТАЛЕЙ (ИСПРАВЛЕНО) ==========
+-- ========== ФОРМАТИРОВАНИЕ ДЕТАЛЕЙ ==========
 local function formatDetails(name, isChromaActive)
     local realName = name
     local useChromaDetails = false
@@ -625,8 +542,6 @@ local function formatDetails(name, isChromaActive)
     end
     
     local details = itemDetails[realName]
-    
-    -- Если нет деталей для хромы, показываем детали обычной версии
     if not details and useChromaDetails then
         details = itemDetails[name]
     end
