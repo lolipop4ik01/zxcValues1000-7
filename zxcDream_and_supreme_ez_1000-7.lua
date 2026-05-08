@@ -1,6 +1,6 @@
 -- ============================================
 -- MM2 ULTIMATE CHECKER (FULL INFO + DREAM PETS)
--- Обновляется с GitHub автоматически
+-- Автообновление через loadstring
 -- ============================================
 
 local Players = game:GetService("Players")
@@ -65,7 +65,28 @@ local function loadDataFromGitHub()
     return true
 end
 
--- ========== CHROMA ==========
+-- ========== ПРЕОБРАЗОВАНИЕ ИМЁН (Chroma ↔ C.) ==========
+local function normalizeChromaName(name)
+    -- "Chroma Cookiecane" → "C. Cookiecane"
+    if name:match("^Chroma ") then
+        local rest = name:sub(8)
+        local cName = "C. " .. rest
+        if prices[cName] or dreampets[cName] then
+            return cName
+        end
+    end
+    -- "C. Cookiecane" → "Chroma Cookiecane"
+    if name:match("^C%. ") then
+        local rest = name:sub(4)
+        local chromaName = "Chroma " .. rest
+        if prices[chromaName] or dreampets[chromaName] then
+            return chromaName
+        end
+    end
+    return name
+end
+
+-- ========== CHROMA MAP ==========
 local chromaMap = {
     ["Luger"] = "Chroma Luger", ["Laser"] = "Chroma Laser", ["Shark"] = "Chroma Shark",
     ["Heat"] = "Chroma Heat", ["Darkbringer"] = "Chroma Darkbringer", ["Lightbringer"] = "Chroma Lightbringer",
@@ -85,8 +106,15 @@ local function getChromaName(regularName)
     return prices[chromaName] and chromaName or nil
 end
 
-local function getPrice(name) return prices[name] or 0 end
-local function getDreamPrice(name) return dreampets[name] or 0 end
+local function getPrice(name)
+    local normalized = normalizeChromaName(name)
+    return prices[normalized] or 0
+end
+
+local function getDreamPrice(name)
+    local normalized = normalizeChromaName(name)
+    return dreampets[normalized] or 0
+end
 
 -- ========== GUI ==========
 pcall(function() game.CoreGui.MM2VALUEGUI:Destroy() end)
@@ -109,7 +137,7 @@ local title = Instance.new("TextLabel")
 title.Parent = frame
 title.Size = UDim2.new(1,0,0,30)
 title.BackgroundTransparency = 1
-title.Text = "1000-7 ZXC made by ghouls"
+title.Text = "1000-7 ZXC made by Ghouls"
 title.Font = Enum.Font.GothamBold
 title.TextColor3 = Color3.new(1,1,1)
 title.TextScaled = true
@@ -374,7 +402,7 @@ UIS.InputChanged:Connect(function(input)
     end
 end)
 
--- ========== ФУНКЦИИ ==========
+-- ========== ФУНКЦИИ ЧТЕНИЯ ТРЕЙДА ==========
 local function getSlotItemName(slot)
     local itemName = slot:FindFirstChild("ItemName")
     if not itemName then return nil end
@@ -397,6 +425,7 @@ local function getSlotAmount(slot)
     return 1
 end
 
+-- ========== ФОРМАТИРОВАНИЕ ДЕТАЛЕЙ ==========
 local function formatDetails(name, isChromaActive)
     local realName = name
     if isChromaActive then
@@ -420,6 +449,7 @@ local function formatDetails(name, isChromaActive)
     return table.concat(lines, "\n")
 end
 
+-- ========== ПОДСЧЁТ ОБЩИХ СУММ ==========
 local function calculateTotal(sideName, maxSlot, chromaTable)
     local tradeGui = LP.PlayerGui:FindFirstChild("TradeGUI")
     if not tradeGui then return 0, 0 end
