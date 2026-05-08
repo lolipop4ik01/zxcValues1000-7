@@ -1,5 +1,6 @@
 -- ============================================
--- MM2 ULTIMATE CHECKER (РАБОЧАЯ ВЕРСИЯ + ШЕСТЕРЁНКА)
+-- MM2 ULTIMATE CHECKER (FULL INFO + DREAM PETS)
+-- Автообновление через loadstring
 -- ============================================
 
 local Players = game:GetService("Players")
@@ -140,26 +141,104 @@ frame.ClipsDescendants = true
 Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 10)
 
 -- ============================================
--- ФОН ГЛАВНОГО МЕНЮ
+-- ПЕРЕТАСКИВАНИЕ ГЛАВНОГО ОКНА
+-- ============================================
+local frameDragging = false
+local frameDragStart
+local frameStartPos
+
+frame.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        frameDragging = true
+        frameDragStart = input.Position
+        frameStartPos = frame.Position
+        
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                frameDragging = false
+            end
+        end)
+    end
+end)
+
+UIS.InputChanged:Connect(function(input)
+    if frameDragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+        local delta = input.Position - frameDragStart
+        frame.Position = UDim2.new(
+            frameStartPos.X.Scale,
+            frameStartPos.X.Offset + delta.X,
+            frameStartPos.Y.Scale,
+            frameStartPos.Y.Offset + delta.Y
+        )
+    end
+end)
+
+-- ============================================
+-- EXECUTOR IMAGE SYSTEM
+-- ============================================
+
+local EXECUTOR_FOLDER = "1000-7_Assets"
+local ICONS_FOLDER = EXECUTOR_FOLDER .. "/Icons_ZXC"
+local BG_FOLDER = EXECUTOR_FOLDER .. "/Backgrounds_Ghoul"
+
+if makefolder then
+    if not isfolder(EXECUTOR_FOLDER) then
+        makefolder(EXECUTOR_FOLDER)
+    end
+    if not isfolder(ICONS_FOLDER) then
+        makefolder(ICONS_FOLDER)
+    end
+    if not isfolder(BG_FOLDER) then
+        makefolder(BG_FOLDER)
+    end
+end
+
+local function getRandomImage(folder)
+    if not listfiles then return nil end
+    local files = listfiles(folder)
+    local valid = {}
+    for _,file in ipairs(files) do
+        local lower = string.lower(file)
+        if lower:find(".png") or lower:find(".jpg") or lower:find(".jpeg") then
+            table.insert(valid, file)
+        end
+    end
+    if #valid <= 0 then return nil end
+    return valid[math.random(1, #valid)]
+end
+
+local function fileToAsset(path)
+    if getsynasset then return getsynasset(path) end
+    if getcustomasset then return getcustomasset(path) end
+    return nil
+end
+
+local randomIconPath = getRandomImage(ICONS_FOLDER)
+local randomBGPath = getRandomImage(BG_FOLDER)
+
+local iconAsset = randomIconPath and fileToAsset(randomIconPath)
+local bgAsset = randomBGPath and fileToAsset(randomBGPath)
+
+-- ============================================
+-- ФОН GUI
 -- ============================================
 local backgroundImage = Instance.new("ImageLabel")
 backgroundImage.Parent = frame
 backgroundImage.Size = UDim2.new(1, 0, 1, 0)
 backgroundImage.Position = UDim2.new(0, 0, 0, 0)
 backgroundImage.BackgroundTransparency = 1
-backgroundImage.Image = "rbxassetid://9066026056"
+backgroundImage.Image = bgAsset or "rbxassetid://9066026056"
 backgroundImage.ImageTransparency = transparency.bg
 backgroundImage.ScaleType = Enum.ScaleType.Crop
 backgroundImage.ZIndex = -999
 
 -- ============================================
--- ШЕСТЕРЁНКА (ПАНЕЛЬ НАСТРОЕК)
+-- ПАНЕЛЬ НАСТРОЕК (ШЕСТЕРЁНКА)
 -- ============================================
 
 local settingsOpen = false
 local settingsPanel = nil
 
--- Функция обновления прозрачности фреймов
 local function updateFrameTransparency(value)
     transparency.frames = value
     frame.BackgroundTransparency = value
@@ -177,13 +256,11 @@ local function updateFrameTransparency(value)
     end
 end
 
--- Функция обновления прозрачности фона
 local function updateBGTransparency(value)
     transparency.bg = value
     backgroundImage.ImageTransparency = value
 end
 
--- Создание панели настроек
 local function createSettingsPanel()
     if settingsPanel then settingsPanel:Destroy() end
     
@@ -280,7 +357,6 @@ local function createSettingsPanel()
     frameKnob.BorderSizePixel = 0
     Instance.new("UICorner", frameKnob).CornerRadius = UDim.new(1, 0)
     
-    -- Драг для фона
     local draggingBg = false
     bgKnob.InputBegan:Connect(function(input)
         if input.UserInputType == Enum.UserInputType.MouseButton1 then
@@ -288,7 +364,6 @@ local function createSettingsPanel()
         end
     end)
     
-    -- Драг для окон
     local draggingFrame = false
     frameKnob.InputBegan:Connect(function(input)
         if input.UserInputType == Enum.UserInputType.MouseButton1 then
@@ -342,37 +417,6 @@ gearButton.MouseButton1Click:Connect(function()
 end)
 
 -- ============================================
--- ПЕРЕТАСКИВАНИЕ ГЛАВНОГО ОКНА
--- ============================================
-local frameDragging = false
-local frameDragStart, frameStartPos
-
-frame.InputBegan:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 then
-        frameDragging = true
-        frameDragStart = input.Position
-        frameStartPos = frame.Position
-        input.Changed:Connect(function()
-            if input.UserInputState == Enum.UserInputState.End then
-                frameDragging = false
-            end
-        end)
-    end
-end)
-
-UIS.InputChanged:Connect(function(input)
-    if frameDragging and input.UserInputType == Enum.UserInputType.MouseMovement then
-        local delta = input.Position - frameDragStart
-        frame.Position = UDim2.new(
-            frameStartPos.X.Scale,
-            frameStartPos.X.Offset + delta.X,
-            frameStartPos.Y.Scale,
-            frameStartPos.Y.Offset + delta.Y
-        )
-    end
-end)
-
--- ============================================
 -- ЗАГОЛОВОК
 -- ============================================
 local title = Instance.new("TextLabel")
@@ -384,7 +428,7 @@ title.Font = Enum.Font.GothamBold
 title.TextColor3 = Color3.new(1, 1, 1)
 title.TextScaled = true
 
--- Разделители
+-- Разделитель
 local line1 = Instance.new("Frame")
 line1.Parent = frame
 line1.Position = UDim2.new(0, 0, 0, 35)
@@ -393,6 +437,7 @@ line1.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
 line1.BorderSizePixel = 0
 line1.BackgroundTransparency = transparency.frames
 
+-- Центральная линия
 local centerLine = Instance.new("Frame")
 centerLine.Parent = frame
 centerLine.Position = UDim2.new(0.5, 0, 0, 40)
@@ -423,7 +468,7 @@ theirHeader.Font = Enum.Font.GothamBold
 theirHeader.TextColor3 = Color3.fromRGB(100, 200, 255)
 theirHeader.TextScaled = true
 
--- ========== ОБЩИЕ СУММЫ ==========
+-- ОБЩАЯ СУММА YOUR
 local yourTotalFrame = Instance.new("Frame")
 yourTotalFrame.Parent = frame
 yourTotalFrame.Position = UDim2.new(0, 0, 0, 65)
@@ -453,6 +498,7 @@ yourTotalDreamLabel.Font = Enum.Font.Gotham
 yourTotalDreamLabel.TextSize = 12
 yourTotalDreamLabel.TextColor3 = Color3.fromRGB(150, 150, 150)
 
+-- ОБЩАЯ СУММА THEIR
 local theirTotalFrame = Instance.new("Frame")
 theirTotalFrame.Parent = frame
 theirTotalFrame.Position = UDim2.new(0.5, 0, 0, 65)
@@ -580,7 +626,7 @@ local theirPos = {
 }
 
 for i = 1, 4 do
-    local slot = createSlot(frame, yourPos[i][1], yourPos[i][2], i)
+    local slot = createSlot(frame, yourPos[i].x, yourPos[i].y, i)
     yourSlots[i] = slot
     
     slot.chromaBtn.MouseButton1Click:Connect(function()
@@ -598,7 +644,7 @@ for i = 1, 4 do
 end
 
 for i = 1, 4 do
-    local slot = createSlot(frame, theirPos[i][1], theirPos[i][2], i)
+    local slot = createSlot(frame, theirPos[i].x, theirPos[i].y, i)
     theirSlots[i] = slot
     
     slot.chromaBtn.MouseButton1Click:Connect(function()
@@ -628,8 +674,9 @@ toggleButton.Position = UDim2.new(0, 20, 0.5, -30)
 toggleButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 toggleButton.BackgroundTransparency = 0
 toggleButton.BorderSizePixel = 0
-toggleButton.Image = "rbxassetid://7072719338"
+toggleButton.Image = iconAsset or "rbxassetid://7072719338"
 toggleButton.ScaleType = Enum.ScaleType.Crop
+toggleButton.ZIndex = 999999
 Instance.new("UICorner", toggleButton).CornerRadius = UDim.new(1, 0)
 
 local opened = true
@@ -694,26 +741,4 @@ local function getSlotAmount(slot)
     return 1
 end
 
--- ========== ФОРМАТИРОВАНИЕ ДЕТАЛЕЙ ==========
-local function formatDetails(name, isChromaActive)
-    local realName = name
-    if isChromaActive then
-        local chromaName = getChromaName(name)
-        if chromaName then realName = chromaName end
-    end
-    
-    local det = itemDetails[realName]
-    if not det and isChromaActive then det = itemDetails[name] end
-    if not det then return "📊 Нет данных" end
-    
-    local trendIcon = (det.trend == "Rising" and "📈") or (det.trend == "Falling" and "📉") or (det.trend == "Stable" and "➡️") or "❓"
-    local rangeStr = (det.range and det.range ~= "") and ("📊 " .. det.range) or ""
-    
-    local lines = {string.format("%s %s | %s", trendIcon, det.trend, det.stability)}
-    if rangeStr ~= "" then table.insert(lines, rangeStr) end
-    table.insert(lines, string.format("🔥 %s | ✨ %s", det.demand, det.rarity))
-    
-    return table.concat(lines, "\n")
-end
-
--- ========== ПОДСЧЁТ ОБЩИХ СУММ
+-- ========== ФОРМАТИРОВАНИЕ ДЕТАЛЕЙ =
