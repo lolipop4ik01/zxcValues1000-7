@@ -1,1661 +1,3174 @@
 {
   "godlies": {
-    "×": {
-      "raw": "×\n\tExtra Features:\n\t:\n\tAliases - \n\tFlippability - \n\tChance of Rising - ~%\n\tView Item on the MM2 Wiki"
-    },
-    "Join our Discord Server Join our Roblox Group": {
-      "raw": "Join our Discord Server Join our Roblox Group\nTrade your MM2 items using Cosmic Values, our official trading partner! Take me there"
-    },
     "Traveler's Gun": {
-      "raw": "Traveler's Gun\nValue - 4,500 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 6 Rarity - 4\nOrigin - Hallows 2023 (Unboxed)\nLast Change in Value - (+50)"
+      "value": 4500,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 6,
+      "rarity": 4
     },
     "Evergun": {
-      "raw": "Evergun\nValue - 3,400 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 5 Rarity - 4\nOrigin - Xmas 2023 (Gifting)\nLast Change in Value - (-50)"
+      "value": 3400,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 5,
+      "rarity": 4
     },
     "Constellation": {
-      "raw": "Constellation\nValue - 2,750 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 5 Rarity - 3\nOrigin - Xmas 2024 (Unboxed)\nLast Change in Value - (-50)"
+      "value": 2750,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 5,
+      "rarity": 3
     },
     "Evergreen": {
-      "raw": "Evergreen\nValue - 2,550 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 5 Rarity - 3\nOrigin - Xmas 2023 (Unboxed)\nLast Change in Value - (-50)"
+      "value": 2550,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 5,
+      "rarity": 3
     },
     "Alienbeam": {
-      "raw": "Alienbeam\nValue - 2,250 +1 -1 ~\nRanged Value - [2,200 - 2,250]\nStability - Receding \nDemand - 6 Rarity - 3\nOrigin - Hallows 2025 (Unboxed)\nLast Change in Value - (-50)"
+      "value": 2250,
+      "trend": "",
+      "stability": "Receding",
+      "range": "2,200 - 2,250",
+      "demand": 6,
+      "rarity": 3
     },
     "Turkey": {
-      "raw": "Turkey\nValue - 2,050 +1 -1 ~\nRanged Value - [2,050 - 2,100]\nStability - Doing Well \nDemand - 6 Rarity - 3\nOrigin - Thanksgiving 2023 Pack\nLast Change in Value - (+25)"
+      "value": 2050,
+      "trend": "",
+      "stability": "Doing Well",
+      "range": "2,050 - 2,100",
+      "demand": 6,
+      "rarity": 3
     },
     "Vampire's Gun": {
-      "raw": "Vampire's Gun\nValue - 1,700 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 5 Rarity - 3\nOrigin - Hallows 2024 (Unboxed)\nLast Change in Value - (-25)"
+      "value": 1700,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 5,
+      "rarity": 3
     },
     "Raygun": {
-      "raw": "Raygun\nValue - 1,400 +1 -1 ~\nRanged Value - [1,350 - 1,400]\nStability - Receding \nDemand - 5 Rarity - 3\nOrigin - Hallows 2025 (Tier 25)\nLast Change in Value - (-50)"
+      "value": 1400,
+      "trend": "",
+      "stability": "Receding",
+      "range": "1,350 - 1,400",
+      "demand": 5,
+      "rarity": 3
     },
     "Darkshot": {
-      "raw": "Darkshot\nValue - 1,240 +1 -1 ~\nRanged Value - [1,240 - 1,260]\nStability - Doing Well \nDemand - 5 Rarity - 3\nOrigin - Hallows 2023 Item Pack\nLast Change in Value - (+10)"
+      "value": 1240,
+      "trend": "",
+      "stability": "Doing Well",
+      "range": "1,240 - 1,260",
+      "demand": 5,
+      "rarity": 3
     },
     "Darksword": {
-      "raw": "Darksword\nValue - 1,220 +1 -1 ~\nRanged Value - [1,220 - 1,240]\nStability - Doing Well \nDemand - 5 Rarity - 3\nOrigin - Hallows 2023 Item Pack\nLast Change in Value - (+10)"
+      "value": 1220,
+      "trend": "",
+      "stability": "Doing Well",
+      "range": "1,220 - 1,240",
+      "demand": 5,
+      "rarity": 3
     },
     "Blossom": {
-      "raw": "Blossom\nValue - 1,110 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 5 Rarity - 3\nOrigin - Valentine 2023 Item Pack\nLast Change in Value - (+10)"
+      "value": 1110,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 5,
+      "rarity": 3
     },
     "Sakura": {
-      "raw": "Sakura\nValue - 1,100 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 5 Rarity - 3\nOrigin - Valentine 2023 Item Pack\nLast Change in Value - (+10)"
+      "value": 1100,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 5,
+      "rarity": 3
     },
     "Bauble": {
-      "raw": "Bauble\nValue - 925 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 5 Rarity - 3\nOrigin - Xmas 2024 (Gifting)\nLast Change in Value - (+25)"
+      "value": 925,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 5,
+      "rarity": 3
     },
     "Snowcannon": {
-      "raw": "Snowcannon\nValue - 875 +1 -1 ~\nRanged Value - [875 - 900]\nStability - Doing Well \nDemand - 6 Rarity - 3\nOrigin - Xmas 2025 (Tier 30)\nLast Change in Value - (+25)"
+      "value": 875,
+      "trend": "",
+      "stability": "Doing Well",
+      "range": "875 - 900",
+      "demand": 6,
+      "rarity": 3
     },
     "Sunrise": {
-      "raw": "Sunrise\nValue - 850 +1 -1 ~\nRanged Value - [850 - 900]\nStability - Overpaid For \nDemand - 6 Rarity - 3\nOrigin - Summer 2025 (Unboxed)\nLast Change in Value - (+50)"
+      "value": 850,
+      "trend": "",
+      "stability": "Overpaid For",
+      "range": "850 - 900",
+      "demand": 6,
+      "rarity": 3
     },
     "Sunset": {
-      "raw": "Sunset\nValue - 450 +1 -1 ~\nRanged Value - [450 - 475]\nStability - Doing Well \nDemand - 4 Rarity - 3\nOrigin - Summer 2025 (Tier 25)\nLast Change in Value - (+25)"
+      "value": 450,
+      "trend": "",
+      "stability": "Doing Well",
+      "range": "450 - 475",
+      "demand": 4,
+      "rarity": 3
     },
     "Heart Wand": {
-      "raw": "Heart Wand\nValue - 375 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 4 Rarity - 3\nOrigin - Valentine 2026 (Unboxed)\nLast Change in Value - (+50)"
+      "value": 375,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 4,
+      "rarity": 3
     },
     "Soul": {
-      "raw": "Soul\nValue - 345 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 4 Rarity - 3\nOrigin - Hallows 2024 Item Pack\nLast Change in Value - (+5)"
+      "value": 345,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 4,
+      "rarity": 3
     },
     "Spirit": {
-      "raw": "Spirit\nValue - 335 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 4 Rarity - 3\nOrigin - Hallows 2024 Item Pack\nLast Change in Value - (+5)"
+      "value": 335,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 4,
+      "rarity": 3
     },
     "Rainbow Gun": {
-      "raw": "Rainbow Gun\nValue - 300 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 4 Rarity - 3\nOrigin - Easter 2023 Item Pack\nLast Change in Value - (-5)"
+      "value": 300,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 4,
+      "rarity": 3
     },
     "Rainbow": {
-      "raw": "Rainbow\nValue - 290 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 4 Rarity - 3\nOrigin - Easter 2023 Item Pack\nLast Change in Value - (-5)"
+      "value": 290,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 4,
+      "rarity": 3
     },
     "Flora": {
-      "raw": "Flora\nValue - 275 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 4 Rarity - 3\nOrigin - Easter 2025 Item Pack\nLast Change in Value - (+5)"
+      "value": 275,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 4,
+      "rarity": 3
     },
     "Bloom": {
-      "raw": "Bloom\nValue - 265 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 4 Rarity - 3\nOrigin - Easter 2025 Item Pack\nLast Change in Value - (+5)"
+      "value": 265,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 4,
+      "rarity": 3
     },
     "Snow Dagger": {
-      "raw": "Snow Dagger\nValue - 260 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 4 Rarity - 3\nOrigin - Xmas 2025 (Unboxed)\nLast Change in Value - (+10)"
+      "value": 260,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 4,
+      "rarity": 3
     },
     "Flowerwood Gun": {
-      "raw": "Flowerwood Gun\nValue - 205 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3 Rarity - 3\nOrigin - Easter 2024 Item Pack\nLast Change in Value - (+5)"
+      "value": 205,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Treat": {
-      "raw": "Treat\nValue - 205 +1 -1 ~\nRanged Value - [200 - 205]\nStability - Underpaid For \nDemand - 3 Rarity - 3\nOrigin - Valentine 2026 Item Pack\nLast Change in Value - (-5)"
+      "value": 205,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "200 - 205",
+      "demand": 3,
+      "rarity": 3
     },
     "Flowerwood": {
-      "raw": "Flowerwood\nValue - 200 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3 Rarity - 3\nOrigin - Easter 2024 Item Pack\nLast Change in Value - (+5)"
+      "value": 200,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Xenoknife": {
-      "raw": "Xenoknife\nValue - 200 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3 Rarity - 3 \nOrigin - Hallows 2025 Item Pack\nLast Change in Value - (+5)"
+      "value": 200,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Xenoshot": {
-      "raw": "Xenoshot\nValue - 200 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3 Rarity - 3 \nOrigin - Hallows 2025 Item Pack\nLast Change in Value - (+5)"
+      "value": 200,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Sweet": {
-      "raw": "Sweet\nValue - 200 +1 -1 ~\nRanged Value - [195 - 200]\nStability - Underpaid For \nDemand - 3 Rarity - 3\nOrigin - Valentine 2026 Item Pack\nLast Change in Value - (-5)"
+      "value": 200,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "195 - 200",
+      "demand": 3,
+      "rarity": 3
     },
     "Ocean": {
-      "raw": "Ocean\nValue - 170 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3 Rarity - 3\nOrigin - Summer 2023 Item Pack\nLast Change in Value - (+5)"
+      "value": 170,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Waves": {
-      "raw": "Waves\nValue - 165 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3 Rarity - 3\nOrigin - Summer 2023 Item Pack\nLast Change in Value - (+5)"
+      "value": 165,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Watergun": {
-      "raw": "Watergun\nValue - 160 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3 Rarity - 3\nOrigin - Summer 2024 (Unboxed)\nLast Change in Value - (+5)"
+      "value": 160,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Blizzard": {
-      "raw": "Blizzard\nValue - 155 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3 Rarity - 3\nOrigin - Xmas 2025 Item Pack\nLast Change in Value - (+5)"
+      "value": 155,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Snowstorm": {
-      "raw": "Snowstorm\nValue - 155 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3 Rarity - 3\nOrigin - Xmas 2025 Item Pack\nLast Change in Value - (+5)"
+      "value": 155,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Bat": {
-      "raw": "Bat\nValue - 125 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3 Rarity - 3\nOrigin - Hallows 2022 (Zombie)\nLast Change in Value - (-5)"
+      "value": 125,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Borealis": {
-      "raw": "Borealis\nValue - 105 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3 Rarity - 3\nOrigin - Xmas 2024 Item Pack\nLast Change in Value - (-5)"
+      "value": 105,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Candy": {
-      "raw": "Candy\nValue - 105 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Xmas 2015 (Unboxed)\nLast Change in Value - (-5)"
+      "value": 105,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Australis": {
-      "raw": "Australis\nValue - 100 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3 Rarity - 3\nOrigin - Xmas 2024 Item Pack\nLast Change in Value - (-5)"
+      "value": 100,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Heartblade": {
-      "raw": "Heartblade\nValue - 85 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - February Offer\nLast Change in Value - (-5)"
+      "value": 85,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Pearlshine": {
-      "raw": "Pearlshine\nValue - 55 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 3\nOrigin - Summer 2024 Item Pack\nLast Change in Value - (-5)"
+      "value": 55,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Pearl": {
-      "raw": "Pearl\nValue - 50 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 3\nOrigin - Summer 2024 Item Pack\nLast Change in Value - (-5)"
+      "value": 50,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Luger": {
-      "raw": "Luger\nValue - 50 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Gun Box #1\nLast Change in Value - (-5)"
+      "value": 50,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Candleflame": {
-      "raw": "Candleflame\nValue - 45 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 3\nOrigin - Hallows 2021 (Unboxed)\nLast Change in Value - (-5)"
+      "value": 45,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Elderwood Blade": {
-      "raw": "Elderwood Blade\nValue - 45 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 3\nOrigin - Hallows 2022 (Unboxed)\nLast Change in Value - (-5)"
+      "value": 45,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Makeshift": {
-      "raw": "Makeshift\nValue - 45 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 3\nOrigin - Hallows 2022 (Survivor)\nLast Change in Value - (-5)"
+      "value": 45,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Elderwood Revolver": {
-      "raw": "Elderwood Revolver\nValue - 45 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Hallows 2019 (Unboxed)\nLast Change in Value - (-5)"
+      "value": 45,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Red Luger": {
-      "raw": "Red Luger\nValue - 45 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Xmas 2015 (Crafted)\nLast Change in Value - (-5)"
+      "value": 45,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Sugar": {
-      "raw": "Sugar\nValue - 45 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Xmas 2015 (Unboxed)\nLast Change in Value - (-5)"
+      "value": 45,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Phantom": {
-      "raw": "Phantom\nValue - 42 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 3\nOrigin - Hallows 2022 Item Pack\nLast Change in Value - (-3)"
+      "value": 42,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Spectre": {
-      "raw": "Spectre\nValue - 42 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 3\nOrigin - Hallows 2022 Item Pack\nLast Change in Value - (-3)"
+      "value": 42,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Darkbringer": {
-      "raw": "Darkbringer\nValue - 42 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Mystery Crate #2\nLast Change in Value - (-3)"
+      "value": 42,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Iceblaster": {
-      "raw": "Iceblaster\nValue - 42 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Xmas 2020 (Unboxed)\nLast Change in Value - (-3)"
+      "value": 42,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Lightbringer": {
-      "raw": "Lightbringer\nValue - 38 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Mystery Crate #2\nLast Change in Value - (-2)"
+      "value": 38,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Green Luger": {
-      "raw": "Green Luger\nValue - 30 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Xmas 2015 (Crafted)\nLast Change in Value - (-2)"
+      "value": 30,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Ornament": {
-      "raw": "Ornament\nValue - 30 +1 -1 ~\nRanged Value - [25 - 30]\nStability - Underpaid For \nDemand - 2 Rarity - 3\nOrigin - Xmas 2025 (Gifting)\nLast Change in Value - (-5)"
+      "value": 30,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "25 - 30",
+      "demand": 2,
+      "rarity": 3
     },
     "Laser": {
-      "raw": "Laser\nValue - 27 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Gun Box #3\nLast Change in Value - (-1)"
+      "value": 27,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Swirly Gun": {
-      "raw": "Swirly Gun\nValue - 25 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 3\nOrigin - Xmas 2021 (Unboxed)\nLast Change in Value - (-2)"
+      "value": 25,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Amerilaser": {
-      "raw": "Amerilaser\nValue - 25 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - American Item Pack\nLast Change in Value - (-3)"
+      "value": 25,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Hallowgun": {
-      "raw": "Hallowgun\nValue - 25 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Hallows 2020 (Unboxed)\nLast Change in Value - (-2)"
+      "value": 25,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Icebeam": {
-      "raw": "Icebeam\nValue - 25 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Xmas 2021 Item Pack\nLast Change in Value - (+0)"
+      "value": 25,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Plasmabeam": {
-      "raw": "Plasmabeam\nValue - 25 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Plasmabeam Item Pack\nLast Change in Value - (+0)"
+      "value": 25,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Iceflake": {
-      "raw": "Iceflake\nValue - 23 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Xmas 2021 Item Pack\nLast Change in Value - (-2)"
+      "value": 23,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Plasmablade": {
-      "raw": "Plasmablade\nValue - 23 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Plasmablade Item Pack\nLast Change in Value - (-2)"
+      "value": 23,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Shark": {
-      "raw": "Shark\nValue - 23 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Gun Box #2\nLast Change in Value - (-2)"
+      "value": 23,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Nightblade": {
-      "raw": "Nightblade\nValue - 22 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Shadow Item Pack\nLast Change in Value - (-1)"
+      "value": 22,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Blaster": {
-      "raw": "Blaster\nValue - 20 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Futuristic Item Pack\nLast Change in Value - (-2)"
+      "value": 20,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Ginger Luger": {
-      "raw": "Ginger Luger\nValue - 20 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Xmas 2018 (Crafted)\nLast Change in Value - (+0)"
+      "value": 20,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Pixel": {
-      "raw": "Pixel\nValue - 20 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - 8-Bit Item Pack\nLast Change in Value - (-2)"
+      "value": 20,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Cookiecane": {
-      "raw": "Cookiecane\nValue - 18 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 3\nOrigin - Xmas 2022 (Unboxed)\nLast Change in Value - (-2)"
+      "value": 18,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Gingermint": {
-      "raw": "Gingermint\nValue - 18 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 3\nOrigin - Xmas 2022 (Gifting)\nLast Change in Value - (-2)"
+      "value": 18,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Lugercane": {
-      "raw": "Lugercane\nValue - 18 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Xmas 2019 (Gifting)\nLast Change in Value - (-2)"
+      "value": 18,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Minty": {
-      "raw": "Minty\nValue - 18 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Xmas 2019 (Unboxed)\nLast Change in Value - (-2)"
+      "value": 18,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Old Glory": {
-      "raw": "Old Glory\nValue - 18 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - American Item Pack\nLast Change in Value - (-2)"
+      "value": 18,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Slasher": {
-      "raw": "Slasher\nValue - 18 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Knife Box #4\nLast Change in Value - (-2)"
+      "value": 18,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Battleaxe II": {
-      "raw": "Battleaxe II\nValue - 18 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Hallows 2018 (Tier 100)\nLast Change in Value - (+0)"
+      "value": 18,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Eternalcane": {
-      "raw": "Eternalcane\nValue - 17 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - MM2 Shop Promo\nLast Change in Value - (-1)"
+      "value": 17,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Jinglegun": {
-      "raw": "Jinglegun\nValue - 17 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Xmas 2020 (Gifting)\nLast Change in Value - (+0)"
+      "value": 17,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Virtual": {
-      "raw": "Virtual\nValue - 17 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Futuristic Item Pack\nLast Change in Value - (-1)"
+      "value": 17,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Gemstone": {
-      "raw": "Gemstone\nValue - 17 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Mystery Box #1\nLast Change in Value - (-1)"
+      "value": 17,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Gingerblade": {
-      "raw": "Gingerblade\nValue - 17 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Xmas 2018 (Unboxed)\nLast Change in Value - (-1)"
+      "value": 17,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Swirly Blade": {
-      "raw": "Swirly Blade\nValue - 15 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 3\nOrigin - Xmas 2021 (Gifting)\nLast Change in Value - (-2)"
+      "value": 15,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Nebula": {
-      "raw": "Nebula\nValue - 15 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Nebula Item Pack\nLast Change in Value - (-2)"
+      "value": 15,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Vampire's Edge": {
-      "raw": "Vampire's Edge\nValue - 15 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Hallows 2020 Item Pack\nLast Change in Value - (+0)"
+      "value": 15,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Deathshard": {
-      "raw": "Deathshard\nValue - 15 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Knife Box #1\nLast Change in Value - (-3)"
+      "value": 15,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Battleaxe": {
-      "raw": "Battleaxe\nValue - 12 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Hallows 2017 Item Pack\nLast Change in Value - (+0)"
+      "value": 12,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Bioblade": {
-      "raw": "Bioblade\nValue - 10 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Bioblade Item Pack\nLast Change in Value - (-2)"
+      "value": 10,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Chill": {
-      "raw": "Chill\nValue - 10 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Xmas 2015 (Crafted)\nLast Change in Value - (-2)"
+      "value": 10,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Clockwork": {
-      "raw": "Clockwork\nValue - 10 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Steampunk Item Pack\nLast Change in Value - (-2)"
+      "value": 10,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Eternal III": {
-      "raw": "Eternal III\nValue - 10 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - MM2 Shop Promo\nLast Change in Value - (+0)"
+      "value": 10,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Eternal IV": {
-      "raw": "Eternal IV\nValue - 10 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - MM2 Shop Promo\nLast Change in Value - (+0)"
+      "value": 10,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Fang": {
-      "raw": "Fang\nValue - 10 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Knife Box #2\nLast Change in Value - (-2)"
+      "value": 10,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Frostsaber": {
-      "raw": "Frostsaber\nValue - 10 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Xmas 2017 (Bought)\nLast Change in Value - (+0)"
+      "value": 10,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Heat": {
-      "raw": "Heat\nValue - 10 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Rainbow Box\nLast Change in Value - (-2)"
+      "value": 10,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Spider": {
-      "raw": "Spider\nValue - 10 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Hallows 2015 (Bingo)\nLast Change in Value - (-2)"
+      "value": 10,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Tides": {
-      "raw": "Tides\nValue - 10 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Knife Box #5\nLast Change in Value - (-2)"
+      "value": 10,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Eternal": {
-      "raw": "Eternal\nValue - 8 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - MM2 Shop Promo\nLast Change in Value - (+0)"
+      "value": 8,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Eternal II": {
-      "raw": "Eternal II\nValue - 8 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - MM2 Shop Promo\nLast Change in Value - (+0)"
+      "value": 8,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Hallow's Blade": {
-      "raw": "Hallow's Blade\nValue - 8 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Hallows 2017 (Bought)\nLast Change in Value - (+0)"
+      "value": 8,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Hallow's Edge": {
-      "raw": "Hallow's Edge\nValue - 8 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Hallows 2016 (Unboxed)\nLast Change in Value - (+0)"
+      "value": 8,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Handsaw": {
-      "raw": "Handsaw\nValue - 8 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Xmas 2015 (Crafted)\nLast Change in Value - (+0)"
+      "value": 8,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Xmas": {
-      "raw": "Xmas\nValue - 8 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Xmas 2015 (Bought)\nLast Change in Value - (+0)"
+      "value": 8,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Boneblade": {
-      "raw": "Boneblade\nValue - 7 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Hallows 2018 (Unboxed)\nLast Change in Value - (+0)"
+      "value": 7,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Frostbite": {
-      "raw": "Frostbite\nValue - 7 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Xmas 2019 Item Pack\nLast Change in Value - (+0)"
+      "value": 7,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Ghostblade": {
-      "raw": "Ghostblade\nValue - 7 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Hallows 2019 Item Pack\nLast Change in Value - (+0)"
+      "value": 7,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Ice Dragon": {
-      "raw": "Ice Dragon\nValue - 7 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Xmas 2016 (Bought)\nLast Change in Value - (-1)"
+      "value": 7,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Ice Shard": {
-      "raw": "Ice Shard\nValue - 7 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Xmas 2017 Item Pack\nLast Change in Value - (-1)"
+      "value": 7,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Prismatic": {
-      "raw": "Prismatic\nValue - 7 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Prismatic Item Pack\nLast Change in Value - (+0)"
+      "value": 7,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Pumpking": {
-      "raw": "Pumpking\nValue - 7 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Hallows 2017 (Unboxed)\nLast Change in Value - (-1)"
+      "value": 7,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Saw": {
-      "raw": "Saw\nValue - 7 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Knife Box #3\nLast Change in Value - (+0)"
+      "value": 7,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Eggblade": {
-      "raw": "Eggblade\nValue - 5 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - April Offer\nLast Change in Value - (+0)"
+      "value": 5,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Flames": {
-      "raw": "Flames\nValue - 5 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - MM2 Classic Crafting\nLast Change in Value - (-2)"
+      "value": 5,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Snowflake": {
-      "raw": "Snowflake\nValue - 5 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Xmas 2017 (Bought)\nLast Change in Value - (+0)"
+      "value": 5,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Winter's Edge": {
-      "raw": "Winter's Edge\nValue - 5 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Xmas 2017 (Unboxed)\nLast Change in Value - (-2)"
+      "value": 5,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Peppermint": {
-      "raw": "Peppermint\nValue - 4 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Xmas 2020 Item Pack\nLast Change in Value - (+0)"
+      "value": 4,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Cookieblade": {
-      "raw": "Cookieblade\nValue - 3 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - Xmas 2020 Item Pack\nLast Change in Value - (+0)"
+      "value": 3,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Blue Seer": {
-      "raw": "Blue Seer\nValue - 3 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 1\nOrigin - Season 1 Crafting\nLast Change in Value - (+0)"
+      "value": 3,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 1
     },
     "Purple Seer": {
-      "raw": "Purple Seer\nValue - 3 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 1\nOrigin - Season 1 Crafting\nLast Change in Value - (+0)"
+      "value": 3,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 1
     },
     "Red Seer": {
-      "raw": "Red Seer\nValue - 3 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 1\nOrigin - Season 1 Crafting\nLast Change in Value - (+0)"
+      "value": 3,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 1
     },
     "Seer": {
-      "raw": "Seer\nValue - 3 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 1\nOrigin - Crafting\nLast Change in Value - (+0)"
+      "value": 3,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 1
     },
     "Orange Seer": {
-      "raw": "Orange Seer\nValue - 2 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 1\nOrigin - Season 1 Crafting\nLast Change in Value - (+0)"
+      "value": 2,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 1
     },
     "Yellow Seer": {
-      "raw": "Yellow Seer\nValue - 2 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 1\nOrigin - Season 1 Crafting\nLast Change in Value - (+0)"
+      "value": 2,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 1
     }
   },
   "chromas": {
-    "×": {
-      "raw": "×\n\tExtra Features:\n\t:\n\tAliases - \n\tFlippability - \n\tChance of Rising - ~%\n\tView Item on the MM2 Wiki"
-    },
-    "Join our Discord Server Join our Roblox Group": {
-      "raw": "Join our Discord Server Join our Roblox Group\nTrade your MM2 items using Cosmic Values, our official trading partner! Take me there"
-    },
     "C. Traveler's Gun": {
-      "raw": "C. Traveler's Gun\nValue - 225,000 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 9 Rarity - 9\nOrigin - Hallows 2023 (Unboxed)\nLast Change in Value - (+5,000)"
+      "value": 225000,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 9,
+      "rarity": 9
     },
     "Chroma Evergun": {
-      "raw": "Chroma Evergun\nValue - 100,000 +1 -1 ~\nRanged Value - [95,000 - 100K]\nStability - Underpaid For \nDemand - 8 Rarity - 7\nOrigin - Xmas 2023 (Gifting)\nLast Change in Value - (-1,000)"
+      "value": 100000,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "",
+      "demand": 8,
+      "rarity": 7
     },
     "Chroma Evergreen": {
-      "raw": "Chroma Evergreen\nValue - 60,000 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 7 Rarity - 6\nOrigin - Xmas 2023 (Unboxed)\nLast Change in Value - (-1,000)"
+      "value": 60000,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 7,
+      "rarity": 6
     },
     "C. Vampire's Gun": {
-      "raw": "C. Vampire's Gun\nValue - 38,000 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 7 Rarity - 6\nOrigin - Hallows 2024 (Unboxed)\nLast Change in Value - (-1,000)"
+      "value": 38000,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 7,
+      "rarity": 6
     },
     "Chroma Bauble": {
-      "raw": "Chroma Bauble\nValue - 38,000 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 7 Rarity - 5\nOrigin - Xmas 2024 (Gifting)\nLast Change in Value - (-1,000)"
+      "value": 38000,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 7,
+      "rarity": 5
     },
     "C. Constellation": {
-      "raw": "C. Constellation\nValue - 36,000 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 7 Rarity - 5\nOrigin - Xmas 2024 (Unboxed)\nLast Change in Value - (-1,000)"
+      "value": 36000,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 7,
+      "rarity": 5
     },
     "Chroma Alienbeam": {
-      "raw": "Chroma Alienbeam\nValue - 30,000 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 7 Rarity - 5\nOrigin - Hallows 2025 (Unboxed)\nLast Change in Value - (-1,000)"
+      "value": 30000,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 7,
+      "rarity": 5
     },
     "Chroma Raygun": {
-      "raw": "Chroma Raygun\nValue - 15,500 +1 -1 ~\nRanged Value - [15,500 - 15,750]\nStability - Doing Well \nDemand - 6 Rarity - 4\nOrigin - Hallows 2025 (Tier 25)\nLast Change in Value - (+250)"
+      "value": 15500,
+      "trend": "",
+      "stability": "Doing Well",
+      "range": "15,500 - 15,750",
+      "demand": 6,
+      "rarity": 4
     },
     "Chroma Sunrise": {
-      "raw": "Chroma Sunrise\nValue - 10,500 +1 -1 ~\nRanged Value - [10,500 - 11,000]\nStability - Doing Well \nDemand - 6 Rarity - 4\nOrigin - Summer 2025 (Unboxed)\nLast Change in Value - (+250)"
+      "value": 10500,
+      "trend": "",
+      "stability": "Doing Well",
+      "range": "10,500 - 11,000",
+      "demand": 6,
+      "rarity": 4
     },
     "C. Snowcannon": {
-      "raw": "C. Snowcannon\nValue - 8,500 +1 -1 ~\nRanged Value - [8,500 - 8,750]\nStability - Doing Well \nDemand - 6 Rarity - 4\nOrigin - Xmas 2025 (Tier 30)\nLast Change in Value - (+250)"
+      "value": 8500,
+      "trend": "",
+      "stability": "Doing Well",
+      "range": "8,500 - 8,750",
+      "demand": 6,
+      "rarity": 4
     },
     "Chroma Blizzard": {
-      "raw": "Chroma Blizzard\nValue - 8,000 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 5 Rarity - 5\nOrigin - Xmas 2025 Item Pack\nLast Change in Value - (-500)"
+      "value": 8000,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 5,
+      "rarity": 5
     },
     "Chroma Treat": {
-      "raw": "Chroma Treat\nValue - 6,250 +1 -1 ~\nRanged Value - [6,000 - 6,250]\nStability - Underpaid For \nDemand - 5 Rarity - 5\nOrigin - Valentine 2026 Item Pack\nLast Change in Value - (-250)"
+      "value": 6250,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "6,000 - 6,250",
+      "demand": 5,
+      "rarity": 5
     },
     "Chroma Sunset": {
-      "raw": "Chroma Sunset\nValue - 6,000 +1 -1 ~\nRanged Value - [6,000 - 6,250]\nStability - Improving \nDemand - 6 Rarity - 4\nOrigin - Summer 2025 (Tier 25)\nLast Change in Value - (+250)"
+      "value": 6000,
+      "trend": "",
+      "stability": "",
+      "range": "6,000 - 6,250",
+      "demand": 6,
+      "rarity": 4
     },
     "C. Heart Wand": {
-      "raw": "C. Heart Wand\nValue - 6,000 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 6 Rarity - 5\nOrigin - Valentine 2026 (Unboxed)\nLast Change in Value - (+250)"
+      "value": 6000,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 6,
+      "rarity": 5
     },
     "C. Snow Dagger": {
-      "raw": "C. Snow Dagger\nValue - 5,000 +1 -1 ~\nRanged Value - [5,000 - 5,250]\nStability - Doing Well \nDemand - 6 Rarity - 4\nOrigin - Xmas 2025 (Unboxed)\nLast Change in Value - (+250)"
+      "value": 5000,
+      "trend": "",
+      "stability": "Doing Well",
+      "range": "5,000 - 5,250",
+      "demand": 6,
+      "rarity": 4
     },
     "Chroma Snowstorm": {
-      "raw": "Chroma Snowstorm\nValue - 4,250 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 5 Rarity - 5\nOrigin - Xmas 2025 Item Pack\nLast Change in Value - (-250)"
+      "value": 4250,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 5,
+      "rarity": 5
     },
     "Chroma Sweet": {
-      "raw": "Chroma Sweet\nValue - 4,250 +1 -1 ~\nRanged Value - [4,000 - 4,250]\nStability - Underpaid For \nDemand - 5 Rarity - 5\nOrigin - Valentine 2026 Item Pack\nLast Change in Value - (-250)"
+      "value": 4250,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "4,000 - 4,250",
+      "demand": 5,
+      "rarity": 5
     },
     "Chroma Watergun": {
-      "raw": "Chroma Watergun\nValue - 3,400 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 5 Rarity - 4\nOrigin - Summer 2024 (Unboxed)\nLast Change in Value - (-50)"
+      "value": 3400,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 5,
+      "rarity": 4
     },
     "Chroma Ornament": {
-      "raw": "Chroma Ornament\nValue - 2,850 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 5 Rarity - 4\nOrigin - Xmas 2025 (Gifting)\nLast Change in Value - (-50)"
+      "value": 2850,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 5,
+      "rarity": 4
     },
     "C. Darkbringer": {
-      "raw": "C. Darkbringer\nValue - 90 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Mystery Crate #2\nLast Change in Value - (-5)"
+      "value": 90,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "C. Lightbringer": {
-      "raw": "C. Lightbringer\nValue - 85 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Mystery Crate #2\nLast Change in Value - (-5)"
+      "value": 85,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Chroma Luger": {
-      "raw": "Chroma Luger\nValue - 57 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Gun Box #1\nLast Change in Value - (-3)"
+      "value": 57,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "C. Candleflame": {
-      "raw": "C. Candleflame\nValue - 50 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 3\nOrigin - Hallows 2021 (Unboxed)\nLast Change in Value - (-2)"
+      "value": 50,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "C. Elderwood Blade": {
-      "raw": "C. Elderwood Blade\nValue - 50 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 3\nOrigin - Hallows 2022 (Unboxed)\nLast Change in Value - (-2)"
+      "value": 50,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Chroma Laser": {
-      "raw": "Chroma Laser\nValue - 48 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Gun Box #3\nLast Change in Value - (-2)"
+      "value": 48,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "C. Swirly Gun": {
-      "raw": "C. Swirly Gun\nValue - 47 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 3\nOrigin - Xmas 2021 (Unboxed)\nLast Change in Value - (-3)"
+      "value": 47,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "C. Deathshard": {
-      "raw": "C. Deathshard\nValue - 42 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Knife Box #1\nLast Change in Value - (-3)"
+      "value": 42,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Chroma Slasher": {
-      "raw": "Chroma Slasher\nValue - 42 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Knife Box #4\nLast Change in Value - (-3)"
+      "value": 42,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "C. Cookiecane": {
-      "raw": "C. Cookiecane\nValue - 40 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 3\nOrigin - Xmas 2022 (Unboxed)\nLast Change in Value - (-2)"
+      "value": 40,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Chroma Shark": {
-      "raw": "Chroma Shark\nValue - 40 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Gun Box #2\nLast Change in Value - (-3)"
+      "value": 40,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Chroma Fang": {
-      "raw": "Chroma Fang\nValue - 38 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Knife Box #2\nLast Change in Value - (-4)"
+      "value": 38,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Chroma Gemstone": {
-      "raw": "Chroma Gemstone\nValue - 35 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Mystery Crate #1\nLast Change in Value - (-3)"
+      "value": 35,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Chroma Heat": {
-      "raw": "Chroma Heat\nValue - 35 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Rainbow Box\nLast Change in Value - (-3)"
+      "value": 35,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "C. Gingerblade": {
-      "raw": "C. Gingerblade\nValue - 33 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Xmas 2018 (Unboxed)\nLast Change in Value - (-4)"
+      "value": 33,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Chroma Saw": {
-      "raw": "Chroma Saw\nValue - 33 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Knife Box #3\nLast Change in Value - (-4)"
+      "value": 33,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Chroma Seer": {
-      "raw": "Chroma Seer\nValue - 33 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Season 1 Crafting\nLast Change in Value - (-4)"
+      "value": 33,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Chroma Tides": {
-      "raw": "Chroma Tides\nValue - 32 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Knife Box #5\nLast Change in Value - (-3)"
+      "value": 32,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Chroma Boneblade": {
-      "raw": "Chroma Boneblade\nValue - 28 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Hallows 2018 (Unboxed)\nLast Change in Value - (-2)"
+      "value": 28,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Chroma Fire Bat": {
-      "raw": "Chroma Fire Bat\nValue - 7 +1 -1 ~\nRanged Value - [5 - 7]\nStability - Underpaid For \nDemand - 1 Rarity - 4\nOrigin - Season 1 Pet Egg\nLast Change in Value - (-1)"
+      "value": 7,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "5 - 7",
+      "demand": 1,
+      "rarity": 4
     },
     "Chroma Fire Bear": {
-      "raw": "Chroma Fire Bear\nValue - 7 +1 -1 ~\nRanged Value - [5 - 7]\nStability - Underpaid For \nDemand - 1 Rarity - 4\nOrigin - Season 1 Pet Egg\nLast Change in Value - (-1)"
+      "value": 7,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "5 - 7",
+      "demand": 1,
+      "rarity": 4
     },
     "C. Fire Bunny": {
-      "raw": "C. Fire Bunny\nValue - 7 +1 -1 ~\nRanged Value - [5 - 7]\nStability - Underpaid For \nDemand - 1 Rarity - 4\nOrigin - Season 1 Pet Egg\nLast Change in Value - (-1)"
+      "value": 7,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "5 - 7",
+      "demand": 1,
+      "rarity": 4
     },
     "Chroma Fire Cat": {
-      "raw": "Chroma Fire Cat\nValue - 7 +1 -1 ~\nRanged Value - [5 - 7]\nStability - Underpaid For \nDemand - 1 Rarity - 4\nOrigin - Season 1 Pet Egg\nLast Change in Value - (-1)"
+      "value": 7,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "5 - 7",
+      "demand": 1,
+      "rarity": 4
     },
     "Chroma Fire Dog": {
-      "raw": "Chroma Fire Dog\nValue - 7 +1 -1 ~\nRanged Value - [5 - 7]\nStability - Underpaid For \nDemand - 1 Rarity - 4\nOrigin - Season 1 Pet Egg\nLast Change in Value - (-1)"
+      "value": 7,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "5 - 7",
+      "demand": 1,
+      "rarity": 4
     },
     "Chroma Fire Fox": {
-      "raw": "Chroma Fire Fox\nValue - 7 +1 -1 ~\nRanged Value - [5 - 7]\nStability - Underpaid For \nDemand - 1 Rarity - 4\nOrigin - Season 1 Pet Egg\nLast Change in Value - (-1)"
+      "value": 7,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "5 - 7",
+      "demand": 1,
+      "rarity": 4
     },
     "Chroma Fire Pig": {
-      "raw": "Chroma Fire Pig\nValue - 7 +1 -1 ~\nRanged Value - [5 - 7]\nStability - Underpaid For \nDemand - 1 Rarity - 4\nOrigin - Season 1 Pet Egg\nLast Change in Value - (-1)"
+      "value": 7,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "5 - 7",
+      "demand": 1,
+      "rarity": 4
     }
   },
   "vintages": {
-    "×": {
-      "raw": "×\n\tExtra Features:\n\t:\n\tAliases - \n\tFlippability - \n\tChance of Rising - ~%\n\tView Item on the MM2 Wiki"
-    },
-    "Join our Discord Server Join our Roblox Group": {
-      "raw": "Join our Discord Server Join our Roblox Group\nTrade your MM2 items using Cosmic Values, our official trading partner! Take me there"
-    },
     "Ghost": {
-      "raw": "Ghost\nValue - 10 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - MM1 (1,200 Coins)\nLast Change in Value - (+0)"
+      "value": 10,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Blood": {
-      "raw": "Blood\nValue - 8 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - MM1 (4,000 Coins)\nLast Change in Value - (+0)"
+      "value": 8,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Laser": {
-      "raw": "Laser\nValue - 8 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - MM1 (1,200 Coins)\nLast Change in Value - (+0)"
+      "value": 8,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "America": {
-      "raw": "America\nValue - 7 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - MM1 July 4th (25 Cash)\nLast Change in Value - (+0)"
+      "value": 7,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Prince": {
-      "raw": "Prince\nValue - 6 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - MM1 (2,000 Coins)\nLast Change in Value - (+0)"
+      "value": 6,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Shadow": {
-      "raw": "Shadow\nValue - 6 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - MM1 (3,000 Coins)\nLast Change in Value - (+0)"
+      "value": 6,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Phaser": {
-      "raw": "Phaser\nValue - 5 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - MM1 (2,000 Coins)\nLast Change in Value - (+0)"
+      "value": 5,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Cowboy": {
-      "raw": "Cowboy\nValue - 4 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - MM1 (800 Coins)\nLast Change in Value - (-1)"
+      "value": 4,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Golden": {
-      "raw": "Golden\nValue - 4 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - MM1 (3,500 Coins)\nLast Change in Value - (+0)"
+      "value": 4,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Splitter": {
-      "raw": "Splitter\nValue - 3 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1 Rarity - 2\nOrigin - MM1 (800 Coins)\nLast Change in Value - (+0)"
+      "value": 3,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     }
   },
   "ancients": {
-    "×": {
-      "raw": "×\n\tExtra Features:\n\t:\n\tAliases - \n\tFlippability - \n\tChance of Rising - ~%\n\tView Item on the MM2 Wiki"
-    },
-    "Join our Discord Server Join our Roblox Group": {
-      "raw": "Join our Discord Server Join our Roblox Group\nTrade your MM2 items using Cosmic Values, our official trading partner! Take me there"
-    },
-    "Nik's Scythe": {
-      "raw": "Nik's Scythe\nValue - Priceless\nStability - Overpaid For \nDemand - 11Rarity - 11\nOrigin - Gift From Nikilis"
-    },
     "Gingerscope": {
-      "raw": "Gingerscope\nValue - 17,250 +1 -1 ~\nRanged Value - [17,000 - 17,250]\nStability - Underpaid For \nDemand - 7 Rarity - 4\nOrigin - Xmas 2023 (Tier 20)\nLast Change in Value - (-250)"
+      "value": 17250,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "17,000 - 17,250",
+      "demand": 7,
+      "rarity": 4
     },
     "Traveler's Axe": {
-      "raw": "Traveler's Axe\nValue - 8,400 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 7 Rarity - 5\nOrigin - Hallows 2023 (Tier 30)\nLast Change in Value - (+50)"
+      "value": 8400,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 7,
+      "rarity": 5
     },
     "Celestial": {
-      "raw": "Celestial\nValue - 1,725 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 5 Rarity - 3\nOrigin - Xmas 2024 (Tier 20)\nLast Change in Value - (-25)"
+      "value": 1725,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 5,
+      "rarity": 3
     },
     "Vampire's Axe": {
-      "raw": "Vampire's Axe\nValue - 925 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 5 Rarity - 3\nOrigin - Hallows 2024 (Tier 20)\nLast Change in Value - (-25)"
+      "value": 925,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 5,
+      "rarity": 3
     },
     "Harvester": {
-      "raw": "Harvester\nValue - 300 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3 Rarity - 3\nOrigin - Hallows 2021 (Tier 30)\nLast Change in Value - (-10)"
+      "value": 300,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Icepiercer": {
-      "raw": "Icepiercer\nValue - 200 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3 Rarity - 3\nOrigin - Xmas 2022 (Tier 20)\nLast Change in Value - (-10)"
+      "value": 200,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Icebreaker": {
-      "raw": "Icebreaker\nValue - 85 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Xmas 2020 (Tier 20)\nLast Change in Value - (-5)"
+      "value": 85,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Batwing": {
-      "raw": "Batwing\nValue - 50 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Hallows 2018 Item Pack\nLast Change in Value - (-5)"
+      "value": 50,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Elderwood Scythe": {
-      "raw": "Elderwood Scythe\nValue - 50 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Hallows 2019 (Tier 40)\nLast Change in Value - (-5)"
+      "value": 50,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Swirly Axe": {
-      "raw": "Swirly Axe\nValue - 45 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 3\nOrigin - Xmas 2021 (Tier 20)\nLast Change in Value - (-2)"
+      "value": 45,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Hallowscythe": {
-      "raw": "Hallowscythe\nValue - 35 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Hallows 2020 (Tier 30)\nLast Change in Value - (-5)"
+      "value": 35,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Logchopper": {
-      "raw": "Logchopper\nValue - 20 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2 Rarity - 2\nOrigin - Xmas 2019 (Tier 30)\nLast Change in Value - (-2)"
+      "value": 20,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Icewing": {
-      "raw": "Icewing\nValue - 15 +1 -1 ~\nRanged Value - [10 - 20]\nStability - Fluctuating \nDemand - 2 Rarity - 1\nOrigin - Xmas 2018 Item Pack\nLast Change in Value - (+2)"
-    },
-    "ANCIENTS:": {
-      "raw": "ANCIENTS:\nGingerscope reduced to 17,250 [17,000-17,250]"
+      "value": 15,
+      "trend": "",
+      "stability": "Fluctuating",
+      "range": "10 - 20",
+      "demand": 2,
+      "rarity": 1
     }
   },
   "uniques": {
-    "×": {
-      "raw": "×\n\tExtra Features:\n\t:\n\tAliases - \n\tFlippability - \n\tChance of Rising - ~%\n\tView Item on the MM2 Wiki"
-    },
-    "Join our Discord Server Join our Roblox Group": {
-      "raw": "Join our Discord Server Join our Roblox Group\nTrade your MM2 items using Cosmic Values, our official trading partner! Take me there"
-    },
-    "Make sure to click on an item's image if it has the  symbol next to its name! It shows you extra information about the item. Read more about this in our use guide!": {
-      "raw": "Make sure to click on an item's image if it has the  symbol next to its name! It shows you extra information about the item. Read more about this in our use guide!\n*** Be aware that some of the leaderboard players' usernames may be out of date but the account links will always be accurate."
-    },
     "Corrupt": {
-      "raw": "Corrupt\nValue - 600 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 4Rarity - 3\nOrigin - Data Loss\nLast Change in Value - (-25)"
-    },
-    "slouse's Clown (Gun)": {
-      "raw": "slouse's Clown (Gun)\nOwner - slouse\nDemand - 11Rarity - 11\nOrigin - Gift From Nikilis"
-    },
-    "Owner - slouse": {
-      "raw": "Owner - slouse\nDemand - 11Rarity - 11\nOrigin - Gift From Nikilis"
-    },
-    "slouse's Clown (Knife)": {
-      "raw": "slouse's Clown (Knife)\nOwner - slouse\nDemand - 11Rarity - 11\nOrigin - Gift From Nikilis"
-    },
-    "Sharkseeker": {
-      "raw": "Sharkseeker\nRarity - 6\nOrigin - Nerf x Roblox Promo"
-    },
-    "Rarity - 6": {
-      "raw": "Rarity - 6\nOrigin - Nerf x Roblox Promo"
-    },
-    "Dartbringer": {
-      "raw": "Dartbringer\nRarity - 7\nOrigin - Nerf x Roblox Promo"
-    },
-    "Rarity - 7": {
-      "raw": "Rarity - 7\nOrigin - Nerf x Roblox Promo"
-    },
-    "Gold Candy": {
-      "raw": "Gold Candy\nOwner - zLordKillerz (Account Terminated)\nOrigin - Xmas 2017 Leaderboard"
-    },
-    "Owner - zLordKillerz (Account Terminated)": {
-      "raw": "Owner - zLordKillerz (Account Terminated)\nOrigin - Xmas 2017 Leaderboard"
-    },
-    "Gold Hallow": {
-      "raw": "Gold Hallow\nOwner - Else8888\nOrigin - Hallows 2018 Leaderboard"
-    },
-    "Owner - Else8888": {
-      "raw": "Owner - Else8888\nOrigin - Hallows 2018 Leaderboard"
-    },
-    "Gold Sugar": {
-      "raw": "Gold Sugar\nOwner - d0wnfalling\nOrigin - Xmas 2018 Leaderboard"
-    },
-    "Owner - d0wnfalling": {
-      "raw": "Owner - d0wnfalling\nOrigin - Xmas 2018 Leaderboard"
-    },
-    "Gold Elderwood": {
-      "raw": "Gold Elderwood\nOwner - AstropIuto\nOwner's Team - Survivor\nOrigin - Hallows 2022 Leaderboard"
-    },
-    "Owner - ironjenjin": {
-      "raw": "Owner - ironjenjin\nOrigin - Xmas 2020 Tokens Leaderboard"
-    },
-    "Gold Minty": {
-      "raw": "Gold Minty\nOwner - vFad4d (Account Terminated)\nOrigin - Xmas 2019 Gifting Leaderboard"
-    },
-    "Owner - vFad4d (Account Terminated)": {
-      "raw": "Owner - vFad4d (Account Terminated)\nOrigin - Xmas 2019 Gifting Leaderboard"
-    },
-    "Gold Logchopper": {
-      "raw": "Gold Logchopper\nOwner - Hippocritical\nOrigin - Xmas 2019 Tokens Leaderboard"
-    },
-    "Owner - Hippocritical": {
-      "raw": "Owner - Hippocritical\nOrigin - Xmas 2020 Tokens Leaderboard"
-    },
-    "Gold Vamp's Edge": {
-      "raw": "Gold Vamp's Edge\nOwner - ironjenjin\nOrigin - Hallows 2020 Leaderboard"
-    },
-    "Gold Iceblaster": {
-      "raw": "Gold Iceblaster\nOwner - SimplyALemon\nOrigin - Xmas 2020 Gifting Leaderboard"
-    },
-    "Owner - SimplyALemon": {
-      "raw": "Owner - SimplyALemon\nOrigin - Xmas 2023 Gifting Leaderboard"
-    },
-    "Gold Icebreaker": {
-      "raw": "Gold Icebreaker\nOwner - Hippocritical\nOrigin - Xmas 2020 Tokens Leaderboard"
-    },
-    "Gold Harvester": {
-      "raw": "Gold Harvester\nOwner - Songbreeze15\nOrigin - Hallows 2021 Leaderboard"
-    },
-    "Owner - Songbreeze15": {
-      "raw": "Owner - Songbreeze15\nOrigin - Hallows 2021 Leaderboard"
-    },
-    "Gold Swirly": {
-      "raw": "Gold Swirly\nOwner - AstropIuto\nOrigin - Xmas 2021 Tokens Leaderboard"
-    },
-    "Owner - AstropIuto": {
-      "raw": "Owner - AstropIuto\nOwner's Team - Survivor\nOrigin - Hallows 2022 Leaderboard"
-    },
-    "Gold Icecrusher": {
-      "raw": "Gold Icecrusher\nOwner - SimplyALemon\nOrigin - Xmas 2022 Gifting Leaderboard"
-    },
-    "Gold Icepiercer": {
-      "raw": "Gold Icepiercer\nOwner - HellishDespair\nOrigin - Xmas 2022 Tokens Leaderboard"
-    },
-    "Owner - HellishDespair": {
-      "raw": "Owner - HellishDespair\nOrigin - Xmas 2022 Tokens Leaderboard"
-    },
-    "Gold Traveler's": {
-      "raw": "Gold Traveler's\nOwner - StreamSpeed\nOrigin - Hallows 2023 Leaderboard"
-    },
-    "Owner - StreamSpeed": {
-      "raw": "Owner - StreamSpeed\nOrigin - Hallows 2024 Leaderboard"
-    },
-    "Gold Gingerscythe": {
-      "raw": "Gold Gingerscythe\nOwner - SimplyALemon\nOrigin - Xmas 2023 Gifting Leaderboard"
-    },
-    "Gold Gingerscope": {
-      "raw": "Gold Gingerscope\nOwner - StreamSpeed\nOrigin - Xmas 2023 Tokens Leaderboard"
-    },
-    "Gold Vampire's Axe": {
-      "raw": "Gold Vampire's Axe\nOwner - semhsr\nOrigin - Hallows 2024 Leaderboard"
-    },
-    "Owner - semhsr": {
-      "raw": "Owner - semhsr\nOrigin - Hallows 2023 Leaderboard"
-    },
-    "Gold Constellation": {
-      "raw": "Gold Constellation\nOwner - n9ughty\nOrigin - Xmas 2024 Gifting Leaderboard"
-    },
-    "Owner - n9ughty": {
-      "raw": "Owner - n9ughty\nOrigin - Xmas 2024 Gifting Leaderboard"
-    },
-    "Gold Celestial": {
-      "raw": "Gold Celestial\nOwner - SnakeKing0705\nOrigin - Xmas 2024 Tokens Leaderboard"
-    },
-    "Owner - SnakeKing0705": {
-      "raw": "Owner - SnakeKing0705\nOrigin - Summer 2025 Leaderboard"
-    },
-    "Gold Synthwave": {
-      "raw": "Gold Synthwave\nOwner - SnakeKing0705\nOrigin - Summer 2025 Leaderboard"
-    },
-    "Gold Placeholder": {
-      "raw": "Gold Placeholder\nOwner - Coming Soon!\nOrigin - Halloween 2025 Leaderboard"
-    },
-    "Owner - Coming Soon!": {
-      "raw": "Owner - Coming Soon!\nOrigin - Halloween 2025 Leaderboard"
-    },
-    "Silver Candy": {
-      "raw": "Silver Candy\nOwner - DreamfulBella\nOrigin - Xmas 2017 Leaderboard"
-    },
-    "Owner - DreamfulBella": {
-      "raw": "Owner - DreamfulBella\nOrigin - Xmas 2019 Gifting Leaderboard"
-    },
-    "Silver Hallow": {
-      "raw": "Silver Hallow\nOwner - Chowinz (Account Terminated)\nOrigin - Hallows 2018 Leaderboard"
-    },
-    "Owner - Chowinz (Account Terminated)": {
-      "raw": "Owner - Chowinz (Account Terminated)\nOrigin - Hallows 2019 Leaderboard"
-    },
-    "Silver Sugar": {
-      "raw": "Silver Sugar\nOwner - mfdubs\nOrigin - Xmas 2018 Leaderboard"
-    },
-    "Owner - mfdubs": {
-      "raw": "Owner - mfdubs\nOrigin - Xmas 2018 Leaderboard"
-    },
-    "Silver Elderwood": {
-      "raw": "Silver Elderwood\nOwner - MorallyLow\nOwner's Team - Survivor\nOrigin - Hallows 2022 Leaderboard"
-    },
-    "Owner - Dheawalker": {
-      "raw": "Owner - Dheawalker\nOrigin - Hallows 2019 Leaderboard"
-    },
-    "Silver Minty": {
-      "raw": "Silver Minty\nOwner - DreamfulBella\nOrigin - Xmas 2019 Gifting Leaderboard"
-    },
-    "Silver Logchopper": {
-      "raw": "Silver Logchopper\nOwner - ChrisPatron\nOrigin - Xmas 2019 Tokens Leaderboard"
-    },
-    "Owner - ChrisPatron": {
-      "raw": "Owner - ChrisPatron\nOrigin - Hallows 2021 Leaderboard"
-    },
-    "Silver Vamp's Edge": {
-      "raw": "Silver Vamp's Edge\nOwner - ImFaire\nOrigin - Hallows 2020 Leaderboard"
-    },
-    "Owner - ImFaire": {
-      "raw": "Owner - ImFaire\nOrigin - Hallows 2020 Leaderboard"
-    },
-    "Silver Iceblaster": {
-      "raw": "Silver Iceblaster\nOwner - LightenAli (Account Terminated)\nOrigin - Xmas 2020 Gifting Leaderboard"
-    },
-    "Owner - LightenAli (Account Terminated)": {
-      "raw": "Owner - LightenAli (Account Terminated)\nOrigin - Xmas 2020 Gifting Leaderboard"
-    },
-    "Silver Icebreaker": {
-      "raw": "Silver Icebreaker\nOwner - ironjenjin\nOrigin - Xmas 2020 Tokens Leaderboard"
-    },
-    "Silver Harvester": {
-      "raw": "Silver Harvester\nOwner - ChrisPatron\nOrigin - Hallows 2021 Leaderboard"
-    },
-    "Silver Swirly": {
-      "raw": "Silver Swirly\nOwner - iGoa_t\nOrigin - Xmas 2021 Tokens Leaderboard"
-    },
-    "Owner - sirehns": {
-      "raw": "Owner - sirehns\nOrigin - Xmas 2023 Gifting Leaderboard"
-    },
-    "Owner - iGoa_t": {
-      "raw": "Owner - iGoa_t\nOrigin - Xmas 2021 Tokens Leaderboard"
-    },
-    "Owner - MorallyLow": {
-      "raw": "Owner - MorallyLow\nOwner's Team - Survivor\nOrigin - Hallows 2022 Leaderboard"
-    },
-    "Silver Icecrusher": {
-      "raw": "Silver Icecrusher\nOwner - sirehns\nOrigin - Xmas 2022 Gifting Leaderboard"
-    },
-    "Silver Icepiercer": {
-      "raw": "Silver Icepiercer\nOwner - A_DawgFTW\nOrigin - Xmas 2022 Tokens Leaderboard"
-    },
-    "Owner - A_DawgFTW": {
-      "raw": "Owner - A_DawgFTW\nOrigin - Xmas 2022 Tokens Leaderboard"
-    },
-    "Silver Traveler's": {
-      "raw": "Silver Traveler's\nOwner - Slain_xz\nOrigin - Hallows 2023 Leaderboard"
-    },
-    "Owner - Slain_xz": {
-      "raw": "Owner - Slain_xz\nOrigin - Hallows 2023 Leaderboard"
-    },
-    "Silver Gingerscythe": {
-      "raw": "Silver Gingerscythe\nOwner - sirehns\nOrigin - Xmas 2023 Gifting Leaderboard"
-    },
-    "Silver Gingerscope": {
-      "raw": "Silver Gingerscope\nOwner - Steadfast984O7\nOrigin - Xmas 2023 Tokens Leaderboard"
-    },
-    "Owner - Steadfast984O7": {
-      "raw": "Owner - Steadfast984O7\nOrigin - Xmas 2023 Tokens Leaderboard"
-    },
-    "Silver Vampire's Axe": {
-      "raw": "Silver Vampire's Axe\nOwner - 2huYui\nOrigin - Hallows 2024 Leaderboard"
-    },
-    "Owner - 2huYui": {
-      "raw": "Owner - 2huYui\nOrigin - Hallows 2024 Leaderboard"
-    },
-    "Silver Constellation": {
-      "raw": "Silver Constellation\nOwner - fateoftheworldlol\nOrigin - Xmas 2024 Gifting Leaderboard"
-    },
-    "Owner - fateoftheworldlol": {
-      "raw": "Owner - fateoftheworldlol\nOrigin - Xmas 2024 Gifting Leaderboard"
-    },
-    "Silver Celestial": {
-      "raw": "Silver Celestial\nOwner - Mrt_Tiago\nOrigin - Xmas 2024 Tokens Leaderboard"
-    },
-    "Owner - Mrt_Tiago": {
-      "raw": "Owner - Mrt_Tiago\nOrigin - Xmas 2024 Tokens Leaderboard"
-    },
-    "Silver Synthwave": {
-      "raw": "Silver Synthwave\nOwner - Walrus8495\nOrigin - Summer 2025 Leaderboard"
-    },
-    "Owner - Walrus8495": {
-      "raw": "Owner - Walrus8495\nOrigin - Xmas 2024 Tokens Leaderboard"
-    },
-    "Silver Placeholder": {
-      "raw": "Silver Placeholder\nOwner - Coming Soon!\nOrigin - Halloween 2025 Leaderboard"
-    },
-    "Bronze Candy": {
-      "raw": "Bronze Candy\nOwner - x808z\nOrigin - Xmas 2017 Leaderboard"
-    },
-    "Owner - x808z": {
-      "raw": "Owner - x808z\nOrigin - Xmas 2017 Leaderboard"
-    },
-    "Bronze Hallow": {
-      "raw": "Bronze Hallow\nOwner - Never_Again101\nOrigin - Hallows 2018 Leaderboard"
-    },
-    "Owner - Never_Again101": {
-      "raw": "Owner - Never_Again101\nOrigin - Hallows 2018 Leaderboard"
-    },
-    "Bronze Sugar": {
-      "raw": "Bronze Sugar\nOwner - OverseerGreenEye1\nOrigin - Xmas 2018 Leaderboard"
-    },
-    "Owner - OverseerGreenEye1": {
-      "raw": "Owner - OverseerGreenEye1\nOrigin - Xmas 2018 Leaderboard"
-    },
-    "Bronze Elderwood": {
-      "raw": "Bronze Elderwood\nOwner - Maliviolent\nOwner's Team - Survivor\nOrigin - Hallows 2022 Leaderboard"
-    },
-    "Bronze Minty": {
-      "raw": "Bronze Minty\nOwner - proto_fox\nOrigin - Xmas 2019 Gifting Leaderboard"
-    },
-    "Owner - proto_fox": {
-      "raw": "Owner - proto_fox\nOrigin - Xmas 2019 Gifting Leaderboard"
-    },
-    "Bronze Logchopper": {
-      "raw": "Bronze Logchopper\nOwner - dedpvp\nOrigin - Xmas 2019 Tokens Leaderboard"
-    },
-    "Owner - dedpvp": {
-      "raw": "Owner - dedpvp\nOrigin - Hallows 2021 Leaderboard"
-    },
-    "Bronze Vamp's Edge": {
-      "raw": "Bronze Vamp's Edge\nOwner - GalaxyPhoenixFlames\nOrigin - Hallows 2020 Leaderboard"
-    },
-    "Owner - GalaxyPhoenixFlames": {
-      "raw": "Owner - GalaxyPhoenixFlames\nOrigin - Hallows 2020 Leaderboard"
-    },
-    "Bronze Iceblaster": {
-      "raw": "Bronze Iceblaster\nOwner - aHappyBlaze (Account Terminated)\nOrigin - Xmas 2020 Gifting Leaderboard"
-    },
-    "Owner - aHappyBlaze (Account Terminated)": {
-      "raw": "Owner - aHappyBlaze (Account Terminated)\nOrigin - Xmas 2020 Gifting Leaderboard"
-    },
-    "Bronze Icebreaker": {
-      "raw": "Bronze Icebreaker\nOwner - Avwwie\nOrigin - Xmas 2020 Tokens Leaderboard"
-    },
-    "Owner - Avwwie": {
-      "raw": "Owner - Avwwie\nOrigin - Xmas 2020 Tokens Leaderboard"
-    },
-    "Bronze Harvester": {
-      "raw": "Bronze Harvester\nOwner - dedpvp\nOrigin - Hallows 2021 Leaderboard"
-    },
-    "Bronze Swirly": {
-      "raw": "Bronze Swirly\nOwner - supscapes\nOrigin - Xmas 2021 Tokens Leaderboard"
-    },
-    "Owner - supscapes": {
-      "raw": "Owner - supscapes\nOrigin - Xmas 2021 Tokens Leaderboard"
-    },
-    "Owner - Maliviolent": {
-      "raw": "Owner - Maliviolent\nOrigin - Summer 2025 Leaderboard"
-    },
-    "Bronze Icecrusher": {
-      "raw": "Bronze Icecrusher\nOwner - Bmat213\nOrigin - Xmas 2022 Gifting Leaderboard"
-    },
-    "Owner - Bmat213": {
-      "raw": "Owner - Bmat213\nOrigin - Xmas 2022 Gifting Leaderboard"
-    },
-    "Bronze Icepiercer": {
-      "raw": "Bronze Icepiercer\nOwner - StreamSpeed\nOrigin - Xmas 2022 Tokens Leaderboard"
-    },
-    "Bronze Traveler's": {
-      "raw": "Bronze Traveler's\nOwner - semhsr\nOrigin - Hallows 2023 Leaderboard"
-    },
-    "Bronze Gingerscythe": {
-      "raw": "Bronze Gingerscythe\nOwner - luckyyloll\nOrigin - Xmas 2023 Gifting Leaderboard"
-    },
-    "Owner - luckyyloll": {
-      "raw": "Owner - luckyyloll\nOrigin - Xmas 2023 Gifting Leaderboard"
-    },
-    "Bronze Gingerscope": {
-      "raw": "Bronze Gingerscope\nOwner - Maliviolent\nOrigin - Xmas 2023 Tokens Leaderboard"
-    },
-    "Bronze Vampire's Axe": {
-      "raw": "Bronze Vampire's Axe\nOwner - StreamSpeed\nOrigin - Hallows 2024 Leaderboard"
-    },
-    "Bronze Constellation": {
-      "raw": "Bronze Constellation\nOwner - CoolBoyAwesome553\nOrigin - Xmas 2024 Gifting Leaderboard"
-    },
-    "Owner - CoolBoyAwesome553": {
-      "raw": "Owner - CoolBoyAwesome553\nOrigin - Xmas 2024 Gifting Leaderboard"
-    },
-    "Bronze Celestial": {
-      "raw": "Bronze Celestial\nOwner - Walrus8495\nOrigin - Xmas 2024 Tokens Leaderboard"
-    },
-    "Bronze Synthwave": {
-      "raw": "Bronze Synthwave\nOwner - Maliviolent\nOrigin - Summer 2025 Leaderboard"
-    },
-    "Bronze Placeholder": {
-      "raw": "Bronze Placeholder\nOwner - Coming Soon!\nOrigin - Halloween 2025 Leaderboard"
-    },
-    "Blue Candy": {
-      "raw": "Blue Candy\nOwners - Click Here to See List!\nOrigin - Xmas 2017 Leaderboard"
-    },
-    "Owners - Click Here to See List!": {
-      "raw": "Owners - Click Here to See List!\nOrigin - Summer 2025 Leaderboard"
-    },
-    "Red Hallow": {
-      "raw": "Red Hallow\nOwners - Click Here to See List!\nOrigin - Hallows 2018 Leaderboard"
-    },
-    "Blue Sugar": {
-      "raw": "Blue Sugar\nOwners - Click Here to See List!\nOrigin - Xmas 2018 Leaderboard"
-    },
-    "Blue Elderwood": {
-      "raw": "Blue Elderwood\nOwners - Coming Soon!\nOrigin - Hallows 2022 Leaderboard"
-    },
-    "Blue Minty": {
-      "raw": "Blue Minty\nOwners - Coming Soon!\nOrigin - Xmas 2019 Gifting Leaderboard"
-    },
-    "Owners - Coming Soon!": {
-      "raw": "Owners - Coming Soon!\nOrigin - Halloween 2025 Leaderboard"
-    },
-    "Blue Logchopper": {
-      "raw": "Blue Logchopper\nOwners - Click Here to See List!\nOrigin - Xmas 2019 Tokens Leaderboard"
-    },
-    "Blue Vamp's Edge": {
-      "raw": "Blue Vamp's Edge\nOwners - Click Here to See List!\nOrigin - Hallows 2020 Leaderboard"
-    },
-    "Red Iceblaster": {
-      "raw": "Red Iceblaster\nOwners - Click Here to See List!\nOrigin - Xmas 2020 Gifting Leaderboard"
-    },
-    "Red Icebreaker": {
-      "raw": "Red Icebreaker\nOwners - Click Here to See List!\nOrigin - Xmas 2020 Tokens Leaderboard"
-    },
-    "Blue Harvester": {
-      "raw": "Blue Harvester\nOwners - Click Here to See List!\nOrigin - Hallows 2021 Leaderboard"
-    },
-    "Blue Swirly": {
-      "raw": "Blue Swirly\nOwners - Coming Soon!\nOrigin - Xmas 2021 Tokens Leaderboard"
-    },
-    "Red Icecrusher": {
-      "raw": "Red Icecrusher\nOwners - Coming Soon!\nOrigin - Xmas 2022 Gifting Leaderboard"
-    },
-    "Red Icepiercer": {
-      "raw": "Red Icepiercer\nOwners - Coming Soon!\nOrigin - Xmas 2022 Tokens Leaderboard"
-    },
-    "Red Traveler's": {
-      "raw": "Red Traveler's\nOwners - Coming Soon!\nOrigin - Hallows 2023 Leaderboard"
-    },
-    "Blue Gingerscythe": {
-      "raw": "Blue Gingerscythe\nOwners - Coming Soon!\nOrigin - Xmas 2023 Gifting Leaderboard"
-    },
-    "Blue Gingerscope": {
-      "raw": "Blue Gingerscope\nOwners - Coming Soon!\nOrigin - Xmas 2023 Tokens Leaderboard"
-    },
-    "Purple Vampire's Axe": {
-      "raw": "Purple Vampire's Axe\nOwners - Coming Soon!\nOrigin - Hallows 2024 Leaderboard"
-    },
-    "Red Constellation": {
-      "raw": "Red Constellation\nOwners - Coming Soon!\nOrigin - Xmas 2024 Gifting Leaderboard"
-    },
-    "Red Celestial": {
-      "raw": "Red Celestial\nOwners - Coming Soon!\nOrigin - Xmas 2024 Tokens Leaderboard"
-    },
-    "Blue Synthwave": {
-      "raw": "Blue Synthwave\nOwners - Click Here to See List!\nOrigin - Summer 2025 Leaderboard"
-    },
-    "Top 100 Placeholder": {
-      "raw": "Top 100 Placeholder\nOwners - Coming Soon!\nOrigin - Halloween 2025 Leaderboard"
+      "value": 600,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 4,
+      "rarity": 3
     }
   },
   "sets": {
-    "×": {
-      "raw": "×\n    Extra Features:\n    :\n    Aliases - \n    Flippability - \n    Chance of Rising - ~%\n    View Item on the MM2 Wiki"
-    },
-    "Join our Discord Server Join our Roblox Group": {
-      "raw": "Join our Discord Server Join our Roblox Group\nTrade your MM2 items using Cosmic Values, our official trading partner! Take me there"
-    },
-    "Make sure to click on an item's image if it has the  symbol next to its name! It shows you extra information about the item. Read more about this in our use guide!": {
-      "raw": "Make sure to click on an item's image if it has the  symbol next to its name! It shows you extra information about the item. Read more about this in our use guide!\n*** Be aware that some sets round up in value and are not always the exact sum of the base values of the included items."
-    },
     "Chroma Ever Set": {
-      "raw": "Chroma Ever Set\nContains - Chroma Evergreen, Chroma Evergun\nValue - 160,000 +1 -1 ~\nRanged Value - [155K - 160K]\nStability - Underpaid For \nDemand - 8Rarity - 7\nLast Change in Value - (-1,000)"
+      "value": 160000,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "",
+      "demand": 8,
+      "rarity": 7
     },
     "Contains - Chroma Evergreen, Chroma Evergun": {
-      "raw": "Contains - Chroma Evergreen, Chroma Evergun\nValue - 160,000 +1 -1 ~\nRanged Value - [155K - 160K]\nStability - Underpaid For \nDemand - 8Rarity - 7\nLast Change in Value - (-1,000)"
+      "value": 160000,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "",
+      "demand": 8,
+      "rarity": 7
     },
     "Chroma Alien Set": {
-      "raw": "Chroma Alien Set\nContains - Chroma Alienbeam, Chroma Raygun\nValue - 45,500 +1 -1 ~\nRanged Value - [45,500 - 45,750]\nStability - Doing Well \nDemand - 7Rarity - 5\nLast Change in Value - (+250)"
+      "value": 45500,
+      "trend": "",
+      "stability": "Doing Well",
+      "range": "45,500 - 45,750",
+      "demand": 7,
+      "rarity": 5
     },
     "Contains - Chroma Alienbeam, Chroma Raygun": {
-      "raw": "Contains - Chroma Alienbeam, Chroma Raygun\nValue - 45,500 +1 -1 ~\nRanged Value - [45,500 - 45,750]\nStability - Doing Well \nDemand - 7Rarity - 5\nLast Change in Value - (+250)"
+      "value": 45500,
+      "trend": "",
+      "stability": "Doing Well",
+      "range": "45,500 - 45,750",
+      "demand": 7,
+      "rarity": 5
     },
     "Chroma Bauble Set": {
-      "raw": "Chroma Bauble Set\nContains - Chroma Bauble, Chroma Ornament\nValue - 40,850 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 7Rarity - 5\nLast Change in Value - (-50)"
+      "value": 40850,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 7,
+      "rarity": 5
     },
     "Contains - Chroma Bauble, Chroma Ornament": {
-      "raw": "Contains - Chroma Bauble, Chroma Ornament\nValue - 40,850 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 7Rarity - 5\nLast Change in Value - (-50)"
+      "value": 40850,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 7,
+      "rarity": 5
     },
     "Chroma Sun Set": {
-      "raw": "Chroma Sun Set\nContains - Chroma Sunrise, Chroma Sunset\nValue - 16,500 +1 -1 ~\nRanged Value - [16,500 - 17,250]\nStability - Doing Well \nDemand - 6Rarity - 4\nLast Change in Value - (+500)"
+      "value": 16500,
+      "trend": "",
+      "stability": "Doing Well",
+      "range": "16,500 - 17,250",
+      "demand": 6,
+      "rarity": 4
     },
     "Contains - Chroma Sunrise, Chroma Sunset": {
-      "raw": "Contains - Chroma Sunrise, Chroma Sunset\nValue - 16,500 +1 -1 ~\nRanged Value - [16,500 - 17,250]\nStability - Doing Well \nDemand - 6Rarity - 4\nLast Change in Value - (+500)"
+      "value": 16500,
+      "trend": "",
+      "stability": "Doing Well",
+      "range": "16,500 - 17,250",
+      "demand": 6,
+      "rarity": 4
     },
     "Chroma Snow Set": {
-      "raw": "Chroma Snow Set\nContains - Chroma Snowcannon, Chroma Snow Dagger\nValue - 13,500 +1 -1 ~\nRanged Value - [13,500 - 14,000]\nStability - Doing Well \nDemand - 6Rarity - 4\nLast Change in Value - (+500)"
+      "value": 13500,
+      "trend": "",
+      "stability": "Doing Well",
+      "range": "13,500 - 14,000",
+      "demand": 6,
+      "rarity": 4
     },
     "Contains - Chroma Snowcannon, Chroma Snow Dagger": {
-      "raw": "Contains - Chroma Snowcannon, Chroma Snow Dagger\nValue - 13,500 +1 -1 ~\nRanged Value - [13,500 - 14,000]\nStability - Doing Well \nDemand - 6Rarity - 4\nLast Change in Value - (+500)"
+      "value": 13500,
+      "trend": "",
+      "stability": "Doing Well",
+      "range": "13,500 - 14,000",
+      "demand": 6,
+      "rarity": 4
     },
     "Chroma Blizzard Set": {
-      "raw": "Chroma Blizzard Set\nContains - Chroma Blizzard, Chroma Snowstorm\nValue - 12,250 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 5Rarity - 5\nLast Change in Value - (-250)"
+      "value": 12250,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 5,
+      "rarity": 5
     },
     "Contains - Chroma Blizzard, Chroma Snowstorm": {
-      "raw": "Contains - Chroma Blizzard, Chroma Snowstorm\nValue - 12,250 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 5Rarity - 5\nLast Change in Value - (-250)"
+      "value": 12250,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 5,
+      "rarity": 5
     },
     "Chroma Sweet Set": {
-      "raw": "Chroma Sweet Set\nContains - Chroma Sweet, Chroma Treat\nValue - 10,500 +1 -1 ~\nRanged Value - [10,000 - 10,500]\nStability - Underpaid For \nDemand - 5Rarity - 5\nLast Change in Value - (-500)"
+      "value": 10500,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "10,000 - 10,500",
+      "demand": 5,
+      "rarity": 5
     },
     "Contains - Chroma Sweet, Chroma Treat": {
-      "raw": "Contains - Chroma Sweet, Chroma Treat\nValue - 10,500 +1 -1 ~\nRanged Value - [10,000 - 10,500]\nStability - Underpaid For \nDemand - 5Rarity - 5\nLast Change in Value - (-500)"
+      "value": 10500,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "10,000 - 10,500",
+      "demand": 5,
+      "rarity": 5
     },
     "Chroma Bringer Set": {
-      "raw": "Chroma Bringer Set\nContains - Chroma Darkbringer, Chroma Lightbringer\nValue - 175 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-10)"
+      "value": 175,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Contains - Chroma Darkbringer, Chroma Lightbringer": {
-      "raw": "Contains - Chroma Darkbringer, Chroma Lightbringer\nValue - 175 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-10)"
+      "value": 175,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Chroma Slasher Set": {
-      "raw": "Chroma Slasher Set\nContains - Chroma Laser, Chroma Slasher\nValue - 90 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-5)"
+      "value": 90,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Contains - Chroma Laser, Chroma Slasher": {
-      "raw": "Contains - Chroma Laser, Chroma Slasher\nValue - 90 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-5)"
+      "value": 90,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Chroma Pet Set": {
-      "raw": "Chroma Pet Set\nContains - All Chroma Pets\nValue - 49 +1 -1 ~\nRanged Value - [35 - 49]\nStability - Underpaid For \nDemand - 1Rarity - 4\nLast Change in Value - (-7)"
+      "value": 49,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "35 - 49",
+      "demand": 1,
+      "rarity": 4
     },
     "Contains - All Chroma Pets": {
-      "raw": "Contains - All Chroma Pets\nValue - 49 +1 -1 ~\nRanged Value - [35 - 49]\nStability - Underpaid For \nDemand - 1Rarity - 4\nLast Change in Value - (-7)"
+      "value": 49,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "35 - 49",
+      "demand": 1,
+      "rarity": 4
     },
     "Traveler's Set": {
-      "raw": "Traveler's Set\nContains - Traveler's Axe, Traveler's Gun\nValue - 12,900 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 7Rarity - 5\nLast Change in Value - (+100)"
+      "value": 12900,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 7,
+      "rarity": 5
     },
     "Contains - Traveler's Axe, Traveler's Gun": {
-      "raw": "Contains - Traveler's Axe, Traveler's Gun\nValue - 12,900 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 7Rarity - 5\nLast Change in Value - (+100)"
+      "value": 12900,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 7,
+      "rarity": 5
     },
     "Ever Set": {
-      "raw": "Ever Set\nContains - Evergreen, Evergun\nValue - 5,950 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 5Rarity - 4\nLast Change in Value - (-100)"
+      "value": 5950,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 5,
+      "rarity": 4
     },
     "Contains - Evergreen, Evergun": {
-      "raw": "Contains - Evergreen, Evergun\nValue - 5,950 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 5Rarity - 4\nLast Change in Value - (-100)"
+      "value": 5950,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 5,
+      "rarity": 4
     },
     "Celestial Set": {
-      "raw": "Celestial Set\nContains - Celestial, Constellation\nValue - 4,475 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 5Rarity - 3\nLast Change in Value - (-50)"
+      "value": 4475,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 5,
+      "rarity": 3
     },
     "Contains - Celestial, Constellation": {
-      "raw": "Contains - Celestial, Constellation\nValue - 4,475 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 5Rarity - 3\nLast Change in Value - (-50)"
+      "value": 4475,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 5,
+      "rarity": 3
     },
     "Alien Set": {
-      "raw": "Alien Set\nContains - Alienbeam, Raygun\nValue - 3,650 +1 -1 ~\nRanged Value - [3,550 - 3,650]\nStability - Receding \nDemand - 6Rarity - 3\nLast Change in Value - (-100)"
+      "value": 3650,
+      "trend": "",
+      "stability": "Receding",
+      "range": "3,550 - 3,650",
+      "demand": 6,
+      "rarity": 3
     },
     "Contains - Alienbeam, Raygun": {
-      "raw": "Contains - Alienbeam, Raygun\nValue - 3,650 +1 -1 ~\nRanged Value - [3,550 - 3,650]\nStability - Receding \nDemand - 6Rarity - 3\nLast Change in Value - (-100)"
+      "value": 3650,
+      "trend": "",
+      "stability": "Receding",
+      "range": "3,550 - 3,650",
+      "demand": 6,
+      "rarity": 3
     },
     "Vampire's Set": {
-      "raw": "Vampire's Set\nContains - Vampire's Axe, Vampire's Gun\nValue - 2,625 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 5Rarity - 3\nLast Change in Value - (-25)"
+      "value": 2625,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 5,
+      "rarity": 3
     },
     "Contains - Vampire's Axe, Vampire's Gun": {
-      "raw": "Contains - Vampire's Axe, Vampire's Gun\nValue - 2,625 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 5Rarity - 3\nLast Change in Value - (-25)"
+      "value": 2625,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 5,
+      "rarity": 3
     },
     "Dark Set": {
-      "raw": "Dark Set\nContains - Darkshot, Darksword\nValue - 2,460 +1 -1 ~\nRanged Value - [2,460 - 2,500]\nStability - Doing Well \nDemand - 5Rarity - 3\nLast Change in Value - (+20)"
+      "value": 2460,
+      "trend": "",
+      "stability": "Doing Well",
+      "range": "2,460 - 2,500",
+      "demand": 5,
+      "rarity": 3
     },
     "Contains - Darkshot, Darksword": {
-      "raw": "Contains - Darkshot, Darksword\nValue - 2,460 +1 -1 ~\nRanged Value - [2,460 - 2,500]\nStability - Doing Well \nDemand - 5Rarity - 3\nLast Change in Value - (+20)"
+      "value": 2460,
+      "trend": "",
+      "stability": "Doing Well",
+      "range": "2,460 - 2,500",
+      "demand": 5,
+      "rarity": 3
     },
     "Sakura Set": {
-      "raw": "Sakura Set\nContains - Blossom, Sakura\nValue - 2,210 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 5Rarity - 3\nLast Change in Value - (+20)"
+      "value": 2210,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 5,
+      "rarity": 3
     },
     "Contains - Blossom, Sakura": {
-      "raw": "Contains - Blossom, Sakura\nValue - 2,210 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 5Rarity - 3\nLast Change in Value - (+20)"
+      "value": 2210,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 5,
+      "rarity": 3
     },
     "Sun Set": {
-      "raw": "Sun Set\nContains - Sunrise, Sunset\nValue - 1,300 +1 -1 ~\nRanged Value - [1,300 - 1,375]\nStability - Overpaid For \nDemand - 6Rarity - 3\nLast Change in Value - (+75)"
+      "value": 1300,
+      "trend": "",
+      "stability": "Overpaid For",
+      "range": "1,300 - 1,375",
+      "demand": 6,
+      "rarity": 3
     },
     "Contains - Sunrise, Sunset": {
-      "raw": "Contains - Sunrise, Sunset\nValue - 1,300 +1 -1 ~\nRanged Value - [1,300 - 1,375]\nStability - Overpaid For \nDemand - 6Rarity - 3\nLast Change in Value - (+75)"
+      "value": 1300,
+      "trend": "",
+      "stability": "Overpaid For",
+      "range": "1,300 - 1,375",
+      "demand": 6,
+      "rarity": 3
     },
     "Snow Set": {
-      "raw": "Snow Set\nContains - Snowcannon, Snow Dagger\nValue - 1,135 +1 -1 ~\nRanged Value - [1,135 - 1,160]\nStability - Doing Well \nDemand - 6Rarity - 3\nLast Change in Value - (+35)"
+      "value": 1135,
+      "trend": "",
+      "stability": "Doing Well",
+      "range": "1,135 - 1,160",
+      "demand": 6,
+      "rarity": 3
     },
     "Contains - Snowcannon, Snow Dagger": {
-      "raw": "Contains - Snowcannon, Snow Dagger\nValue - 1,135 +1 -1 ~\nRanged Value - [1,135 - 1,160]\nStability - Doing Well \nDemand - 6Rarity - 3\nLast Change in Value - (+35)"
+      "value": 1135,
+      "trend": "",
+      "stability": "Doing Well",
+      "range": "1,135 - 1,160",
+      "demand": 6,
+      "rarity": 3
     },
     "Bauble Set": {
-      "raw": "Bauble Set\nContains - Bauble, Ornament\nValue - 955 +1 -1 ~\nRanged Value - [950 - 955]\nStability - Underpaid For \nDemand - 5Rarity - 3\nLast Change in Value - (-5)"
+      "value": 955,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "950 - 955",
+      "demand": 5,
+      "rarity": 3
     },
     "Contains - Bauble, Ornament": {
-      "raw": "Contains - Bauble, Ornament\nValue - 955 +1 -1 ~\nRanged Value - [950 - 955]\nStability - Underpaid For \nDemand - 5Rarity - 3\nLast Change in Value - (-5)"
+      "value": 955,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "950 - 955",
+      "demand": 5,
+      "rarity": 3
     },
     "Soul Set": {
-      "raw": "Soul Set\nContains - Soul, Spirit\nValue - 680 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 4Rarity - 3\nLast Change in Value - (+10)"
+      "value": 680,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 4,
+      "rarity": 3
     },
     "Contains - Soul, Spirit": {
-      "raw": "Contains - Soul, Spirit\nValue - 680 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 4Rarity - 3\nLast Change in Value - (+10)"
+      "value": 680,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 4,
+      "rarity": 3
     },
     "Corrupt Set": {
-      "raw": "Corrupt Set\nContains - Corrupt, Luger\nValue - 650 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 4Rarity - 3\nLast Change in Value - (-25)"
+      "value": 650,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 4,
+      "rarity": 3
     },
     "Contains - Corrupt, Luger": {
-      "raw": "Contains - Corrupt, Luger\nValue - 650 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 4Rarity - 3\nLast Change in Value - (-25)"
+      "value": 650,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 4,
+      "rarity": 3
     },
     "Rainbow Set": {
-      "raw": "Rainbow Set\nContains - Rainbow Gun, Rainbow\nValue - 590 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 4Rarity - 3\nLast Change in Value - (-10)"
+      "value": 590,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 4,
+      "rarity": 3
     },
     "Contains - Rainbow Gun, Rainbow": {
-      "raw": "Contains - Rainbow Gun, Rainbow\nValue - 590 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 4Rarity - 3\nLast Change in Value - (-10)"
+      "value": 590,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 4,
+      "rarity": 3
     },
     "Bloom Set": {
-      "raw": "Bloom Set\nContains - Bloom, Flora\nValue - 540 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 4Rarity - 3\nLast Change in Value - (+10)"
+      "value": 540,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 4,
+      "rarity": 3
     },
     "Contains - Bloom, Flora": {
-      "raw": "Contains - Bloom, Flora\nValue - 540 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 4Rarity - 3\nLast Change in Value - (+10)"
+      "value": 540,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 4,
+      "rarity": 3
     },
     "Bow Set": {
-      "raw": "Bow Set\nContains - Harvester, Icepiercer\nValue - 500 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3Rarity - 3\nLast Change in Value - (-20)"
+      "value": 500,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Contains - Harvester, Icepiercer": {
-      "raw": "Contains - Harvester, Icepiercer\nValue - 500 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3Rarity - 3\nLast Change in Value - (-20)"
+      "value": 500,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Flowerwood Set": {
-      "raw": "Flowerwood Set\nContains - Flowerwood, Flowerwood Gun\nValue - 405 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3Rarity - 3\nLast Change in Value - (+10)"
+      "value": 405,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Contains - Flowerwood, Flowerwood Gun": {
-      "raw": "Contains - Flowerwood, Flowerwood Gun\nValue - 405 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3Rarity - 3\nLast Change in Value - (+10)"
+      "value": 405,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Sweet Set": {
-      "raw": "Sweet Set\nContains - Sweet, Treat\nValue - 405 +1 -1 ~\nRanged Value - [395 - 405]\nStability - Underpaid For \nDemand - 3Rarity - 3\nLast Change in Value - (-10)"
+      "value": 405,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "395 - 405",
+      "demand": 3,
+      "rarity": 3
     },
     "Contains - Sweet, Treat": {
-      "raw": "Contains - Sweet, Treat\nValue - 405 +1 -1 ~\nRanged Value - [395 - 405]\nStability - Underpaid For \nDemand - 3Rarity - 3\nLast Change in Value - (-10)"
+      "value": 405,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "395 - 405",
+      "demand": 3,
+      "rarity": 3
     },
     "Xeno Set": {
-      "raw": "Xeno Set\nContains - Xenoknife, Xenoshot\nValue - 400 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3Rarity - 3\nLast Change in Value - (+10)"
+      "value": 400,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Contains - Xenoknife, Xenoshot": {
-      "raw": "Contains - Xenoknife, Xenoshot\nValue - 400 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3Rarity - 3\nLast Change in Value - (+10)"
+      "value": 400,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Ocean Set": {
-      "raw": "Ocean Set\nContains - Ocean, Waves\nValue - 335 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3Rarity - 3\nLast Change in Value - (+10)"
+      "value": 335,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Contains - Ocean, Waves": {
-      "raw": "Contains - Ocean, Waves\nValue - 335 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3Rarity - 3\nLast Change in Value - (+10)"
+      "value": 335,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Full Ice Set": {
-      "raw": "Full Ice Set\nContains - Icebreaker, Iceblaster, Icepiercer\nValue - 327 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3Rarity - 3\nLast Change in Value - (-5)"
+      "value": 327,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Contains - Icebreaker, Iceblaster, Icepiercer": {
-      "raw": "Contains - Icebreaker, Iceblaster, Icepiercer\nValue - 327 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3Rarity - 3\nLast Change in Value - (-5)"
+      "value": 327,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Blizzard Set": {
-      "raw": "Blizzard Set\nContains - Blizzard, Snowstorm\nValue - 310 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3Rarity - 3\nLast Change in Value - (+10)"
+      "value": 310,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Contains - Blizzard, Snowstorm": {
-      "raw": "Contains - Blizzard, Snowstorm\nValue - 310 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3Rarity - 3\nLast Change in Value - (+10)"
+      "value": 310,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Borealis Set": {
-      "raw": "Borealis Set\nContains - Australis, Borealis\nValue - 205 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3Rarity - 3\nLast Change in Value - (-10)"
+      "value": 205,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Contains - Australis, Borealis": {
-      "raw": "Contains - Australis, Borealis\nValue - 205 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3Rarity - 3\nLast Change in Value - (-10)"
+      "value": 205,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Bat Set": {
-      "raw": "Bat Set\nContains - Bat, Makeshift\nValue - 170 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3Rarity - 3\nLast Change in Value - (-5)"
+      "value": 170,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Contains - Bat, Makeshift": {
-      "raw": "Contains - Bat, Makeshift\nValue - 170 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3Rarity - 3\nLast Change in Value - (-5)"
+      "value": 170,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Candy Set": {
-      "raw": "Candy Set\nContains - Candy, Sugar\nValue - 150 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-5)"
+      "value": 150,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Contains - Candy, Sugar": {
-      "raw": "Contains - Candy, Sugar\nValue - 150 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-5)"
+      "value": 150,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Full Elderwood Set": {
-      "raw": "Full Elderwood Set\nContains - Elderwood Blade, Revolver, and Scythe\nValue - 140 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-15)"
+      "value": 140,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Contains - Elderwood Blade, Revolver, and Scythe": {
-      "raw": "Contains - Elderwood Blade, Revolver, and Scythe\nValue - 140 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-15)"
+      "value": 140,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Ice Set": {
-      "raw": "Ice Set\nContains - Icebreaker, Iceblaster\nValue - 127 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-5)"
+      "value": 127,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Contains - Icebreaker, Iceblaster": {
-      "raw": "Contains - Icebreaker, Iceblaster\nValue - 127 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-5)"
+      "value": 127,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Pearl Set": {
-      "raw": "Pearl Set\nContains - Pearl, Pearlshine\nValue - 105 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-5)"
+      "value": 105,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Contains - Pearl, Pearlshine": {
-      "raw": "Contains - Pearl, Pearlshine\nValue - 105 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-5)"
+      "value": 105,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Elderwood Set": {
-      "raw": "Elderwood Set\nContains - Elderwood Revolver, Elderwood Scythe\nValue - 95 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-10)"
+      "value": 95,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Contains - Elderwood Revolver, Elderwood Scythe": {
-      "raw": "Contains - Elderwood Revolver, Elderwood Scythe\nValue - 95 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-10)"
+      "value": 95,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Full Swirly Set": {
-      "raw": "Full Swirly Set\nContains - Swirly Axe, Swirly Gun, Swirly Blade\nValue - 85 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-6)"
+      "value": 85,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Contains - Swirly Axe, Swirly Gun, Swirly Blade": {
-      "raw": "Contains - Swirly Axe, Swirly Gun, Swirly Blade\nValue - 85 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-6)"
+      "value": 85,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Spectre Set": {
-      "raw": "Spectre Set\nContains - Phantom, Spectre\nValue - 84 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-6)"
+      "value": 84,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Contains - Phantom, Spectre": {
-      "raw": "Contains - Phantom, Spectre\nValue - 84 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-6)"
+      "value": 84,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Bringer Set": {
-      "raw": "Bringer Set\nContains - Darkbringer, Lightbringer\nValue - 80 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-5)"
+      "value": 80,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Contains - Darkbringer, Lightbringer": {
-      "raw": "Contains - Darkbringer, Lightbringer\nValue - 80 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-5)"
+      "value": 80,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Swirly Set": {
-      "raw": "Swirly Set\nContains - Swirly Gun, Swirly Axe\nValue - 70 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-4)"
+      "value": 70,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Contains - Swirly Gun, Swirly Axe": {
-      "raw": "Contains - Swirly Gun, Swirly Axe\nValue - 70 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-4)"
+      "value": 70,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Hallow Set": {
-      "raw": "Hallow Set\nContains - Hallowgun, Hallowscythe\nValue - 60 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-7)"
+      "value": 60,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Contains - Hallowgun, Hallowscythe": {
-      "raw": "Contains - Hallowgun, Hallowscythe\nValue - 60 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-7)"
+      "value": 60,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Iceflake Set": {
-      "raw": "Iceflake Set\nContains - Icebeam, Iceflake\nValue - 48 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-2)"
+      "value": 48,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Contains - Icebeam, Iceflake": {
-      "raw": "Contains - Icebeam, Iceflake\nValue - 48 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-2)"
+      "value": 48,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Plasma Set": {
-      "raw": "Plasma Set\nContains - Plasmabeam, Plasmablade\nValue - 48 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-2)"
+      "value": 48,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Contains - Plasmabeam, Plasmablade": {
-      "raw": "Contains - Plasmabeam, Plasmablade\nValue - 48 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-2)"
+      "value": 48,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Slasher Set": {
-      "raw": "Slasher Set\nContains - Laser, Slasher\nValue - 45 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-2)"
+      "value": 45,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Contains - Laser, Slasher": {
-      "raw": "Contains - Laser, Slasher\nValue - 45 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-2)"
+      "value": 45,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Old Glory Set": {
-      "raw": "Old Glory Set\nContains - Amerilaser, Old Glory\nValue - 43 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-2)"
+      "value": 43,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Contains - Amerilaser, Old Glory": {
-      "raw": "Contains - Amerilaser, Old Glory\nValue - 43 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-2)"
+      "value": 43,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Logchopper Set": {
-      "raw": "Logchopper Set\nContains - Logchopper, Minty\nValue - 38 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-2)"
+      "value": 38,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Contains - Logchopper, Minty": {
-      "raw": "Contains - Logchopper, Minty\nValue - 38 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-2)"
+      "value": 38,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Ginger Set (Godly)": {
-      "raw": "Ginger Set (Godly)\nContains - Gingerblade, Ginger Luger\nValue - 37 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-1)"
+      "value": 37,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Contains - Gingerblade, Ginger Luger": {
-      "raw": "Contains - Gingerblade, Ginger Luger\nValue - 37 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-1)"
+      "value": 37,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Virtual Set": {
-      "raw": "Virtual Set\nContains - Blaster, Virtual\nValue - 37 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-1)"
+      "value": 37,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Contains - Blaster, Virtual": {
-      "raw": "Contains - Blaster, Virtual\nValue - 37 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-1)"
+      "value": 37,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Cookie Set": {
-      "raw": "Cookie Set\nContains - Cookiecane, Gingermint\nValue - 36 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-4)"
+      "value": 36,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Contains - Cookiecane, Gingermint": {
-      "raw": "Contains - Cookiecane, Gingermint\nValue - 36 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-4)"
+      "value": 36,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Eternalcane Set": {
-      "raw": "Eternalcane Set\nContains - Eternalcane, Lugercane\nValue - 35 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-1)"
+      "value": 35,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Contains - Eternalcane, Lugercane": {
-      "raw": "Contains - Eternalcane, Lugercane\nValue - 35 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-1)"
+      "value": 35,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Pumpkin Set": {
-      "raw": "Pumpkin Set\nContains - Blue, Green, Purple, and Red Pumpkin (2018)\nValue - 410 +1 -1 ~\nRanged Value - [405 - 410]\nStability - Underpaid For \nDemand - 3Rarity - 4\nLast Change in Value - (+15)"
+      "value": 410,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "405 - 410",
+      "demand": 3,
+      "rarity": 4
     },
     "Contains - Blue, Green, Purple, and Red Pumpkin (2018)": {
-      "raw": "Contains - Blue, Green, Purple, and Red Pumpkin (2018)\nValue - 410 +1 -1 ~\nRanged Value - [405 - 410]\nStability - Underpaid For \nDemand - 3Rarity - 4\nLast Change in Value - (+15)"
+      "value": 410,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "405 - 410",
+      "demand": 3,
+      "rarity": 4
     },
     "Latte Set": {
-      "raw": "Latte Set\nContains - Latte (Gun), Latte (Knife)\nValue - 260 +1 -1 ~\nRanged Value - [250 - 270]\nStability - Fluctuating \nDemand - 3Rarity - 3\nLast Change in Value - (+10)"
+      "value": 260,
+      "trend": "",
+      "stability": "Fluctuating",
+      "range": "250 - 270",
+      "demand": 3,
+      "rarity": 3
     },
     "Contains - Latte (Gun), Latte (Knife)": {
-      "raw": "Contains - Latte (Gun), Latte (Knife)\nValue - 260 +1 -1 ~\nRanged Value - [250 - 270]\nStability - Fluctuating \nDemand - 3Rarity - 3\nLast Change in Value - (+10)"
+      "value": 260,
+      "trend": "",
+      "stability": "Fluctuating",
+      "range": "250 - 270",
+      "demand": 3,
+      "rarity": 3
     },
     "Bats Set": {
-      "raw": "Bats Set\nContains - Bats (Gun), Bats (Knife)\nValue - 111 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3Rarity - 4\nLast Change in Value - (+5)"
+      "value": 111,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 4
     },
     "Contains - Bats (Gun), Bats (Knife)": {
-      "raw": "Contains - Bats (Gun), Bats (Knife)\nValue - 111 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3Rarity - 4\nLast Change in Value - (+5)"
+      "value": 111,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 4
     },
     "Zombified Set": {
-      "raw": "Zombified Set\nContains - Zombified (Gun), Zombified (Knife)\nValue - 80 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 4\nLast Change in Value - (+5)"
+      "value": 80,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 4
     },
     "Contains - Zombified (Gun), Zombified (Knife)": {
-      "raw": "Contains - Zombified (Gun), Zombified (Knife)\nValue - 80 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 4\nLast Change in Value - (+5)"
+      "value": 80,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 4
     },
     "Silent Night Set": {
-      "raw": "Silent Night Set\nContains - Silent Night (Gun), Silent Night (Knife)\nValue - 62 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 4\nLast Change in Value - (-1)"
+      "value": 62,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 4
     },
     "Contains - Silent Night (Gun), Silent Night (Knife)": {
-      "raw": "Contains - Silent Night (Gun), Silent Night (Knife)\nValue - 62 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 4\nLast Change in Value - (-1)"
+      "value": 62,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 4
     },
     "Gingerbread Set (2019)": {
-      "raw": "Gingerbread Set (2019)\nContains - Gingerbread (Knife), Gingerbread (Gun)\nValue - 53 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 4\nLast Change in Value - (+3)"
+      "value": 53,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 4
     },
     "Contains - Gingerbread (Knife), Gingerbread (Gun)": {
-      "raw": "Contains - Gingerbread (Knife), Gingerbread (Gun)\nValue - 53 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 4\nLast Change in Value - (+3)"
+      "value": 53,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 4
     },
     "Traveler Set": {
-      "raw": "Traveler Set\nContains - Traveler (Gun), Traveler (Knife)\nValue - 27 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3Rarity - 3\nLast Change in Value - (+5)"
+      "value": 27,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Contains - Traveler (Gun), Traveler (Knife)": {
-      "raw": "Contains - Traveler (Gun), Traveler (Knife)\nValue - 27 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 3Rarity - 3\nLast Change in Value - (+5)"
+      "value": 27,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 3,
+      "rarity": 3
     },
     "Spectral Set": {
-      "raw": "Spectral Set\nContains - Spectral (Gun), Spectral (Knife)\nValue - 22 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (+2)"
+      "value": 22,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Contains - Spectral (Gun), Spectral (Knife)": {
-      "raw": "Contains - Spectral (Gun), Spectral (Knife)\nValue - 22 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (+2)"
+      "value": 22,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Vampire Set (Legend.)": {
-      "raw": "Vampire Set (Legend.)\nContains - Vampire (Gun), Vampire (Knife)\nValue - 18 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (+3)"
+      "value": 18,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Contains - Vampire (Gun), Vampire (Knife)": {
-      "raw": "Contains - Vampire (Gun), Vampire (Knife)\nValue - 8 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-1)"
+      "value": 8,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Pumpkin Set (2019)": {
-      "raw": "Pumpkin Set (2019)\nContains - Blue, Green, and Red Pumpkin (2019)\nValue - 18 +1 -1 ~\nRanged Value - [12 - 18]\nStability - Underpaid For \nDemand - 2Rarity - 3\nLast Change in Value - (-8)"
+      "value": 18,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "12 - 18",
+      "demand": 2,
+      "rarity": 3
     },
     "Contains - Blue, Green, and Red Pumpkin (2019)": {
-      "raw": "Contains - Blue, Green, and Red Pumpkin (2019)\nValue - 18 +1 -1 ~\nRanged Value - [12 - 18]\nStability - Underpaid For \nDemand - 2Rarity - 3\nLast Change in Value - (-8)"
+      "value": 18,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "12 - 18",
+      "demand": 2,
+      "rarity": 3
     },
     "Pumpkin Set (2020)": {
-      "raw": "Pumpkin Set (2020)\nContains - Blue, Green, and Red Pumpkin (2020)\nValue - 16 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 4\nLast Change in Value - (+1)"
+      "value": 16,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 4
     },
     "Contains - Blue, Green, and Red Pumpkin (2020)": {
-      "raw": "Contains - Blue, Green, and Red Pumpkin (2020)\nValue - 16 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 4\nLast Change in Value - (+1)"
+      "value": 16,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 4
     },
     "Aurora Set (Legend.)": {
-      "raw": "Aurora Set (Legend.)\nContains - Aurora (Gun), Aurora (Knife)\nValue - 15 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (+2)"
+      "value": 15,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Contains - Aurora (Gun), Aurora (Knife)": {
-      "raw": "Contains - Aurora (Gun), Aurora (Knife)\nValue - 14 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-2)"
+      "value": 14,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Pumpkin Set (2021)": {
-      "raw": "Pumpkin Set (2021)\nContains - Green, Red, and Shadow Pumpkin (2021)\nValue - 14 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 4\nLast Change in Value - (+3)"
+      "value": 14,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 4
     },
     "Contains - Green, Red, and Shadow Pumpkin (2021)": {
-      "raw": "Contains - Green, Red, and Shadow Pumpkin (2021)\nValue - 14 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 4\nLast Change in Value - (+3)"
+      "value": 14,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 4
     },
     "Aurora Set (Rare)": {
-      "raw": "Aurora Set (Rare)\nContains - Aurora (Gun), Aurora (Knife)\nValue - 14 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-2)"
+      "value": 14,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Eye Set": {
-      "raw": "Eye Set\nContains - Overseer Eye, Eyeball\nValue - 14 +1 -1 ~\nRanged Value - [10 - 14]\nStability - Underpaid For \nDemand - 1Rarity - 3\nLast Change in Value - (-4)"
+      "value": 14,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "10 - 14",
+      "demand": 1,
+      "rarity": 3
     },
     "Contains - Overseer Eye, Eyeball": {
-      "raw": "Contains - Overseer Eye, Eyeball\nValue - 14 +1 -1 ~\nRanged Value - [10 - 14]\nStability - Underpaid For \nDemand - 1Rarity - 3\nLast Change in Value - (-4)"
+      "value": 14,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "10 - 14",
+      "demand": 1,
+      "rarity": 3
     },
     "Mummy Set": {
-      "raw": "Mummy Set\nContains - Mummy 2018 (Gun), Mummy 2018 (Knife)\nValue - 13 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-2)"
+      "value": 13,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Contains - Mummy 2018 (Gun), Mummy 2018 (Knife)": {
-      "raw": "Contains - Mummy 2018 (Gun), Mummy 2018 (Knife)\nValue - 13 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-2)"
+      "value": 13,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Potion Set": {
-      "raw": "Potion Set\nContains - Potion (Gun), Potion (Knife)\nValue - 13 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-2)"
+      "value": 13,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Contains - Potion (Gun), Potion (Knife)": {
-      "raw": "Contains - Potion (Gun), Potion (Knife)\nValue - 13 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-2)"
+      "value": 13,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Zombie Set": {
-      "raw": "Zombie Set\nContains - Zombie (Gun), Zombie (Knife)\nValue - 13 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-2)"
+      "value": 13,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Contains - Zombie (Gun), Zombie (Knife)": {
-      "raw": "Contains - Zombie (Gun), Zombie (Knife)\nValue - 13 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-2)"
+      "value": 13,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Frozen Set": {
-      "raw": "Frozen Set\nContains - Frozen (Gun), Frozen (Knife)\nValue - 11 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-2)"
+      "value": 11,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Contains - Frozen (Gun), Frozen (Knife)": {
-      "raw": "Contains - Frozen (Gun), Frozen (Knife)\nValue - 11 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-2)"
+      "value": 11,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Toxic Set": {
-      "raw": "Toxic Set\nContains - Toxic (Gun), Toxic (Knife)\nValue - 9 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-1)"
+      "value": 9,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Contains - Toxic (Gun), Toxic (Knife)": {
-      "raw": "Contains - Toxic (Gun), Toxic (Knife)\nValue - 9 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-1)"
+      "value": 9,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Cavern Set": {
-      "raw": "Cavern Set\nContains - Cavern (Gun), Cavern (Knife)\nValue - 8 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-1)"
+      "value": 8,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Contains - Cavern (Gun), Cavern (Knife)": {
-      "raw": "Contains - Cavern (Gun), Cavern (Knife)\nValue - 8 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-1)"
+      "value": 8,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Vampire Set (Rare)": {
-      "raw": "Vampire Set (Rare)\nContains - Vampire (Gun), Vampire (Knife)\nValue - 8 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-1)"
+      "value": 8,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Slime Set": {
-      "raw": "Slime Set\nContains - Slime (Gun), Slime (Knife)\nValue - 7 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-1)"
+      "value": 7,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Contains - Slime (Gun), Slime (Knife)": {
-      "raw": "Contains - Slime (Gun), Slime (Knife)\nValue - 7 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-1)"
+      "value": 7,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Ghost Set": {
-      "raw": "Ghost Set\nContains - Ghost (Gun), Ghost (Knife)\nValue - 7 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1Rarity - 3\nLast Change in Value - (-1)"
+      "value": 7,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 3
     },
     "Contains - Ghost (Gun), Ghost (Knife)": {
-      "raw": "Contains - Ghost (Gun), Ghost (Knife)\nValue - 7 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1Rarity - 3\nLast Change in Value - (-1)"
+      "value": 7,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 3
     },
     "Candy Swirl Set": {
-      "raw": "Candy Swirl Set\nContains - Candy Swirl (Gun), Candy Swirl (Knife)\nValue - 6 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-2)"
+      "value": 6,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Contains - Candy Swirl (Gun), Candy Swirl (Knife)": {
-      "raw": "Contains - Candy Swirl (Gun), Candy Swirl (Knife)\nValue - 6 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-2)"
+      "value": 6,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Lights Set": {
-      "raw": "Lights Set\nContains - Lights (Gun), Lights (Knife)\nValue - 6 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-2)"
+      "value": 6,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Contains - Lights (Gun), Lights (Knife)": {
-      "raw": "Contains - Lights (Gun), Lights (Knife)\nValue - 6 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-2)"
+      "value": 6,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Icedriller Set": {
-      "raw": "Icedriller Set\nContains - Icecracker, Icedriller\nValue - 6 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-3)"
+      "value": 6,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Contains - Icecracker, Icedriller": {
-      "raw": "Contains - Icecracker, Icedriller\nValue - 6 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-3)"
+      "value": 6,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Full Elite Set": {
-      "raw": "Full Elite Set\nContains - Blue Elite, Elite, Green Elite, Elitey\nValue - 6 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1Rarity - 3\nLast Change in Value - (-2)"
+      "value": 6,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 3
     },
     "Contains - Blue Elite, Elite, Green Elite, Elitey": {
-      "raw": "Contains - Blue Elite, Elite, Green Elite, Elitey\nValue - 6 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1Rarity - 3\nLast Change in Value - (-2)"
+      "value": 6,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 3
     },
     "Santa's Set (Legendary)": {
-      "raw": "Santa's Set (Legendary)\nContains - Santa's Magic, Santa's Spirit\nValue - 6 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1Rarity - 3\nLast Change in Value - (-4)"
+      "value": 6,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 3
     },
     "Contains - Santa's Magic, Santa's Spirit": {
-      "raw": "Contains - Santa's Magic, Santa's Spirit\nValue - 6 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1Rarity - 3\nLast Change in Value - (-4)"
+      "value": 6,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 3
     },
     "Scratch Set": {
-      "raw": "Scratch Set\nContains - Blue Scratch, Red Scratch\nValue - 6 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1Rarity - 3\nLast Change in Value - (-1)"
+      "value": 6,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 3
     },
     "Contains - Blue Scratch, Red Scratch": {
-      "raw": "Contains - Blue Scratch, Red Scratch\nValue - 6 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1Rarity - 3\nLast Change in Value - (-1)"
+      "value": 6,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 3
     },
     "Grave Set": {
-      "raw": "Grave Set\nContains - Grave (Gun), Grave (Knife)\nValue - 5 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-1)"
+      "value": 5,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Contains - Grave (Gun), Grave (Knife)": {
-      "raw": "Contains - Grave (Gun), Grave (Knife)\nValue - 5 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-1)"
+      "value": 5,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Marble Set": {
-      "raw": "Marble Set\nContains - Green Marble, Orange Marble\nValue - 5 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1Rarity - 3\nLast Change in Value - (-2)"
+      "value": 5,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 3
     },
     "Contains - Green Marble, Orange Marble": {
-      "raw": "Contains - Green Marble, Orange Marble\nValue - 5 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1Rarity - 3\nLast Change in Value - (-2)"
+      "value": 5,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 3
     },
     "Snakebite Set": {
-      "raw": "Snakebite Set\nContains - Snakebite (Gun), Snakebite (Knife)\nValue - 4 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-2)"
+      "value": 4,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Contains - Snakebite (Gun), Snakebite (Knife)": {
-      "raw": "Contains - Snakebite (Gun), Snakebite (Knife)\nValue - 4 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-2)"
+      "value": 4,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Haunted Set": {
-      "raw": "Haunted Set\nContains - Haunted (Gun), Haunted (Knife)\nValue - 2 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1Rarity - 3\nLast Change in Value - (-2)"
+      "value": 2,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 3
     },
     "Contains - Haunted (Gun), Haunted (Knife)": {
-      "raw": "Contains - Haunted (Gun), Haunted (Knife)\nValue - 2 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1Rarity - 3\nLast Change in Value - (-2)"
+      "value": 2,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 3
     },
     "Full Bringer Set": {
-      "raw": "Full Bringer Set\nContains - Chroma Bringer Set + Bringer Set\nValue - 255 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-5)"
+      "value": 255,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Contains - Chroma Bringer Set + Bringer Set": {
-      "raw": "Contains - Chroma Bringer Set + Bringer Set\nValue - 255 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-5)"
+      "value": 255,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Full Luger Set": {
-      "raw": "Full Luger Set\nContains - Luger Set + Chroma Luger\nValue - 220 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-10)"
+      "value": 220,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Contains - Luger Set + Chroma Luger": {
-      "raw": "Contains - Luger Set + Chroma Luger\nValue - 220 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-10)"
+      "value": 220,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Luger Set": {
-      "raw": "Luger Set\nContains - All the non-Chroma Lugers in the Game\nValue - 165 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-5)"
+      "value": 165,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Contains - All the non-Chroma Lugers in the Game": {
-      "raw": "Contains - All the non-Chroma Lugers in the Game\nValue - 165 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-5)"
+      "value": 165,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Sparkle Set": {
-      "raw": "Sparkle Set\nContains - Sparkles 1-10\nValue - 127 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (+2)"
+      "value": 127,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Contains - Sparkles 1-10": {
-      "raw": "Contains - Sparkles 1-10\nValue - 127 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (+2)"
+      "value": 127,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Collectible Set": {
-      "raw": "Collectible Set\nContains - All 2015-2016Q2 Collectible Items\nValue - 71 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 4\nLast Change in Value - (-4)"
+      "value": 71,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 4
     },
     "Contains - All 2015-2016Q2 Collectible Items": {
-      "raw": "Contains - All 2015-2016Q2 Collectible Items\nValue - 71 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 4\nLast Change in Value - (-4)"
+      "value": 71,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 4
     },
     "Vintage Set": {
-      "raw": "Vintage Set\nContains - All items in the Vintages Section\nValue - 61 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1Rarity - 2\nLast Change in Value - (-4)"
+      "value": 61,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Contains - All items in the Vintages Section": {
-      "raw": "Contains - All items in the Vintages Section\nValue - 61 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1Rarity - 2\nLast Change in Value - (-4)"
+      "value": 61,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 2
     },
     "Eternal Set": {
-      "raw": "Eternal Set\nContains - Eternal, Eternal II, Eternal III, Eternal IV, Eternalcane\nValue - 53 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-1)"
+      "value": 53,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Contains - Eternal, Eternal II, Eternal III, Eternal IV, Eternalcane": {
-      "raw": "Contains - Eternal, Eternal II, Eternal III, Eternal IV, Eternalcane\nValue - 53 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-1)"
+      "value": 53,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Full Colored Seer Set": {
-      "raw": "Full Colored Seer Set\nContains - Colored Seer Set + Chroma Seer\nValue - 50 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-3)"
+      "value": 50,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Contains - Colored Seer Set + Chroma Seer": {
-      "raw": "Contains - Colored Seer Set + Chroma Seer\nValue - 50 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-3)"
+      "value": 50,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Skate Set": {
-      "raw": "Skate Set\nContains - Euro, Grind, Indy, Ollie, Sidewinder, Tailslide\nValue - 30 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-1)"
+      "value": 30,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Contains - Euro, Grind, Indy, Ollie, Sidewinder, Tailslide": {
-      "raw": "Contains - Euro, Grind, Indy, Ollie, Sidewinder, Tailslide\nValue - 30 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (-1)"
+      "value": 30,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Pals Set": {
-      "raw": "Pals Set\nContains - Alex, Corl, Denis, Sketchy, Sub\nValue - 16 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (+1)"
+      "value": 16,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Contains - Alex, Corl, Denis, Sketchy, Sub": {
-      "raw": "Contains - Alex, Corl, Denis, Sketchy, Sub\nValue - 16 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 3\nLast Change in Value - (+1)"
+      "value": 16,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 3
     },
     "Wrapping Paper Set": {
-      "raw": "Wrapping Paper Set\nContains - All Variants of the Wrapping Paper Misc. Items\nValue - 16 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1Rarity - 4\nLast Change in Value - (-6)"
+      "value": 16,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 4
     },
     "Contains - All Variants of the Wrapping Paper Misc. Items": {
-      "raw": "Contains - All Variants of the Wrapping Paper Misc. Items\nValue - 16 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1Rarity - 4\nLast Change in Value - (-6)"
+      "value": 16,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 4
     },
     "Colored Seer Set": {
-      "raw": "Colored Seer Set\nContains - All Colored Seers + Pure Seer\nValue - 16 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1Rarity - 1\nLast Change in Value - (-6)"
+      "value": 16,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 1
     },
     "Contains - All Colored Seers + Pure Seer": {
-      "raw": "Contains - All Colored Seers + Pure Seer\nValue - 16 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 1Rarity - 1\nLast Change in Value - (-6)"
+      "value": 16,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 1,
+      "rarity": 1
     },
     "Godly Pet Set": {
-      "raw": "Godly Pet Set\nContains - All Pets in the Godly Class\nValue - 10 +1 -1 ~\nRanged Value - [5 - 10]\nStability - Underpaid For \nDemand - 1Rarity - 3\nLast Change in Value - (-3)"
+      "value": 10,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "5 - 10",
+      "demand": 1,
+      "rarity": 3
     },
     "Contains - All Pets in the Godly Class": {
-      "raw": "Contains - All Pets in the Godly Class\nValue - 10 +1 -1 ~\nRanged Value - [5 - 10]\nStability - Underpaid For \nDemand - 1Rarity - 3\nLast Change in Value - (-3)"
+      "value": 10,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "5 - 10",
+      "demand": 1,
+      "rarity": 3
     },
     "Small Set (107 Items)": {
-      "raw": "Small Set (107 Items)\nContains - Small Set (103 Items) + Plasma Set and Iceflake Set\nValue - 1,600 +1 -1 ~\nRanged Value - [1,550 - 1,650]\nStability - Fluctuating \nDemand - 4Rarity - 4\nLast Change in Value - (-10)"
+      "value": 1600,
+      "trend": "",
+      "stability": "Fluctuating",
+      "range": "1,550 - 1,650",
+      "demand": 4,
+      "rarity": 4
     },
     "Contains - Small Set (103 Items) + Plasma Set and Iceflake Set": {
-      "raw": "Contains - Small Set (103 Items) + Plasma Set and Iceflake Set\nValue - 1,600 +1 -1 ~\nRanged Value - [1,550 - 1,650]\nStability - Fluctuating \nDemand - 4Rarity - 4\nLast Change in Value - (-10)"
+      "value": 1600,
+      "trend": "",
+      "stability": "Fluctuating",
+      "range": "1,550 - 1,650",
+      "demand": 4,
+      "rarity": 4
     },
     "Small Set (103 Items)": {
-      "raw": "Small Set (103 Items)\nContains - Every Godly, Ancient, and Vintage before Hallows 2021\nValue - 1,505 +1 -1 ~\nRanged Value - [1,455 - 1,555]\nStability - Fluctuating \nDemand - 4Rarity - 4\nLast Change in Value - (-10)"
+      "value": 1505,
+      "trend": "",
+      "stability": "Fluctuating",
+      "range": "1,455 - 1,555",
+      "demand": 4,
+      "rarity": 4
     },
     "Contains - Every Godly, Ancient, and Vintage before Hallows 2021": {
-      "raw": "Contains - Every Godly, Ancient, and Vintage before Hallows 2021\nValue - 1,505 +1 -1 ~\nRanged Value - [1,455 - 1,555]\nStability - Fluctuating \nDemand - 4Rarity - 4\nLast Change in Value - (-10)"
+      "value": 1505,
+      "trend": "",
+      "stability": "Fluctuating",
+      "range": "1,455 - 1,555",
+      "demand": 4,
+      "rarity": 4
     },
     "Full Chroma Set": {
-      "raw": "Full Chroma Set\nContains - Every Chroma from Before 2021 (Pets & Weapons)\nValue - 720 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 4\nLast Change in Value - (-40)"
+      "value": 720,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 4
     },
     "Contains - Every Chroma from Before 2021 (Pets & Weapons)": {
-      "raw": "Contains - Every Chroma from Before 2021 (Pets & Weapons)\nValue - 720 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 4\nLast Change in Value - (-40)"
+      "value": 720,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 4
     },
     "Chroma Weapon Set": {
-      "raw": "Chroma Weapon Set\nContains - Every Chroma from Before 2021 (Minus Pets)\nValue - 675 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-35)"
+      "value": 675,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     },
     "Contains - Every Chroma from Before 2021 (Minus Pets)": {
-      "raw": "Contains - Every Chroma from Before 2021 (Minus Pets)\nValue - 675 +1 -1 ~\nRanged Value - [N/A]\nStability - Stable \nDemand - 2Rarity - 2\nLast Change in Value - (-35)"
+      "value": 675,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 2,
+      "rarity": 2
     }
   }
 }
