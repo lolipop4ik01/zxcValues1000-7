@@ -121,6 +121,238 @@ local gui = Instance.new("ScreenGui")
 gui.Name = "MM2VALUEGUI"
 gui.Parent = game.CoreGui
 
+-- ============================================
+-- MM2 AUTO ASSETS + TOGGLE ICON + RANDOM BG
+-- ВСТАВИТЬ СРАЗУ ПОСЛЕ:
+-- gui.Parent = game.CoreGui
+-- ============================================
+
+-- SERVICES
+local TweenService = game:GetService("TweenService")
+
+-- ============================================
+-- АВТО СОЗДАНИЕ ПАПКИ В WORKSPACE
+-- ============================================
+
+local assetsFolder = workspace:FindFirstChild("MM2Assets")
+
+if not assetsFolder then
+    assetsFolder = Instance.new("Folder")
+    assetsFolder.Name = "PHOTO_ZXC_Assets"
+    assetsFolder.Parent = workspace
+end
+
+-- ============================================
+-- ПАПКА ICONS
+-- ============================================
+
+local iconsFolder = assetsFolder:FindFirstChild("Icons")
+
+if not iconsFolder then
+    iconsFolder = Instance.new("Folder")
+    iconsFolder.Name = "ZXC_Icons"
+    iconsFolder.Parent = assetsFolder
+end
+
+-- ============================================
+-- ПАПКА BACKGROUNDS
+-- ============================================
+
+local bgFolder = assetsFolder:FindFirstChild("Backgrounds")
+
+if not bgFolder then
+    bgFolder = Instance.new("Folder")
+    bgFolder.Name = "1000-7_Backgrounds"
+    bgFolder.Parent = assetsFolder
+end
+
+-- ============================================
+-- ЕСЛИ ИКОНОК НЕТ — СОЗДАЕМ
+-- ============================================
+
+if #iconsFolder:GetChildren() == 0 then
+    
+    local icon1 = Instance.new("Decal")
+    icon1.Name = "Icon1"
+    icon1.Texture = "rbxassetid://7072719338"
+    icon1.Parent = iconsFolder
+
+    local icon2 = Instance.new("Decal")
+    icon2.Name = "Icon2"
+    icon2.Texture = "rbxassetid://6031094678"
+    icon2.Parent = iconsFolder
+
+    local icon3 = Instance.new("Decal")
+    icon3.Name = "Icon3"
+    icon3.Texture = "rbxassetid://6031071053"
+    icon3.Parent = iconsFolder
+end
+
+-- ============================================
+-- ЕСЛИ ФОНОВ НЕТ — СОЗДАЕМ
+-- ============================================
+
+if #bgFolder:GetChildren() == 0 then
+
+    local bg1 = Instance.new("Decal")
+    bg1.Name = "Background1"
+    bg1.Texture = "rbxassetid://9066026056"
+    bg1.Parent = bgFolder
+
+    local bg2 = Instance.new("Decal")
+    bg2.Name = "Background2"
+    bg2.Texture = "rbxassetid://12275054482"
+    bg2.Parent = bgFolder
+
+    local bg3 = Instance.new("Decal")
+    bg3.Name = "Background3"
+    bg3.Texture = "rbxassetid://13532940466"
+    bg3.Parent = bgFolder
+end
+
+-- ============================================
+-- РАНДОМНАЯ ИКОНКА
+-- ============================================
+
+local icons = iconsFolder:GetChildren()
+local randomIcon = icons[math.random(1, #icons)]
+
+-- ============================================
+-- РАНДОМНЫЙ ФОН
+-- ============================================
+
+local bgs = bgFolder:GetChildren()
+local randomBG = bgs[math.random(1, #bgs)]
+
+-- ============================================
+-- ФОН GUI
+-- ============================================
+
+frame.ClipsDescendants = true
+
+local bgImage = Instance.new("ImageLabel")
+bgImage.Parent = frame
+bgImage.Size = UDim2.new(1,0,1,0)
+bgImage.Position = UDim2.new(0,0,0,0)
+bgImage.BackgroundTransparency = 1
+bgImage.Image = randomBG.Texture
+bgImage.ImageTransparency = 0.4
+bgImage.ScaleType = Enum.ScaleType.Crop
+bgImage.ZIndex = 0
+
+-- ============================================
+-- КНОПКА ОТКРЫТИЯ / ЗАКРЫТИЯ
+-- ============================================
+
+local toggleButton = Instance.new("ImageButton")
+toggleButton.Parent = gui
+toggleButton.Name = "ToggleButton"
+
+toggleButton.Size = UDim2.new(0,60,0,60)
+toggleButton.Position = UDim2.new(0,20,0.5,-30)
+
+toggleButton.BackgroundColor3 = Color3.fromRGB(20,20,20)
+toggleButton.BackgroundTransparency = 0.15
+toggleButton.BorderSizePixel = 0
+
+toggleButton.Image = randomIcon.Texture
+toggleButton.ScaleType = Enum.ScaleType.Crop
+toggleButton.AutoButtonColor = true
+
+toggleButton.ZIndex = 999
+
+Instance.new("UICorner", toggleButton).CornerRadius = UDim.new(1,0)
+
+local stroke = Instance.new("UIStroke")
+stroke.Parent = toggleButton
+stroke.Color = Color3.fromRGB(255,255,255)
+stroke.Thickness = 2
+
+-- ============================================
+-- ОТКРЫТИЕ / ЗАКРЫТИЕ GUI
+-- ============================================
+
+local opened = true
+
+toggleButton.MouseButton1Click:Connect(function()
+
+    opened = not opened
+
+    if opened then
+        
+        frame.Visible = true
+
+        TweenService:Create(
+            frame,
+            TweenInfo.new(0.25),
+            {
+                Size = UDim2.new(0,800,0,450)
+            }
+        ):Play()
+
+    else
+
+        TweenService:Create(
+            frame,
+            TweenInfo.new(0.2),
+            {
+                Size = UDim2.new(0,0,0,0)
+            }
+        ):Play()
+
+        task.wait(0.2)
+
+        frame.Visible = false
+    end
+end)
+
+-- ============================================
+-- ПЕРЕТАСКИВАНИЕ КНОПКИ
+-- ============================================
+
+local draggingToggle = false
+local dragStartToggle
+local startPosToggle
+
+toggleButton.InputBegan:Connect(function(input)
+
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+
+        draggingToggle = true
+        dragStartToggle = input.Position
+        startPosToggle = toggleButton.Position
+
+        input.Changed:Connect(function()
+
+            if input.UserInputState == Enum.UserInputState.End then
+                draggingToggle = false
+            end
+        end)
+    end
+end)
+
+toggleButton.InputChanged:Connect(function(input)
+
+    if input.UserInputType == Enum.UserInputType.MouseMovement then
+        dragInput = input
+    end
+end)
+
+UIS.InputChanged:Connect(function(input)
+
+    if draggingToggle and input.UserInputType == Enum.UserInputType.MouseMovement then
+
+        local delta = input.Position - dragStartToggle
+
+        toggleButton.Position = UDim2.new(
+            startPosToggle.X.Scale,
+            startPosToggle.X.Offset + delta.X,
+            startPosToggle.Y.Scale,
+            startPosToggle.Y.Offset + delta.Y
+        )
+    end
+end)
+
 local frame = Instance.new("Frame")
 frame.Parent = gui
 frame.Size = UDim2.new(0, 800, 0, 450)
