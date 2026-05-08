@@ -1,12 +1,11 @@
 -- ============================================
--- MM2 ULTIMATE CHECKER (FULL INFO + DREAM PETS)
--- С настройками: прозрачность фона + выбор картинки
+-- MM2 ULTIMATE CHECKER (С НАСТРОЙКАМИ)
+-- Шестерёнка → прозрачность фона и фреймов
 -- ============================================
 
 local Players = game:GetService("Players")
 local UIS = game:GetService("UserInputService")
 local HttpService = game:GetService("HttpService")
-local TweenService = game:GetService("TweenService")
 local LP = Players.LocalPlayer
 
 -- ========== НАСТРОЙКИ ==========
@@ -23,11 +22,11 @@ local theirChromaMode = { false, false, false, false }
 local YOUR_MAX_SLOT = 4
 local THEIR_MAX_SLOT = 4
 
--- Настройки GUI (сохраняются)
-local settings = {
-    bgTransparency = 0.3,
-    currentBG = nil,
-    availableBGs = {}
+-- Значения прозрачности (0 = непрозрачный, 1 = полностью прозрачный)
+local transparencySettings = {
+    bgImage = 0.55,   -- фоновая картинка
+    frames = 0.85,    -- все фреймы (основной фон, панели, слоты)
+    text = 0          -- текст (пока не используется)
 }
 
 -- ========== ЗАГРУЗКА ДАННЫХ ==========
@@ -73,7 +72,7 @@ local function loadDataFromGitHub()
     return true
 end
 
--- ========== ПРЕОБРАЗОВАНИЕ ИМЁН (Chroma ↔ C.) ==========
+-- ========== ПРЕОБРАЗОВАНИЕ ИМЁН ==========
 local function normalizeChromaName(name)
     if name:match("^Chroma ") then
         local rest = name:sub(8)
@@ -122,58 +121,12 @@ local function getDreamPrice(name)
     return dreampets[normalized] or 0
 end
 
--- ========== EXECUTOR IMAGE SYSTEM ==========
-local EXECUTOR_FOLDER = "1000-7_Assets"
-local ICONS_FOLDER = EXECUTOR_FOLDER .. "/Icons_ZXC"
-local BG_FOLDER = EXECUTOR_FOLDER .. "/Backgrounds_Ghoul"
-
-if makefolder then
-    if not isfolder(EXECUTOR_FOLDER) then
-        makefolder(EXECUTOR_FOLDER)
-    end
-    if not isfolder(ICONS_FOLDER) then
-        makefolder(ICONS_FOLDER)
-    end
-    if not isfolder(BG_FOLDER) then
-        makefolder(BG_FOLDER)
-    end
-end
-
-local function getAllImages(folder)
-    if not listfiles then return {} end
-    local files = listfiles(folder)
-    local valid = {}
-    for _,file in ipairs(files) do
-        local lower = string.lower(file)
-        if lower:find(".png") or lower:find(".jpg") or lower:find(".jpeg") then
-            table.insert(valid, file)
-        end
-    end
-    return valid
-end
-
-local function fileToAsset(path)
-    if getsynasset then return getsynasset(path) end
-    if getcustomasset then return getcustomasset(path) end
-    return nil
-end
-
--- Загружаем все фоны
-local bgFiles = getAllImages(BG_FOLDER)
-for _, path in ipairs(bgFiles) do
-    table.insert(settings.availableBGs, fileToAsset(path))
-end
-
-local randomIconPath = getRandomImage(ICONS_FOLDER)
-local iconAsset = randomIconPath and fileToAsset(randomIconPath)
-
 -- ========== GUI ==========
 pcall(function() game.CoreGui.MM2VALUEGUI:Destroy() end)
 
 local gui = Instance.new("ScreenGui")
 gui.Name = "MM2VALUEGUI"
 gui.Parent = game.CoreGui
-gui.ResetOnSpawn = false
 
 -- ============================================
 -- ОСНОВНОЙ ФРЕЙМ
@@ -183,162 +136,9 @@ frame.Parent = gui
 frame.Size = UDim2.new(0, 800, 0, 450)
 frame.Position = UDim2.new(0.5, -400, 0, 30)
 frame.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
-frame.BackgroundTransparency = 1
+frame.BackgroundTransparency = transparencySettings.frames
 frame.BorderSizePixel = 0
-frame.ClipsDescendants = true
 Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 10)
-
--- ============================================
--- ФОН (КАРТИНКА)
--- ============================================
-local backgroundImage = Instance.new("ImageLabel")
-backgroundImage.Parent = frame
-backgroundImage.Size = UDim2.new(1, 0, 1, 0)
-backgroundImage.Position = UDim2.new(0, 0, 0, 0)
-backgroundImage.BackgroundTransparency = 1
-backgroundImage.ImageTransparency = settings.bgTransparency
-backgroundImage.ScaleType = Enum.ScaleType.Crop
-backgroundImage.ZIndex = -999
-
--- Выбираем случайный фон
-if #settings.availableBGs > 0 then
-    settings.currentBG = settings.availableBGs[math.random(1, #settings.availableBGs)]
-    backgroundImage.Image = settings.currentBG
-end
-
--- ============================================
--- ПАНЕЛЬ НАСТРОЕК (ШЕСТЕРЁНКА)
--- ============================================
-
-local settingsOpen = false
-local settingsPanel = nil
-
-local function createSettingsPanel()
-    if settingsPanel then settingsPanel:Destroy() end
-    
-    settingsPanel = Instance.new("Frame")
-    settingsPanel.Parent = gui
-    settingsPanel.Size = UDim2.new(0, 250, 0, 120)
-    settingsPanel.Position = UDim2.new(1, -270, 0, 50)
-    settingsPanel.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-    settingsPanel.BackgroundTransparency = 0.1
-    settingsPanel.BorderSizePixel = 0
-    settingsPanel.Visible = false
-    Instance.new("UICorner", settingsPanel).CornerRadius = UDim.new(0, 8)
-    
-    -- Заголовок
-    local title = Instance.new("TextLabel")
-    title.Parent = settingsPanel
-    title.Size = UDim2.new(1, 0, 0, 25)
-    title.BackgroundTransparency = 1
-    title.Text = "⚙️ НАСТРОЙКИ"
-    title.Font = Enum.Font.GothamBold
-    title.TextColor3 = Color3.new(1, 1, 1)
-    title.TextScaled = true
-    
-    -- Прозрачность фона
-    local transLabel = Instance.new("TextLabel")
-    transLabel.Parent = settingsPanel
-    transLabel.Position = UDim2.new(0, 10, 0, 30)
-    transLabel.Size = UDim2.new(0, 100, 0, 20)
-    transLabel.BackgroundTransparency = 1
-    transLabel.Text = "Прозрачность:"
-    transLabel.Font = Enum.Font.Gotham
-    transLabel.TextSize = 12
-    transLabel.TextColor3 = Color3.fromRGB(200, 200, 200)
-    
-    local transValue = Instance.new("TextLabel")
-    transValue.Parent = settingsPanel
-    transValue.Position = UDim2.new(0, 120, 0, 30)
-    transValue.Size = UDim2.new(0, 40, 0, 20)
-    transValue.BackgroundTransparency = 1
-    transValue.Text = tostring(math.floor(settings.bgTransparency * 100)) .. "%"
-    transValue.Font = Enum.Font.Gotham
-    transValue.TextSize = 12
-    transValue.TextColor3 = Color3.fromRGB(255, 200, 100)
-    
-    local slider = Instance.new("Frame")
-    slider.Parent = settingsPanel
-    slider.Position = UDim2.new(0, 10, 0, 55)
-    slider.Size = UDim2.new(0, 200, 0, 4)
-    slider.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
-    slider.BorderSizePixel = 0
-    Instance.new("UICorner", slider).CornerRadius = UDim.new(1, 0)
-    
-    local sliderKnob = Instance.new("Frame")
-    sliderKnob.Parent = slider
-    sliderKnob.Size = UDim2.new(0, 12, 0, 12)
-    sliderKnob.Position = UDim2.new(settings.bgTransparency, -6, 0.5, -6)
-    sliderKnob.BackgroundColor3 = Color3.fromRGB(255, 200, 100)
-    sliderKnob.BorderSizePixel = 0
-    Instance.new("UICorner", sliderKnob).CornerRadius = UDim.new(1, 0)
-    
-    local draggingKnob = false
-    
-    sliderKnob.InputBegan:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 then
-            draggingKnob = true
-        end
-    end)
-    
-    UIS.InputChanged:Connect(function(input)
-        if draggingKnob and input.UserInputType == Enum.UserInputType.MouseMovement then
-            local mousePos = input.Position.X
-            local sliderPos = slider.AbsolutePosition.X
-            local newPos = math.clamp((mousePos - sliderPos) / slider.AbsoluteSize.X, 0, 1)
-            settings.bgTransparency = newPos
-            backgroundImage.ImageTransparency = settings.bgTransparency
-            sliderKnob.Position = UDim2.new(settings.bgTransparency, -6, 0.5, -6)
-            transValue.Text = tostring(math.floor(settings.bgTransparency * 100)) .. "%"
-        end
-    end)
-    
-    UIS.InputEnded:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 then
-            draggingKnob = false
-        end
-    end)
-    
-    -- Кнопка смены фона
-    local changeBgBtn = Instance.new("TextButton")
-    changeBgBtn.Parent = settingsPanel
-    changeBgBtn.Position = UDim2.new(0, 10, 0, 75)
-    changeBgBtn.Size = UDim2.new(0, 200, 0, 30)
-    changeBgBtn.Text = "🖼️ СЛУЧАЙНЫЙ ФОН"
-    changeBgBtn.Font = Enum.Font.GothamBold
-    changeBgBtn.TextSize = 12
-    changeBgBtn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-    changeBgBtn.BorderSizePixel = 0
-    changeBgBtn.TextColor3 = Color3.new(1, 1, 1)
-    Instance.new("UICorner", changeBgBtn).CornerRadius = UDim.new(0, 5)
-    
-    changeBgBtn.MouseButton1Click:Connect(function()
-        if #settings.availableBGs > 0 then
-            local newBG = settings.availableBGs[math.random(1, #settings.availableBGs)]
-            if newBG then
-                settings.currentBG = newBG
-                backgroundImage.Image = settings.currentBG
-            end
-        end
-    end)
-end
-
--- Шестерёнка
-local gearButton = Instance.new("ImageButton")
-gearButton.Parent = frame
-gearButton.Size = UDim2.new(0, 30, 0, 30)
-gearButton.Position = UDim2.new(1, -40, 0, 5)
-gearButton.BackgroundTransparency = 1
-gearButton.Image = "rbxassetid://6031094678"
-gearButton.ZIndex = 10
-
-gearButton.MouseButton1Click:Connect(function()
-    if not settingsPanel then
-        createSettingsPanel()
-    end
-    settingsOpen = not settingsOpen
-    settingsPanel.Visible = settingsOpen
-end)
 
 -- ============================================
 -- ПЕРЕТАСКИВАНИЕ ГЛАВНОГО ОКНА
@@ -349,9 +149,6 @@ local frameStartPos
 
 frame.InputBegan:Connect(function(input)
     if input.UserInputType == Enum.UserInputType.MouseButton1 then
-        if gearButton and gearButton.AbsolutePosition.X <= input.Position.X and gearButton.AbsolutePosition.Y <= input.Position.Y then
-            return
-        end
         frameDragging = true
         frameDragStart = input.Position
         frameStartPos = frame.Position
@@ -377,10 +174,261 @@ UIS.InputChanged:Connect(function(input)
 end)
 
 -- ============================================
--- ОСТАЛЬНОЙ GUI (ЗАГОЛОВКИ, СЛОТЫ, КНОПКИ)
+-- EXECUTOR IMAGE SYSTEM
 -- ============================================
 
+local EXECUTOR_FOLDER = "1000-7_Assets"
+local ICONS_FOLDER = EXECUTOR_FOLDER .. "/Icons_ZXC"
+local BG_FOLDER = EXECUTOR_FOLDER .. "/Backgrounds_Ghoul"
+
+if makefolder then
+    if not isfolder(EXECUTOR_FOLDER) then
+        makefolder(EXECUTOR_FOLDER)
+    end
+    if not isfolder(ICONS_FOLDER) then
+        makefolder(ICONS_FOLDER)
+    end
+    if not isfolder(BG_FOLDER) then
+        makefolder(BG_FOLDER)
+    end
+end
+
+local function getRandomImage(folder)
+    if not listfiles then return nil end
+    local files = listfiles(folder)
+    local valid = {}
+    for _,file in ipairs(files) do
+        local lower = string.lower(file)
+        if lower:find(".png") or lower:find(".jpg") or lower:find(".jpeg") then
+            table.insert(valid, file)
+        end
+    end
+    if #valid <= 0 then return nil end
+    return valid[math.random(1, #valid)]
+end
+
+local function fileToAsset(path)
+    if getsynasset then return getsynasset(path) end
+    if getcustomasset then return getcustomasset(path) end
+    return nil
+end
+
+local randomIconPath = getRandomImage(ICONS_FOLDER)
+local randomBGPath = getRandomImage(BG_FOLDER)
+
+local iconAsset = randomIconPath and fileToAsset(randomIconPath)
+local bgAsset = randomBGPath and fileToAsset(randomBGPath)
+
+-- ============================================
+-- ФОН GUI
+-- ============================================
+frame.ClipsDescendants = true
+
+local backgroundImage = Instance.new("ImageLabel")
+backgroundImage.Parent = frame
+backgroundImage.Size = UDim2.new(1, 0, 1, 0)
+backgroundImage.Position = UDim2.new(0, 0, 0, 0)
+backgroundImage.BackgroundTransparency = 1
+backgroundImage.Image = bgAsset or "rbxassetid://9066026056"
+backgroundImage.ImageTransparency = transparencySettings.bgImage
+backgroundImage.ScaleType = Enum.ScaleType.Crop
+backgroundImage.ZIndex = -999
+
+-- ============================================
+-- ШЕСТЕРЁНКА (НАСТРОЙКИ)
+-- ============================================
+
+local settingsOpen = false
+local settingsPanel = nil
+
+local function updateFrameTransparency(value)
+    transparencySettings.frames = value
+    frame.BackgroundTransparency = value
+    line1.BackgroundTransparency = value
+    centerLine.BackgroundTransparency = value
+    yourTotalFrame.BackgroundTransparency = value
+    theirTotalFrame.BackgroundTransparency = value
+    for i = 1, 4 do
+        yourSlots[i].frame.BackgroundTransparency = value + 0.1
+        theirSlots[i].frame.BackgroundTransparency = value + 0.1
+    end
+end
+
+local function updateBGTransparency(value)
+    transparencySettings.bgImage = value
+    backgroundImage.ImageTransparency = value
+end
+
+local function createSettingsPanel()
+    if settingsPanel then settingsPanel:Destroy() end
+    
+    settingsPanel = Instance.new("Frame")
+    settingsPanel.Parent = gui
+    settingsPanel.Size = UDim2.new(0, 260, 0, 150)
+    settingsPanel.Position = UDim2.new(1, -280, 0, 50)
+    settingsPanel.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+    settingsPanel.BackgroundTransparency = transparencySettings.frames
+    settingsPanel.BorderSizePixel = 0
+    settingsPanel.Visible = false
+    Instance.new("UICorner", settingsPanel).CornerRadius = UDim.new(0, 8)
+    
+    -- Заголовок
+    local title = Instance.new("TextLabel")
+    title.Parent = settingsPanel
+    title.Size = UDim2.new(1, 0, 0, 30)
+    title.BackgroundTransparency = 1
+    title.Text = "⚙️ НАСТРОЙКИ ⚙️"
+    title.Font = Enum.Font.GothamBold
+    title.TextColor3 = Color3.new(1, 1, 1)
+    title.TextScaled = true
+    
+    -- Прозрачность ФОНА (картинка)
+    local bgLabel = Instance.new("TextLabel")
+    bgLabel.Parent = settingsPanel
+    bgLabel.Position = UDim2.new(0, 10, 0, 40)
+    bgLabel.Size = UDim2.new(0, 150, 0, 20)
+    bgLabel.BackgroundTransparency = 1
+    bgLabel.Text = "Прозрачность фона:"
+    bgLabel.Font = Enum.Font.Gotham
+    bgLabel.TextSize = 12
+    bgLabel.TextColor3 = Color3.fromRGB(200, 200, 200)
+    
+    local bgValue = Instance.new("TextLabel")
+    bgValue.Parent = settingsPanel
+    bgValue.Position = UDim2.new(0, 170, 0, 40)
+    bgValue.Size = UDim2.new(0, 50, 0, 20)
+    bgValue.BackgroundTransparency = 1
+    bgValue.Text = math.floor(transparencySettings.bgImage * 100) .. "%"
+    bgValue.Font = Enum.Font.Gotham
+    bgValue.TextSize = 12
+    bgValue.TextColor3 = Color3.fromRGB(255, 200, 100)
+    
+    local bgSlider = Instance.new("Frame")
+    bgSlider.Parent = settingsPanel
+    bgSlider.Position = UDim2.new(0, 10, 0, 65)
+    bgSlider.Size = UDim2.new(0, 210, 0, 4)
+    bgSlider.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+    bgSlider.BorderSizePixel = 0
+    Instance.new("UICorner", bgSlider).CornerRadius = UDim.new(1, 0)
+    
+    local bgKnob = Instance.new("Frame")
+    bgKnob.Parent = bgSlider
+    bgKnob.Size = UDim2.new(0, 12, 0, 12)
+    bgKnob.Position = UDim2.new(transparencySettings.bgImage, -6, 0.5, -6)
+    bgKnob.BackgroundColor3 = Color3.fromRGB(255, 200, 100)
+    bgKnob.BorderSizePixel = 0
+    Instance.new("UICorner", bgKnob).CornerRadius = UDim.new(1, 0)
+    
+    -- Прозрачность ФРЕЙМОВ
+    local frameLabel = Instance.new("TextLabel")
+    frameLabel.Parent = settingsPanel
+    frameLabel.Position = UDim2.new(0, 10, 0, 85)
+    frameLabel.Size = UDim2.new(0, 150, 0, 20)
+    frameLabel.BackgroundTransparency = 1
+    frameLabel.Text = "Прозрачность окон:"
+    frameLabel.Font = Enum.Font.Gotham
+    frameLabel.TextSize = 12
+    frameLabel.TextColor3 = Color3.fromRGB(200, 200, 200)
+    
+    local frameValue = Instance.new("TextLabel")
+    frameValue.Parent = settingsPanel
+    frameValue.Position = UDim2.new(0, 170, 0, 85)
+    frameValue.Size = UDim2.new(0, 50, 0, 20)
+    frameValue.BackgroundTransparency = 1
+    frameValue.Text = math.floor(transparencySettings.frames * 100) .. "%"
+    frameValue.Font = Enum.Font.Gotham
+    frameValue.TextSize = 12
+    frameValue.TextColor3 = Color3.fromRGB(255, 200, 100)
+    
+    local frameSlider = Instance.new("Frame")
+    frameSlider.Parent = settingsPanel
+    frameSlider.Position = UDim2.new(0, 10, 0, 110)
+    frameSlider.Size = UDim2.new(0, 210, 0, 4)
+    frameSlider.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+    frameSlider.BorderSizePixel = 0
+    Instance.new("UICorner", frameSlider).CornerRadius = UDim.new(1, 0)
+    
+    local frameKnob = Instance.new("Frame")
+    frameKnob.Parent = frameSlider
+    frameKnob.Size = UDim2.new(0, 12, 0, 12)
+    frameKnob.Position = UDim2.new(transparencySettings.frames, -6, 0.5, -6)
+    frameKnob.BackgroundColor3 = Color3.fromRGB(255, 200, 100)
+    frameKnob.BorderSizePixel = 0
+    Instance.new("UICorner", frameKnob).CornerRadius = UDim.new(1, 0)
+    
+    -- Драг для фона
+    local draggingBg = false
+    bgKnob.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            draggingBg = true
+        end
+    end)
+    
+    UIS.InputChanged:Connect(function(input)
+        if draggingBg and input.UserInputType == Enum.UserInputType.MouseMovement then
+            local mousePos = input.Position.X
+            local sliderPos = bgSlider.AbsolutePosition.X
+            local newPos = math.clamp((mousePos - sliderPos) / bgSlider.AbsoluteSize.X, 0, 1)
+            updateBGTransparency(newPos)
+            bgKnob.Position = UDim2.new(transparencySettings.bgImage, -6, 0.5, -6)
+            bgValue.Text = math.floor(transparencySettings.bgImage * 100) .. "%"
+        end
+    end)
+    
+    UIS.InputEnded:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            draggingBg = false
+        end
+    end)
+    
+    -- Драг для фреймов
+    local draggingFrame = false
+    frameKnob.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            draggingFrame = true
+        end
+    end)
+    
+    UIS.InputChanged:Connect(function(input)
+        if draggingFrame and input.UserInputType == Enum.UserInputType.MouseMovement then
+            local mousePos = input.Position.X
+            local sliderPos = frameSlider.AbsolutePosition.X
+            local newPos = math.clamp((mousePos - sliderPos) / frameSlider.AbsoluteSize.X, 0, 1)
+            updateFrameTransparency(newPos)
+            frameKnob.Position = UDim2.new(transparencySettings.frames, -6, 0.5, -6)
+            frameValue.Text = math.floor(transparencySettings.frames * 100) .. "%"
+            if settingsPanel then
+                settingsPanel.BackgroundTransparency = transparencySettings.frames
+            end
+        end
+    end)
+    
+    UIS.InputEnded:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            draggingFrame = false
+        end
+    end)
+end
+
+-- Шестерёнка
+local gearButton = Instance.new("ImageButton")
+gearButton.Parent = frame
+gearButton.Size = UDim2.new(0, 32, 0, 32)
+gearButton.Position = UDim2.new(1, -40, 0, 5)
+gearButton.BackgroundTransparency = 1
+gearButton.Image = "rbxassetid://6031094678"
+
+gearButton.MouseButton1Click:Connect(function()
+    if not settingsPanel then
+        createSettingsPanel()
+    end
+    settingsOpen = not settingsOpen
+    settingsPanel.Visible = settingsOpen
+end)
+
+-- ============================================
 -- ЗАГОЛОВОК
+-- ============================================
 local title = Instance.new("TextLabel")
 title.Parent = frame
 title.Size = UDim2.new(1, 0, 0, 30)
@@ -397,6 +445,7 @@ line1.Position = UDim2.new(0, 0, 0, 35)
 line1.Size = UDim2.new(1, 0, 0, 2)
 line1.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
 line1.BorderSizePixel = 0
+line1.BackgroundTransparency = transparencySettings.frames
 
 -- Центральная линия
 local centerLine = Instance.new("Frame")
@@ -405,6 +454,7 @@ centerLine.Position = UDim2.new(0.5, 0, 0, 40)
 centerLine.Size = UDim2.new(0, 2, 1, -40)
 centerLine.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
 centerLine.BorderSizePixel = 0
+centerLine.BackgroundTransparency = transparencySettings.frames
 
 -- YOUR HEADER
 local yourHeader = Instance.new("TextLabel")
@@ -434,7 +484,7 @@ yourTotalFrame.Parent = frame
 yourTotalFrame.Position = UDim2.new(0, 0, 0, 65)
 yourTotalFrame.Size = UDim2.new(0.5, 0, 0, 40)
 yourTotalFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-yourTotalFrame.BackgroundTransparency = 0.5
+yourTotalFrame.BackgroundTransparency = transparencySettings.frames
 yourTotalFrame.BorderSizePixel = 0
 Instance.new("UICorner", yourTotalFrame).CornerRadius = UDim.new(0, 5)
 
@@ -464,7 +514,7 @@ theirTotalFrame.Parent = frame
 theirTotalFrame.Position = UDim2.new(0.5, 0, 0, 65)
 theirTotalFrame.Size = UDim2.new(0.5, 0, 0, 40)
 theirTotalFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-theirTotalFrame.BackgroundTransparency = 0.4
+theirTotalFrame.BackgroundTransparency = transparencySettings.frames
 theirTotalFrame.BorderSizePixel = 0
 Instance.new("UICorner", theirTotalFrame).CornerRadius = UDim.new(0, 5)
 
@@ -488,15 +538,14 @@ theirTotalDreamLabel.Font = Enum.Font.Gotham
 theirTotalDreamLabel.TextSize = 12
 theirTotalDreamLabel.TextColor3 = Color3.fromRGB(150, 150, 150)
 
--- ========== СОЗДАНИЕ СЛОТОВ ==========
--- (функция createSlot и расположение слотов остаются без изменений)
+-- ========== СОЗДАНИЕ СЛОТА ==========
 local function createSlot(parent, xPos, yPos, slotNum)
     local slotFrame = Instance.new("Frame")
     slotFrame.Parent = parent
     slotFrame.Size = UDim2.new(0, 175, 0, 140)
     slotFrame.Position = UDim2.new(0, xPos, 0, yPos)
     slotFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-    slotFrame.BackgroundTransparency = 0.2
+    slotFrame.BackgroundTransparency = transparencySettings.frames + 0.1
     slotFrame.BorderSizePixel = 0
     Instance.new("UICorner", slotFrame).CornerRadius = UDim.new(0, 6)
     
@@ -572,7 +621,7 @@ local function createSlot(parent, xPos, yPos, slotNum)
     }
 end
 
--- РАСПОЛОЖЕНИЕ СЛОТОВ
+-- ========== РАСПОЛОЖЕНИЕ СЛОТОВ ==========
 local yourSlots = {}
 local theirSlots = {}
 
@@ -626,38 +675,29 @@ yourSlots[1].frame.BackgroundColor3 = Color3.fromRGB(40, 60, 90)
 theirSlots[1].frame.BackgroundColor3 = Color3.fromRGB(40, 60, 90)
 
 -- ============================================
--- ТОГГЛ КНОПКА
+-- ТОГГЛ КНОПКА (КРУГЛАЯ)
 -- ============================================
-local function getRandomImage(folder)
-    if not listfiles then return nil end
-    local files = listfiles(folder)
-    local valid = {}
-    for _,file in ipairs(files) do
-        local lower = string.lower(file)
-        if lower:find(".png") or lower:find(".jpg") or lower:find(".jpeg") then
-            table.insert(valid, file)
-        end
-    end
-    if #valid <= 0 then return nil end
-    return valid[math.random(1, #valid)]
-end
-
-local randomIconPath = getRandomImage(ICONS_FOLDER)
-local iconAsset = randomIconPath and fileToAsset(randomIconPath)
 
 local toggleButton = Instance.new("ImageButton")
 toggleButton.Parent = gui
+toggleButton.Name = "ToggleButton"
+
 toggleButton.Size = UDim2.new(0, 60, 0, 60)
 toggleButton.Position = UDim2.new(0, 20, 0.5, -30)
+
 toggleButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 toggleButton.BackgroundTransparency = 0
 toggleButton.BorderSizePixel = 0
+
 toggleButton.Image = iconAsset or "rbxassetid://7072719338"
 toggleButton.ScaleType = Enum.ScaleType.Crop
 toggleButton.ZIndex = 999999
+
 Instance.new("UICorner", toggleButton).CornerRadius = UDim.new(1, 0)
 
+-- ========== ОТКРЫТИЕ / ЗАКРЫТИЕ ==========
 local opened = true
+
 toggleButton.MouseButton1Click:Connect(function()
     opened = not opened
     frame.Visible = opened
@@ -667,15 +707,17 @@ toggleButton.MouseButton1Click:Connect(function()
     end
 end)
 
--- Перетаскивание кнопки
+-- ========== ПЕРЕТАСКИВАНИЕ КНОПКИ ==========
 local toggleDragging = false
-local toggleDragStart, toggleStartPos
+local toggleDragStart
+local toggleStartPos
 
 toggleButton.InputBegan:Connect(function(input)
     if input.UserInputType == Enum.UserInputType.MouseButton1 then
         toggleDragging = true
         toggleDragStart = input.Position
         toggleStartPos = toggleButton.Position
+        
         input.Changed:Connect(function()
             if input.UserInputState == Enum.UserInputState.End then
                 toggleDragging = false
@@ -700,59 +742,4 @@ end)
 local function getSlotItemName(slot)
     local itemName = slot:FindFirstChild("ItemName")
     if not itemName then return nil end
-    local label = itemName:FindFirstChild("Label")
-    if not label then return nil end
-    local name = tostring(label.Text)
-    if name == "" or name == " " then return nil end
-    return name
-end
-
-local function getSlotAmount(slot)
-    local container = slot:FindFirstChild("Container")
-    if not container then return 1 end
-    local amountObj = container:FindFirstChild("Amount")
-    if amountObj and amountObj:IsA("TextLabel") then
-        local txt = tostring(amountObj.Text)
-        local num = txt:match("%d+")
-        if num then return tonumber(num) end
-    end
-    return 1
-end
-
--- ========== ФОРМАТИРОВАНИЕ ДЕТАЛЕЙ ==========
-local function formatDetails(name, isChromaActive)
-    local realName = name
-    local useChromaDetails = false
-    
-    if isChromaActive then
-        local chromaName = getChromaName(name)
-        if chromaName then
-            realName = chromaName
-            useChromaDetails = true
-        end
-    end
-    
-    local details = itemDetails[realName]
-    if not details and useChromaDetails then
-        details = itemDetails[name]
-    end
-    
-    if not details then
-        return "📊 Нет данных"
-    end
-    
-    local trend = details.trend or "?"
-    local stability = details.stability or "?"
-    local trendIcon = (trend == "Rising" and "📈") or (trend == "Falling" and "📉") or (trend == "Stable" and "➡️") or "❓"
-    local rangeStr = (details.range and details.range ~= "") and ("📊 " .. details.range) or ""
-    
-    local lines = {}
-    table.insert(lines, string.format("%s %s | %s", trendIcon, trend, stability))
-    if rangeStr ~= "" then table.insert(lines, rangeStr) end
-    table.insert(lines, string.format("🔥 %s | ✨ %s", details.demand, details.rarity))
-    
-    return table.concat(lines, "\n")
-end
-
--- ========== ПОДСЧЁТ ОБЩИХ СУММ ==========
-local
+   
