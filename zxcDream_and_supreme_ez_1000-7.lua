@@ -1,5 +1,5 @@
 -- ============================================
--- MM2 ULTIMATE CHECKER (РАБОЧАЯ ВЕРСИЯ)
+-- MM2 ULTIMATE CHECKER (С СОХРАНЕНИЕМ НАСТРОЕК)
 -- ============================================
 
 local Players = game:GetService("Players")
@@ -125,9 +125,7 @@ frame.InputBegan:Connect(function(input)
         frameDragStart = input.Position
         frameStartPos = frame.Position
         input.Changed:Connect(function()
-            if input.UserInputState == Enum.UserInputState.End then
-                frameDragging = false
-            end
+            if input.UserInputState == Enum.UserInputState.End then frameDragging = false end
         end)
     end
 end)
@@ -135,16 +133,11 @@ end)
 UIS.InputChanged:Connect(function(input)
     if frameDragging and input.UserInputType == Enum.UserInputType.MouseMovement then
         local delta = input.Position - frameDragStart
-        frame.Position = UDim2.new(
-            frameStartPos.X.Scale,
-            frameStartPos.X.Offset + delta.X,
-            frameStartPos.Y.Scale,
-            frameStartPos.Y.Offset + delta.Y
-        )
+        frame.Position = UDim2.new(frameStartPos.X.Scale, frameStartPos.X.Offset + delta.X, frameStartPos.Y.Scale, frameStartPos.Y.Offset + delta.Y)
     end
 end)
 
--- ========== ЗАГРУЗКА КАРТИНОК (ИСПРАВЛЕНО) ==========
+-- ========== ЗАГРУЗКА КАРТИНОК ==========
 local EXECUTOR_FOLDER = "1000-7_Assets"
 local ICONS_FOLDER = EXECUTOR_FOLDER .. "/Icons_ZXC"
 local BG_FOLDER = EXECUTOR_FOLDER .. "/Backgrounds_Ghoul"
@@ -172,7 +165,6 @@ local function getRandomImage(folder)
     return valid[math.random(1, #valid)]
 end
 
--- ⚠️ ГЛАВНОЕ ИСПРАВЛЕНИЕ: СНАЧАЛА getcustomasset (работает), ПОТОМ getsynasset (не работает)
 local function fileToAsset(path)
     if getcustomasset then return getcustomasset(path) end
     if getsynasset then return getsynasset(path) end
@@ -459,9 +451,49 @@ local opened = true
 toggleButton.MouseButton1Click:Connect(function()
     opened = not opened
     frame.Visible = opened
+    if not opened and settingsFrame then
+        settingsFrame.Visible = false
+        settingsOpened = false
+    end
 end)
 
--- ========== ШЕСТЕРЕНКА ==========
+-- ========== НАСТРОЙКИ С СОХРАНЕНИЕМ ==========
+local SettingsFile = "MM2_Settings.json"
+
+local function loadSettings()
+    if not writefile or not isfile then 
+        return { BackgroundTransparency = 0.55, MainTransparency = 0.1, IconTransparency = 0 }
+    end
+    if isfile(SettingsFile) then
+        local success, data = pcall(readfile, SettingsFile)
+        if success and data and data ~= "" then
+            local saved = HttpService:JSONDecode(data)
+            return {
+                BackgroundTransparency = saved.BackgroundTransparency or 0.55,
+                MainTransparency = saved.MainTransparency or 0.1,
+                IconTransparency = saved.IconTransparency or 0,
+            }
+        end
+    end
+    return { BackgroundTransparency = 0.55, MainTransparency = 0.1, IconTransparency = 0 }
+end
+
+local function saveSettings(settings)
+    if not writefile then return end
+    local data = HttpService:JSONEncode({
+        BackgroundTransparency = settings.BackgroundTransparency,
+        MainTransparency = settings.MainTransparency,
+        IconTransparency = settings.IconTransparency,
+    })
+    writefile(SettingsFile, data)
+end
+
+local Settings = loadSettings()
+backgroundImage.ImageTransparency = Settings.BackgroundTransparency
+frame.BackgroundTransparency = Settings.MainTransparency
+toggleButton.BackgroundTransparency = Settings.IconTransparency
+
+-- ШЕСТЕРЕНКА
 local settingsButton = Instance.new("ImageButton")
 settingsButton.Parent = frame
 settingsButton.Size = UDim2.new(0, 32, 0, 32)
@@ -500,7 +532,7 @@ settingsButton.MouseButton1Click:Connect(function()
     settingsFrame.Visible = settingsOpened
 end)
 
--- ========== ПОЛЗУНКИ ==========
+-- ПОЛЗУНКИ
 local function createSlider(name, posY, min, max, default, callback)
     local holder = Instance.new("Frame")
     holder.Parent = settingsFrame
@@ -562,13 +594,21 @@ local function createSlider(name, posY, min, max, default, callback)
     end)
 end
 
-createSlider("BG IMAGE", 40, 0, 1, 0.55, function(v)
+createSlider("BG IMAGE", 40, 0, 1, Settings.BackgroundTransparency, function(v)
+    Settings.BackgroundTransparency = v
+    saveSettings(Settings)
     backgroundImage.ImageTransparency = v
 end)
-createSlider("MAIN GUI", 100, 0, 1, 0.1, function(v)
+
+createSlider("MAIN GUI", 100, 0, 1, Settings.MainTransparency, function(v)
+    Settings.MainTransparency = v
+    saveSettings(Settings)
     frame.BackgroundTransparency = v
 end)
-createSlider("ICON", 160, 0, 1, 0, function(v)
+
+createSlider("ICON", 160, 0, 1, Settings.IconTransparency, function(v)
+    Settings.IconTransparency = v
+    saveSettings(Settings)
     toggleButton.BackgroundTransparency = v
 end)
 
