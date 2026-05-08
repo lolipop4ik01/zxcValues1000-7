@@ -121,155 +121,141 @@ local gui = Instance.new("ScreenGui")
 gui.Name = "MM2VALUEGUI"
 gui.Parent = game.CoreGui
 
--- ============================================
--- MM2 AUTO ASSETS + TOGGLE ICON + RANDOM BG
--- ВСТАВИТЬ СРАЗУ ПОСЛЕ:
--- gui.Parent = game.CoreGui
--- ============================================
-
--- SERVICES
-local TweenService = game:GetService("TweenService")
 
 -- ============================================
--- АВТО СОЗДАНИЕ ПАПКИ В WORKSPACE
+-- EXECUTOR WORKSPACE IMAGE SYSTEM
 -- ============================================
 
-local assetsFolder = workspace:FindFirstChild("MM2Assets")
+local HttpService = game:GetService("HttpService")
 
-if not assetsFolder then
-    assetsFolder = Instance.new("Folder")
-    assetsFolder.Name = "PHOTO_ZXC_Assets"
-    assetsFolder.Parent = workspace
+local EXECUTOR_FOLDER = "1000-7_Assets"
+local ICONS_FOLDER = EXECUTOR_FOLDER .. "/Icons_ZXC"
+local BG_FOLDER = EXECUTOR_FOLDER .. "/Backgrounds_Ghoul"
+
+-- ============================================
+-- CREATE FOLDERS
+-- ============================================
+
+if makefolder then
+
+    if not isfolder(EXECUTOR_FOLDER) then
+        makefolder(EXECUTOR_FOLDER)
+    end
+
+    if not isfolder(ICONS_FOLDER) then
+        makefolder(ICONS_FOLDER)
+    end
+
+    if not isfolder(BG_FOLDER) then
+        makefolder(BG_FOLDER)
+    end
 end
 
 -- ============================================
--- ПАПКА ICONS
+-- GET RANDOM FILE
 -- ============================================
 
-local iconsFolder = assetsFolder:FindFirstChild("Icons")
+local function getRandomImage(folder)
 
-if not iconsFolder then
-    iconsFolder = Instance.new("Folder")
-    iconsFolder.Name = "ZXC_Icons"
-    iconsFolder.Parent = assetsFolder
+    if not listfiles then
+        return nil
+    end
+
+    local files = listfiles(folder)
+
+    local valid = {}
+
+    for _,file in ipairs(files) do
+
+        local lower = string.lower(file)
+
+        if lower:find(".png") or lower:find(".jpg") or lower:find(".jpeg") then
+            table.insert(valid,file)
+        end
+    end
+
+    if #valid <= 0 then
+        return nil
+    end
+
+    return valid[math.random(1,#valid)]
 end
 
 -- ============================================
--- ПАПКА BACKGROUNDS
+-- CONVERT IMAGE TO DATA URL
 -- ============================================
 
-local bgFolder = assetsFolder:FindFirstChild("Backgrounds")
+local function fileToAsset(path)
 
-if not bgFolder then
-    bgFolder = Instance.new("Folder")
-    bgFolder.Name = "1000-7_Backgrounds"
-    bgFolder.Parent = assetsFolder
+    if getsynasset then
+        return getsynasset(path)
+    end
+
+    if getcustomasset then
+        return getcustomasset(path)
+    end
+
+    return nil
+end
+
+local randomIconPath = getRandomImage(ICONS_FOLDER)
+local randomBGPath = getRandomImage(BG_FOLDER)
+
+local iconAsset = nil
+local bgAsset = nil
+
+if randomIconPath then
+    iconAsset = fileToAsset(randomIconPath)
+end
+
+if randomBGPath then
+    bgAsset = fileToAsset(randomBGPath)
 end
 
 -- ============================================
--- ЕСЛИ ИКОНОК НЕТ — СОЗДАЕМ
--- ============================================
-
-if #iconsFolder:GetChildren() == 0 then
-    
-    local icon1 = Instance.new("Decal")
-    icon1.Name = "Icon1"
-    icon1.Texture = "rbxassetid://7072719338"
-    icon1.Parent = iconsFolder
-
-    local icon2 = Instance.new("Decal")
-    icon2.Name = "Icon2"
-    icon2.Texture = "rbxassetid://6031094678"
-    icon2.Parent = iconsFolder
-
-    local icon3 = Instance.new("Decal")
-    icon3.Name = "Icon3"
-    icon3.Texture = "rbxassetid://6031071053"
-    icon3.Parent = iconsFolder
-end
-
--- ============================================
--- ЕСЛИ ФОНОВ НЕТ — СОЗДАЕМ
--- ============================================
-
-if #bgFolder:GetChildren() == 0 then
-
-    local bg1 = Instance.new("Decal")
-    bg1.Name = "Background1"
-    bg1.Texture = "rbxassetid://9066026056"
-    bg1.Parent = bgFolder
-
-    local bg2 = Instance.new("Decal")
-    bg2.Name = "Background2"
-    bg2.Texture = "rbxassetid://12275054482"
-    bg2.Parent = bgFolder
-
-    local bg3 = Instance.new("Decal")
-    bg3.Name = "Background3"
-    bg3.Texture = "rbxassetid://13532940466"
-    bg3.Parent = bgFolder
-end
-
--- ============================================
--- РАНДОМНАЯ ИКОНКА
--- ============================================
-
-local icons = iconsFolder:GetChildren()
-local randomIcon = icons[math.random(1, #icons)]
-
--- ============================================
--- РАНДОМНЫЙ ФОН
--- ============================================
-
-local bgs = bgFolder:GetChildren()
-local randomBG = bgs[math.random(1, #bgs)]
-
--- ============================================
--- ФОН GUI
--- ============================================
-
-frame.ClipsDescendants = true
-
-local bgImage = Instance.new("ImageLabel")
-bgImage.Parent = frame
-bgImage.Size = UDim2.new(1,0,1,0)
-bgImage.Position = UDim2.new(0,0,0,0)
-bgImage.BackgroundTransparency = 1
-bgImage.Image = randomBG.Texture
-bgImage.ImageTransparency = 0.4
-bgImage.ScaleType = Enum.ScaleType.Crop
-bgImage.ZIndex = 0
-
--- ============================================
--- КНОПКА ОТКРЫТИЯ / ЗАКРЫТИЯ
+-- TOGGLE BUTTON
 -- ============================================
 
 local toggleButton = Instance.new("ImageButton")
 toggleButton.Parent = gui
-toggleButton.Name = "ToggleButton"
 
 toggleButton.Size = UDim2.new(0,60,0,60)
 toggleButton.Position = UDim2.new(0,20,0.5,-30)
 
 toggleButton.BackgroundColor3 = Color3.fromRGB(20,20,20)
-toggleButton.BackgroundTransparency = 0.15
 toggleButton.BorderSizePixel = 0
 
-toggleButton.Image = randomIcon.Texture
-toggleButton.ScaleType = Enum.ScaleType.Crop
-toggleButton.AutoButtonColor = true
+toggleButton.Image = iconAsset or "rbxassetid://7072719338"
 
+toggleButton.ScaleType = Enum.ScaleType.Crop
 toggleButton.ZIndex = 999
 
-Instance.new("UICorner", toggleButton).CornerRadius = UDim.new(1,0)
+Instance.new("UICorner",toggleButton).CornerRadius = UDim.new(1,0)
 
 local stroke = Instance.new("UIStroke")
 stroke.Parent = toggleButton
-stroke.Color = Color3.fromRGB(255,255,255)
 stroke.Thickness = 2
+stroke.Color = Color3.new(1,1,1)
 
 -- ============================================
--- ОТКРЫТИЕ / ЗАКРЫТИЕ GUI
+-- GUI BACKGROUND
+-- ============================================
+
+local bg = Instance.new("ImageLabel")
+bg.Parent = frame
+
+bg.Size = UDim2.new(1,0,1,0)
+bg.BackgroundTransparency = 1
+
+bg.Image = bgAsset or "rbxassetid://9066026056"
+
+bg.ImageTransparency = 0.35
+bg.ScaleType = Enum.ScaleType.Crop
+
+bg.ZIndex = 0
+
+-- ============================================
+-- OPEN CLOSE
 -- ============================================
 
 local opened = true
@@ -278,77 +264,47 @@ toggleButton.MouseButton1Click:Connect(function()
 
     opened = not opened
 
-    if opened then
-        
-        frame.Visible = true
-
-        TweenService:Create(
-            frame,
-            TweenInfo.new(0.25),
-            {
-                Size = UDim2.new(0,800,0,450)
-            }
-        ):Play()
-
-    else
-
-        TweenService:Create(
-            frame,
-            TweenInfo.new(0.2),
-            {
-                Size = UDim2.new(0,0,0,0)
-            }
-        ):Play()
-
-        task.wait(0.2)
-
-        frame.Visible = false
-    end
+    frame.Visible = opened
 end)
 
 -- ============================================
--- ПЕРЕТАСКИВАНИЕ КНОПКИ
+-- DRAGGING
 -- ============================================
 
-local draggingToggle = false
-local dragStartToggle
-local startPosToggle
+local UIS = game:GetService("UserInputService")
+
+local dragging = false
+local dragStart
+local startPos
 
 toggleButton.InputBegan:Connect(function(input)
 
     if input.UserInputType == Enum.UserInputType.MouseButton1 then
 
-        draggingToggle = true
-        dragStartToggle = input.Position
-        startPosToggle = toggleButton.Position
+        dragging = true
+        dragStart = input.Position
+        startPos = toggleButton.Position
 
         input.Changed:Connect(function()
 
             if input.UserInputState == Enum.UserInputState.End then
-                draggingToggle = false
+                dragging = false
             end
         end)
     end
 end)
 
-toggleButton.InputChanged:Connect(function(input)
-
-    if input.UserInputType == Enum.UserInputType.MouseMovement then
-        dragInput = input
-    end
-end)
-
 UIS.InputChanged:Connect(function(input)
 
-    if draggingToggle and input.UserInputType == Enum.UserInputType.MouseMovement then
+    if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
 
-        local delta = input.Position - dragStartToggle
+        local delta = input.Position - dragStart
 
         toggleButton.Position = UDim2.new(
-            startPosToggle.X.Scale,
-            startPosToggle.X.Offset + delta.X,
-            startPosToggle.Y.Scale,
-            startPosToggle.Y.Offset + delta.Y
+            startPos.X.Scale,
+            startPos.X.Offset + delta.X,
+            startPos.Y.Scale,
+            startPos.Y.Offset + delta.Y
         )
     end
 end)
