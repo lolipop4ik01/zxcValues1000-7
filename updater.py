@@ -8,9 +8,6 @@ IGNORE_KEYWORDS = [
     "join our discord", "make sure", "extra features", "placeholder",
     "owner -", "owners -", "gold ", "silver ", "bronze ",
     "wrapping paper", "sparkle", "potion", "mummy", "zombie", "grave",
-    "frozen", "spearmint", "floatie", "gingercookie", "splat", "cupid",
-    "blue elite", "elite", "hardened", "splash", "toy", "jellyfish",
-    "palms", "candy swirl", "lights", "icedriller", "elite",
 ]
 
 def should_ignore_item(name):
@@ -20,10 +17,48 @@ def should_ignore_item(name):
             return True
     if name.startswith("×") or len(name) < 3:
         return True
-    # Игнорируем дешёвый мусор (ценой 2-3 рубля)
     return False
 
-# ========== SUPREME VALUES ПАРСЕР ==========
+# ========== РУЧНЫЕ СООТВЕТСТВИЯ ==========
+MANUAL_MAPPING = {
+    # Battleaxe
+    "BattleAxe II": "Battleaxe II",
+    "BattleAxe": "Battleaxe",
+    "Battle Axe II": "Battleaxe II",
+    "Battle Axe": "Battleaxe",
+    # Chroma (C. ↔ Chroma)
+    "Chroma Traveler's Gun": "C. Traveler's Gun",
+    "Chroma Vampire's Gun": "C. Vampire's Gun",
+    "Chroma Constellation": "C. Constellation",
+    "Chroma Snowcannon": "C. Snowcannon",
+    "Chroma Heart Wand": "C. Heart Wand",
+    "Chroma Snow Dagger": "C. Snow Dagger",
+    "Chroma Darkbringer": "C. Darkbringer",
+    "Chroma Lightbringer": "C. Lightbringer",
+    "Chroma Candleflame": "C. Candleflame",
+    "Chroma Elderwood Blade": "C. Elderwood Blade",
+    "Chroma Swirly Gun": "C. Swirly Gun",
+    "Chroma Deathshard": "C. Deathshard",
+    "Chroma Cookiecane": "C. Cookiecane",
+    "Chroma Gingerblade": "C. Gingerblade",
+    # Обратные
+    "C. Traveler's Gun": "Chroma Traveler's Gun",
+    "C. Vampire's Gun": "Chroma Vampire's Gun",
+    "C. Constellation": "Chroma Constellation",
+    "C. Snowcannon": "Chroma Snowcannon",
+    "C. Heart Wand": "Chroma Heart Wand",
+    "C. Snow Dagger": "Chroma Snow Dagger",
+    "C. Darkbringer": "Chroma Darkbringer",
+    "C. Lightbringer": "Chroma Lightbringer",
+    "C. Candleflame": "Chroma Candleflame",
+    "C. Elderwood Blade": "Chroma Elderwood Blade",
+    "C. Swirly Gun": "Chroma Swirly Gun",
+    "C. Deathshard": "Chroma Deathshard",
+    "C. Cookiecane": "Chroma Cookiecane",
+    "C. Gingerblade": "Chroma Gingerblade",
+}
+
+# ========== SUPREME VALUES ==========
 SUPREME_URLS = {
     "godlies": "https://supremevalues.com/mm2/godlies",
     "chromas": "https://supremevalues.com/mm2/chromas",
@@ -91,9 +126,33 @@ def extract_supreme_items(page, category):
             continue
     return items
 
-# ========== DREAM PETS ПАРСЕР (через JS) ==========
+# ========== DREAM PETS ==========
 def get_dreampets_prices(page):
-    """Собирает все цены с DreamPets через JavaScript"""
+    print("  Закрываю рекламу...")
+    try:
+        close_btn = page.query_selector("xpath=/html/body/div[3]/div/div/div/button")
+        if close_btn:
+            close_btn.click()
+            page.wait_for_timeout(1000)
+            print("    ✅ Реклама закрыта")
+    except:
+        print("    Реклама не найдена")
+    
+    container = page.query_selector("xpath=/html/body/div/div/main/section/div/div/div/div[1]/div/div/div[2]")
+    
+    if not container:
+        print("  ⚠️ Контейнер не найден")
+        return {}
+    
+    print("  Прокручиваю контейнер...")
+    for i in range(25):
+        container.evaluate("element => element.scrollTop = element.scrollHeight")
+        page.wait_for_timeout(1500)
+        if i % 5 == 0:
+            print(f"    Прокрутка {i+1}/25")
+    
+    page.wait_for_timeout(3000)
+    
     js_code = """
     (function() {
         const items = {};
@@ -134,7 +193,7 @@ def get_dreampets_prices(page):
         items = page.evaluate(js_code)
         return items
     except Exception as e:
-        print(f"Ошибка JS: {e}")
+        print(f"  Ошибка JS: {e}")
         return {}
 
 # ========== ОСНОВНАЯ ФУНКЦИЯ ==========
@@ -145,7 +204,6 @@ def main():
         browser = p.chromium.launch(headless=True)
         page = browser.new_page()
         
-        # 1. Собираем SupremeValues
         print("[1/2] Сбор данных с SupremeValues...")
         for category, url in SUPREME_URLS.items():
             print(f"  → {category}...")
@@ -154,26 +212,61 @@ def main():
             all_data[category] = data
             print(f"    Найдено: {len(data)} предметов")
         
-        # 2. Собираем цены с DreamPets
         print("\n[2/2] Сбор цен с DreamPets...")
         page.goto("https://dreampets.gg/mm2/", timeout=30000)
-        page.wait_for_timeout(5000)
+        page.wait_for_timeout(3000)
         
         dreampets_prices = get_dreampets_prices(page)
-        print(f"  Найдено цен: {len(dreampets_prices)}")
+        print(f"\n  ✅ Найдено цен на DreamPets: {len(dreampets_prices)}")
         
         browser.close()
     
-    # 3. Объединяем данные
     print("\n[3/3] Объединение данных...")
+    
+    # Создаём словарь с ВСЕМИ возможными вариантами названий
+    dreampets_lookup = {}
+    for dream_name, price in dreampets_prices.items():
+        # Оригинал
+        dreampets_lookup[dream_name] = price
+        
+        # Ручные соответствия
+        if dream_name in MANUAL_MAPPING:
+            dreampets_lookup[MANUAL_MAPPING[dream_name]] = price
+        
+        # Автоматическое преобразование "Chroma X" → "C. X"
+        if dream_name.startswith("Chroma "):
+            dreampets_lookup["C. " + dream_name[7:]] = price
+        
+        # Автоматическое преобразование "C. X" → "Chroma X"
+        if dream_name.startswith("C. "):
+            chroma_name = "Chroma " + dream_name[3:]
+            dreampets_lookup[chroma_name] = price
+            
+            # Дополнительно: убираем точку "C X" (если есть)
+            dreampets_lookup["C " + dream_name[3:]] = price
+    
+    # Применяем цены к предметам из SupremeValues
     for category, items in all_data.items():
         for name, info in items.items():
-            if name in dreampets_prices:
-                info["dreampets_price"] = dreampets_prices[name]
+            if name in dreampets_lookup:
+                info["dreampets_price"] = dreampets_lookup[name]
             else:
-                info["dreampets_price"] = 0
+                # Пробуем найти по альтернативному названию
+                if name.startswith("C. "):
+                    alt = "Chroma " + name[3:]
+                    if alt in dreampets_lookup:
+                        info["dreampets_price"] = dreampets_lookup[alt]
+                    else:
+                        info["dreampets_price"] = 0
+                elif name.startswith("Chroma "):
+                    alt = "C. " + name[7:]
+                    if alt in dreampets_lookup:
+                        info["dreampets_price"] = dreampets_lookup[alt]
+                    else:
+                        info["dreampets_price"] = 0
+                else:
+                    info["dreampets_price"] = 0
     
-    # 4. Сохраняем результат
     with open("prices.json", "w", encoding="utf-8") as f:
         json.dump(all_data, f, indent=2, ensure_ascii=False)
     
