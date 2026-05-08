@@ -223,7 +223,7 @@ backgroundImage.Size = UDim2.new(1, 0, 1, 0)
 backgroundImage.Position = UDim2.new(0, 0, 0, 0)
 backgroundImage.BackgroundTransparency = 0
 backgroundImage.Image = bgAsset or "rbxassetid://9066026056"
-backgroundImage.ImageTransparency = 1
+backgroundImage.ImageTransparency = 0
 backgroundImage.ScaleType = Enum.ScaleType.Crop
 backgroundImage.ZIndex = -999
 
@@ -283,7 +283,7 @@ yourTotalFrame.Parent = frame
 yourTotalFrame.Position = UDim2.new(0, 0, 0, 65)
 yourTotalFrame.Size = UDim2.new(0.5, 0, 0, 40)
 yourTotalFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-yourTotalFrame.BackgroundTransparency = 0.3
+yourTotalFrame.BackgroundTransparency = 0.5
 yourTotalFrame.BorderSizePixel = 0
 Instance.new("UICorner", yourTotalFrame).CornerRadius = UDim.new(0, 5)
 
@@ -313,7 +313,7 @@ theirTotalFrame.Parent = frame
 theirTotalFrame.Position = UDim2.new(0.5, 0, 0, 65)
 theirTotalFrame.Size = UDim2.new(0.5, 0, 0, 40)
 theirTotalFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-theirTotalFrame.BackgroundTransparency = 0.3
+theirTotalFrame.BackgroundTransparency = 0.4
 theirTotalFrame.BorderSizePixel = 0
 Instance.new("UICorner", theirTotalFrame).CornerRadius = UDim.new(0, 5)
 
