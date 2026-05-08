@@ -551,28 +551,30 @@ local Settings = {
 }
 
 -- ============================================
--- ШЕСТЕРЕНКА
+-- ШЕСТЕРЕНКА ВНУТРИ ГЛАВНОГО GUI
 -- ============================================
 
 local settingsButton = Instance.new("ImageButton")
-settingsButton.Parent = gui
+settingsButton.Parent = frame
 settingsButton.Name = "SettingsButton"
 
-settingsButton.Size = UDim2.new(0,40,0,40)
-settingsButton.Position = UDim2.new(0,90,0.5,-20)
+settingsButton.Size = UDim2.new(0,32,0,32)
+
+settingsButton.Position = UDim2.new(1,-38,0,4)
 
 settingsButton.BackgroundColor3 = Color3.fromRGB(25,25,25)
+settingsButton.BackgroundTransparency = 0
 settingsButton.BorderSizePixel = 0
-settingsButton.Image = "rbxassetid://6031280882"
-settingsButton.ImageColor3 = Color3.new(1,1,1)
 
-Instance.new("UICorner",settingsButton).CornerRadius = UDim.new(1,0)
+settingsButton.Image = "rbxassetid://6031280882"
+
+settingsButton.ImageColor3 = Color3.new(1,1,1)
 
 settingsButton.ZIndex = 999999
 
--- ============================================
--- ПЕРЕТАСКИВАНИЕ ШЕСТЕРЕНКИ
--- ============================================
+Instance.new("UICorner",settingsButton).CornerRadius = UDim.new(1,0)
+
+-- DRAG SETTINGS BUTTON
 
 local settingsDragging = false
 local settingsDragStart
