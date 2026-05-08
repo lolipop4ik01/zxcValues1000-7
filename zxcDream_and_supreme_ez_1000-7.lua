@@ -1,6 +1,5 @@
 -- ============================================
--- MM2 ULTIMATE CHECKER (FINAL)
--- Полная логика трейда + локальные папки Icons_ZXC / Backgrounds_Ghoul
+-- MM2 ULTIMATE CHECKER (ПОЛНАЯ ВЕРСИЯ С НАСТРОЙКАМИ)
 -- ============================================
 
 local Players = game:GetService("Players")
@@ -8,18 +7,102 @@ local UIS = game:GetService("UserInputService")
 local HttpService = game:GetService("HttpService")
 local LP = Players.LocalPlayer
 
--- ==================== 1. UI СОСТОЯНИЕ ====================
+-- ========== 1. ОБЩЕЕ СОСТОЯНИЕ ==========
 local UI_STATE = {
     mainOpen = true,
     settingsOpen = false
 }
 
+-- ========== 2. НАСТРОЙКИ ПРОЗРАЧНОСТИ ==========
 local Settings = {
-    bgTransparency = 0.55,
-    mainTransparency = 0.1
+    bgTrans = 0.55,
+    mainTrans = 0.1
 }
 
--- ==================== 2. ЛОКАЛЬНЫЕ ПАПКИ (ИКОНКА / ФОН) ====================
+-- ========== 3. ТВОИ ПЕРЕМЕННЫЕ (ОРИГИНАЛ) ==========
+local RAW_JSON_URL = "https://raw.githubusercontent.com/lolipop4ik01/zxcValues1000-7/refs/heads/main/prices.json"
+local prices = {}
+local dreampets = {}
+local itemDetails = {}
+
+local yourChromaMode = { false, false, false, false }
+local theirChromaMode = { false, false, false, false }
+local YOUR_MAX_SLOT = 4
+local THEIR_MAX_SLOT = 4
+
+-- ========== 4. ТВОЯ ЗАГРУЗКА ДАННЫХ ==========
+local function loadDataFromGitHub()
+    local success, result = pcall(function()
+        return game:HttpGet(RAW_JSON_URL)
+    end)
+    if not success then
+        warn("[MM2Checker] Ошибка загрузки: " .. tostring(result))
+        return false
+    end
+
+    local data = HttpService:JSONDecode(result)
+    
+    for category, items in pairs(data) do
+        for itemName, info in pairs(items) do
+            local valueNum = tonumber(info.value) or 0
+            if valueNum > 0 then prices[itemName] = valueNum end
+            
+            local dpNum = tonumber(info.dreampets_price) or 0
+            if dpNum > 0 then dreampets[itemName] = dpNum end
+            
+            itemDetails[itemName] = {
+                stability = info.stability or "?",
+                trend = info.trend or "?",
+                range = info.range or "",
+                demand = tostring(info.demand or "?"),
+                rarity = tostring(info.rarity or "?")
+            }
+        end
+    end
+    
+    print("[MM2Checker] Загружено Supreme: " .. tostring(#prices))
+    print("[MM2Checker] Загружено DreamPets: " .. tostring(#dreampets))
+    return true
+end
+
+-- ========== 5. ТВОЯ ЛОГИКА CHROMA ==========
+local function normalizeChromaName(name)
+    if name:match("^Chroma ") then
+        local rest = name:sub(8)
+        local cName = "C. " .. rest
+        if prices[cName] or dreampets[cName] then return cName end
+    end
+    if name:match("^C%. ") then
+        local rest = name:sub(4)
+        local chromaName = "Chroma " .. rest
+        if prices[chromaName] or dreampets[chromaName] then return chromaName end
+    end
+    return name
+end
+
+local chromaMap = {
+    ["Luger"] = "Chroma Luger", ["Laser"] = "Chroma Laser", ["Shark"] = "Chroma Shark",
+    ["Heat"] = "Chroma Heat", ["Darkbringer"] = "Chroma Darkbringer", ["Lightbringer"] = "Chroma Lightbringer",
+    ["Gemstone"] = "Chroma Gemstone", ["Deathshard"] = "Chroma Deathshard", ["Fang"] = "Chroma Fang",
+    ["Slasher"] = "Chroma Slasher", ["Tides"] = "Chroma Tides", ["Gingerblade"] = "Chroma Gingerblade",
+    ["Boneblade"] = "Chroma Boneblade", ["Seer"] = "Chroma Seer", ["Saw"] = "Chroma Saw",
+    ["Elderwood Blade"] = "Chroma Elderwood Blade", ["Candleflame"] = "Chroma Candleflame",
+    ["Sweet"] = "Chroma Sweet", ["Treat"] = "Chroma Treat", ["Snow Dagger"] = "Chroma Snow Dagger",
+    ["Watergun"] = "Chroma Watergun", ["Snowcannon"] = "Chroma Snowcannon", ["Ornament"] = "Chroma Ornament",
+    ["Blizzard"] = "Chroma Blizzard", ["Sunrise"] = "Chroma Sunrise", ["Bauble"] = "Chroma Bauble",
+    ["Heart Wand"] = "Chroma Heart Wand", ["Swirly Gun"] = "Chroma Swirly Gun", ["Cookiecane"] = "Chroma Cookiecane",
+}
+
+local function getChromaName(regularName)
+    if chromaMap[regularName] then return chromaMap[regularName] end
+    local chromaName = "Chroma " .. regularName
+    return prices[chromaName] and chromaName or nil
+end
+
+local function getPrice(name) return prices[normalizeChromaName(name)] or 0 end
+local function getDreamPrice(name) return dreampets[normalizeChromaName(name)] or 0 end
+
+-- ========== 6. СИСТЕМА ПАПОК (ТВОИ Icons_ZXC / Backgrounds_Ghoul) ==========
 local EXECUTOR_FOLDER = "1000-7_Assets"
 local ICONS_FOLDER = EXECUTOR_FOLDER .. "/Icons_ZXC"
 local BG_FOLDER = EXECUTOR_FOLDER .. "/Backgrounds_Ghoul"
@@ -36,7 +119,6 @@ local function getRandomLocalImage(folder)
     if not listfiles then return nil end
     local success, files = pcall(function() return listfiles(folder) end)
     if not success or type(files) ~= "table" then return nil end
-
     local valid = {}
     for _, file in ipairs(files) do
         local lower = string.lower(file)
@@ -57,258 +139,273 @@ end
 local iconAsset = fileToAsset(getRandomLocalImage(ICONS_FOLDER))
 local bgAsset = fileToAsset(getRandomLocalImage(BG_FOLDER))
 
--- ==================== 3. ДАННЫЕ И ЛОГИКА (ВАШ КОД) ====================
-local RAW_JSON_URL = "https://raw.githubusercontent.com/lolipop4ik01/zxcValues1000-7/refs/heads/main/prices.json"
-local prices, dreampets, itemDetails = {}, {}, {}
-local yourChromaMode, theirChromaMode = {false, false, false, false}, {false, false, false, false}
-local YOUR_MAX_SLOT, THEIR_MAX_SLOT = 4, 4
-
-local function loadDataFromGitHub()
-    local success, result = pcall(function() return game:HttpGet(RAW_JSON_URL) end)
-    if not success then return false end
-    local data = HttpService:JSONDecode(result)
-    for _, items in pairs(data) do
-        for name, info in pairs(items) do
-            local v = tonumber(info.value) or 0
-            if v > 0 then prices[name] = v end
-            local dp = tonumber(info.dreampets_price) or 0
-            if dp > 0 then dreampets[name] = dp end
-            itemDetails[name] = {
-                stability = info.stability or "?", trend = info.trend or "?",
-                range = info.range or "", demand = tostring(info.demand or "?"),
-                rarity = tostring(info.rarity or "?")
-            }
-        end
-    end
-    return true
-end
-
-local function normalizeChromaName(name)
-    if name:match("^Chroma ") then
-        local cName = "C. " .. name:sub(8)
-        if prices[cName] or dreampets[cName] then return cName end
-    elseif name:match("^C%. ") then
-        local chromaName = "Chroma " .. name:sub(4)
-        if prices[chromaName] or dreampets[chromaName] then return chromaName end
-    end
-    return name
-end
-
-local chromaMap = {
-    ["Luger"] = "Chroma Luger", ["Laser"] = "Chroma Laser", ["Shark"] = "Chroma Shark",
-    ["Heat"] = "Chroma Heat", ["Darkbringer"] = "Chroma Darkbringer", ["Lightbringer"] = "Chroma Lightbringer",
-    ["Gemstone"] = "Chroma Gemstone", ["Deathshard"] = "Chroma Deathshard", ["Fang"] = "Chroma Fang",
-    ["Slasher"] = "Chroma Slasher", ["Tides"] = "Chroma Tides", ["Gingerblade"] = "Chroma Gingerblade",
-    ["Boneblade"] = "Chroma Boneblade", ["Seer"] = "Chroma Seer", ["Saw"] = "Chroma Saw",
-    ["Elderwood Blade"] = "Chroma Elderwood Blade", ["Candleflame"] = "Chroma Candleflame",
-    ["Sweet"] = "Chroma Sweet", ["Treat"] = "Chroma Treat", ["Snow Dagger"] = "Chroma Snow Dagger",
-    ["Watergun"] = "Chroma Watergun", ["Snowcannon"] = "Chroma Snowcannon", ["Ornament"] = "Chroma Ornament",
-    ["Blizzard"] = "Chroma Blizzard", ["Sunrise"] = "Chroma Sunrise", ["Bauble"] = "Chroma Bauble",
-    ["Heart Wand"] = "Chroma Heart Wand", ["Swirly Gun"] = "Chroma Swirly Gun", ["Cookiecane"] = "Chroma Cookiecane",
-}
-local function getChromaName(name) return chromaMap[name] or (prices["Chroma " .. name] and "Chroma " .. name) or nil end
-
-local function getPrice(name) return prices[normalizeChromaName(name)] or 0 end
-local function getDreamPrice(name) return dreampets[normalizeChromaName(name)] or 0 end
-
--- ==================== 4. GUI ИНТЕРФЕЙС ====================
+-- ========== 7. ОСНОВНОЙ GUI ==========
 pcall(function() game.CoreGui.MM2VALUEGUI:Destroy() end)
-local gui = Instance.new("ScreenGui", game.CoreGui)
+local gui = Instance.new("ScreenGui")
 gui.Name = "MM2VALUEGUI"
+gui.Parent = game.CoreGui
 
-local frame = Instance.new("Frame", gui)
+local frame = Instance.new("Frame")
+frame.Parent = gui
 frame.Size = UDim2.new(0, 800, 0, 450)
 frame.Position = UDim2.new(0.5, -400, 0, 30)
 frame.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
-frame.BackgroundTransparency = Settings.mainTransparency
+frame.BackgroundTransparency = Settings.mainTrans
 frame.BorderSizePixel = 0
-frame.Visible = UI_STATE.mainOpen
 frame.ClipsDescendants = true
 Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 10)
 
-local bgImage = Instance.new("ImageLabel", frame)
-bgImage.Size = UDim2.new(1, 0, 1, 0)
-bgImage.BackgroundTransparency = 1
-bgImage.Image = bgAsset or "rbxassetid://9066026056"
-bgImage.ImageTransparency = Settings.bgTransparency
-bgImage.ScaleType = Enum.ScaleType.Crop
-bgImage.ZIndex = 0
+-- ФОН ИЗ ПАПКИ Backgrounds_Ghoul
+local backgroundImage = Instance.new("ImageLabel")
+backgroundImage.Parent = frame
+backgroundImage.Size = UDim2.new(1, 0, 1, 0)
+backgroundImage.BackgroundTransparency = 1
+backgroundImage.Image = bgAsset or "rbxassetid://9066026056"
+backgroundImage.ImageTransparency = Settings.bgTrans
+backgroundImage.ScaleType = Enum.ScaleType.Crop
+backgroundImage.ZIndex = -999
 
--- Заголовки и линии
-local title = Instance.new("TextLabel", frame)
+-- ЗАГОЛОВОК И РАЗДЕЛИТЕЛИ (ТВОЙ СТИЛЬ)
+local title = Instance.new("TextLabel")
+title.Parent = frame
 title.Size = UDim2.new(1, 0, 0, 30)
 title.BackgroundTransparency = 1
-title.Text = "ZXC 1000-7 by Ghouls"
+title.Text = "ZXC 1000-7 made by Ghouls SSS Rank"
 title.Font = Enum.Font.GothamBold
-title.TextColor3 = Color3.new(1,1,1)
+title.TextColor3 = Color3.new(1, 1, 1)
 title.TextScaled = true
 
-local line = Instance.new("Frame", frame)
-line.Position = UDim2.new(0,0,0,35)
-line.Size = UDim2.new(1,0,0,2)
-line.BackgroundColor3 = Color3.fromRGB(80,80,80)
+local line1 = Instance.new("Frame")
+line1.Parent = frame
+line1.Position = UDim2.new(0, 0, 0, 35)
+line1.Size = UDim2.new(1, 0, 0, 2)
+line1.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
 
-local center = Instance.new("Frame", frame)
-center.Position = UDim2.new(0.5,0,0,40)
-center.Size = UDim2.new(0,2,1,-40)
-center.BackgroundColor3 = Color3.fromRGB(80,80,80)
+local centerLine = Instance.new("Frame")
+centerLine.Parent = frame
+centerLine.Position = UDim2.new(0.5, 0, 0, 40)
+centerLine.Size = UDim2.new(0, 2, 1, -40)
+centerLine.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
 
-local yourHeader = Instance.new("TextLabel", frame)
-yourHeader.Position = UDim2.new(0,0,0,42)
-yourHeader.Size = UDim2.new(0.5,0,0,22)
+local yourHeader = Instance.new("TextLabel")
+yourHeader.Parent = frame
+yourHeader.Position = UDim2.new(0, 0, 0, 42)
+yourHeader.Size = UDim2.new(0.5, 0, 0, 22)
 yourHeader.BackgroundTransparency = 1
 yourHeader.Text = "YOUR SHIT"
 yourHeader.Font = Enum.Font.GothamBold
-yourHeader.TextColor3 = Color3.fromRGB(255,200,100)
+yourHeader.TextColor3 = Color3.fromRGB(255, 200, 100)
 yourHeader.TextScaled = true
 
-local theirHeader = Instance.new("TextLabel", frame)
-theirHeader.Position = UDim2.new(0.5,0,0,42)
-theirHeader.Size = UDim2.new(0.5,0,0,22)
+local theirHeader = Instance.new("TextLabel")
+theirHeader.Parent = frame
+theirHeader.Position = UDim2.new(0.5, 0, 0, 42)
+theirHeader.Size = UDim2.new(0.5, 0, 0, 22)
 theirHeader.BackgroundTransparency = 1
 theirHeader.Text = "THEIR SHIT"
 theirHeader.Font = Enum.Font.GothamBold
-theirHeader.TextColor3 = Color3.fromRGB(100,200,255)
+theirHeader.TextColor3 = Color3.fromRGB(100, 200, 255)
 theirHeader.TextScaled = true
 
--- Тоталы
-local function createTotalFrame(xPos)
-    local f = Instance.new("Frame", frame)
-    f.Position = UDim2.new(xPos,0,0,65)
-    f.Size = UDim2.new(0.5,0,0,40)
-    f.BackgroundColor3 = Color3.fromRGB(30,30,30)
-    f.BackgroundTransparency = 0.3
-    Instance.new("UICorner", f).CornerRadius = UDim.new(0,5)
-    local tl = Instance.new("TextLabel", f)
-    tl.Size = UDim2.new(1,0,0.5,0)
-    tl.BackgroundTransparency = 1
-    tl.Text = "TOTAL: 0 V"
-    tl.Font = Enum.Font.GothamBold
-    tl.TextScaled = true
-    tl.TextColor3 = Color3.fromRGB(180,180,180)
-    local tdl = Instance.new("TextLabel", f)
-    tdl.Size = UDim2.new(1,0,0.5,0)
-    tdl.Position = UDim2.new(0,0,0.5,0)
-    tdl.BackgroundTransparency = 1
-    tdl.Font = Enum.Font.Gotham
-    tdl.TextSize = 12
-    tdl.TextColor3 = Color3.fromRGB(150,150,150)
-    return tl, tdl
+-- ОБЩИЕ СУММЫ
+local yourTotalFrame = Instance.new("Frame")
+yourTotalFrame.Parent = frame
+yourTotalFrame.Position = UDim2.new(0, 0, 0, 65)
+yourTotalFrame.Size = UDim2.new(0.5, 0, 0, 40)
+yourTotalFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+yourTotalFrame.BackgroundTransparency = 0.3
+Instance.new("UICorner", yourTotalFrame).CornerRadius = UDim.new(0, 5)
+
+local yourTotalLabel = Instance.new("TextLabel")
+yourTotalLabel.Parent = yourTotalFrame
+yourTotalLabel.Size = UDim2.new(1, 0, 0.5, 0)
+yourTotalLabel.BackgroundTransparency = 1
+yourTotalLabel.Text = "TOTAL: 0 V"
+yourTotalLabel.Font = Enum.Font.GothamBold
+yourTotalLabel.TextScaled = true
+yourTotalLabel.TextColor3 = Color3.fromRGB(180, 180, 180)
+
+local yourTotalDreamLabel = Instance.new("TextLabel")
+yourTotalDreamLabel.Parent = yourTotalFrame
+yourTotalDreamLabel.Size = UDim2.new(1, 0, 0.5, 0)
+yourTotalDreamLabel.Position = UDim2.new(0, 0, 0.5, 0)
+yourTotalDreamLabel.BackgroundTransparency = 1
+yourTotalDreamLabel.Text = ""
+yourTotalDreamLabel.Font = Enum.Font.Gotham
+yourTotalDreamLabel.TextSize = 12
+yourTotalDreamLabel.TextColor3 = Color3.fromRGB(150, 150, 150)
+
+local theirTotalFrame = Instance.new("Frame")
+theirTotalFrame.Parent = frame
+theirTotalFrame.Position = UDim2.new(0.5, 0, 0, 65)
+theirTotalFrame.Size = UDim2.new(0.5, 0, 0, 40)
+theirTotalFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+theirTotalFrame.BackgroundTransparency = 0.3
+Instance.new("UICorner", theirTotalFrame).CornerRadius = UDim.new(0, 5)
+
+local theirTotalLabel = Instance.new("TextLabel")
+theirTotalLabel.Parent = theirTotalFrame
+theirTotalLabel.Size = UDim2.new(1, 0, 0.5, 0)
+theirTotalLabel.BackgroundTransparency = 1
+theirTotalLabel.Text = "TOTAL: 0 V"
+theirTotalLabel.Font = Enum.Font.GothamBold
+theirTotalLabel.TextScaled = true
+theirTotalLabel.TextColor3 = Color3.fromRGB(180, 180, 180)
+
+local theirTotalDreamLabel = Instance.new("TextLabel")
+theirTotalDreamLabel.Parent = theirTotalFrame
+theirTotalDreamLabel.Size = UDim2.new(1, 0, 0.5, 0)
+theirTotalDreamLabel.Position = UDim2.new(0, 0, 0.5, 0)
+theirTotalDreamLabel.BackgroundTransparency = 1
+theirTotalDreamLabel.Text = ""
+theirTotalDreamLabel.Font = Enum.Font.Gotham
+theirTotalDreamLabel.TextSize = 12
+theirTotalDreamLabel.TextColor3 = Color3.fromRGB(150, 150, 150)
+
+-- ========== 8. ТВОИ СЛОТЫ (2x2) ==========
+local function createSlot(parent, xPos, yPos, slotNum)
+    local slotFrame = Instance.new("Frame")
+    slotFrame.Parent = parent
+    slotFrame.Size = UDim2.new(0, 175, 0, 140)
+    slotFrame.Position = UDim2.new(0, xPos, 0, yPos)
+    slotFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+    slotFrame.BackgroundTransparency = 0.2
+    Instance.new("UICorner", slotFrame).CornerRadius = UDim.new(0, 6)
+    
+    local num = Instance.new("TextLabel")
+    num.Parent = slotFrame
+    num.Size = UDim2.new(0, 22, 0, 18)
+    num.Position = UDim2.new(0, 3, 0, 2)
+    num.BackgroundTransparency = 1
+    num.Text = tostring(slotNum)
+    num.Font = Enum.Font.GothamBold
+    num.TextSize = 12
+    num.TextColor3 = Color3.fromRGB(180, 180, 180)
+    
+    local nameLabel = Instance.new("TextLabel")
+    nameLabel.Parent = slotFrame
+    nameLabel.Size = UDim2.new(1, 0, 0, 18)
+    nameLabel.Position = UDim2.new(0, 0, 0, 22)
+    nameLabel.BackgroundTransparency = 1
+    nameLabel.Text = "..."
+    nameLabel.Font = Enum.Font.GothamBold
+    nameLabel.TextSize = 12
+    nameLabel.TextColor3 = Color3.fromRGB(255, 200, 100)
+    nameLabel.TextXAlignment = Enum.TextXAlignment.Center
+    
+    local priceLabel = Instance.new("TextLabel")
+    priceLabel.Parent = slotFrame
+    priceLabel.Size = UDim2.new(1, 0, 0, 28)
+    priceLabel.Position = UDim2.new(0, 0, 0, 44)
+    priceLabel.BackgroundTransparency = 1
+    priceLabel.Text = "0 V"
+    priceLabel.Font = Enum.Font.GothamBold
+    priceLabel.TextSize = 11
+    priceLabel.TextColor3 = Color3.fromRGB(100, 200, 255)
+    priceLabel.TextXAlignment = Enum.TextXAlignment.Center
+    
+    local detailsLabel = Instance.new("TextLabel")
+    detailsLabel.Parent = slotFrame
+    detailsLabel.Size = UDim2.new(1, 0, 0, 58)
+    detailsLabel.Position = UDim2.new(0, 0, 0, 76)
+    detailsLabel.BackgroundTransparency = 1
+    detailsLabel.Text = ""
+    detailsLabel.Font = Enum.Font.Gotham
+    detailsLabel.TextSize = 9
+    detailsLabel.TextColor3 = Color3.fromRGB(160, 160, 160)
+    detailsLabel.TextWrapped = true
+    detailsLabel.TextXAlignment = Enum.TextXAlignment.Center
+    
+    local selectBtn = Instance.new("TextButton")
+    selectBtn.Parent = slotFrame
+    selectBtn.Size = UDim2.new(1, 0, 1, 0)
+    selectBtn.BackgroundTransparency = 1
+    selectBtn.Text = ""
+    
+    local chromaBtn = Instance.new("TextButton")
+    chromaBtn.Parent = slotFrame
+    chromaBtn.Size = UDim2.new(0, 22, 0, 22)
+    chromaBtn.Position = UDim2.new(1, -26, 1, -24)
+    chromaBtn.Text = "C"
+    chromaBtn.Font = Enum.Font.GothamBold
+    chromaBtn.TextSize = 12
+    chromaBtn.BorderSizePixel = 0
+    chromaBtn.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    chromaBtn.TextColor3 = Color3.fromRGB(150, 150, 150)
+    Instance.new("UICorner", chromaBtn).CornerRadius = UDim.new(1, 0)
+    
+    return {
+        frame = slotFrame,
+        nameLabel = nameLabel,
+        priceLabel = priceLabel,
+        detailsLabel = detailsLabel,
+        selectBtn = selectBtn,
+        chromaBtn = chromaBtn
+    }
 end
-local yourTotalLabel, yourDreamLabel = createTotalFrame(0)
-local theirTotalLabel, theirDreamLabel = createTotalFrame(0.5)
 
--- Слоты
-local function createSlot(parent, x, y, num)
-    local f = Instance.new("Frame", parent)
-    f.Size = UDim2.new(0,175,0,140)
-    f.Position = UDim2.new(0,x,0,y)
-    f.BackgroundColor3 = Color3.fromRGB(25,25,25)
-    f.BackgroundTransparency = 0.2
-    Instance.new("UICorner", f).CornerRadius = UDim.new(0,6)
-    
-    local n = Instance.new("TextLabel", f)
-    n.Size = UDim2.new(0,22,0,18)
-    n.Position = UDim2.new(0,3,0,2)
-    n.BackgroundTransparency = 1
-    n.Text = tostring(num)
-    n.Font = Enum.Font.GothamBold
-    n.TextColor3 = Color3.fromRGB(180,180,180)
-    
-    local nl = Instance.new("TextLabel", f)
-    nl.Size = UDim2.new(1,0,0,18)
-    nl.Position = UDim2.new(0,0,0,22)
-    nl.BackgroundTransparency = 1
-    nl.Text = "..."
-    nl.Font = Enum.Font.GothamBold
-    nl.TextColor3 = Color3.fromRGB(255,200,100)
-    
-    local pl = Instance.new("TextLabel", f)
-    pl.Size = UDim2.new(1,0,0,28)
-    pl.Position = UDim2.new(0,0,0,44)
-    pl.BackgroundTransparency = 1
-    pl.Text = "0 V"
-    pl.Font = Enum.Font.GothamBold
-    pl.TextColor3 = Color3.fromRGB(100,200,255)
-    
-    local dl = Instance.new("TextLabel", f)
-    dl.Size = UDim2.new(1,0,0,58)
-    dl.Position = UDim2.new(0,0,0,76)
-    dl.BackgroundTransparency = 1
-    dl.Font = Enum.Font.Gotham
-    dl.TextSize = 9
-    dl.TextColor3 = Color3.fromRGB(160,160,160)
-    dl.TextWrapped = true
-    
-    local sel = Instance.new("TextButton", f)
-    sel.Size = UDim2.new(1,0,1,0)
-    sel.BackgroundTransparency = 1
-    sel.Text = ""
-    
-    local cBtn = Instance.new("TextButton", f)
-    cBtn.Size = UDim2.new(0,22,0,22)
-    cBtn.Position = UDim2.new(1,-26,1,-24)
-    cBtn.Text = "C"
-    cBtn.Font = Enum.Font.GothamBold
-    cBtn.BackgroundColor3 = Color3.fromRGB(40,40,40)
-    Instance.new("UICorner", cBtn).CornerRadius = UDim.new(1,0)
-    return {frame=f, name=nl, price=pl, details=dl, selectBtn=sel, chromaBtn=cBtn}
-end
+local yourSlots = {}
+local theirSlots = {}
 
-local yourSlots, theirSlots = {}, {}
-local yPos = {{15,115},{200,115},{15,265},{200,265}}
-local tPos = {{410,115},{595,115},{410,265},{595,265}}
+local yourPos = {
+    {15, 115}, {200, 115},
+    {15, 265}, {200, 265}
+}
+local theirPos = {
+    {410, 115}, {595, 115},
+    {410, 265}, {595, 265}
+}
 
-for i=1,4 do
-    yourSlots[i] = createSlot(frame, yPos[i][1], yPos[i][2], i)
-    yourSlots[i].chromaBtn.MouseButton1Click:Connect(function()
+for i = 1, 4 do
+    local slot = createSlot(frame, yourPos[i][1], yourPos[i][2], i)
+    yourSlots[i] = slot
+    
+    slot.chromaBtn.MouseButton1Click:Connect(function()
         yourChromaMode[i] = not yourChromaMode[i]
-        yourSlots[i].chromaBtn.BackgroundColor3 = yourChromaMode[i] and Color3.fromRGB(150,50,200) or Color3.fromRGB(40,40,40)
-    end)
-    yourSlots[i].selectBtn.MouseButton1Click:Connect(function()
-        YOUR_MAX_SLOT = i
-        for j=1,4 do yourSlots[j].frame.BackgroundColor3 = (j==i) and Color3.fromRGB(40,60,90) or Color3.fromRGB(25,25,25) end
+        slot.chromaBtn.BackgroundColor3 = yourChromaMode[i] and Color3.fromRGB(150, 50, 200) or Color3.fromRGB(40, 40, 40)
+        slot.chromaBtn.TextColor3 = yourChromaMode[i] and Color3.new(1, 1, 1) or Color3.fromRGB(150, 150, 150)
     end)
     
-    theirSlots[i] = createSlot(frame, tPos[i][1], tPos[i][2], i)
-    theirSlots[i].chromaBtn.MouseButton1Click:Connect(function()
-        theirChromaMode[i] = not theirChromaMode[i]
-        theirSlots[i].chromaBtn.BackgroundColor3 = theirChromaMode[i] and Color3.fromRGB(150,50,200) or Color3.fromRGB(40,40,40)
-    end)
-    theirSlots[i].selectBtn.MouseButton1Click:Connect(function()
-        THEIR_MAX_SLOT = i
-        for j=1,4 do theirSlots[j].frame.BackgroundColor3 = (j==i) and Color3.fromRGB(40,60,90) or Color3.fromRGB(25,25,25) end
+    slot.selectBtn.MouseButton1Click:Connect(function()
+        YOUR_MAX_SLOT = i
+        for j = 1, 4 do
+            yourSlots[j].frame.BackgroundColor3 = (j == i) and Color3.fromRGB(40, 60, 90) or Color3.fromRGB(25, 25, 25)
+        end
     end)
 end
-yourSlots[1].frame.BackgroundColor3 = Color3.fromRGB(40,60,90)
-theirSlots[1].frame.BackgroundColor3 = Color3.fromRGB(40,60,90)
 
--- Окно настроек (ЗАКРЕПЛЕНО)
-local settingsFrame = Instance.new("Frame", gui)
-settingsFrame.Size = UDim2.new(0,260,0,150)
-settingsFrame.Position = UDim2.new(0,140,0.5,-75)
-settingsFrame.BackgroundColor3 = Color3.fromRGB(20,20,20)
-settingsFrame.Visible = UI_STATE.settingsOpen
-settingsFrame.Active = false
-settingsFrame.Draggable = false
-Instance.new("UICorner", settingsFrame).CornerRadius = UDim.new(0,10)
+for i = 1, 4 do
+    local slot = createSlot(frame, theirPos[i][1], theirPos[i][2], i)
+    theirSlots[i] = slot
+    
+    slot.chromaBtn.MouseButton1Click:Connect(function()
+        theirChromaMode[i] = not theirChromaMode[i]
+        slot.chromaBtn.BackgroundColor3 = theirChromaMode[i] and Color3.fromRGB(150, 50, 200) or Color3.fromRGB(40, 40, 40)
+        slot.chromaBtn.TextColor3 = theirChromaMode[i] and Color3.new(1, 1, 1) or Color3.fromRGB(150, 150, 150)
+    end)
+    
+    slot.selectBtn.MouseButton1Click:Connect(function()
+        THEIR_MAX_SLOT = i
+        for j = 1, 4 do
+            theirSlots[j].frame.BackgroundColor3 = (j == i) and Color3.fromRGB(40, 60, 90) or Color3.fromRGB(25, 25, 25)
+        end
+    end)
+end
 
-local setTitle = Instance.new("TextLabel", settingsFrame)
-setTitle.Size = UDim2.new(1,0,0,40)
-setTitle.BackgroundTransparency = 1
-setTitle.Text = "SETTINGS"
-setTitle.Font = Enum.Font.GothamBold
-setTitle.TextColor3 = Color3.new(1,1,1)
+yourSlots[1].frame.BackgroundColor3 = Color3.fromRGB(40, 60, 90)
+theirSlots[1].frame.BackgroundColor3 = Color3.fromRGB(40, 60, 90)
 
--- Кнопки управления
-local toggleButton = Instance.new("ImageButton", gui)
-toggleButton.Size = UDim2.new(0,60,0,60)
-toggleButton.Position = UDim2.new(0,20,0.5,-30)
-toggleButton.BackgroundColor3 = Color3.fromRGB(20,20,20)
+-- ========== 9. ГЛАВНАЯ КНОПКА (КРУГЛАЯ) ==========
+local toggleButton = Instance.new("ImageButton")
+toggleButton.Parent = gui
+toggleButton.Size = UDim2.new(0, 60, 0, 60)
+toggleButton.Position = UDim2.new(0, 20, 0.5, -30)
+toggleButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+toggleButton.BackgroundTransparency = 0
+toggleButton.BorderSizePixel = 0
 toggleButton.Image = iconAsset or "rbxassetid://7072719338"
 toggleButton.ScaleType = Enum.ScaleType.Crop
-Instance.new("UICorner", toggleButton).CornerRadius = UDim.new(1,0)
-Instance.new("UIStroke", toggleButton).Thickness = 2
+Instance.new("UICorner", toggleButton).CornerRadius = UDim.new(1, 0)
 
 toggleButton.MouseButton1Click:Connect(function()
     UI_STATE.mainOpen = not UI_STATE.mainOpen
@@ -319,144 +416,292 @@ toggleButton.MouseButton1Click:Connect(function()
     end
 end)
 
-local gearButton = Instance.new("ImageButton", frame)
-gearButton.Size = UDim2.new(0,28,0,28)
-gearButton.Position = UDim2.new(1,-38,0,5)
+-- ========== 10. ОКНО НАСТРОЕК (ПЕРЕТАСКИВАЕТСЯ) ==========
+local settingsFrame = Instance.new("Frame")
+settingsFrame.Parent = gui
+settingsFrame.Size = UDim2.new(0, 260, 0, 200)
+settingsFrame.Position = UDim2.new(0, 140, 0.5, -100)
+settingsFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+settingsFrame.BackgroundTransparency = 0.1
+settingsFrame.BorderSizePixel = 0
+settingsFrame.Visible = false
+settingsFrame.ZIndex = 100
+Instance.new("UICorner", settingsFrame).CornerRadius = UDim.new(0, 10)
+
+local settingsTitle = Instance.new("TextLabel")
+settingsTitle.Parent = settingsFrame
+settingsTitle.Size = UDim2.new(1, 0, 0, 30)
+settingsTitle.BackgroundTransparency = 1
+settingsTitle.Text = "⚙️ НАСТРОЙКИ"
+settingsTitle.Font = Enum.Font.GothamBold
+settingsTitle.TextColor3 = Color3.new(1, 1, 1)
+settingsTitle.TextScaled = true
+
+-- Функция создания ползунка (Slider)
+local function createSlider(name, posY, minVal, maxVal, defaultVal, callback)
+    local holder = Instance.new("Frame")
+    holder.Parent = settingsFrame
+    holder.Size = UDim2.new(1, -20, 0, 50)
+    holder.Position = UDim2.new(0, 10, 0, posY)
+    holder.BackgroundTransparency = 1
+    
+    local label = Instance.new("TextLabel")
+    label.Parent = holder
+    label.Size = UDim2.new(1, 0, 0, 18)
+    label.BackgroundTransparency = 1
+    label.Text = name .. ": " .. defaultVal
+    label.Font = Enum.Font.Gotham
+    label.TextSize = 12
+    label.TextColor3 = Color3.new(1, 1, 1)
+    label.TextXAlignment = Enum.TextXAlignment.Left
+    
+    local bar = Instance.new("Frame")
+    bar.Parent = holder
+    bar.Size = UDim2.new(1, 0, 0, 4)
+    bar.Position = UDim2.new(0, 0, 0, 25)
+    bar.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+    Instance.new("UICorner", bar).CornerRadius = UDim.new(1, 0)
+    
+    local fill = Instance.new("Frame")
+    fill.Parent = bar
+    fill.Size = UDim2.new((defaultVal - minVal) / (maxVal - minVal), 0, 1, 0)
+    fill.BackgroundColor3 = Color3.fromRGB(255, 200, 100)
+    Instance.new("UICorner", fill).CornerRadius = UDim.new(1, 0)
+    
+    local knob = Instance.new("Frame")
+    knob.Parent = bar
+    knob.Size = UDim2.new(0, 12, 0, 12)
+    knob.Position = UDim2.new((defaultVal - minVal) / (maxVal - minVal), -6, 0.5, -6)
+    knob.BackgroundColor3 = Color3.fromRGB(255, 200, 100)
+    Instance.new("UICorner", knob).CornerRadius = UDim.new(1, 0)
+    
+    local dragging = false
+    
+    local function update(input)
+        local percent = math.clamp((input.Position.X - bar.AbsolutePosition.X) / bar.AbsoluteSize.X, 0, 1)
+        fill.Size = UDim2.new(percent, 0, 1, 0)
+        knob.Position = UDim2.new(percent, -6, 0.5, -6)
+        local value = minVal + (maxVal - minVal) * percent
+        label.Text = name .. ": " .. math.floor(value * 100) / 100
+        callback(value)
+    end
+    
+    knob.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            dragging = true
+        end
+    end)
+    
+    UIS.InputChanged:Connect(function(input)
+        if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+            update(input)
+        end
+    end)
+    
+    UIS.InputEnded:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            dragging = false
+        end
+    end)
+end
+
+createSlider("Прозрачность фона", 40, 0, 1, Settings.bgTrans, function(v)
+    Settings.bgTrans = v
+    backgroundImage.ImageTransparency = v
+end)
+
+createSlider("Прозрачность меню", 95, 0, 1, Settings.mainTrans, function(v)
+    Settings.mainTrans = v
+    frame.BackgroundTransparency = v
+end)
+
+-- КНОПКА ОТКРЫТИЯ НАСТРОЕК (ШЕСТЕРЁНКА)
+local gearButton = Instance.new("ImageButton")
+gearButton.Parent = frame
+gearButton.Size = UDim2.new(0, 32, 0, 32)
+gearButton.Position = UDim2.new(1, -40, 0, 5)
 gearButton.BackgroundTransparency = 1
 gearButton.Image = "rbxassetid://6031094678"
+
 gearButton.MouseButton1Click:Connect(function()
     UI_STATE.settingsOpen = not UI_STATE.settingsOpen
     settingsFrame.Visible = UI_STATE.settingsOpen
 end)
 
--- Перетаскивание
-local function makeDraggable(obj)
-    local drag, dragStart, startPos
-    obj.InputBegan:Connect(function(i)
-        if i.UserInputType == Enum.UserInputType.MouseButton1 then
-            drag = true; dragStart = i.Position; startPos = obj.Position
-            i.Changed:Connect(function()
-                if i.UserInputState == Enum.UserInputState.End then drag = false end
-            end)
-        end
-    end)
-    UIS.InputChanged:Connect(function(i)
-        if drag and i.UserInputType == Enum.UserInputType.MouseMovement then
-            local delta = i.Position - dragStart
-            obj.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-        end
-    end)
-end
-makeDraggable(frame)
-makeDraggable(toggleButton)
+-- ПЕРЕТАСКИВАНИЕ ОКНА НАСТРОЕК (ЗА ЗАГОЛОВОК)
+local dragSettings = false
+local settingsDragStart, settingsStartPos
 
--- ==================== 5. ЛОГИКА ТРЕЙДА (ВАШ КОД) ====================
+settingsTitle.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        dragSettings = true
+        settingsDragStart = input.Position
+        settingsStartPos = settingsFrame.Position
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragSettings = false
+            end
+        end)
+    end
+end)
+
+UIS.InputChanged:Connect(function(input)
+    if dragSettings and input.UserInputType == Enum.UserInputType.MouseMovement then
+        local delta = input.Position - settingsDragStart
+        settingsFrame.Position = UDim2.new(
+            settingsStartPos.X.Scale,
+            settingsStartPos.X.Offset + delta.X,
+            settingsStartPos.Y.Scale,
+            settingsStartPos.Y.Offset + delta.Y
+        )
+    end
+end)
+
+-- ========== 11. ПЕРЕТАСКИВАНИЕ ГЛАВНОГО ОКНА И КНОПКИ ==========
+local frameDrag = false
+local frameDragStart, frameStartPos
+
+frame.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        frameDrag = true
+        frameDragStart = input.Position
+        frameStartPos = frame.Position
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                frameDrag = false
+            end
+        end)
+    end
+end)
+
+UIS.InputChanged:Connect(function(input)
+    if frameDrag and input.UserInputType == Enum.UserInputType.MouseMovement then
+        local delta = input.Position - frameDragStart
+        frame.Position = UDim2.new(
+            frameStartPos.X.Scale,
+            frameStartPos.X.Offset + delta.X,
+            frameStartPos.Y.Scale,
+            frameStartPos.Y.Offset + delta.Y
+        )
+    end
+end)
+
+local buttonDrag = false
+local buttonDragStart, buttonStartPos
+
+toggleButton.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        buttonDrag = true
+        buttonDragStart = input.Position
+        buttonStartPos = toggleButton.Position
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                buttonDrag = false
+            end
+        end)
+    end
+end)
+
+UIS.InputChanged:Connect(function(input)
+    if buttonDrag and input.UserInputType == Enum.UserInputType.MouseMovement then
+        local delta = input.Position - buttonDragStart
+        toggleButton.Position = UDim2.new(
+            buttonStartPos.X.Scale,
+            buttonStartPos.X.Offset + delta.X,
+            buttonStartPos.Y.Scale,
+            buttonStartPos.Y.Offset + delta.Y
+        )
+    end
+end)
+
+-- ========== 12. ТВОИ ФУНКЦИИ ТРЕЙДА ==========
 local function getSlotItemName(slot)
     local itemName = slot:FindFirstChild("ItemName")
     if not itemName then return nil end
     local label = itemName:FindFirstChild("Label")
-    return label and tostring(label.Text) ~= "" and tostring(label.Text) or nil
+    if not label then return nil end
+    local name = tostring(label.Text)
+    if name == "" or name == " " then return nil end
+    return name
 end
 
 local function getSlotAmount(slot)
     local container = slot:FindFirstChild("Container")
-    local amountObj = container and container:FindFirstChild("Amount")
+    if not container then return 1 end
+    local amountObj = container:FindFirstChild("Amount")
     if amountObj and amountObj:IsA("TextLabel") then
-        local num = amountObj.Text:match("%d+")
+        local txt = tostring(amountObj.Text)
+        local num = txt:match("%d+")
         if num then return tonumber(num) end
     end
     return 1
 end
 
-local function formatDetails(name, isChroma)
-    local realName = isChroma and (getChromaName(name) or name) or name
-    local d = itemDetails[realName] or itemDetails[name]
-    if not d then return "📊 Нет данных" end
-    local icon = (d.trend == "Rising" and "📈") or (d.trend == "Falling" and "📉") or "➡️"
-    local rangeStr = (d.range and d.range ~= "") and ("📊 " .. d.range) or ""
-    return string.format("%s %s | %s\n%s\n🔥 %s | ✨ %s", icon, d.trend, d.stability, rangeStr, d.demand, d.rarity)
+local function formatDetails(name, isChromaActive)
+    local realName = name
+    if isChromaActive then
+        local chromaName = getChromaName(name)
+        if chromaName then realName = chromaName end
+    end
+    
+    local details = itemDetails[realName]
+    if not details and isChromaActive then details = itemDetails[name] end
+    if not details then return "📊 Нет данных" end
+    
+    local trendIcon = (details.trend == "Rising" and "📈") or (details.trend == "Falling" and "📉") or (details.trend == "Stable" and "➡️") or "❓"
+    local rangeStr = (details.range and details.range ~= "") and ("📊 " .. details.range) or ""
+    
+    local lines = {string.format("%s %s | %s", trendIcon, details.trend, details.stability)}
+    if rangeStr ~= "" then table.insert(lines, rangeStr) end
+    table.insert(lines, string.format("🔥 %s | ✨ %s", details.demand, details.rarity))
+    return table.concat(lines, "\n")
 end
 
-local function calculateTotal(side, maxSlot, chromaMode)
+local function calculateTotal(sideName, maxSlot, chromaTable)
     local tradeGui = LP.PlayerGui:FindFirstChild("TradeGUI")
-    local container = tradeGui and tradeGui.Container.Trade[side].Container
+    if not tradeGui then return 0, 0 end
+    local container = tradeGui.Container.Trade[sideName].Container
     if not container then return 0, 0 end
-    local totalV, totalR = 0, 0
-    for i=1, maxSlot do
+    
+    local totalV = 0
+    local totalRub = 0
+    
+    for i = 1, maxSlot do
         local slot = container:FindFirstChild("NewItem"..i)
         if slot then
             local name = getSlotItemName(slot)
             if name then
                 local amount = getSlotAmount(slot)
-                local lookupName = (chromaMode and chromaMode[i]) and (getChromaName(name) or name) or name
-                totalV = totalV + (getPrice(lookupName) * amount)
-                totalR = totalR + (getDreamPrice(lookupName) * amount)
+                local priceV, priceRub
+                
+                if chromaTable and chromaTable[i] then
+                    local chromaName = getChromaName(name)
+                    if chromaName then
+                        priceV = getPrice(chromaName)
+                        priceRub = getDreamPrice(chromaName)
+                    else
+                        priceV = getPrice(name)
+                        priceRub = getDreamPrice(name)
+                    end
+                else
+                    priceV = getPrice(name)
+                    priceRub = getDreamPrice(name)
+                end
+                
+                totalV = totalV + (priceV * amount)
+                totalRub = totalRub + (priceRub * amount)
             end
         end
     end
-    return totalV, totalR
+    return totalV, totalRub
 end
 
 local function updateAll()
     local tradeGui = LP.PlayerGui:FindFirstChild("TradeGUI")
     if not tradeGui then return end
     
-    local function updateSide(container, slots, chromaMode)
-        for i=1,4 do
-            local slot = container:FindFirstChild("NewItem"..i)
-            local ui = slots[i]
-            if slot then
-                local name = getSlotItemName(slot)
-                if name then
-                    local amount = getSlotAmount(slot)
-                    local priceName = chromaMode[i] and (getChromaName(name) or name) or name
-                    local sup = math.floor(getPrice(priceName) * amount)
-                    local drm = math.floor(getDreamPrice(priceName) * amount)
-                    ui.name.Text = (#name > 14) and name:sub(1,12)..".." or name
-                    ui.price.Text = (drm > 0) and (sup.." V\n"..drm.." ₽") or (sup.." V")
-                    ui.details.Text = formatDetails(name, chromaMode[i])
-                else
-                    ui.name.Text = "Пусто"; ui.price.Text = "0 V"; ui.details.Text = "❌"
-                end
-            else
-                ui.name.Text = "Пусто"; ui.price.Text = "0 V"; ui.details.Text = "❌"
-            end
-        end
-    end
+    local yourContainer = tradeGui.Container.Trade.YourOffer.Container
+    local theirContainer = tradeGui.Container.Trade.TheirOffer.Container
     
-    local yourCont = tradeGui.Container.Trade.YourOffer.Container
-    local theirCont = tradeGui.Container.Trade.TheirOffer.Container
-    updateSide(yourCont, yourSlots, yourChromaMode)
-    updateSide(theirCont, theirSlots, theirChromaMode)
-    
-    local yV, yR = calculateTotal("YourOffer", YOUR_MAX_SLOT, yourChromaMode)
-    local tV, tR = calculateTotal("TheirOffer", THEIR_MAX_SLOT, theirChromaMode)
-    
-    yourTotalLabel.Text = "TOTAL: "..math.floor(yV).." V"
-    theirTotalLabel.Text = "TOTAL: "..math.floor(tV).." V"
-    yourDreamLabel.Text = (yR > 0) and ("💸 "..math.floor(yR).." ₽") or ""
-    theirDreamLabel.Text = (tR > 0) and ("💸 "..math.floor(tR).." ₽") or ""
-    
-    if yV > tV then
-        yourTotalLabel.TextColor3 = Color3.new(0,1,0)
-        theirTotalLabel.TextColor3 = Color3.new(1,0,0)
-    elseif tV > yV then
-        yourTotalLabel.TextColor3 = Color3.new(1,0,0)
-        theirTotalLabel.TextColor3 = Color3.new(0,1,0)
-    else
-        yourTotalLabel.TextColor3 = Color3.new(0.7,0.7,0.7)
-        theirTotalLabel.TextColor3 = Color3.new(0.7,0.7,0.7)
-    end
-end
-
--- ==================== 6. ЗАПУСК ====================
-loadDataFromGitHub()
-
-spawn(function()
-    while task.wait(0.3) do
-        pcall(updateAll)
-    end
-end)
-
-print("[ZXC] Скрипт готов! Иконка -> " .. (iconAsset and "папка Icons_ZXC" or "стандартная") ..
-      " | Фон -> " .. (bgAsset and "папка Backgrounds_Ghoul" or "стандартный"))
+    for i = 1, 4 do
+        local slot = yourContainer:FindFirstChild("New
