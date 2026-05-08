@@ -1,5 +1,6 @@
 import json
 import re
+import time
 from playwright.sync_api import sync_playwright
 
 # ========== ЧЁРНЫЙ СПИСОК ==========
@@ -21,12 +22,10 @@ def should_ignore_item(name):
 
 # ========== РУЧНЫЕ СООТВЕТСТВИЯ ==========
 MANUAL_MAPPING = {
-    # Battleaxe
     "BattleAxe II": "Battleaxe II",
     "BattleAxe": "Battleaxe",
     "Battle Axe II": "Battleaxe II",
     "Battle Axe": "Battleaxe",
-    # Chroma (C. ↔ Chroma)
     "Chroma Traveler's Gun": "C. Traveler's Gun",
     "Chroma Vampire's Gun": "C. Vampire's Gun",
     "Chroma Constellation": "C. Constellation",
@@ -41,21 +40,6 @@ MANUAL_MAPPING = {
     "Chroma Deathshard": "C. Deathshard",
     "Chroma Cookiecane": "C. Cookiecane",
     "Chroma Gingerblade": "C. Gingerblade",
-    # Обратные
-    "C. Traveler's Gun": "Chroma Traveler's Gun",
-    "C. Vampire's Gun": "Chroma Vampire's Gun",
-    "C. Constellation": "Chroma Constellation",
-    "C. Snowcannon": "Chroma Snowcannon",
-    "C. Heart Wand": "Chroma Heart Wand",
-    "C. Snow Dagger": "Chroma Snow Dagger",
-    "C. Darkbringer": "Chroma Darkbringer",
-    "C. Lightbringer": "Chroma Lightbringer",
-    "C. Candleflame": "Chroma Candleflame",
-    "C. Elderwood Blade": "Chroma Elderwood Blade",
-    "C. Swirly Gun": "Chroma Swirly Gun",
-    "C. Deathshard": "Chroma Deathshard",
-    "C. Cookiecane": "Chroma Cookiecane",
-    "C. Gingerblade": "Chroma Gingerblade",
 }
 
 # ========== SUPREME VALUES ==========
@@ -126,7 +110,7 @@ def extract_supreme_items(page, category):
             continue
     return items
 
-# ========== DREAM PETS ==========
+# ========== DREAM PETS ПАРСЕР (ТОЛЬКО price класс) ==========
 def get_dreampets_prices(page):
     print("  Закрываю рекламу...")
     try:
@@ -147,41 +131,48 @@ def get_dreampets_prices(page):
     print("  Прокручиваю контейнер...")
     for i in range(25):
         container.evaluate("element => element.scrollTop = element.scrollHeight")
-        page.wait_for_timeout(1500)
+        page.wait_for_timeout(2000)
         if i % 5 == 0:
             print(f"    Прокрутка {i+1}/25")
     
     page.wait_for_timeout(3000)
     
+    # НОВЫЙ JS-КОД: ищем только <p class="price">
     js_code = """
     (function() {
         const items = {};
-        const h3s = document.querySelectorAll('h3');
+        const priceElements = document.querySelectorAll('p.price');
         
-        for (let i = 0; i < h3s.length; i++) {
-            const h3 = h3s[i];
-            const parent = h3.closest('a');
-            let priceElem = null;
+        for (let i = 0; i < priceElements.length; i++) {
+            const priceElem = priceElements[i];
+            const priceText = priceElem.innerText.trim();
+            const match = priceText.match(/(\\d+(?:\\.\\d+)?)/);
             
-            if (parent) {
-                priceElem = parent.querySelector('[class*="price"]');
-            }
-            if (!priceElem && h3.parentElement) {
-                priceElem = h3.parentElement.querySelector('[class*="price"]');
-            }
+            if (!match) continue;
             
-            let price = 0;
-            if (priceElem) {
-                const priceText = priceElem.innerText.trim();
-                const match = priceText.match(/(\\d+(?:\\.\\d+)?)/);
-                if (match) {
-                    price = parseFloat(match[1]);
+            const price = parseFloat(match[1]);
+            if (price <= 0) continue;
+            
+            // Ищем родительский элемент с названием предмета
+            let parent = priceElem.parentElement;
+            let nameElem = null;
+            let maxDepth = 10;
+            
+            while (parent && maxDepth > 0) {
+                const h3 = parent.querySelector('h3');
+                if (h3) {
+                    nameElem = h3;
+                    break;
                 }
+                parent = parent.parentElement;
+                maxDepth = maxDepth - 1;
             }
             
-            const name = h3.innerText.trim();
-            if (price > 0 && name.length > 0) {
-                items[name] = price;
+            if (nameElem) {
+                const name = nameElem.innerText.trim();
+                if (name.length > 0 && !items[name]) {
+                    items[name] = price;
+                }
             }
         }
         
@@ -223,49 +214,28 @@ def main():
     
     print("\n[3/3] Объединение данных...")
     
-    # Создаём словарь с ВСЕМИ возможными вариантами названий
     dreampets_lookup = {}
     for dream_name, price in dreampets_prices.items():
-        # Оригинал
         dreampets_lookup[dream_name] = price
         
         # Ручные соответствия
         if dream_name in MANUAL_MAPPING:
             dreampets_lookup[MANUAL_MAPPING[dream_name]] = price
         
-        # Автоматическое преобразование "Chroma X" → "C. X"
+        # "Chroma X" → "C. X"
         if dream_name.startswith("Chroma "):
             dreampets_lookup["C. " + dream_name[7:]] = price
         
-        # Автоматическое преобразование "C. X" → "Chroma X"
+        # "C. X" → "Chroma X"
         if dream_name.startswith("C. "):
-            chroma_name = "Chroma " + dream_name[3:]
-            dreampets_lookup[chroma_name] = price
-            
-            # Дополнительно: убираем точку "C X" (если есть)
-            dreampets_lookup["C " + dream_name[3:]] = price
+            dreampets_lookup["Chroma " + dream_name[3:]] = price
     
-    # Применяем цены к предметам из SupremeValues
     for category, items in all_data.items():
         for name, info in items.items():
             if name in dreampets_lookup:
                 info["dreampets_price"] = dreampets_lookup[name]
             else:
-                # Пробуем найти по альтернативному названию
-                if name.startswith("C. "):
-                    alt = "Chroma " + name[3:]
-                    if alt in dreampets_lookup:
-                        info["dreampets_price"] = dreampets_lookup[alt]
-                    else:
-                        info["dreampets_price"] = 0
-                elif name.startswith("Chroma "):
-                    alt = "C. " + name[7:]
-                    if alt in dreampets_lookup:
-                        info["dreampets_price"] = dreampets_lookup[alt]
-                    else:
-                        info["dreampets_price"] = 0
-                else:
-                    info["dreampets_price"] = 0
+                info["dreampets_price"] = 0
     
     with open("prices.json", "w", encoding="utf-8") as f:
         json.dump(all_data, f, indent=2, ensure_ascii=False)
