@@ -22,10 +22,10 @@ local theirChromaMode = { false, false, false, false }
 local YOUR_MAX_SLOT = 4
 local THEIR_MAX_SLOT = 4
 
--- Прозрачности (0 = непрозрачный, 1 = полностью прозрачный)
+-- Прозрачности
 local transparency = {
     bg = 0.55,      -- фоновая картинка
-    frames = 0.85   -- все фреймы (окна, панели, слоты)
+    frames = 0.85   -- все фреймы
 }
 
 -- ========== ЗАГРУЗКА ДАННЫХ ==========
@@ -233,7 +233,7 @@ backgroundImage.ScaleType = Enum.ScaleType.Crop
 backgroundImage.ZIndex = -999
 
 -- ============================================
--- ПАНЕЛЬ НАСТРОЕК (ШЕСТЕРЁНКА)
+-- ШЕСТЕРЁНКА (ПАНЕЛЬ НАСТРОЕК)
 -- ============================================
 
 local settingsOpen = false
@@ -283,7 +283,7 @@ local function createSettingsPanel()
     stitle.TextColor3 = Color3.new(1, 1, 1)
     stitle.TextScaled = true
     
-    -- Фон (картинка)
+    -- Фон
     local bgLabel = Instance.new("TextLabel")
     bgLabel.Parent = settingsPanel
     bgLabel.Position = UDim2.new(0, 10, 0, 35)
@@ -320,7 +320,7 @@ local function createSettingsPanel()
     bgKnob.BorderSizePixel = 0
     Instance.new("UICorner", bgKnob).CornerRadius = UDim.new(1, 0)
     
-    -- Окна (фреймы)
+    -- Окна
     local frameLabel = Instance.new("TextLabel")
     frameLabel.Parent = settingsPanel
     frameLabel.Position = UDim2.new(0, 10, 0, 80)
@@ -400,7 +400,7 @@ local function createSettingsPanel()
     end)
 end
 
--- Шестерёнка
+-- Шестерёнка (справа сверху)
 local gearButton = Instance.new("ImageButton")
 gearButton.Parent = frame
 gearButton.Size = UDim2.new(0, 32, 0, 32)
@@ -736,9 +736,3 @@ local function getSlotAmount(slot)
     if amountObj and amountObj:IsA("TextLabel") then
         local txt = tostring(amountObj.Text)
         local num = txt:match("%d+")
-        if num then return tonumber(num) end
-    end
-    return 1
-end
-
--- ========== ФОРМАТИРОВАНИЕ ДЕТАЛЕЙ =
