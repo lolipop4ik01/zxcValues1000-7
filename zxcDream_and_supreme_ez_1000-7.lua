@@ -67,7 +67,6 @@ end
 
 -- ========== ПРЕОБРАЗОВАНИЕ ИМЁН (Chroma ↔ C.) ==========
 local function normalizeChromaName(name)
-    -- "Chroma Cookiecane" → "C. Cookiecane"
     if name:match("^Chroma ") then
         local rest = name:sub(8)
         local cName = "C. " .. rest
@@ -75,7 +74,6 @@ local function normalizeChromaName(name)
             return cName
         end
     end
-    -- "C. Cookiecane" → "Chroma Cookiecane"
     if name:match("^C%. ") then
         local rest = name:sub(4)
         local chromaName = "Chroma " .. rest
@@ -137,7 +135,7 @@ local title = Instance.new("TextLabel")
 title.Parent = frame
 title.Size = UDim2.new(1,0,0,30)
 title.BackgroundTransparency = 1
-title.Text = "1000-7 ZXC made by Ghouls"
+title.Text = "ZXC 1000-7 made by Ghouls SSS Rank"
 title.Font = Enum.Font.GothamBold
 title.TextColor3 = Color3.new(1,1,1)
 title.TextScaled = true
@@ -425,16 +423,29 @@ local function getSlotAmount(slot)
     return 1
 end
 
--- ========== ФОРМАТИРОВАНИЕ ДЕТАЛЕЙ ==========
+-- ========== ФОРМАТИРОВАНИЕ ДЕТАЛЕЙ (ИСПРАВЛЕНО) ==========
 local function formatDetails(name, isChromaActive)
     local realName = name
+    local useChromaDetails = false
+    
     if isChromaActive then
         local chromaName = getChromaName(name)
-        if chromaName then realName = chromaName end
+        if chromaName then
+            realName = chromaName
+            useChromaDetails = true
+        end
     end
     
     local details = itemDetails[realName]
-    if not details then return "📊 Нет данных" end
+    
+    -- Если нет деталей для хромы, показываем детали обычной версии
+    if not details and useChromaDetails then
+        details = itemDetails[name]
+    end
+    
+    if not details then
+        return "📊 Нет данных"
+    end
     
     local trend = details.trend or "?"
     local stability = details.stability or "?"
