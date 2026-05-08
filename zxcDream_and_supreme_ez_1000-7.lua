@@ -134,7 +134,40 @@ frame.BorderSizePixel = 0
 Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 10)
 
 -- ============================================
--- EXECUTOR IMAGE SYSTEM (РАБОТАЕТ ТОЛЬКО ПОСЛЕ FRAME)
+-- ПЕРЕТАСКИВАНИЕ ГЛАВНОГО ОКНА
+-- ============================================
+local frameDragging = false
+local frameDragStart
+local frameStartPos
+
+frame.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        frameDragging = true
+        frameDragStart = input.Position
+        frameStartPos = frame.Position
+        
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                frameDragging = false
+            end
+        end)
+    end
+end)
+
+UIS.InputChanged:Connect(function(input)
+    if frameDragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+        local delta = input.Position - frameDragStart
+        frame.Position = UDim2.new(
+            frameStartPos.X.Scale,
+            frameStartPos.X.Offset + delta.X,
+            frameStartPos.Y.Scale,
+            frameStartPos.Y.Offset + delta.Y
+        )
+    end
+end)
+
+-- ============================================
+-- EXECUTOR IMAGE SYSTEM
 -- ============================================
 
 local EXECUTOR_FOLDER = "1000-7_Assets"
@@ -441,7 +474,7 @@ yourSlots[1].frame.BackgroundColor3 = Color3.fromRGB(40, 60, 90)
 theirSlots[1].frame.BackgroundColor3 = Color3.fromRGB(40, 60, 90)
 
 -- ============================================
--- ТОГГЛ КНОПКА (КРУГЛАЯ, ПЕРЕТАСКИВАЕТСЯ)
+-- ТОГГЛ КНОПКА (КРУГЛАЯ, БЕЗ БЕЛОЙ ПОЛОСКИ, НЕ ПРОЗРАЧНАЯ)
 -- ============================================
 
 local toggleButton = Instance.new("ImageButton")
@@ -452,7 +485,7 @@ toggleButton.Size = UDim2.new(0, 60, 0, 60)
 toggleButton.Position = UDim2.new(0, 20, 0.5, -30)
 
 toggleButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-toggleButton.BackgroundTransparency = 0.15
+toggleButton.BackgroundTransparency = 0  -- Убрана прозрачность
 toggleButton.BorderSizePixel = 0
 
 toggleButton.Image = iconAsset or "rbxassetid://7072719338"
@@ -461,10 +494,7 @@ toggleButton.ZIndex = 999999
 
 Instance.new("UICorner", toggleButton).CornerRadius = UDim.new(1, 0)
 
-local stroke = Instance.new("UIStroke")
-stroke.Parent = toggleButton
-stroke.Thickness = 2
-stroke.Color = Color3.new(1, 1, 1)
+-- БЕЛАЯ ПОЛОСКА УБРАНА (UIStroke НЕ ДОБАВЛЯЕМ)
 
 -- ========== ОТКРЫТИЕ / ЗАКРЫТИЕ ==========
 local opened = true
