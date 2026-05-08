@@ -6,7 +6,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 6,
-      "rarity": 4
+      "rarity": 4,
+      "dreampets_price": 4395
     },
     "Evergun": {
       "value": 3400,
@@ -14,7 +15,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 5,
-      "rarity": 4
+      "rarity": 4,
+      "dreampets_price": 3314
     },
     "Constellation": {
       "value": 2750,
@@ -22,7 +24,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 5,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 2200
     },
     "Evergreen": {
       "value": 2550,
@@ -30,7 +33,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 5,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 2167
     },
     "Alienbeam": {
       "value": 2250,
@@ -38,7 +42,8 @@
       "stability": "Receding",
       "range": "2,200 - 2,250",
       "demand": 6,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 1849
     },
     "Turkey": {
       "value": 2050,
@@ -46,7 +51,8 @@
       "stability": "Doing Well",
       "range": "2,050 - 2,100",
       "demand": 6,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 2050
     },
     "Vampire's Gun": {
       "value": 1700,
@@ -54,7 +60,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 5,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 1791.98
     },
     "Raygun": {
       "value": 1400,
@@ -62,7 +69,8 @@
       "stability": "Receding",
       "range": "1,350 - 1,400",
       "demand": 5,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 1150
     },
     "Darkshot": {
       "value": 1240,
@@ -70,7 +78,8 @@
       "stability": "Doing Well",
       "range": "1,240 - 1,260",
       "demand": 5,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 1247
     },
     "Darksword": {
       "value": 1220,
@@ -78,7 +87,8 @@
       "stability": "Doing Well",
       "range": "1,220 - 1,240",
       "demand": 5,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 1249
     },
     "Blossom": {
       "value": 1110,
@@ -86,7 +96,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 5,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 35
     },
     "Sakura": {
       "value": 1100,
@@ -94,7 +105,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 5,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 999
     },
     "Bauble": {
       "value": 925,
@@ -102,7 +114,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 5,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 900
     },
     "Snowcannon": {
       "value": 875,
@@ -110,7 +123,8 @@
       "stability": "Doing Well",
       "range": "875 - 900",
       "demand": 6,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 1020
     },
     "Sunrise": {
       "value": 850,
@@ -118,7 +132,8 @@
       "stability": "Overpaid For",
       "range": "850 - 900",
       "demand": 6,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 973
     },
     "Sunset": {
       "value": 450,
@@ -126,7 +141,8 @@
       "stability": "Doing Well",
       "range": "450 - 475",
       "demand": 4,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 3.5
     },
     "Heart Wand": {
       "value": 375,
@@ -134,7 +150,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 4,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 383
     },
     "Soul": {
       "value": 345,
@@ -142,7 +159,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 4,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 366
     },
     "Spirit": {
       "value": 335,
@@ -150,7 +168,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 4,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 359
     },
     "Rainbow Gun": {
       "value": 300,
@@ -158,7 +177,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 4,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 299
     },
     "Rainbow": {
       "value": 290,
@@ -166,7 +186,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 4,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 4.99
     },
     "Flora": {
       "value": 275,
@@ -174,7 +195,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 4,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 439
     },
     "Bloom": {
       "value": 265,
@@ -182,7 +204,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 4,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 320
     },
     "Snow Dagger": {
       "value": 260,
@@ -190,7 +213,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 4,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 245
     },
     "Flowerwood Gun": {
       "value": 205,
@@ -198,7 +222,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 3,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 299
     },
     "Treat": {
       "value": 205,
@@ -206,7 +231,8 @@
       "stability": "Underpaid For",
       "range": "200 - 205",
       "demand": 3,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 159
     },
     "Flowerwood": {
       "value": 200,
@@ -214,7 +240,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 3,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 225
     },
     "Xenoknife": {
       "value": 200,
@@ -222,7 +249,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 3,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 247
     },
     "Xenoshot": {
       "value": 200,
@@ -230,7 +258,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 3,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 249
     },
     "Sweet": {
       "value": 200,
@@ -238,7 +267,8 @@
       "stability": "Underpaid For",
       "range": "195 - 200",
       "demand": 3,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 174
     },
     "Ocean": {
       "value": 170,
@@ -246,7 +276,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 3,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 194
     },
     "Waves": {
       "value": 165,
@@ -254,7 +285,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 3,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 159
     },
     "Watergun": {
       "value": 160,
@@ -262,7 +294,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 3,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 171
     },
     "Blizzard": {
       "value": 155,
@@ -270,7 +303,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 3,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 199
     },
     "Snowstorm": {
       "value": 155,
@@ -278,7 +312,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 3,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 180
     },
     "Bat": {
       "value": 125,
@@ -286,7 +321,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 3,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 2.99
     },
     "Borealis": {
       "value": 105,
@@ -294,7 +330,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 3,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 104
     },
     "Candy": {
       "value": 105,
@@ -302,7 +339,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 99.99
     },
     "Australis": {
       "value": 100,
@@ -310,7 +348,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 3,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 97.99
     },
     "Heartblade": {
       "value": 85,
@@ -318,7 +357,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 64.99
     },
     "Pearlshine": {
       "value": 55,
@@ -326,7 +366,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 59.99
     },
     "Pearl": {
       "value": 50,
@@ -334,7 +375,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 51
     },
     "Luger": {
       "value": 50,
@@ -342,7 +384,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 41.99
     },
     "Candleflame": {
       "value": 45,
@@ -350,7 +393,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 21
     },
     "Elderwood Blade": {
       "value": 45,
@@ -358,7 +402,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 53
     },
     "Makeshift": {
       "value": 45,
@@ -366,7 +411,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 100
     },
     "Elderwood Revolver": {
       "value": 45,
@@ -374,7 +420,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 38
     },
     "Red Luger": {
       "value": 45,
@@ -382,7 +429,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 39.99
     },
     "Sugar": {
       "value": 45,
@@ -390,7 +438,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 38.99
     },
     "Phantom": {
       "value": 42,
@@ -398,7 +447,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 98.99
     },
     "Spectre": {
       "value": 42,
@@ -406,7 +456,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 39.99
     },
     "Darkbringer": {
       "value": 42,
@@ -414,7 +465,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 42.99
     },
     "Iceblaster": {
       "value": 42,
@@ -422,7 +474,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 45
     },
     "Lightbringer": {
       "value": 38,
@@ -430,7 +483,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 33
     },
     "Green Luger": {
       "value": 30,
@@ -438,7 +492,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 23.98
     },
     "Ornament": {
       "value": 30,
@@ -446,7 +501,8 @@
       "stability": "Underpaid For",
       "range": "25 - 30",
       "demand": 2,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 2.5
     },
     "Laser": {
       "value": 27,
@@ -454,7 +510,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 30
     },
     "Swirly Gun": {
       "value": 25,
@@ -462,7 +519,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 29.99
     },
     "Amerilaser": {
       "value": 25,
@@ -470,7 +528,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 40
     },
     "Hallowgun": {
       "value": 25,
@@ -478,7 +537,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 23.99
     },
     "Icebeam": {
       "value": 25,
@@ -486,7 +546,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 24.89
     },
     "Plasmabeam": {
       "value": 25,
@@ -494,7 +555,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 27.22
     },
     "Iceflake": {
       "value": 23,
@@ -502,7 +564,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 18.99
     },
     "Plasmablade": {
       "value": 23,
@@ -510,7 +573,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 19.97
     },
     "Shark": {
       "value": 23,
@@ -518,7 +582,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 17.99
     },
     "Nightblade": {
       "value": 22,
@@ -526,7 +591,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 30.99
     },
     "Blaster": {
       "value": 20,
@@ -534,7 +600,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 14.99
     },
     "Ginger Luger": {
       "value": 20,
@@ -542,7 +609,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 19.99
     },
     "Pixel": {
       "value": 20,
@@ -550,7 +618,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 23.99
     },
     "Cookiecane": {
       "value": 18,
@@ -558,7 +627,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 17.99
     },
     "Gingermint": {
       "value": 18,
@@ -566,7 +636,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 17.98
     },
     "Lugercane": {
       "value": 18,
@@ -574,7 +645,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 18.99
     },
     "Minty": {
       "value": 18,
@@ -582,7 +654,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 20.99
     },
     "Old Glory": {
       "value": 18,
@@ -590,7 +663,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 23
     },
     "Slasher": {
       "value": 18,
@@ -598,7 +672,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 14.99
     },
     "Battleaxe II": {
       "value": 18,
@@ -606,7 +681,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 20.99
     },
     "Eternalcane": {
       "value": 17,
@@ -614,7 +690,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 13.99
     },
     "Jinglegun": {
       "value": 17,
@@ -622,7 +699,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 16.89
     },
     "Virtual": {
       "value": 17,
@@ -630,7 +708,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 15.39
     },
     "Gemstone": {
       "value": 17,
@@ -638,7 +717,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 18.01
     },
     "Gingerblade": {
       "value": 17,
@@ -646,7 +726,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 14.28
     },
     "Swirly Blade": {
       "value": 15,
@@ -654,7 +735,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 15
     },
     "Nebula": {
       "value": 15,
@@ -662,7 +744,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 12.99
     },
     "Vampire's Edge": {
       "value": 15,
@@ -670,7 +753,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 25
     },
     "Deathshard": {
       "value": 15,
@@ -678,7 +762,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 19.48
     },
     "Battleaxe": {
       "value": 12,
@@ -686,7 +771,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 14.93
     },
     "Bioblade": {
       "value": 10,
@@ -694,7 +780,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 29
     },
     "Chill": {
       "value": 10,
@@ -702,7 +789,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 11.26
     },
     "Clockwork": {
       "value": 10,
@@ -710,7 +798,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 11.99
     },
     "Eternal III": {
       "value": 10,
@@ -718,7 +807,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 17
     },
     "Eternal IV": {
       "value": 10,
@@ -726,7 +816,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 9.88
     },
     "Fang": {
       "value": 10,
@@ -734,7 +825,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 16
     },
     "Frostsaber": {
       "value": 10,
@@ -742,7 +834,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 13.65
     },
     "Heat": {
       "value": 10,
@@ -750,7 +843,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 15.19
     },
     "Spider": {
       "value": 10,
@@ -758,7 +852,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 2
     },
     "Tides": {
       "value": 10,
@@ -766,7 +861,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 13
     },
     "Eternal": {
       "value": 8,
@@ -774,7 +870,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 9.69
     },
     "Eternal II": {
       "value": 8,
@@ -782,7 +879,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 9.98
     },
     "Hallow's Blade": {
       "value": 8,
@@ -790,7 +888,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 28
     },
     "Hallow's Edge": {
       "value": 8,
@@ -798,7 +897,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 9.99
     },
     "Handsaw": {
       "value": 8,
@@ -806,7 +906,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 9.97
     },
     "Xmas": {
       "value": 8,
@@ -814,7 +915,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 9.98
     },
     "Boneblade": {
       "value": 7,
@@ -822,7 +924,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 7.97
     },
     "Frostbite": {
       "value": 7,
@@ -830,7 +933,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 9.99
     },
     "Ghostblade": {
       "value": 7,
@@ -838,7 +942,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 9.99
     },
     "Ice Dragon": {
       "value": 7,
@@ -846,7 +951,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 7.97
     },
     "Ice Shard": {
       "value": 7,
@@ -854,7 +960,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 9.49
     },
     "Prismatic": {
       "value": 7,
@@ -862,7 +969,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 7.19
     },
     "Pumpking": {
       "value": 7,
@@ -870,7 +978,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 9.97
     },
     "Saw": {
       "value": 7,
@@ -878,7 +987,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 9.98
     },
     "Eggblade": {
       "value": 5,
@@ -886,7 +996,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 9.96
     },
     "Flames": {
       "value": 5,
@@ -894,7 +1005,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 55
     },
     "Snowflake": {
       "value": 5,
@@ -902,7 +1014,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 2
     },
     "Winter's Edge": {
       "value": 5,
@@ -910,7 +1023,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 9.98
     },
     "Peppermint": {
       "value": 4,
@@ -918,7 +1032,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 2
     },
     "Cookieblade": {
       "value": 3,
@@ -926,7 +1041,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 14.98
     },
     "Blue Seer": {
       "value": 3,
@@ -934,7 +1050,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 1
+      "rarity": 1,
+      "dreampets_price": 5.99
     },
     "Purple Seer": {
       "value": 3,
@@ -942,7 +1059,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 1
+      "rarity": 1,
+      "dreampets_price": 9
     },
     "Red Seer": {
       "value": 3,
@@ -950,7 +1068,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 1
+      "rarity": 1,
+      "dreampets_price": 6
     },
     "Seer": {
       "value": 3,
@@ -958,7 +1077,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 1
+      "rarity": 1,
+      "dreampets_price": 7.98
     },
     "Orange Seer": {
       "value": 2,
@@ -966,7 +1086,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 1
+      "rarity": 1,
+      "dreampets_price": 8.97
     },
     "Yellow Seer": {
       "value": 2,
@@ -974,17 +1095,19 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 1
+      "rarity": 1,
+      "dreampets_price": 7.99
     }
   },
   "chromas": {
-    "Chroma Traveler's Gun": {
+    "C. Traveler's Gun": {
       "value": 225000,
       "trend": "Stable",
       "stability": "Stable",
       "range": "",
       "demand": 9,
-      "rarity": 9
+      "rarity": 9,
+      "dreampets_price": 0
     },
     "Chroma Evergun": {
       "value": 100000,
@@ -992,7 +1115,8 @@
       "stability": "Underpaid For",
       "range": "",
       "demand": 8,
-      "rarity": 7
+      "rarity": 7,
+      "dreampets_price": 0
     },
     "Chroma Evergreen": {
       "value": 60000,
@@ -1000,15 +1124,17 @@
       "stability": "Stable",
       "range": "",
       "demand": 7,
-      "rarity": 6
+      "rarity": 6,
+      "dreampets_price": 0
     },
-    "Chroma Vampire's Gun": {
+    "C. Vampire's Gun": {
       "value": 38000,
       "trend": "Stable",
       "stability": "Stable",
       "range": "",
       "demand": 7,
-      "rarity": 6
+      "rarity": 6,
+      "dreampets_price": 0
     },
     "Chroma Bauble": {
       "value": 38000,
@@ -1016,15 +1142,17 @@
       "stability": "Stable",
       "range": "",
       "demand": 7,
-      "rarity": 5
+      "rarity": 5,
+      "dreampets_price": 39500
     },
-    "Chroma Constellation": {
+    "C. Constellation": {
       "value": 36000,
       "trend": "Stable",
       "stability": "Stable",
       "range": "",
       "demand": 7,
-      "rarity": 5
+      "rarity": 5,
+      "dreampets_price": 0
     },
     "Chroma Alienbeam": {
       "value": 30000,
@@ -1032,7 +1160,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 7,
-      "rarity": 5
+      "rarity": 5,
+      "dreampets_price": 0
     },
     "Chroma Raygun": {
       "value": 15500,
@@ -1040,7 +1169,8 @@
       "stability": "Doing Well",
       "range": "15,500 - 15,750",
       "demand": 6,
-      "rarity": 4
+      "rarity": 4,
+      "dreampets_price": 0
     },
     "Chroma Sunrise": {
       "value": 10500,
@@ -1048,15 +1178,17 @@
       "stability": "Doing Well",
       "range": "10,500 - 11,000",
       "demand": 6,
-      "rarity": 4
+      "rarity": 4,
+      "dreampets_price": 14000
     },
-    "Chroma Snowcannon": {
+    "C. Snowcannon": {
       "value": 8500,
       "trend": "",
       "stability": "Doing Well",
       "range": "8,500 - 8,750",
       "demand": 6,
-      "rarity": 4
+      "rarity": 4,
+      "dreampets_price": 10000
     },
     "Chroma Blizzard": {
       "value": 8000,
@@ -1064,7 +1196,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 5,
-      "rarity": 5
+      "rarity": 5,
+      "dreampets_price": 13000
     },
     "Chroma Treat": {
       "value": 6250,
@@ -1072,7 +1205,8 @@
       "stability": "Underpaid For",
       "range": "6,000 - 6,250",
       "demand": 5,
-      "rarity": 5
+      "rarity": 5,
+      "dreampets_price": 7350.25
     },
     "Chroma Sunset": {
       "value": 6000,
@@ -1080,23 +1214,26 @@
       "stability": "",
       "range": "6,000 - 6,250",
       "demand": 6,
-      "rarity": 4
+      "rarity": 4,
+      "dreampets_price": 0
     },
-    "Chroma Heart Wand": {
+    "C. Heart Wand": {
       "value": 6000,
       "trend": "Stable",
       "stability": "Stable",
       "range": "",
       "demand": 6,
-      "rarity": 5
+      "rarity": 5,
+      "dreampets_price": 6099
     },
-    "Chroma Snow Dagger": {
+    "C. Snow Dagger": {
       "value": 5000,
       "trend": "",
       "stability": "Doing Well",
       "range": "5,000 - 5,250",
       "demand": 6,
-      "rarity": 4
+      "rarity": 4,
+      "dreampets_price": 6950
     },
     "Chroma Snowstorm": {
       "value": 4250,
@@ -1104,7 +1241,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 5,
-      "rarity": 5
+      "rarity": 5,
+      "dreampets_price": 0
     },
     "Chroma Sweet": {
       "value": 4250,
@@ -1112,7 +1250,8 @@
       "stability": "Underpaid For",
       "range": "4,000 - 4,250",
       "demand": 5,
-      "rarity": 5
+      "rarity": 5,
+      "dreampets_price": 4398
     },
     "Chroma Watergun": {
       "value": 3400,
@@ -1120,7 +1259,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 5,
-      "rarity": 4
+      "rarity": 4,
+      "dreampets_price": 4000
     },
     "Chroma Ornament": {
       "value": 2850,
@@ -1128,23 +1268,26 @@
       "stability": "Stable",
       "range": "",
       "demand": 5,
-      "rarity": 4
+      "rarity": 4,
+      "dreampets_price": 3999
     },
-    "Chroma Darkbringer": {
+    "C. Darkbringer": {
       "value": 90,
       "trend": "Stable",
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 88.88
     },
-    "Chroma Lightbringer": {
+    "C. Lightbringer": {
       "value": 85,
       "trend": "Stable",
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 75.78
     },
     "Chroma Luger": {
       "value": 57,
@@ -1152,23 +1295,26 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 69.99
     },
-    "Chroma Candleflame": {
+    "C. Candleflame": {
       "value": 50,
       "trend": "Stable",
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 59
     },
-    "Chroma Elderwood Blade": {
+    "C. Elderwood Blade": {
       "value": 50,
       "trend": "Stable",
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 58.49
     },
     "Chroma Laser": {
       "value": 48,
@@ -1176,23 +1322,26 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 64.99
     },
-    "Chroma Swirly Gun": {
+    "C. Swirly Gun": {
       "value": 47,
       "trend": "Stable",
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 48.99
     },
-    "Chroma Deathshard": {
+    "C. Deathshard": {
       "value": 42,
       "trend": "Stable",
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 39.99
     },
     "Chroma Slasher": {
       "value": 42,
@@ -1200,15 +1349,17 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 36.99
     },
-    "Chroma Cookiecane": {
+    "C. Cookiecane": {
       "value": 40,
       "trend": "Stable",
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 43.99
     },
     "Chroma Shark": {
       "value": 40,
@@ -1216,7 +1367,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 55.88
     },
     "Chroma Fang": {
       "value": 38,
@@ -1224,7 +1376,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 38
     },
     "Chroma Gemstone": {
       "value": 35,
@@ -1232,7 +1385,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 39.99
     },
     "Chroma Heat": {
       "value": 35,
@@ -1240,15 +1394,17 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 39.99
     },
-    "Chroma Gingerblade": {
+    "C. Gingerblade": {
       "value": 33,
       "trend": "Stable",
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 25
     },
     "Chroma Saw": {
       "value": 33,
@@ -1256,7 +1412,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 24.9
     },
     "Chroma Seer": {
       "value": 33,
@@ -1264,7 +1421,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 37.99
     },
     "Chroma Tides": {
       "value": 32,
@@ -1272,7 +1430,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 31.99
     },
     "Chroma Boneblade": {
       "value": 28,
@@ -1280,7 +1439,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 26.72
     },
     "Chroma Fire Bat": {
       "value": 7,
@@ -1288,55 +1448,8 @@
       "stability": "Underpaid For",
       "range": "5 - 7",
       "demand": 1,
-      "rarity": 4
-    },
-    "Chroma Fire Bear": {
-      "value": 7,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "5 - 7",
-      "demand": 1,
-      "rarity": 4
-    },
-    "Chroma Fire Bunny": {
-      "value": 7,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "5 - 7",
-      "demand": 1,
-      "rarity": 4
-    },
-    "Chroma Fire Cat": {
-      "value": 7,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "5 - 7",
-      "demand": 1,
-      "rarity": 4
-    },
-    "Chroma Fire Dog": {
-      "value": 7,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "5 - 7",
-      "demand": 1,
-      "rarity": 4
-    },
-    "Chroma Fire Fox": {
-      "value": 7,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "5 - 7",
-      "demand": 1,
-      "rarity": 4
-    },
-    "Chroma Fire Pig": {
-      "value": 7,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "5 - 7",
-      "demand": 1,
-      "rarity": 4
+      "rarity": 4,
+      "dreampets_price": 8.99
     }
   },
   "vintages": {
@@ -1346,7 +1459,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 13
     },
     "Blood": {
       "value": 8,
@@ -1354,7 +1468,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 6.99
     },
     "Laser": {
       "value": 8,
@@ -1362,7 +1477,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 30
     },
     "America": {
       "value": 7,
@@ -1370,7 +1486,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 7
     },
     "Prince": {
       "value": 6,
@@ -1378,7 +1495,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 4.99
     },
     "Shadow": {
       "value": 6,
@@ -1386,7 +1504,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 7.5
     },
     "Phaser": {
       "value": 5,
@@ -1394,7 +1513,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 5.95
     },
     "Cowboy": {
       "value": 4,
@@ -1402,7 +1522,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 3.99
     },
     "Golden": {
       "value": 4,
@@ -1410,7 +1531,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 5.99
     },
     "Splitter": {
       "value": 3,
@@ -1418,7 +1540,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 1,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 4.99
     }
   },
   "ancients": {
@@ -1428,7 +1551,8 @@
       "stability": "Underpaid For",
       "range": "17,000 - 17,250",
       "demand": 7,
-      "rarity": 4
+      "rarity": 4,
+      "dreampets_price": 16000
     },
     "Traveler's Axe": {
       "value": 8400,
@@ -1436,7 +1560,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 7,
-      "rarity": 5
+      "rarity": 5,
+      "dreampets_price": 7450
     },
     "Celestial": {
       "value": 1725,
@@ -1444,7 +1569,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 5,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 1940
     },
     "Vampire's Axe": {
       "value": 925,
@@ -1452,7 +1578,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 5,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 999
     },
     "Harvester": {
       "value": 300,
@@ -1460,7 +1587,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 3,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 310
     },
     "Icepiercer": {
       "value": 200,
@@ -1468,7 +1596,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 3,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 220
     },
     "Icebreaker": {
       "value": 85,
@@ -1476,7 +1605,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 76
     },
     "Batwing": {
       "value": 50,
@@ -1484,7 +1614,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 44.99
     },
     "Elderwood Scythe": {
       "value": 50,
@@ -1492,7 +1623,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 49
     },
     "Swirly Axe": {
       "value": 45,
@@ -1500,7 +1632,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 3
+      "rarity": 3,
+      "dreampets_price": 49.99
     },
     "Hallowscythe": {
       "value": 35,
@@ -1508,7 +1641,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 37
     },
     "Logchopper": {
       "value": 20,
@@ -1516,7 +1650,8 @@
       "stability": "Stable",
       "range": "",
       "demand": 2,
-      "rarity": 2
+      "rarity": 2,
+      "dreampets_price": 24.99
     },
     "Icewing": {
       "value": 15,
@@ -1524,1651 +1659,8 @@
       "stability": "Fluctuating",
       "range": "10 - 20",
       "demand": 2,
-      "rarity": 1
-    }
-  },
-  "uniques": {
-    "Corrupt": {
-      "value": 600,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 4,
-      "rarity": 3
-    }
-  },
-  "sets": {
-    "Chroma Ever Set": {
-      "value": 160000,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "",
-      "demand": 8,
-      "rarity": 7
-    },
-    "Contains - Chroma Evergreen, Chroma Evergun": {
-      "value": 160000,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "",
-      "demand": 8,
-      "rarity": 7
-    },
-    "Chroma Alien Set": {
-      "value": 45500,
-      "trend": "",
-      "stability": "Doing Well",
-      "range": "45,500 - 45,750",
-      "demand": 7,
-      "rarity": 5
-    },
-    "Contains - Chroma Alienbeam, Chroma Raygun": {
-      "value": 45500,
-      "trend": "",
-      "stability": "Doing Well",
-      "range": "45,500 - 45,750",
-      "demand": 7,
-      "rarity": 5
-    },
-    "Chroma Bauble Set": {
-      "value": 40850,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 7,
-      "rarity": 5
-    },
-    "Contains - Chroma Bauble, Chroma Ornament": {
-      "value": 40850,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 7,
-      "rarity": 5
-    },
-    "Chroma Sun Set": {
-      "value": 16500,
-      "trend": "",
-      "stability": "Doing Well",
-      "range": "16,500 - 17,250",
-      "demand": 6,
-      "rarity": 4
-    },
-    "Contains - Chroma Sunrise, Chroma Sunset": {
-      "value": 16500,
-      "trend": "",
-      "stability": "Doing Well",
-      "range": "16,500 - 17,250",
-      "demand": 6,
-      "rarity": 4
-    },
-    "Chroma Snow Set": {
-      "value": 13500,
-      "trend": "",
-      "stability": "Doing Well",
-      "range": "13,500 - 14,000",
-      "demand": 6,
-      "rarity": 4
-    },
-    "Contains - Chroma Snowcannon, Chroma Snow Dagger": {
-      "value": 13500,
-      "trend": "",
-      "stability": "Doing Well",
-      "range": "13,500 - 14,000",
-      "demand": 6,
-      "rarity": 4
-    },
-    "Chroma Blizzard Set": {
-      "value": 12250,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 5,
-      "rarity": 5
-    },
-    "Contains - Chroma Blizzard, Chroma Snowstorm": {
-      "value": 12250,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 5,
-      "rarity": 5
-    },
-    "Chroma Sweet Set": {
-      "value": 10500,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "10,000 - 10,500",
-      "demand": 5,
-      "rarity": 5
-    },
-    "Contains - Chroma Sweet, Chroma Treat": {
-      "value": 10500,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "10,000 - 10,500",
-      "demand": 5,
-      "rarity": 5
-    },
-    "Chroma Bringer Set": {
-      "value": 175,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Contains - Chroma Darkbringer, Chroma Lightbringer": {
-      "value": 175,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Chroma Slasher Set": {
-      "value": 90,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Contains - Chroma Laser, Chroma Slasher": {
-      "value": 90,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Chroma Pet Set": {
-      "value": 49,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "35 - 49",
-      "demand": 1,
-      "rarity": 4
-    },
-    "Contains - All Chroma Pets": {
-      "value": 49,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "35 - 49",
-      "demand": 1,
-      "rarity": 4
-    },
-    "Traveler's Set": {
-      "value": 12900,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 7,
-      "rarity": 5
-    },
-    "Contains - Traveler's Axe, Traveler's Gun": {
-      "value": 12900,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 7,
-      "rarity": 5
-    },
-    "Ever Set": {
-      "value": 5950,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 5,
-      "rarity": 4
-    },
-    "Contains - Evergreen, Evergun": {
-      "value": 5950,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 5,
-      "rarity": 4
-    },
-    "Celestial Set": {
-      "value": 4475,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 5,
-      "rarity": 3
-    },
-    "Contains - Celestial, Constellation": {
-      "value": 4475,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 5,
-      "rarity": 3
-    },
-    "Alien Set": {
-      "value": 3650,
-      "trend": "",
-      "stability": "Receding",
-      "range": "3,550 - 3,650",
-      "demand": 6,
-      "rarity": 3
-    },
-    "Contains - Alienbeam, Raygun": {
-      "value": 3650,
-      "trend": "",
-      "stability": "Receding",
-      "range": "3,550 - 3,650",
-      "demand": 6,
-      "rarity": 3
-    },
-    "Vampire's Set": {
-      "value": 2625,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 5,
-      "rarity": 3
-    },
-    "Contains - Vampire's Axe, Vampire's Gun": {
-      "value": 2625,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 5,
-      "rarity": 3
-    },
-    "Dark Set": {
-      "value": 2460,
-      "trend": "",
-      "stability": "Doing Well",
-      "range": "2,460 - 2,500",
-      "demand": 5,
-      "rarity": 3
-    },
-    "Contains - Darkshot, Darksword": {
-      "value": 2460,
-      "trend": "",
-      "stability": "Doing Well",
-      "range": "2,460 - 2,500",
-      "demand": 5,
-      "rarity": 3
-    },
-    "Sakura Set": {
-      "value": 2210,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 5,
-      "rarity": 3
-    },
-    "Contains - Blossom, Sakura": {
-      "value": 2210,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 5,
-      "rarity": 3
-    },
-    "Sun Set": {
-      "value": 1300,
-      "trend": "",
-      "stability": "Overpaid For",
-      "range": "1,300 - 1,375",
-      "demand": 6,
-      "rarity": 3
-    },
-    "Contains - Sunrise, Sunset": {
-      "value": 1300,
-      "trend": "",
-      "stability": "Overpaid For",
-      "range": "1,300 - 1,375",
-      "demand": 6,
-      "rarity": 3
-    },
-    "Snow Set": {
-      "value": 1135,
-      "trend": "",
-      "stability": "Doing Well",
-      "range": "1,135 - 1,160",
-      "demand": 6,
-      "rarity": 3
-    },
-    "Contains - Snowcannon, Snow Dagger": {
-      "value": 1135,
-      "trend": "",
-      "stability": "Doing Well",
-      "range": "1,135 - 1,160",
-      "demand": 6,
-      "rarity": 3
-    },
-    "Bauble Set": {
-      "value": 955,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "950 - 955",
-      "demand": 5,
-      "rarity": 3
-    },
-    "Contains - Bauble, Ornament": {
-      "value": 955,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "950 - 955",
-      "demand": 5,
-      "rarity": 3
-    },
-    "Soul Set": {
-      "value": 680,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 4,
-      "rarity": 3
-    },
-    "Contains - Soul, Spirit": {
-      "value": 680,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 4,
-      "rarity": 3
-    },
-    "Corrupt Set": {
-      "value": 650,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 4,
-      "rarity": 3
-    },
-    "Contains - Corrupt, Luger": {
-      "value": 650,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 4,
-      "rarity": 3
-    },
-    "Rainbow Set": {
-      "value": 590,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 4,
-      "rarity": 3
-    },
-    "Contains - Rainbow Gun, Rainbow": {
-      "value": 590,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 4,
-      "rarity": 3
-    },
-    "Bloom Set": {
-      "value": 540,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 4,
-      "rarity": 3
-    },
-    "Contains - Bloom, Flora": {
-      "value": 540,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 4,
-      "rarity": 3
-    },
-    "Bow Set": {
-      "value": 500,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 3,
-      "rarity": 3
-    },
-    "Contains - Harvester, Icepiercer": {
-      "value": 500,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 3,
-      "rarity": 3
-    },
-    "Flowerwood Set": {
-      "value": 405,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 3,
-      "rarity": 3
-    },
-    "Contains - Flowerwood, Flowerwood Gun": {
-      "value": 405,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 3,
-      "rarity": 3
-    },
-    "Sweet Set": {
-      "value": 405,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "395 - 405",
-      "demand": 3,
-      "rarity": 3
-    },
-    "Contains - Sweet, Treat": {
-      "value": 405,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "395 - 405",
-      "demand": 3,
-      "rarity": 3
-    },
-    "Xeno Set": {
-      "value": 400,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 3,
-      "rarity": 3
-    },
-    "Contains - Xenoknife, Xenoshot": {
-      "value": 400,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 3,
-      "rarity": 3
-    },
-    "Ocean Set": {
-      "value": 335,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 3,
-      "rarity": 3
-    },
-    "Contains - Ocean, Waves": {
-      "value": 335,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 3,
-      "rarity": 3
-    },
-    "Full Ice Set": {
-      "value": 327,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 3,
-      "rarity": 3
-    },
-    "Contains - Icebreaker, Iceblaster, Icepiercer": {
-      "value": 327,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 3,
-      "rarity": 3
-    },
-    "Blizzard Set": {
-      "value": 310,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 3,
-      "rarity": 3
-    },
-    "Contains - Blizzard, Snowstorm": {
-      "value": 310,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 3,
-      "rarity": 3
-    },
-    "Borealis Set": {
-      "value": 205,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 3,
-      "rarity": 3
-    },
-    "Contains - Australis, Borealis": {
-      "value": 205,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 3,
-      "rarity": 3
-    },
-    "Bat Set": {
-      "value": 170,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 3,
-      "rarity": 3
-    },
-    "Contains - Bat, Makeshift": {
-      "value": 170,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 3,
-      "rarity": 3
-    },
-    "Candy Set": {
-      "value": 150,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Contains - Candy, Sugar": {
-      "value": 150,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Full Elderwood Set": {
-      "value": 140,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Contains - Elderwood Blade, Revolver, and Scythe": {
-      "value": 140,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Ice Set": {
-      "value": 127,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Contains - Icebreaker, Iceblaster": {
-      "value": 127,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Pearl Set": {
-      "value": 105,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Contains - Pearl, Pearlshine": {
-      "value": 105,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Elderwood Set": {
-      "value": 95,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Contains - Elderwood Revolver, Elderwood Scythe": {
-      "value": 95,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Full Swirly Set": {
-      "value": 85,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Contains - Swirly Axe, Swirly Gun, Swirly Blade": {
-      "value": 85,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Spectre Set": {
-      "value": 84,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Contains - Phantom, Spectre": {
-      "value": 84,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Bringer Set": {
-      "value": 80,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Contains - Darkbringer, Lightbringer": {
-      "value": 80,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Swirly Set": {
-      "value": 70,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Contains - Swirly Gun, Swirly Axe": {
-      "value": 70,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Hallow Set": {
-      "value": 60,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Contains - Hallowgun, Hallowscythe": {
-      "value": 60,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Iceflake Set": {
-      "value": 48,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Contains - Icebeam, Iceflake": {
-      "value": 48,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Plasma Set": {
-      "value": 48,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Contains - Plasmabeam, Plasmablade": {
-      "value": 48,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Slasher Set": {
-      "value": 45,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Contains - Laser, Slasher": {
-      "value": 45,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Old Glory Set": {
-      "value": 43,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Contains - Amerilaser, Old Glory": {
-      "value": 43,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Logchopper Set": {
-      "value": 38,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Contains - Logchopper, Minty": {
-      "value": 38,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Ginger Set (Godly)": {
-      "value": 37,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Contains - Gingerblade, Ginger Luger": {
-      "value": 37,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Virtual Set": {
-      "value": 37,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Contains - Blaster, Virtual": {
-      "value": 37,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Cookie Set": {
-      "value": 36,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Contains - Cookiecane, Gingermint": {
-      "value": 36,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Eternalcane Set": {
-      "value": 35,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Contains - Eternalcane, Lugercane": {
-      "value": 35,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Pumpkin Set": {
-      "value": 410,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "405 - 410",
-      "demand": 3,
-      "rarity": 4
-    },
-    "Contains - Blue, Green, Purple, and Red Pumpkin (2018)": {
-      "value": 410,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "405 - 410",
-      "demand": 3,
-      "rarity": 4
-    },
-    "Latte Set": {
-      "value": 260,
-      "trend": "",
-      "stability": "Fluctuating",
-      "range": "250 - 270",
-      "demand": 3,
-      "rarity": 3
-    },
-    "Contains - Latte (Gun), Latte (Knife)": {
-      "value": 260,
-      "trend": "",
-      "stability": "Fluctuating",
-      "range": "250 - 270",
-      "demand": 3,
-      "rarity": 3
-    },
-    "Bats Set": {
-      "value": 111,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 3,
-      "rarity": 4
-    },
-    "Contains - Bats (Gun), Bats (Knife)": {
-      "value": 111,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 3,
-      "rarity": 4
-    },
-    "Zombified Set": {
-      "value": 80,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 4
-    },
-    "Contains - Zombified (Gun), Zombified (Knife)": {
-      "value": 80,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 4
-    },
-    "Silent Night Set": {
-      "value": 62,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 4
-    },
-    "Contains - Silent Night (Gun), Silent Night (Knife)": {
-      "value": 62,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 4
-    },
-    "Gingerbread Set (2019)": {
-      "value": 53,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 4
-    },
-    "Contains - Gingerbread (Knife), Gingerbread (Gun)": {
-      "value": 53,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 4
-    },
-    "Traveler Set": {
-      "value": 27,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 3,
-      "rarity": 3
-    },
-    "Contains - Traveler (Gun), Traveler (Knife)": {
-      "value": 27,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 3,
-      "rarity": 3
-    },
-    "Spectral Set": {
-      "value": 22,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Contains - Spectral (Gun), Spectral (Knife)": {
-      "value": 22,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Vampire Set (Legend.)": {
-      "value": 18,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Contains - Vampire (Gun), Vampire (Knife)": {
-      "value": 8,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Pumpkin Set (2019)": {
-      "value": 18,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "12 - 18",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Contains - Blue, Green, and Red Pumpkin (2019)": {
-      "value": 18,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "12 - 18",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Pumpkin Set (2020)": {
-      "value": 16,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 4
-    },
-    "Contains - Blue, Green, and Red Pumpkin (2020)": {
-      "value": 16,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 4
-    },
-    "Aurora Set (Legend.)": {
-      "value": 15,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Contains - Aurora (Gun), Aurora (Knife)": {
-      "value": 14,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Pumpkin Set (2021)": {
-      "value": 14,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 4
-    },
-    "Contains - Green, Red, and Shadow Pumpkin (2021)": {
-      "value": 14,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 4
-    },
-    "Aurora Set (Rare)": {
-      "value": 14,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Eye Set": {
-      "value": 14,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "10 - 14",
-      "demand": 1,
-      "rarity": 3
-    },
-    "Contains - Overseer Eye, Eyeball": {
-      "value": 14,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "10 - 14",
-      "demand": 1,
-      "rarity": 3
-    },
-    "Mummy Set": {
-      "value": 13,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Contains - Mummy 2018 (Gun), Mummy 2018 (Knife)": {
-      "value": 13,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Potion Set": {
-      "value": 13,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Contains - Potion (Gun), Potion (Knife)": {
-      "value": 13,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Zombie Set": {
-      "value": 13,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Contains - Zombie (Gun), Zombie (Knife)": {
-      "value": 13,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Frozen Set": {
-      "value": 11,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Contains - Frozen (Gun), Frozen (Knife)": {
-      "value": 11,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Toxic Set": {
-      "value": 9,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Contains - Toxic (Gun), Toxic (Knife)": {
-      "value": 9,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Cavern Set": {
-      "value": 8,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Contains - Cavern (Gun), Cavern (Knife)": {
-      "value": 8,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Vampire Set (Rare)": {
-      "value": 8,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Slime Set": {
-      "value": 7,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Contains - Slime (Gun), Slime (Knife)": {
-      "value": 7,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Ghost Set": {
-      "value": 7,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 1,
-      "rarity": 3
-    },
-    "Contains - Ghost (Gun), Ghost (Knife)": {
-      "value": 7,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 1,
-      "rarity": 3
-    },
-    "Candy Swirl Set": {
-      "value": 6,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Contains - Candy Swirl (Gun), Candy Swirl (Knife)": {
-      "value": 6,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Lights Set": {
-      "value": 6,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Contains - Lights (Gun), Lights (Knife)": {
-      "value": 6,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Icedriller Set": {
-      "value": 6,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Contains - Icecracker, Icedriller": {
-      "value": 6,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Full Elite Set": {
-      "value": 6,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 1,
-      "rarity": 3
-    },
-    "Contains - Blue Elite, Elite, Green Elite, Elitey": {
-      "value": 6,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 1,
-      "rarity": 3
-    },
-    "Santa's Set (Legendary)": {
-      "value": 6,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 1,
-      "rarity": 3
-    },
-    "Contains - Santa's Magic, Santa's Spirit": {
-      "value": 6,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 1,
-      "rarity": 3
-    },
-    "Scratch Set": {
-      "value": 6,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 1,
-      "rarity": 3
-    },
-    "Contains - Blue Scratch, Red Scratch": {
-      "value": 6,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 1,
-      "rarity": 3
-    },
-    "Grave Set": {
-      "value": 5,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Contains - Grave (Gun), Grave (Knife)": {
-      "value": 5,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Marble Set": {
-      "value": 5,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 1,
-      "rarity": 3
-    },
-    "Contains - Green Marble, Orange Marble": {
-      "value": 5,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 1,
-      "rarity": 3
-    },
-    "Snakebite Set": {
-      "value": 4,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Contains - Snakebite (Gun), Snakebite (Knife)": {
-      "value": 4,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Haunted Set": {
-      "value": 2,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 1,
-      "rarity": 3
-    },
-    "Contains - Haunted (Gun), Haunted (Knife)": {
-      "value": 2,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 1,
-      "rarity": 3
-    },
-    "Full Bringer Set": {
-      "value": 255,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Contains - Chroma Bringer Set + Bringer Set": {
-      "value": 255,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Full Luger Set": {
-      "value": 220,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Contains - Luger Set + Chroma Luger": {
-      "value": 220,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Luger Set": {
-      "value": 165,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Contains - All the non-Chroma Lugers in the Game": {
-      "value": 165,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Sparkle Set": {
-      "value": 127,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Contains - Sparkles 1-10": {
-      "value": 127,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Collectible Set": {
-      "value": 71,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 4
-    },
-    "Contains - All 2015-2016Q2 Collectible Items": {
-      "value": 71,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 4
-    },
-    "Vintage Set": {
-      "value": 61,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 1,
-      "rarity": 2
-    },
-    "Contains - All items in the Vintages Section": {
-      "value": 61,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 1,
-      "rarity": 2
-    },
-    "Eternal Set": {
-      "value": 53,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Contains - Eternal, Eternal II, Eternal III, Eternal IV, Eternalcane": {
-      "value": 53,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Full Colored Seer Set": {
-      "value": 50,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Contains - Colored Seer Set + Chroma Seer": {
-      "value": 50,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Skate Set": {
-      "value": 30,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Contains - Euro, Grind, Indy, Ollie, Sidewinder, Tailslide": {
-      "value": 30,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Pals Set": {
-      "value": 16,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Contains - Alex, Corl, Denis, Sketchy, Sub": {
-      "value": 16,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 3
-    },
-    "Wrapping Paper Set": {
-      "value": 16,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 1,
-      "rarity": 4
-    },
-    "Contains - All Variants of the Wrapping Paper Misc. Items": {
-      "value": 16,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 1,
-      "rarity": 4
-    },
-    "Colored Seer Set": {
-      "value": 16,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 1,
-      "rarity": 1
-    },
-    "Contains - All Colored Seers + Pure Seer": {
-      "value": 16,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 1,
-      "rarity": 1
-    },
-    "Godly Pet Set": {
-      "value": 10,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "5 - 10",
-      "demand": 1,
-      "rarity": 3
-    },
-    "Contains - All Pets in the Godly Class": {
-      "value": 10,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "5 - 10",
-      "demand": 1,
-      "rarity": 3
-    },
-    "Small Set (107 Items)": {
-      "value": 1600,
-      "trend": "",
-      "stability": "Fluctuating",
-      "range": "1,550 - 1,650",
-      "demand": 4,
-      "rarity": 4
-    },
-    "Contains - Small Set (103 Items) + Plasma Set and Iceflake Set": {
-      "value": 1600,
-      "trend": "",
-      "stability": "Fluctuating",
-      "range": "1,550 - 1,650",
-      "demand": 4,
-      "rarity": 4
-    },
-    "Small Set (103 Items)": {
-      "value": 1505,
-      "trend": "",
-      "stability": "Fluctuating",
-      "range": "1,455 - 1,555",
-      "demand": 4,
-      "rarity": 4
-    },
-    "Contains - Every Godly, Ancient, and Vintage before Hallows 2021": {
-      "value": 1505,
-      "trend": "",
-      "stability": "Fluctuating",
-      "range": "1,455 - 1,555",
-      "demand": 4,
-      "rarity": 4
-    },
-    "Full Chroma Set": {
-      "value": 720,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 4
-    },
-    "Contains - Every Chroma from Before 2021 (Pets & Weapons)": {
-      "value": 720,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 4
-    },
-    "Chroma Weapon Set": {
-      "value": 675,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
-    },
-    "Contains - Every Chroma from Before 2021 (Minus Pets)": {
-      "value": 675,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
-      "demand": 2,
-      "rarity": 2
+      "rarity": 1,
+      "dreampets_price": 14.89
     }
   }
 }
