@@ -43,7 +43,7 @@
       "range": "2,250 - 2,350",
       "demand": 6,
       "rarity": 3,
-      "dreampets_price": 2370
+      "dreampets_price": 2300
     },
     "Alienbeam": {
       "value": 2050,
@@ -70,7 +70,7 @@
       "range": "1,300 - 1,340",
       "demand": 6,
       "rarity": 3,
-      "dreampets_price": 1249
+      "dreampets_price": 0
     },
     "Darksword": {
       "value": 1280,
@@ -88,7 +88,7 @@
       "range": "1,150 - 1,200",
       "demand": 5,
       "rarity": 3,
-      "dreampets_price": 1035
+      "dreampets_price": 1000
     },
     "Blossom": {
       "value": 1140,
@@ -106,7 +106,7 @@
       "range": "1,130 - 1,140",
       "demand": 5,
       "rarity": 3,
-      "dreampets_price": 1350
+      "dreampets_price": 1250
     },
     "Sunrise": {
       "value": 975,
@@ -115,7 +115,7 @@
       "range": "975 - 1,025",
       "demand": 6,
       "rarity": 3,
-      "dreampets_price": 1000
+      "dreampets_price": 1018.5
     },
     "Bauble": {
       "value": 925,
@@ -124,7 +124,7 @@
       "range": "",
       "demand": 5,
       "rarity": 3,
-      "dreampets_price": 942
+      "dreampets_price": 913.74
     },
     "Snowcannon": {
       "value": 925,
@@ -133,7 +133,7 @@
       "range": "",
       "demand": 5,
       "rarity": 3,
-      "dreampets_price": 1085
+      "dreampets_price": 999
     },
     "Sunset": {
       "value": 525,
@@ -142,7 +142,7 @@
       "range": "",
       "demand": 4,
       "rarity": 3,
-      "dreampets_price": 485
+      "dreampets_price": 470.45
     },
     "Heart Wand": {
       "value": 425,
@@ -151,7 +151,7 @@
       "range": "425 - 475",
       "demand": 4,
       "rarity": 3,
-      "dreampets_price": 420
+      "dreampets_price": 421.95
     },
     "Soul": {
       "value": 355,
@@ -160,7 +160,7 @@
       "range": "",
       "demand": 4,
       "rarity": 3,
-      "dreampets_price": 525
+      "dreampets_price": 510
     },
     "Spirit": {
       "value": 345,
@@ -169,7 +169,7 @@
       "range": "",
       "demand": 4,
       "rarity": 3,
-      "dreampets_price": 432
+      "dreampets_price": 412.25
     },
     "Rainbow Gun": {
       "value": 300,
@@ -178,7 +178,7 @@
       "range": "",
       "demand": 4,
       "rarity": 3,
-      "dreampets_price": 354
+      "dreampets_price": 344
     },
     "Flora": {
       "value": 290,
@@ -187,7 +187,7 @@
       "range": "",
       "demand": 4,
       "rarity": 3,
-      "dreampets_price": 265
+      "dreampets_price": 257.05
     },
     "Rainbow": {
       "value": 290,
@@ -196,7 +196,7 @@
       "range": "",
       "demand": 4,
       "rarity": 3,
-      "dreampets_price": 324
+      "dreampets_price": 315
     },
     "Bloom": {
       "value": 280,
@@ -205,7 +205,7 @@
       "range": "",
       "demand": 4,
       "rarity": 3,
-      "dreampets_price": 324
+      "dreampets_price": 314
     },
     "Snow Dagger": {
       "value": 260,
@@ -214,7 +214,7 @@
       "range": "",
       "demand": 4,
       "rarity": 3,
-      "dreampets_price": 248.99
+      "dreampets_price": 225
     },
     "Flowerwood Gun": {
       "value": 205,
@@ -223,7 +223,7 @@
       "range": "",
       "demand": 3,
       "rarity": 3,
-      "dreampets_price": 205
+      "dreampets_price": 198.85
     },
     "Flowerwood": {
       "value": 200,
@@ -241,7 +241,7 @@
       "range": "",
       "demand": 3,
       "rarity": 3,
-      "dreampets_price": 240
+      "dreampets_price": 232.8
     },
     "Xenoshot": {
       "value": 200,
@@ -259,7 +259,7 @@
       "range": "180 - 185",
       "demand": 3,
       "rarity": 3,
-      "dreampets_price": 180
+      "dreampets_price": 169.75
     },
     "Sweet": {
       "value": 180,
@@ -268,7 +268,7 @@
       "range": "175 - 180",
       "demand": 3,
       "rarity": 3,
-      "dreampets_price": 179
+      "dreampets_price": 173.63
     },
     "Ocean": {
       "value": 175,
@@ -277,7 +277,7 @@
       "range": "",
       "demand": 3,
       "rarity": 3,
-      "dreampets_price": 199
+      "dreampets_price": 191
     },
     "Watergun": {
       "value": 175,
@@ -286,7 +286,7 @@
       "range": "",
       "demand": 3,
       "rarity": 3,
-      "dreampets_price": 190
+      "dreampets_price": 184.3
     },
     "Waves": {
       "value": 170,
@@ -295,7 +295,7 @@
       "range": "",
       "demand": 3,
       "rarity": 3,
-      "dreampets_price": 222
+      "dreampets_price": 215.34
     },
     "Blizzard": {
       "value": 155,
@@ -313,7 +313,7 @@
       "range": "",
       "demand": 3,
       "rarity": 3,
-      "dreampets_price": 159
+      "dreampets_price": 163.93
     },
     "Bat": {
       "value": 125,
@@ -322,7 +322,7 @@
       "range": "",
       "demand": 3,
       "rarity": 3,
-      "dreampets_price": 120
+      "dreampets_price": 119.31
     },
     "Borealis": {
       "value": 105,
@@ -340,7 +340,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 104
+      "dreampets_price": 100
     },
     "Australis": {
       "value": 100,
@@ -349,7 +349,7 @@
       "range": "",
       "demand": 3,
       "rarity": 3,
-      "dreampets_price": 110
+      "dreampets_price": 109
     },
     "Heartblade": {
       "value": 80,
@@ -358,7 +358,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 55
+      "dreampets_price": 53.35
     },
     "Pearlshine": {
       "value": 55,
@@ -376,7 +376,7 @@
       "range": "",
       "demand": 2,
       "rarity": 3,
-      "dreampets_price": 63.03
+      "dreampets_price": 54.32
     },
     "Luger": {
       "value": 50,
@@ -385,7 +385,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 47
+      "dreampets_price": 39.77
     },
     "Candleflame": {
       "value": 45,
@@ -394,7 +394,7 @@
       "range": "",
       "demand": 2,
       "rarity": 3,
-      "dreampets_price": 41
+      "dreampets_price": 40.73
     },
     "Elderwood Blade": {
       "value": 45,
@@ -412,7 +412,7 @@
       "range": "",
       "demand": 2,
       "rarity": 3,
-      "dreampets_price": 55.88
+      "dreampets_price": 48.48
     },
     "Red Luger": {
       "value": 45,
@@ -421,7 +421,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 44.99
+      "dreampets_price": 37.83
     },
     "Sugar": {
       "value": 45,
@@ -430,7 +430,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 48.99
+      "dreampets_price": 43.99
     },
     "Phantom": {
       "value": 42,
@@ -457,7 +457,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 35
+      "dreampets_price": 34.99
     },
     "Elderwood Revolver": {
       "value": 42,
@@ -466,7 +466,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 49.99
+      "dreampets_price": 48.49
     },
     "Iceblaster": {
       "value": 42,
@@ -475,7 +475,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 35
+      "dreampets_price": 40
     },
     "Lightbringer": {
       "value": 38,
@@ -484,7 +484,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 40
+      "dreampets_price": 32.96
     },
     "Ornament": {
       "value": 30,
@@ -502,7 +502,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 24.99
+      "dreampets_price": 24.23
     },
     "Laser": {
       "value": 27,
@@ -511,7 +511,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 29.98
+      "dreampets_price": 22.31
     },
     "Swirly Gun": {
       "value": 25,
@@ -520,7 +520,7 @@
       "range": "",
       "demand": 2,
       "rarity": 3,
-      "dreampets_price": 33.99
+      "dreampets_price": 28.99
     },
     "Amerilaser": {
       "value": 25,
@@ -538,7 +538,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 25
+      "dreampets_price": 24.23
     },
     "Icebeam": {
       "value": 25,
@@ -547,7 +547,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 0
+      "dreampets_price": 75
     },
     "Plasmabeam": {
       "value": 25,
@@ -556,7 +556,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 28.99
+      "dreampets_price": 22.99
     },
     "Iceflake": {
       "value": 23,
@@ -574,7 +574,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 22.99
+      "dreampets_price": 15.99
     },
     "Shark": {
       "value": 23,
@@ -583,7 +583,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 25
+      "dreampets_price": 19.4
     },
     "Nightblade": {
       "value": 22,
@@ -592,7 +592,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 52
+      "dreampets_price": 45
     },
     "Blaster": {
       "value": 20,
@@ -601,7 +601,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 17.99
+      "dreampets_price": 18
     },
     "Ginger Luger": {
       "value": 20,
@@ -619,7 +619,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 18
+      "dreampets_price": 13.58
     },
     "Cookiecane": {
       "value": 18,
@@ -628,7 +628,7 @@
       "range": "",
       "demand": 2,
       "rarity": 3,
-      "dreampets_price": 28
+      "dreampets_price": 27.16
     },
     "Gingermint": {
       "value": 18,
@@ -646,7 +646,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 20
+      "dreampets_price": 15
     },
     "Minty": {
       "value": 18,
@@ -655,7 +655,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 16
+      "dreampets_price": 12.59
     },
     "Old Glory": {
       "value": 18,
@@ -664,7 +664,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 24
+      "dreampets_price": 19.4
     },
     "Slasher": {
       "value": 18,
@@ -673,7 +673,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 18.99
+      "dreampets_price": 14
     },
     "Battleaxe II": {
       "value": 18,
@@ -682,7 +682,7 @@
       "range": "",
       "demand": 1,
       "rarity": 2,
-      "dreampets_price": 15
+      "dreampets_price": 14.55
     },
     "Eternalcane": {
       "value": 17,
@@ -700,7 +700,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 14
+      "dreampets_price": 13.58
     },
     "Virtual": {
       "value": 17,
@@ -709,7 +709,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 15
+      "dreampets_price": 11.64
     },
     "Gemstone": {
       "value": 17,
@@ -718,7 +718,7 @@
       "range": "",
       "demand": 1,
       "rarity": 2,
-      "dreampets_price": 14
+      "dreampets_price": 13.58
     },
     "Gingerblade": {
       "value": 17,
@@ -736,7 +736,7 @@
       "range": "",
       "demand": 2,
       "rarity": 3,
-      "dreampets_price": 15.99
+      "dreampets_price": 11.64
     },
     "Nebula": {
       "value": 15,
@@ -745,7 +745,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 13
+      "dreampets_price": 9
     },
     "Vampire's Edge": {
       "value": 15,
@@ -754,7 +754,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 15
+      "dreampets_price": 10.67
     },
     "Deathshard": {
       "value": 15,
@@ -763,7 +763,7 @@
       "range": "",
       "demand": 1,
       "rarity": 2,
-      "dreampets_price": 20
+      "dreampets_price": 19.4
     },
     "Battleaxe": {
       "value": 12,
@@ -772,7 +772,7 @@
       "range": "",
       "demand": 1,
       "rarity": 2,
-      "dreampets_price": 14
+      "dreampets_price": 13.58
     },
     "Bioblade": {
       "value": 10,
@@ -781,7 +781,7 @@
       "range": "",
       "demand": 1,
       "rarity": 2,
-      "dreampets_price": 23
+      "dreampets_price": 22.31
     },
     "Chill": {
       "value": 10,
@@ -799,7 +799,7 @@
       "range": "",
       "demand": 1,
       "rarity": 2,
-      "dreampets_price": 13
+      "dreampets_price": 12.61
     },
     "Eternal III": {
       "value": 10,
@@ -862,7 +862,7 @@
       "range": "",
       "demand": 1,
       "rarity": 2,
-      "dreampets_price": 10.99
+      "dreampets_price": 7
     },
     "Eternal": {
       "value": 8,
@@ -880,7 +880,7 @@
       "range": "",
       "demand": 1,
       "rarity": 2,
-      "dreampets_price": 5
+      "dreampets_price": 8.44
     },
     "Hallow's Blade": {
       "value": 8,
@@ -889,7 +889,7 @@
       "range": "",
       "demand": 1,
       "rarity": 2,
-      "dreampets_price": 13
+      "dreampets_price": 12.53
     },
     "Hallow's Edge": {
       "value": 8,
@@ -898,7 +898,7 @@
       "range": "",
       "demand": 1,
       "rarity": 2,
-      "dreampets_price": 9
+      "dreampets_price": 8.99
     },
     "Handsaw": {
       "value": 8,
@@ -916,7 +916,7 @@
       "range": "",
       "demand": 1,
       "rarity": 2,
-      "dreampets_price": 24.99
+      "dreampets_price": 20
     },
     "Boneblade": {
       "value": 7,
@@ -925,7 +925,7 @@
       "range": "",
       "demand": 1,
       "rarity": 2,
-      "dreampets_price": 6
+      "dreampets_price": 9.9
     },
     "Frostbite": {
       "value": 7,
@@ -979,7 +979,7 @@
       "range": "",
       "demand": 1,
       "rarity": 2,
-      "dreampets_price": 8.48
+      "dreampets_price": 8.47
     },
     "Saw": {
       "value": 7,
@@ -1015,7 +1015,7 @@
       "range": "",
       "demand": 1,
       "rarity": 2,
-      "dreampets_price": 9
+      "dreampets_price": 5
     },
     "Winter's Edge": {
       "value": 5,
@@ -1033,7 +1033,7 @@
       "range": "",
       "demand": 1,
       "rarity": 2,
-      "dreampets_price": 9
+      "dreampets_price": 5
     },
     "Cookieblade": {
       "value": 3,
@@ -1060,7 +1060,7 @@
       "range": "",
       "demand": 1,
       "rarity": 1,
-      "dreampets_price": 8.99
+      "dreampets_price": 5
     },
     "Red Seer": {
       "value": 3,
@@ -1069,7 +1069,7 @@
       "range": "",
       "demand": 1,
       "rarity": 1,
-      "dreampets_price": 8.99
+      "dreampets_price": 5
     },
     "Seer": {
       "value": 3,
@@ -1078,7 +1078,7 @@
       "range": "",
       "demand": 1,
       "rarity": 1,
-      "dreampets_price": 6
+      "dreampets_price": 5.99
     },
     "Orange Seer": {
       "value": 2,
@@ -1087,7 +1087,7 @@
       "range": "",
       "demand": 1,
       "rarity": 1,
-      "dreampets_price": 6
+      "dreampets_price": 4
     },
     "Yellow Seer": {
       "value": 2,
@@ -1096,7 +1096,7 @@
       "range": "",
       "demand": 1,
       "rarity": 1,
-      "dreampets_price": 6.99
+      "dreampets_price": 4
     }
   },
   "chromas": {
@@ -1188,7 +1188,7 @@
       "range": "",
       "demand": 6,
       "rarity": 4,
-      "dreampets_price": 10000
+      "dreampets_price": 9700
     },
     "Chroma Blizzard": {
       "value": 8000,
@@ -1206,7 +1206,7 @@
       "range": "",
       "demand": 6,
       "rarity": 4,
-      "dreampets_price": 10000
+      "dreampets_price": 0
     },
     "C. Snow Dagger": {
       "value": 5750,
@@ -1224,7 +1224,7 @@
       "range": "",
       "demand": 5,
       "rarity": 5,
-      "dreampets_price": 4400
+      "dreampets_price": 4380
     },
     "Chroma Treat": {
       "value": 5500,
@@ -1278,7 +1278,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 79.99
+      "dreampets_price": 77.59
     },
     "C. Lightbringer": {
       "value": 80,
@@ -1287,7 +1287,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 74.99
+      "dreampets_price": 67.88
     },
     "Chroma Luger": {
       "value": 57,
@@ -1296,7 +1296,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 54
+      "dreampets_price": 50
     },
     "C. Candleflame": {
       "value": 48,
@@ -1323,7 +1323,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 63
+      "dreampets_price": 65
     },
     "C. Swirly Gun": {
       "value": 47,
@@ -1332,7 +1332,7 @@
       "range": "",
       "demand": 2,
       "rarity": 3,
-      "dreampets_price": 46
+      "dreampets_price": 41
     },
     "C. Deathshard": {
       "value": 42,
@@ -1341,7 +1341,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 45.49
+      "dreampets_price": 44.12
     },
     "Chroma Slasher": {
       "value": 42,
@@ -1350,7 +1350,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 40
+      "dreampets_price": 35
     },
     "C. Cookiecane": {
       "value": 40,
@@ -1359,7 +1359,7 @@
       "range": "",
       "demand": 2,
       "rarity": 3,
-      "dreampets_price": 39.99
+      "dreampets_price": 38.78
     },
     "Chroma Shark": {
       "value": 40,
@@ -1386,7 +1386,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 40.99
+      "dreampets_price": 39.75
     },
     "Chroma Heat": {
       "value": 35,
@@ -1395,7 +1395,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 27
+      "dreampets_price": 31.99
     },
     "C. Gingerblade": {
       "value": 33,
@@ -1413,7 +1413,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 30
+      "dreampets_price": 25
     },
     "Chroma Seer": {
       "value": 33,
@@ -1422,7 +1422,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 31.99
+      "dreampets_price": 24.25
     },
     "Chroma Tides": {
       "value": 32,
@@ -1431,7 +1431,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 26
+      "dreampets_price": 23
     },
     "Chroma Boneblade": {
       "value": 28,
@@ -1440,7 +1440,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 17
+      "dreampets_price": 16.49
     },
     "Chroma Fire Bat": {
       "value": 7,
@@ -1469,7 +1469,7 @@
       "range": "",
       "demand": 1,
       "rarity": 2,
-      "dreampets_price": 6.96
+      "dreampets_price": 4
     },
     "Laser": {
       "value": 8,
@@ -1478,7 +1478,7 @@
       "range": "",
       "demand": 1,
       "rarity": 2,
-      "dreampets_price": 29.98
+      "dreampets_price": 22.31
     },
     "America": {
       "value": 7,
@@ -1487,7 +1487,7 @@
       "range": "",
       "demand": 1,
       "rarity": 2,
-      "dreampets_price": 8.56
+      "dreampets_price": 4
     },
     "Prince": {
       "value": 6,
@@ -1496,7 +1496,7 @@
       "range": "",
       "demand": 1,
       "rarity": 2,
-      "dreampets_price": 4.99
+      "dreampets_price": 4.97
     },
     "Shadow": {
       "value": 6,
@@ -1523,7 +1523,7 @@
       "range": "",
       "demand": 1,
       "rarity": 2,
-      "dreampets_price": 4.99
+      "dreampets_price": 3
     },
     "Golden": {
       "value": 4,
@@ -1532,7 +1532,7 @@
       "range": "",
       "demand": 1,
       "rarity": 2,
-      "dreampets_price": 6.99
+      "dreampets_price": 4
     },
     "Splitter": {
       "value": 3,
@@ -1541,7 +1541,7 @@
       "range": "",
       "demand": 1,
       "rarity": 2,
-      "dreampets_price": 5.18
+      "dreampets_price": 4.84
     }
   },
   "ancients": {
@@ -1588,7 +1588,7 @@
       "range": "",
       "demand": 3,
       "rarity": 3,
-      "dreampets_price": 265
+      "dreampets_price": 261.9
     },
     "Icepiercer": {
       "value": 200,
@@ -1597,7 +1597,7 @@
       "range": "",
       "demand": 3,
       "rarity": 3,
-      "dreampets_price": 199
+      "dreampets_price": 194
     },
     "Icebreaker": {
       "value": 85,
@@ -1615,7 +1615,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 35
+      "dreampets_price": 38.78
     },
     "Elderwood Scythe": {
       "value": 48,
@@ -1624,7 +1624,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 60
+      "dreampets_price": 58.2
     },
     "Swirly Axe": {
       "value": 45,
@@ -1633,7 +1633,7 @@
       "range": "",
       "demand": 2,
       "rarity": 3,
-      "dreampets_price": 40.99
+      "dreampets_price": 39.76
     },
     "Hallowscythe": {
       "value": 35,
@@ -1642,7 +1642,7 @@
       "range": "",
       "demand": 2,
       "rarity": 2,
-      "dreampets_price": 31
+      "dreampets_price": 30.05
     },
     "Logchopper": {
       "value": 20,
@@ -1660,7 +1660,7 @@
       "range": "10 - 20",
       "demand": 2,
       "rarity": 1,
-      "dreampets_price": 12
+      "dreampets_price": 13.58
     }
   }
 }
