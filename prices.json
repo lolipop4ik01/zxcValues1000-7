@@ -124,7 +124,7 @@
       "range": "",
       "demand": 5,
       "rarity": 3,
-      "dreampets_price": 2000
+      "dreampets_price": 1999
     },
     "Bauble": {
       "value": 825,
@@ -250,7 +250,7 @@
       "range": "",
       "demand": 4,
       "rarity": 3,
-      "dreampets_price": 600
+      "dreampets_price": 599
     },
     "Waves": {
       "value": 280,
@@ -304,7 +304,7 @@
       "range": "230 - 240",
       "demand": 3,
       "rarity": 3,
-      "dreampets_price": 559
+      "dreampets_price": 560
     },
     "Watergun": {
       "value": 240,
@@ -394,7 +394,7 @@
       "range": "",
       "demand": 1,
       "rarity": 3,
-      "dreampets_price": 249.99
+      "dreampets_price": 249.98
     },
     "Pearl": {
       "value": 80,
@@ -826,7 +826,7 @@
       "range": "",
       "demand": 1,
       "rarity": 2,
-      "dreampets_price": 25
+      "dreampets_price": 38
     },
     "Clockwork": {
       "value": 10,
@@ -1404,7 +1404,7 @@
       "range": "",
       "demand": 1,
       "rarity": 2,
-      "dreampets_price": 98
+      "dreampets_price": 99
     },
     "Chroma Deathshard": {
       "value": 35,
@@ -1660,7 +1660,7 @@
       "range": "",
       "demand": 3,
       "rarity": 2,
-      "dreampets_price": 589
+      "dreampets_price": 588
     },
     "Icepiercer": {
       "value": 160,
@@ -1705,7 +1705,7 @@
       "range": "",
       "demand": 1,
       "rarity": 2,
-      "dreampets_price": 107.99
+      "dreampets_price": 107.98
     },
     "Hallowscythe": {
       "value": 30,
@@ -1732,7 +1732,7 @@
       "range": "",
       "demand": 1,
       "rarity": 2,
-      "dreampets_price": 59.8
+      "dreampets_price": 55
     }
   }
 }
