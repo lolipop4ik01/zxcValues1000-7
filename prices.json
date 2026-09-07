@@ -19,16 +19,16 @@
       "dreampets_price": 0
     },
     "Constellation": {
-      "value": 3050,
+      "value": 3150,
       "trend": "",
-      "stability": "Overpaid For",
-      "range": "3,050 - 3,150",
+      "stability": "Doing Well",
+      "range": "3,150 - 3,200",
       "demand": 6,
       "rarity": 4,
       "dreampets_price": 0
     },
     "Evergreen": {
-      "value": 3000,
+      "value": 2950,
       "trend": "Stable",
       "stability": "Stable",
       "range": "",
@@ -37,16 +37,16 @@
       "dreampets_price": 0
     },
     "Alienbeam": {
-      "value": 2250,
+      "value": 2150,
       "trend": "",
       "stability": "Receding",
-      "range": "2,150 - 2,250",
+      "range": "2,050 - 2,150",
       "demand": 5,
       "rarity": 4,
       "dreampets_price": 0
     },
     "Vampire's Gun": {
-      "value": 2250,
+      "value": 2150,
       "trend": "Stable",
       "stability": "Stable",
       "range": "",
@@ -55,19 +55,19 @@
       "dreampets_price": 0
     },
     "Turkey": {
-      "value": 2200,
+      "value": 2100,
       "trend": "",
       "stability": "Underpaid For",
-      "range": "2,150 - 2,200",
+      "range": "2,000 - 2,100",
       "demand": 5,
       "rarity": 4,
       "dreampets_price": 0
     },
     "Raygun": {
-      "value": 1850,
+      "value": 1800,
       "trend": "",
       "stability": "Receding",
-      "range": "1,750 - 1,850",
+      "range": "1,700 - 1,800",
       "demand": 5,
       "rarity": 3,
       "dreampets_price": 0
@@ -109,55 +109,55 @@
       "dreampets_price": 0
     },
     "Sunrise": {
-      "value": 1250,
+      "value": 1200,
       "trend": "",
       "stability": "Receding",
-      "range": "1,150 - 1,250",
+      "range": "1,100 - 1,200",
       "demand": 5,
       "rarity": 4,
       "dreampets_price": 0
     },
     "Sunset": {
-      "value": 750,
+      "value": 700,
       "trend": "",
       "stability": "Receding",
-      "range": "725 - 750",
+      "range": "675 - 700",
       "demand": 5,
       "rarity": 3,
       "dreampets_price": 0
     },
     "Bauble": {
-      "value": 700,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "650 - 700",
+      "value": 675,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
       "demand": 5,
       "rarity": 4,
       "dreampets_price": 0
     },
     "Snowcannon": {
-      "value": 700,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "650 - 700",
+      "value": 675,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
       "demand": 5,
       "rarity": 3,
       "dreampets_price": 0
     },
     "Soul": {
-      "value": 640,
+      "value": 650,
       "trend": "",
       "stability": "Doing Well",
-      "range": "640 - 650",
+      "range": "650 - 660",
       "demand": 5,
       "rarity": 3,
       "dreampets_price": 0
     },
     "Spirit": {
-      "value": 630,
+      "value": 640,
       "trend": "",
       "stability": "Doing Well",
-      "range": "630 - 640",
+      "range": "640 - 650",
       "demand": 5,
       "rarity": 3,
       "dreampets_price": 0
@@ -261,8 +261,8 @@
       "rarity": 3,
       "dreampets_price": 0
     },
-    "Flowerwood Gun": {
-      "value": 265,
+    "Blizzard": {
+      "value": 270,
       "trend": "Stable",
       "stability": "Stable",
       "range": "",
@@ -270,8 +270,17 @@
       "rarity": 3,
       "dreampets_price": 0
     },
-    "Blizzard": {
-      "value": 260,
+    "Snowstorm": {
+      "value": 270,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
+      "demand": 4,
+      "rarity": 3,
+      "dreampets_price": 0
+    },
+    "Flowerwood Gun": {
+      "value": 265,
       "trend": "Stable",
       "stability": "Stable",
       "range": "",
@@ -288,35 +297,26 @@
       "rarity": 3,
       "dreampets_price": 0
     },
-    "Snowstorm": {
-      "value": 260,
+    "Snow Dagger": {
+      "value": 175,
       "trend": "Stable",
       "stability": "Stable",
       "range": "",
-      "demand": 4,
-      "rarity": 3,
-      "dreampets_price": 0
-    },
-    "Snow Dagger": {
-      "value": 185,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "175 - 185",
       "demand": 3,
       "rarity": 3,
       "dreampets_price": 0
     },
     "Watergun": {
-      "value": 185,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "175 - 185",
+      "value": 175,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
       "demand": 3,
       "rarity": 3,
       "dreampets_price": 0
     },
     "Icecream": {
-      "value": 175,
+      "value": 165,
       "trend": "Stable",
       "stability": "Stable",
       "range": "",
@@ -372,8 +372,8 @@
     "Ornament": {
       "value": 110,
       "trend": "",
-      "stability": "Doing Well",
-      "range": "110 - 120",
+      "stability": "Fluctuating",
+      "range": "100 - 120",
       "demand": 2,
       "rarity": 2,
       "dreampets_price": 0
@@ -1146,20 +1146,20 @@
   },
   "chromas": {
     "C. Traveler's Gun": {
-      "value": 200000,
+      "value": 190000,
       "trend": "",
       "stability": "Underpaid For",
-      "range": "190,000 - 200,000",
-      "demand": 9,
+      "range": "180,000 - 190,000",
+      "demand": 8,
       "rarity": 10,
       "dreampets_price": 0
     },
     "Chroma Evergun": {
-      "value": 72000,
+      "value": 70000,
       "trend": "",
       "stability": "Underpaid For",
-      "range": "70,000 - 72,000",
-      "demand": 8,
+      "range": "68,000 - 70,000",
+      "demand": 7,
       "rarity": 8,
       "dreampets_price": 0
     },
@@ -1218,10 +1218,10 @@
       "dreampets_price": 0
     },
     "Chroma Sunrise": {
-      "value": 11750,
-      "trend": "Stable",
-      "stability": "Stable",
-      "range": "",
+      "value": 11500,
+      "trend": "",
+      "stability": "Underpaid For",
+      "range": "11,250 - 11,500",
       "demand": 5,
       "rarity": 5,
       "dreampets_price": 0
@@ -1236,19 +1236,19 @@
       "dreampets_price": 0
     },
     "Chroma Sunset": {
-      "value": 7750,
+      "value": 7500,
       "trend": "",
       "stability": "Underpaid For",
-      "range": "7,500 - 7,750",
+      "range": "7,250 - 7,500",
       "demand": 5,
       "rarity": 5,
       "dreampets_price": 0
     },
     "Chroma Blizzard": {
-      "value": 4400,
-      "trend": "",
-      "stability": "Underpaid For",
-      "range": "4,300 - 4,400",
+      "value": 4300,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
       "demand": 5,
       "rarity": 5,
       "dreampets_price": 0
@@ -1272,7 +1272,7 @@
       "dreampets_price": 0
     },
     "Chroma Watergun": {
-      "value": 3000,
+      "value": 2800,
       "trend": "Stable",
       "stability": "Stable",
       "range": "",
@@ -1290,25 +1290,25 @@
       "dreampets_price": 0
     },
     "Chroma Icecream": {
-      "value": 2150,
+      "value": 2200,
       "trend": "",
       "stability": "Overpaid For",
-      "range": "2,150 - 2,350",
+      "range": "2,200 - 2,400",
       "demand": 6,
       "rarity": 4,
       "dreampets_price": 0
     },
-    "Chroma Treat": {
-      "value": 1850,
-      "trend": "",
-      "stability": "Receding",
-      "range": "1,800 - 1,850",
+    "Chroma Ornament": {
+      "value": 1825,
+      "trend": "Stable",
+      "stability": "Stable",
+      "range": "",
       "demand": 5,
       "rarity": 4,
       "dreampets_price": 0
     },
-    "Chroma Ornament": {
-      "value": 1800,
+    "Chroma Treat": {
+      "value": 1775,
       "trend": "Stable",
       "stability": "Stable",
       "range": "",
@@ -1317,7 +1317,7 @@
       "dreampets_price": 0
     },
     "Chroma Sweet": {
-      "value": 1750,
+      "value": 1725,
       "trend": "Stable",
       "stability": "Stable",
       "range": "",
@@ -1326,20 +1326,20 @@
       "dreampets_price": 0
     },
     "Chroma Sands": {
-      "value": 1550,
+      "value": 1600,
       "trend": "",
       "stability": "Doing Well",
-      "range": "1,550 - 1,600",
-      "demand": 5,
+      "range": "1,600 - 1,650",
+      "demand": 6,
       "rarity": 4,
       "dreampets_price": 0
     },
     "Chroma Beachy": {
-      "value": 1500,
+      "value": 1550,
       "trend": "",
       "stability": "Doing Well",
-      "range": "1,500 - 1,550",
-      "demand": 5,
+      "range": "1,550 - 1,600",
+      "demand": 6,
       "rarity": 4,
       "dreampets_price": 0
     },
@@ -1618,7 +1618,7 @@
   },
   "ancients": {
     "Gingerscope": {
-      "value": 17000,
+      "value": 16750,
       "trend": "Stable",
       "stability": "Stable",
       "range": "",
@@ -1636,11 +1636,11 @@
       "dreampets_price": 0
     },
     "Celestial": {
-      "value": 2450,
+      "value": 2500,
       "trend": "Stable",
       "stability": "Stable",
       "range": "",
-      "demand": 5,
+      "demand": 6,
       "rarity": 4,
       "dreampets_price": 0
     },
